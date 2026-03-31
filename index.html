@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 <title>Saúco — Catálogo de Fragancias</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
@@ -87,6 +88,11 @@
   .red-icon { font-family: 'Jost', sans-serif; font-size: 8px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; }
   .red-handle-light { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; color: var(--arena); letter-spacing: 1px; }
   .red-handle-dark { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; color: var(--cobre); letter-spacing: 1px; }
+  .red-handle-dark a { color: var(--cobre); text-decoration: none; }
+  .red-handle-dark a:hover { text-decoration: underline; }
+  .red-handle-light a { color: var(--arena); text-decoration: none; }
+  .red-handle-light a:hover { opacity: 0.8; }
+  .red-handle-light a, .red-handle-dark a { cursor: pointer; }
 
   @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr 1fr; gap: 1rem; padding: 0.5rem 1rem 2rem; } }
   @media print {
@@ -111,10 +117,10 @@
   <p class="portada-subtitulo">Decants</p>
   <p class="portada-tagline">El lujo que mereces, en tu medida preferida.</p>
   <div class="portada-redes">
-    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">Instagram</span><span class="red-handle-light">@sauco.decants</span></div>
-    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">TikTok</span><span class="red-handle-light">@saucodecants</span></div>
-    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">Facebook</span><span class="red-handle-light">Saúco Decants</span></div>
-    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">WhatsApp</span><span class="red-handle-light">56 1256 7245</span></div>
+    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">Instagram</span><span class="red-handle-light"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank">@sauco.decants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">TikTok</span><span class="red-handle-light"><a href="https://www.tiktok.com/@saucodecants" target="_blank">@saucodecants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">Facebook</span><span class="red-handle-light"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank">Saúco Decants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:var(--cobre)">WhatsApp</span><span class="red-handle-light"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
   </div>
   <div class="portada-info">Monterrey · Envíos a todo México</div>
 </div>
@@ -561,10 +567,10 @@
   <div class="footer-sub">Decants · Monterrey · Envíos a todo México</div>
   <div class="footer-contacto">Escríbenos por WhatsApp o DM de Instagram para hacer tu pedido</div>
   <div class="footer-redes">
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Instagram</span><span class="red-handle-dark">@sauco.decants</span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">TikTok</span><span class="red-handle-dark">@saucodecants</span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Facebook</span><span class="red-handle-dark">Saúco Decants</span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">WhatsApp</span><span class="red-handle-dark">56 1256 7245</span></div>
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank">@sauco.decants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank">@saucodecants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Facebook</span><span class="red-handle-dark"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank">Saúco Decants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">WhatsApp</span><span class="red-handle-dark"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
   </div>
 </div>
 
