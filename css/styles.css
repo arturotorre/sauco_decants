@@ -63,10 +63,13 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .tier-disenador .tier-title { color: #1D7A5A; }
 .tier-vendidos .tier-line { background: var(--terracota); }
 .tier-vendidos .tier-title { color: var(--terracota); }
-.tier-caballero .tier-line { background: #4A6670; }
-.tier-caballero .tier-title { color: #4A6670; }
-.tier-dama .tier-line { background: #B5657D; }
-.tier-dama .tier-title { color: #B5657D; }
+
+/* Divisores de "Perfumes completos": mucho más notorios que .tier-header,
+   para que no haya confusión entre las secciones. Misma franja para las dos
+   (paleta de Saúco) — el diferenciador es la palabra ("Caballero"/"Dama"). */
+.completos-tier-header { display: flex; align-items: center; justify-content: center; margin: 2.5rem 0 0.5rem; padding: 1rem 2rem; background: var(--chocolate); }
+.completos-tier-titulo { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 28px; letter-spacing: 5px; text-transform: uppercase; color: var(--crema); }
+@media (max-width: 600px) { .completos-tier-titulo { font-size: 21px; letter-spacing: 3px; } }
 
 .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 0.25rem 2rem 1.5rem; max-width: 900px; margin: 0 auto; }
 

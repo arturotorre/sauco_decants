@@ -84,16 +84,16 @@ function completoCardHTML(p) {
 function renderCompletos() {
   const contenedor = document.getElementById('completos-grid');
   const grupos = [
-    { key: 'Caballero', clase: 'tier-caballero', label: 'Caballero' },
-    { key: 'Dama', clase: 'tier-dama', label: 'Dama' }
+    { key: 'Caballero', label: 'Caballero' },
+    { key: 'Dama', label: 'Dama' }
   ];
 
   contenedor.innerHTML = grupos.map(g => {
     const perfumes = PERFUMES_COMPLETOS.filter(p => p.genero === g.key);
     if (!perfumes.length) return '';
     return `
-    <div class="tier-header ${g.clase}">
-      <div class="tier-line"></div><span class="tier-title">${g.label}</span><div class="tier-line"></div>
+    <div class="completos-tier-header">
+      <span class="completos-tier-titulo">${g.label}</span>
     </div>
     <div class="cards-grid">
       ${perfumes.map(completoCardHTML).join('')}
