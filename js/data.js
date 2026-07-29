@@ -49,7 +49,7 @@ const PERFUMES = [
     imagen: "imagenes/replica by the fireplace.webp",
     alt: "By the Fireplace",
     notas: ["Clavo", "Pimienta rosa", "Castaña", "Madera de guayaco", "Vainilla"],
-    precios: { "3ml": "", "5ml": "", "10ml": "" },
+    precios: { "3ml": "$140", "5ml": "$200", "10ml": "$360" },
     bestseller: false
   },
 
@@ -150,7 +150,7 @@ const PERFUMES = [
     imagen: "imagenes/born in roma intense donna.webp",
     alt: "Donna Born in Roma Intense",
     notas: ["Bergamota", "Jazmín sambac", "Iris blanco", "Vainilla bourbon", "Almizcle"],
-    precios: { "3ml": "", "5ml": "", "10ml": "" },
+    precios: { "3ml": "$220", "5ml": "$335", "10ml": "$590" },
     bestseller: true
   },
   {
@@ -161,7 +161,7 @@ const PERFUMES = [
     imagen: "imagenes/y edp.webp",
     alt: "Y EDP",
     notas: ["Manzana", "Jengibre", "Bergamota", "Salvia", "Haba tonka", "Cedro"],
-    precios: { "3ml": "", "5ml": "", "10ml": "" },
+    precios: { "3ml": "$160", "5ml": "$240", "10ml": "$430" },
     bestseller: false
   },
   {
