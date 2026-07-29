@@ -81,6 +81,30 @@ function completoCardHTML(p) {
   </div>`;
 }
 
+let completosGenero = 'todos';
+let completosMarca = 'todas';
+
+function completosMarcasDisponibles() {
+  const base = completosGenero === 'todos'
+    ? PERFUMES_COMPLETOS
+    : PERFUMES_COMPLETOS.filter(p => p.genero === completosGenero);
+  return Array.from(new Set(base.map(p => p.casa))).sort((a, b) => a.localeCompare(b, 'es'));
+}
+
+function renderFiltroMarcaCompletos() {
+  const cont = document.getElementById('completos-filtro-marca');
+  const marcas = completosMarcasDisponibles();
+  cont.innerHTML = ['<button type="button" class="completos-chip completos-chip-marca activo" data-marca="todas">Todas las marcas</button>']
+    .concat(marcas.map(m => `<button type="button" class="completos-chip completos-chip-marca" data-marca="${m}">${m}</button>`))
+    .join('');
+}
+
+function completosCoincide(p) {
+  const okGenero = completosGenero === 'todos' || p.genero === completosGenero;
+  const okMarca = completosMarca === 'todas' || p.casa === completosMarca;
+  return okGenero && okMarca;
+}
+
 function renderCompletos() {
   const contenedor = document.getElementById('completos-grid');
   const grupos = [
@@ -88,8 +112,8 @@ function renderCompletos() {
     { key: 'Dama', label: 'Dama' }
   ];
 
-  contenedor.innerHTML = grupos.map(g => {
-    const perfumes = PERFUMES_COMPLETOS.filter(p => p.genero === g.key);
+  const html = grupos.map(g => {
+    const perfumes = PERFUMES_COMPLETOS.filter(p => p.genero === g.key && completosCoincide(p));
     if (!perfumes.length) return '';
     return `
     <div class="completos-tier-header">
@@ -99,6 +123,8 @@ function renderCompletos() {
       ${perfumes.map(completoCardHTML).join('')}
     </div>`;
   }).join('');
+
+  contenedor.innerHTML = html.trim() ? html : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
 }
 
 function carruselSlideHTML(p) {
@@ -190,6 +216,7 @@ function route() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCarrusel();
+  renderFiltroMarcaCompletos();
   renderCompletos();
   route();
 
@@ -197,6 +224,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('nav-lateral');
     const abierto = nav.classList.toggle('nav-abierto');
     document.getElementById('nav-toggle').setAttribute('aria-expanded', String(abierto));
+  });
+
+  document.getElementById('completos-filtro-genero').addEventListener('click', (e) => {
+    const btn = e.target.closest('.completos-chip');
+    if (!btn) return;
+    completosGenero = btn.dataset.filtroGenero;
+    completosMarca = 'todas';
+    document.querySelectorAll('#completos-filtro-genero .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
+    renderFiltroMarcaCompletos();
+    renderCompletos();
+  });
+
+  document.getElementById('completos-filtro-marca').addEventListener('click', (e) => {
+    const btn = e.target.closest('.completos-chip');
+    if (!btn) return;
+    completosMarca = btn.dataset.marca;
+    document.querySelectorAll('#completos-filtro-marca .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
+    renderCompletos();
   });
 });
 
