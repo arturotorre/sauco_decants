@@ -165,8 +165,18 @@ function cerrarSelectorTamano() {
   document.getElementById('selector-tamano').hidden = true;
 }
 
+function generarNumeroPedido() {
+  // Aleatorio criptográfico (no Math.random) para minimizar la probabilidad
+  // de choque entre pedidos, ya que no hay base de datos que valide unicidad.
+  const buffer = new Uint32Array(1);
+  crypto.getRandomValues(buffer);
+  return String(10000000 + (buffer[0] % 90000000));
+}
+
 function checkoutWhatsApp() {
   if (!carrito.length) return;
+
+  const numeroPedido = generarNumeroPedido();
 
   const lineas = carrito.map(item => {
     const cantidadTexto = item.cantidad > 1 ? ` x${item.cantidad}` : '';
@@ -181,6 +191,7 @@ function checkoutWhatsApp() {
   });
 
   let mensaje = 'Hola, me gustaría realizar un pedido de los siguientes decants:\n\n'
+    + `Número de pedido: ${numeroPedido}\n\n`
     + lineas.join('\n')
     + `\n\nTotal: ${formatoPrecio(calcularTotal())}`;
 
