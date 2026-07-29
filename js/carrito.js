@@ -144,11 +144,20 @@ function abrirSelectorTamano(perfume, boton) {
   cont.dataset.nombre = perfume.nombre;
   cont.hidden = false;
 
+  // #selector-tamano es position:fixed → las coordenadas van relativas al
+  // viewport (las que ya da getBoundingClientRect), sin sumar el scroll.
   const r = boton.getBoundingClientRect();
   const ancho = cont.offsetWidth;
-  let left = r.right + window.scrollX - ancho;
+  const alto = cont.offsetHeight;
+
+  let left = r.right - ancho;
   if (left < 8) left = 8;
-  cont.style.top = (r.bottom + window.scrollY + 6) + 'px';
+  if (left + ancho > window.innerWidth - 8) left = window.innerWidth - 8 - ancho;
+
+  let top = r.bottom + 6;
+  if (top + alto > window.innerHeight - 8) top = r.top - alto - 6;
+
+  cont.style.top = top + 'px';
   cont.style.left = left + 'px';
 }
 
