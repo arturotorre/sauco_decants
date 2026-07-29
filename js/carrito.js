@@ -205,7 +205,7 @@ function checkoutWhatsApp() {
 document.addEventListener('click', (e) => {
   const btnCotizar = e.target.closest('.btn-cotizar');
   if (btnCotizar) {
-    enviarCotizacionPerfume(btnCotizar.dataset.nombre, btnCotizar.dataset.casa);
+    enviarCotizacionPerfume(btnCotizar.dataset.nombre, btnCotizar.dataset.casa, btnCotizar.dataset.concentracion);
     return;
   }
 
@@ -250,8 +250,8 @@ function enviarCotizacion(nombrePerfume, marca) {
   window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
-function enviarCotizacionPerfume(nombrePerfume, marca) {
-  const mensaje = `¡Hola! Me gustaría cotizar el perfume ${nombrePerfume} de ${marca} por favor.`;
+function enviarCotizacionPerfume(nombrePerfume, marca, concentracion) {
+  const mensaje = `¡Hola! Me gustaría cotizar el perfume ${nombrePerfume} de ${marca} en su versión ${concentracion} por favor.`;
   window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
