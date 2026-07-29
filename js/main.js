@@ -79,7 +79,13 @@ function completoCardHTML(p) {
     </div>
     <div class="card-info">
       <div class="card-casa">${p.casa}</div>
-      <div class="card-nombre">${p.nombre}</div>
+      <div class="card-nombre-fila">
+        <div class="card-nombre">${p.nombre}</div>
+        <button class="btn-agregar btn-cotizar" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Cotizar ${p.nombre}">
+          <span class="btn-agregar-texto">Cotizar</span>
+          <span class="btn-agregar-icono" aria-hidden="true">💬</span>
+        </button>
+      </div>
       <div class="card-genero">${p.concentracion} · ${p.genero}</div>
     </div>
   </div>`;
