@@ -263,8 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
   formCotizar.addEventListener('submit', (e) => {
     e.preventDefault();
     const nombrePerfume = document.getElementById('cotizar-nombre').value.trim();
-    const marca = document.getElementById('cotizar-marca').value.trim();
-    if (!nombrePerfume || !marca) return;
+    const marca = document.getElementById('cotizar-marca').value.trim() || 'N/A';
+    if (!nombrePerfume) return;
     enviarCotizacion(nombrePerfume, marca);
     formCotizar.reset();
   });
