@@ -66,6 +66,41 @@ function renderCatalogo(filtro) {
   contenedor.innerHTML = `<div class="main-content">${html}</div>`;
 }
 
+function completoCardHTML(p) {
+  return `
+  <div class="card card-completo">
+    <div class="card-foto">
+      <img src="${p.imagen}" alt="${p.alt}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="foto-label" style="display:none">Sin imagen</span>
+    </div>
+    <div class="card-info">
+      <div class="card-casa">${p.casa}</div>
+      <div class="card-nombre">${p.nombre}</div>
+      <div class="card-genero">${p.concentracion} · ${p.genero}</div>
+    </div>
+  </div>`;
+}
+
+function renderCompletos() {
+  const contenedor = document.getElementById('completos-grid');
+  const grupos = [
+    { key: 'Caballero', clase: 'tier-caballero', label: 'Caballero' },
+    { key: 'Dama', clase: 'tier-dama', label: 'Dama' }
+  ];
+
+  contenedor.innerHTML = grupos.map(g => {
+    const perfumes = PERFUMES_COMPLETOS.filter(p => p.genero === g.key);
+    if (!perfumes.length) return '';
+    return `
+    <div class="tier-header ${g.clase}">
+      <div class="tier-line"></div><span class="tier-title">${g.label}</span><div class="tier-line"></div>
+    </div>
+    <div class="cards-grid">
+      ${perfumes.map(completoCardHTML).join('')}
+    </div>`;
+  }).join('');
+}
+
 function carruselSlideHTML(p) {
   return `
   <div class="card carrusel-slide">
@@ -128,25 +163,34 @@ function route() {
   const [seccion, filtro] = hash.split('/');
   const vistaHome = document.getElementById('vista-home');
   const vistaCatalogo = document.getElementById('vista-catalogo');
+  const vistaCompletos = document.getElementById('vista-completos');
   const navLinks = document.querySelectorAll('.nav-links a');
+
+  vistaHome.hidden = true;
+  vistaCatalogo.hidden = true;
+  vistaCompletos.hidden = true;
+  let activo = null;
 
   if (seccion === 'catalogo') {
     const genero = filtro || 'todos';
-    vistaHome.hidden = true;
     vistaCatalogo.hidden = false;
     renderCatalogo(genero);
-    navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === genero));
+    activo = genero;
+  } else if (seccion === 'completos') {
+    vistaCompletos.hidden = false;
+    activo = 'completos';
   } else {
     vistaHome.hidden = false;
-    vistaCatalogo.hidden = true;
-    navLinks.forEach(a => a.classList.remove('activo'));
   }
+
+  navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
   window.scrollTo(0, 0);
   cerrarNavMovil();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCarrusel();
+  renderCompletos();
   route();
 
   document.getElementById('nav-toggle').addEventListener('click', () => {

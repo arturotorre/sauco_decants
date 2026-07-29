@@ -26,7 +26,7 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
   .nav-hamburguesa { display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 26px; height: 22px; background: none; border: none; cursor: pointer; padding: 0; order: -1; }
   .nav-hamburguesa span { display: block; height: 1px; background: var(--arena); width: 100%; }
   .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--chocolate); flex-direction: column; align-items: stretch; gap: 0; padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; border-bottom: 0.5px solid rgba(184,115,51,0.25); }
-  .nav-lateral.nav-abierto .nav-links { max-height: 260px; padding: 0.5rem 0 1rem; }
+  .nav-lateral.nav-abierto .nav-links { max-height: 340px; padding: 0.5rem 0 1rem; }
   .nav-links a { padding: 0.75rem 1rem; border-bottom: none; }
 }
 
@@ -63,6 +63,10 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .tier-disenador .tier-title { color: #1D7A5A; }
 .tier-vendidos .tier-line { background: var(--terracota); }
 .tier-vendidos .tier-title { color: var(--terracota); }
+.tier-caballero .tier-line { background: #4A6670; }
+.tier-caballero .tier-title { color: #4A6670; }
+.tier-dama .tier-line { background: #B5657D; }
+.tier-dama .tier-title { color: #B5657D; }
 
 .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 0.25rem 2rem 1.5rem; max-width: 900px; margin: 0 auto; }
 
@@ -105,6 +109,22 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .card-footer-text { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 1.5px; color: #9B7B6A; text-transform: uppercase; }
 
 .main-content { background: var(--fondo); flex: 1; }
+.card-completo .card-info { padding-bottom: 1rem; }
+
+/* ===== PERFUMES COMPLETOS ===== */
+.completos-header { padding: 3rem 2rem 0.5rem; text-align: center; }
+.completos-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 40px; color: var(--chocolate); letter-spacing: 1px; }
+
+.cotizar-section { max-width: 520px; margin: 0 auto; padding: 1.5rem 2rem 3rem; text-align: center; }
+.cotizar-pregunta { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; font-weight: 300; color: var(--chocolate); line-height: 1.6; margin-bottom: 1.5rem; }
+.cotizar-form { display: flex; flex-direction: column; gap: 1rem; }
+.cotizar-campo { display: flex; flex-direction: column; gap: 4px; text-align: left; }
+.cotizar-campo span { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 2px; color: var(--cobre); text-transform: uppercase; }
+.cotizar-campo input { font-family: 'Jost', sans-serif; font-size: 14px; padding: 0.65rem 0.85rem; border: 0.5px solid var(--arena); border-radius: 4px; background: #fff; color: var(--chocolate); }
+.cotizar-campo input:focus { outline: none; border-color: var(--terracota); }
+.cotizar-enviar { margin-top: 0.25rem; padding: 0.75rem; border: none; border-radius: 4px; background: var(--terracota); color: #fff; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.cotizar-enviar:hover { background: var(--cobre); }
+.cotizar-nota { margin-top: 1.5rem; padding: 0.85rem 1rem; background: var(--crema); border-left: 3px solid var(--cobre); border-radius: 2px; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300; color: var(--chocolate); line-height: 1.6; text-align: left; }
 
 /* ===== CARRUSEL "LOS MÁS VENDIDOS" ===== */
 .carrusel-viewport { position: relative; max-width: 900px; margin: 0 auto; padding: 0 3rem 2rem; }

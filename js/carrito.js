@@ -239,7 +239,22 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+function enviarCotizacion(nombrePerfume, marca) {
+  const mensaje = `Hola, me gustaría cotizar ${nombrePerfume} de la marca ${marca}, por favor.`;
+  window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   cargarCarrito();
   actualizarBadge();
+
+  const formCotizar = document.getElementById('form-cotizar');
+  formCotizar.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombrePerfume = document.getElementById('cotizar-nombre').value.trim();
+    const marca = document.getElementById('cotizar-marca').value.trim();
+    if (!nombrePerfume || !marca) return;
+    enviarCotizacion(nombrePerfume, marca);
+    formCotizar.reset();
+  });
 });

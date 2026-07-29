@@ -209,3 +209,44 @@ const PERFUMES = [
     bestseller: false
   }
 ];
+
+// Perfumes de línea completa (no decants): sin precio ni tamaños, se cotizan
+// por WhatsApp. Fotos pendientes de agregar en imagenes/completos/<archivo>.
+const PERFUMES_COMPLETOS = [
+  // ---- CABALLERO ----
+  { casa: "Paco Rabanne", nombre: "Invictus", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/invictus.webp", alt: "Invictus" },
+  { casa: "Azzaro", nombre: "The Most Wanted", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/the most wanted.webp", alt: "The Most Wanted" },
+  { casa: "Dolce & Gabbana", nombre: "King", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/dolce gabbana king.webp", alt: "King" },
+  { casa: "Dior", nombre: "Sauvage", concentracion: "Parfum", genero: "Caballero", imagen: "imagenes/completos/sauvage parfum.webp", alt: "Sauvage Parfum" },
+  { casa: "Valentino", nombre: "Uomo Born In Roma Intense", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/uomo born in roma intense.webp", alt: "Uomo Born In Roma Intense" },
+  { casa: "Valentino", nombre: "Uomo Born In Roma Yellow Dream", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/uomo born in roma yellow dream.webp", alt: "Uomo Born In Roma Yellow Dream" },
+  { casa: "Valentino", nombre: "Uomo Born In Roma Green Stravaganza", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/uomo born in roma green stravaganza.webp", alt: "Uomo Born In Roma Green Stravaganza" },
+  { casa: "Jean Paul Gaultier", nombre: "Le Male Elixir", concentracion: "Parfum", genero: "Caballero", imagen: "imagenes/completos/le male elixir.webp", alt: "Le Male Elixir" },
+  { casa: "Dior", nombre: "Sauvage", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/sauvage edp.webp", alt: "Sauvage EDP" },
+  { casa: "Lacoste", nombre: "Blanc", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/lacoste blanc.webp", alt: "Blanc" },
+  { casa: "Versace", nombre: "Pour Homme Dylan Blue", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/dylan blue.webp", alt: "Pour Homme Dylan Blue" },
+  { casa: "Paco Rabanne", nombre: "One Million Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/one million parfum.webp", alt: "One Million Parfum" },
+  { casa: "Paco Rabanne", nombre: "One Million", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/one million edt.webp", alt: "One Million" },
+  { casa: "Montblanc", nombre: "Explorer", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/explorer.webp", alt: "Explorer" },
+  { casa: "Jean Paul Gaultier", nombre: "Le Beau Le Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/le beau le parfum.webp", alt: "Le Beau Le Parfum" },
+  { casa: "Jean Paul Gaultier", nombre: "Le Beau", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/le beau edt.webp", alt: "Le Beau" },
+  { casa: "Jean Paul Gaultier", nombre: "Le Male", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/le male edt.webp", alt: "Le Male" },
+
+  // ---- DAMA ----
+  { casa: "Dior", nombre: "Miss Dior Originale", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/miss dior originale.webp", alt: "Miss Dior Originale" },
+  { casa: "Dolce & Gabbana", nombre: "Queen", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/queen.webp", alt: "Queen" },
+  { casa: "Dolce & Gabbana", nombre: "Light Blue Capri In Love", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/light blue capri in love.webp", alt: "Light Blue Capri In Love" },
+  { casa: "YSL", nombre: "Libre L'Eau Nue Parfum de Peau", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre leau nue parfum de peau.webp", alt: "Libre L'Eau Nue Parfum de Peau" },
+  { casa: "Burberry", nombre: "My Burberry Blush", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/my burberry blush.webp", alt: "My Burberry Blush" },
+  { casa: "Prada", nombre: "Paradoxe Virtual Flower", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/paradoxe virtual flower.webp", alt: "Paradoxe Virtual Flower" },
+  { casa: "Prada", nombre: "Paradoxe Intense", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/paradoxe intense completo.webp", alt: "Paradoxe Intense" },
+  { casa: "Dior", nombre: "J'adore Parfum d'Eau", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/jadore parfum deau.webp", alt: "J'adore Parfum d'Eau" },
+  { casa: "Adolfo Domínguez", nombre: "Jazmín Tonka", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/jazmin tonka.webp", alt: "Jazmín Tonka" },
+  { casa: "Salvatore Ferragamo", nombre: "Signorina Unica", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/signorina unica.webp", alt: "Signorina Unica" },
+  { casa: "Salvatore Ferragamo", nombre: "Signorina Libera", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/signorina libera.webp", alt: "Signorina Libera" },
+  { casa: "Carolina Herrera", nombre: "Very Good Girl Elixir", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/very good girl elixir.webp", alt: "Very Good Girl Elixir" },
+  { casa: "Carolina Herrera", nombre: "Good Girl Blush Elixir", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/good girl blush elixir.webp", alt: "Good Girl Blush Elixir" },
+  { casa: "Carolina Herrera", nombre: "Very Good Girl", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/very good girl.webp", alt: "Very Good Girl" },
+  { casa: "Carolina Herrera", nombre: "Good Girl", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/good girl.webp", alt: "Good Girl" },
+  { casa: "Valentino", nombre: "Donna Born In Roma Yellow Dream", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/donna born in roma yellow dream.webp", alt: "Donna Born In Roma Yellow Dream" }
+];
