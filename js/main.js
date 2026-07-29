@@ -46,6 +46,7 @@ function coincideGenero(p, filtro) {
 
 function renderCatalogo(filtro) {
   const contenedor = document.getElementById('vista-catalogo');
+  const etiquetasGenero = { todos: 'Todos', hombre: 'Hombre', mujer: 'Mujer' };
   const tiers = [
     { key: 'nicho', clase: 'tier-nicho', label: 'Nicho' },
     { key: 'disenador', clase: 'tier-disenador', label: 'Diseñador' }
@@ -63,7 +64,10 @@ function renderCatalogo(filtro) {
     </div>`;
   }).join('');
 
-  contenedor.innerHTML = `<div class="main-content">${html}</div>`;
+  contenedor.innerHTML = `<div class="main-content">
+    <div class="vista-header"><h1>Decants - ${etiquetasGenero[filtro] || 'Todos'}</h1></div>
+    ${html}
+  </div>`;
 }
 
 function completoCardHTML(p) {

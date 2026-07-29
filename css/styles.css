@@ -124,8 +124,8 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .card-completo .card-info { padding-bottom: 1rem; }
 
 /* ===== PERFUMES COMPLETOS ===== */
-.completos-header { padding: 3rem 2rem 0.5rem; text-align: center; }
-.completos-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 40px; color: var(--chocolate); letter-spacing: 1px; }
+.vista-header { padding: 3rem 2rem 0.5rem; text-align: center; }
+.vista-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 40px; color: var(--chocolate); letter-spacing: 1px; }
 
 .cotizar-section { max-width: 520px; margin: 0 auto; padding: 1.5rem 2rem 3rem; text-align: center; }
 .cotizar-pregunta { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; font-weight: 300; color: var(--chocolate); line-height: 1.6; margin-bottom: 1.5rem; }
