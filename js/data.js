@@ -41,19 +41,19 @@ const PERFUMES = [
     precios: { "3ml": "$490", "5ml": "$790", "10ml": "$1,390" },
     bestseller: false
   },
+
+  // ---- DISEÑADOR ----
   {
     casa: "Maison Margiela",
     nombre: "Replica By the Fireplace EDT",
     genero: "Unisex",
-    tier: "nicho",
+    tier: "disenador",
     imagen: "imagenes/replica by the fireplace.webp",
     alt: "By the Fireplace",
     notas: ["Clavo", "Pimienta rosa", "Castaña", "Madera de guayaco", "Vainilla"],
     precios: { "3ml": "$140", "5ml": "$200", "10ml": "$360" },
     bestseller: false
   },
-
-  // ---- DISEÑADOR ----
   {
     casa: "Louis Vuitton",
     nombre: "Imagination EDP",
