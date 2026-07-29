@@ -17,7 +17,13 @@ function cardHTML(p) {
     </div>
     <div class="card-info">
       <div class="card-casa">${p.casa}</div>
-      <div class="card-nombre">${p.nombre}</div>
+      <div class="card-nombre-fila">
+        <div class="card-nombre">${p.nombre}</div>
+        <button class="btn-agregar" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Agregar ${p.nombre} al carrito">
+          <span class="btn-agregar-texto">Agregar al carrito</span>
+          <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
+        </button>
+      </div>
       <div class="card-genero">${p.genero}</div>
       <div class="card-notas">
         <span class="notas-label">Notas</span>

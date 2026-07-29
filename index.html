@@ -67,6 +67,27 @@
 
 </div>
 
+<button id="carrito-boton" aria-label="Ver carrito">
+  <span aria-hidden="true">🛒</span>
+  <span id="carrito-contador" hidden>0</span>
+</button>
+
+<div id="carrito-overlay" hidden></div>
+<aside id="carrito-panel" hidden aria-label="Carrito de compras">
+  <div class="carrito-panel-header">
+    <h2>Tu carrito</h2>
+    <button class="carrito-cerrar" aria-label="Cerrar carrito">×</button>
+  </div>
+  <div id="carrito-items"></div>
+  <div class="carrito-panel-footer">
+    <div id="carrito-total"></div>
+    <p class="carrito-checkout-label">Confirmar tu pedido mediante:</p>
+    <button id="carrito-checkout-whatsapp">WhatsApp</button>
+  </div>
+</aside>
+
+<div id="selector-tamano" hidden></div>
+
 <div class="footer-global">
   <div class="footer-nombre">Saúco</div>
   <div class="footer-linea"></div>
@@ -83,5 +104,6 @@
 
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
+<script src="js/carrito.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .nav-hamburguesa { display: none; }
 
 @media (max-width: 860px) {
-  .nav-lateral { width: 100%; height: auto; flex-direction: row; align-items: center; justify-content: space-between; padding: 0.85rem 1.25rem; position: fixed; }
+  .nav-lateral { width: 100%; height: auto; flex-direction: row; align-items: center; justify-content: flex-start; gap: 0.85rem; padding: 0.85rem 60px 0.85rem 1.25rem; position: fixed; }
   .nav-marca { font-size: 20px; }
   .nav-hamburguesa { display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 26px; height: 22px; background: none; border: none; cursor: pointer; padding: 0; order: -1; }
   .nav-hamburguesa span { display: block; height: 1px; background: var(--arena); width: 100%; }
@@ -78,7 +78,8 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 
 .card-info { padding: 0.6rem 0.85rem 0.4rem; }
 .card-casa { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 3px; color: var(--cobre); text-transform: uppercase; margin-bottom: 4px; }
-.card-nombre { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--chocolate); line-height: 1.2; margin-bottom: 3px; }
+.card-nombre { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--chocolate); line-height: 1.2; }
+.card-nombre-fila { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; margin-bottom: 3px; }
 .card-genero { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 2px; color: #9B7B6A; text-transform: uppercase; }
 .card-divider { height: 0.5px; background: var(--arena); margin: 0.5rem 0; }
 .card-notas { margin: 0.3rem 0; }
@@ -89,6 +90,15 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .precio-item { text-align: center; padding: 4px 4px; border-radius: 3px; background: var(--fondo); }
 .precio-ml { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 1px; color: var(--cobre); display: block; margin-bottom: 3px; }
 .precio-val { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 400; color: var(--chocolate); display: block; }
+
+.btn-agregar { flex-shrink: 0; display: flex; align-items: center; gap: 4px; background: var(--fondo); border: 0.5px solid var(--cobre); border-radius: 20px; padding: 4px 10px; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 8px; font-weight: 300; letter-spacing: 1px; color: var(--cobre); text-transform: uppercase; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+.btn-agregar:hover { background: var(--terracota); border-color: var(--terracota); color: #fff; }
+.btn-agregar-icono { display: none; font-size: 11px; }
+@media (max-width: 600px) {
+  .btn-agregar { padding: 0; width: 24px; height: 24px; border-radius: 50%; justify-content: center; }
+  .btn-agregar-texto { display: none; }
+  .btn-agregar-icono { display: block; }
+}
 
 .card-footer { padding: 0.4rem 0.85rem; border-top: 0.5px solid var(--arena); display: flex; align-items: center; gap: 6px; }
 .card-footer-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
@@ -110,6 +120,45 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .carrusel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1rem; }
 .carrusel-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--arena); border: none; padding: 0; cursor: pointer; }
 .carrusel-dot.activo { background: var(--terracota); }
+
+/* ===== SELECTOR DE TAMAÑO (flotante) ===== */
+#selector-tamano { position: fixed; z-index: 200; background: #fff; border: 0.5px solid var(--arena); border-radius: 4px; box-shadow: 0 8px 24px rgba(61,35,20,0.18); overflow: hidden; min-width: 170px; }
+.selector-tamano-opcion { display: block; width: 100%; text-align: left; background: none; border: none; border-bottom: 0.5px solid var(--arena); padding: 0.6rem 0.85rem; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300; color: var(--chocolate); cursor: pointer; }
+.selector-tamano-opcion:last-child { border-bottom: none; }
+.selector-tamano-opcion:hover { background: var(--fondo); color: var(--terracota); }
+
+/* ===== CARRITO ===== */
+#carrito-boton { position: fixed; top: 14px; right: 16px; z-index: 150; width: 44px; height: 44px; border-radius: 50%; background: var(--chocolate); border: 0.5px solid rgba(184,115,51,0.4); color: var(--crema); font-size: 18px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+#carrito-contador { position: absolute; top: -4px; right: -4px; min-width: 17px; height: 17px; padding: 0 3px; border-radius: 9px; background: var(--terracota); color: #fff; font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; display: flex; align-items: center; justify-content: center; }
+@media (max-width: 860px) { #carrito-boton { top: calc((var(--nav-alto-movil) - 40px) / 2); right: 12px; width: 40px; height: 40px; } }
+
+#carrito-overlay { position: fixed; inset: 0; background: rgba(61,35,20,0.5); opacity: 0; transition: opacity 0.3s; z-index: 200; }
+#carrito-overlay.visible { opacity: 1; }
+
+#carrito-panel { position: fixed; top: 0; right: 0; height: 100vh; width: min(380px, 100vw); background: var(--fondo); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease; }
+#carrito-panel.abierto { transform: translateX(0); }
+.carrito-panel-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.25rem 1rem; border-bottom: 0.5px solid var(--arena); }
+.carrito-panel-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 22px; color: var(--chocolate); }
+.carrito-cerrar { background: none; border: none; font-size: 22px; line-height: 1; color: var(--chocolate); cursor: pointer; }
+#carrito-items { flex: 1; overflow-y: auto; padding: 0.5rem 1.25rem; }
+.carrito-vacio { font-family: 'Jost', sans-serif; font-size: 13px; color: #9B7B6A; text-align: center; margin-top: 2rem; }
+
+.carrito-item { position: relative; display: flex; gap: 10px; padding: 0.85rem 0; border-bottom: 0.5px solid var(--arena); }
+.carrito-item-foto { flex-shrink: 0; width: 56px; height: 56px; background: #fff; border: 0.5px solid var(--arena); border-radius: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.carrito-item-foto img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.carrito-item-info { padding-right: 1.5rem; }
+.carrito-item-casa { font-family: 'Jost', sans-serif; font-size: 8px; font-weight: 300; letter-spacing: 2px; color: var(--cobre); text-transform: uppercase; margin-bottom: 2px; }
+.carrito-item-nombre { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--chocolate); line-height: 1.2; margin-bottom: 3px; }
+.carrito-item-detalle { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; color: #9B7B6A; }
+.carrito-item-quitar { position: absolute; top: 8px; right: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--fondo); border: 0.5px solid var(--arena); color: var(--chocolate); font-size: 13px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.carrito-item-quitar:hover { background: var(--terracota); border-color: var(--terracota); color: #fff; }
+
+.carrito-panel-footer { padding: 1rem 1.25rem 1.5rem; border-top: 0.5px solid var(--arena); }
+.carrito-total-monto { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--chocolate); margin-bottom: 4px; }
+.carrito-total-nota { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 300; color: #9B7B6A; margin-bottom: 0.75rem; }
+.carrito-checkout-label { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 2px; color: var(--cobre); text-transform: uppercase; margin: 0.75rem 0 0.5rem; }
+#carrito-checkout-whatsapp { width: 100%; padding: 0.75rem; border: none; border-radius: 4px; background: var(--terracota); color: #fff; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+#carrito-checkout-whatsapp:hover { background: var(--cobre); }
 
 .footer-global { background: var(--chocolate); padding: 3rem 2rem; text-align: center; }
 .footer-nombre { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--crema); letter-spacing: 6px; }
