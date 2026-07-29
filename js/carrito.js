@@ -203,6 +203,12 @@ function checkoutWhatsApp() {
 }
 
 document.addEventListener('click', (e) => {
+  const btnCotizar = e.target.closest('.btn-cotizar');
+  if (btnCotizar) {
+    enviarCotizacionPerfume(btnCotizar.dataset.nombre, btnCotizar.dataset.casa, btnCotizar.dataset.concentracion);
+    return;
+  }
+
   const btnAgregar = e.target.closest('.btn-agregar');
   if (btnAgregar) {
     const perfume = PERFUMES.find(p => p.casa === btnAgregar.dataset.casa && p.nombre === btnAgregar.dataset.nombre);
@@ -239,7 +245,27 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+function enviarCotizacion(nombrePerfume, marca) {
+  const mensaje = `Hola, me gustaría cotizar ${nombrePerfume} de la marca ${marca}, por favor.`;
+  window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+function enviarCotizacionPerfume(nombrePerfume, marca, concentracion) {
+  const mensaje = `¡Hola! Me gustaría cotizar el perfume ${nombrePerfume} de ${marca} en su versión ${concentracion} por favor.`;
+  window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   cargarCarrito();
   actualizarBadge();
+
+  const formCotizar = document.getElementById('form-cotizar');
+  formCotizar.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombrePerfume = document.getElementById('cotizar-nombre').value.trim();
+    const marca = document.getElementById('cotizar-marca').value.trim() || 'N/A';
+    if (!nombrePerfume) return;
+    enviarCotizacion(nombrePerfume, marca);
+    formCotizar.reset();
+  });
 });

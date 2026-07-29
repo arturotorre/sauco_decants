@@ -20,6 +20,7 @@
     <li><a href="#catalogo/todos" data-genero="todos">Todos</a></li>
     <li><a href="#catalogo/hombre" data-genero="hombre">Hombre</a></li>
     <li><a href="#catalogo/mujer" data-genero="mujer">Mujer</a></li>
+    <li><a href="#completos" data-genero="completos">Perfumes completos</a></li>
   </ul>
 </nav>
 
@@ -66,6 +67,41 @@
 
   <div id="vista-catalogo" hidden></div>
 
+  <div id="vista-completos" hidden>
+    <div class="main-content">
+      <div class="vista-header">
+        <h1>Perfumes completos</h1>
+      </div>
+
+      <div class="cotizar-section">
+        <p class="cotizar-pregunta">¿No encuentras tu perfume en nuestro catálogo? ¡No te preocupes! Envíanos un mensaje con el nombre de tu perfume y te lo cotizamos en este instante.</p>
+        <form id="form-cotizar" class="cotizar-form">
+          <label class="cotizar-campo">
+            <span>Nombre del perfume</span>
+            <input type="text" id="cotizar-nombre" required>
+          </label>
+          <label class="cotizar-campo">
+            <span>Marca (opcional)</span>
+            <input type="text" id="cotizar-marca">
+          </label>
+          <button type="submit" class="cotizar-enviar">Enviar</button>
+        </form>
+        <p class="cotizar-nota">En Saúco no manejamos stock para entrega inmediata, por lo que la entrega de tu perfume puede tardar entre 7 y 10 días hábiles.</p>
+      </div>
+
+      <div class="completos-filtros">
+        <div class="completos-filtro-genero" id="completos-filtro-genero">
+          <button type="button" class="completos-chip activo" data-filtro-genero="todos">Todos</button>
+          <button type="button" class="completos-chip" data-filtro-genero="Caballero">Caballero</button>
+          <button type="button" class="completos-chip" data-filtro-genero="Dama">Dama</button>
+        </div>
+        <div class="completos-filtro-marca" id="completos-filtro-marca"></div>
+      </div>
+
+      <div id="completos-grid"></div>
+    </div>
+  </div>
+
 </div>
 
 <button id="carrito-boton" aria-label="Ver carrito">
@@ -82,8 +118,7 @@
   <div id="carrito-items"></div>
   <div class="carrito-panel-footer">
     <div id="carrito-total"></div>
-    <p class="carrito-checkout-label">Confirmar tu pedido mediante:</p>
-    <button id="carrito-checkout-whatsapp">WhatsApp</button>
+    <button id="carrito-checkout-whatsapp">Confirmar Pedido</button>
   </div>
 </aside>
 

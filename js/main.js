@@ -46,6 +46,7 @@ function coincideGenero(p, filtro) {
 
 function renderCatalogo(filtro) {
   const contenedor = document.getElementById('vista-catalogo');
+  const etiquetasGenero = { todos: 'Todos', hombre: 'Hombre', mujer: 'Mujer' };
   const tiers = [
     { key: 'nicho', clase: 'tier-nicho', label: 'Nicho' },
     { key: 'disenador', clase: 'tier-disenador', label: 'Diseñador' }
@@ -63,7 +64,77 @@ function renderCatalogo(filtro) {
     </div>`;
   }).join('');
 
-  contenedor.innerHTML = `<div class="main-content">${html}</div>`;
+  contenedor.innerHTML = `<div class="main-content">
+    <div class="vista-header"><h1>Decants - ${etiquetasGenero[filtro] || 'Todos'}</h1></div>
+    ${html}
+  </div>`;
+}
+
+function completoCardHTML(p) {
+  return `
+  <div class="card card-completo">
+    <div class="card-foto">
+      <img src="${p.imagen}" alt="${p.alt}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="foto-label" style="display:none">Sin imagen</span>
+    </div>
+    <div class="card-info">
+      <div class="card-casa">${p.casa}</div>
+      <div class="card-nombre-fila">
+        <div class="card-nombre">${p.nombre}</div>
+        <button class="btn-agregar btn-cotizar" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Cotizar ${p.nombre}">
+          <span class="btn-agregar-texto">Cotizar</span>
+          <span class="btn-agregar-icono" aria-hidden="true">💬</span>
+        </button>
+      </div>
+      <div class="card-genero">${p.concentracion} · ${p.genero}</div>
+    </div>
+  </div>`;
+}
+
+let completosGenero = 'todos';
+let completosMarca = 'todas';
+
+function completosMarcasDisponibles() {
+  const base = completosGenero === 'todos'
+    ? PERFUMES_COMPLETOS
+    : PERFUMES_COMPLETOS.filter(p => p.genero === completosGenero);
+  return Array.from(new Set(base.map(p => p.casa))).sort((a, b) => a.localeCompare(b, 'es'));
+}
+
+function renderFiltroMarcaCompletos() {
+  const cont = document.getElementById('completos-filtro-marca');
+  const marcas = completosMarcasDisponibles();
+  cont.innerHTML = ['<button type="button" class="completos-chip completos-chip-marca activo" data-marca="todas">Todas las marcas</button>']
+    .concat(marcas.map(m => `<button type="button" class="completos-chip completos-chip-marca" data-marca="${m}">${m}</button>`))
+    .join('');
+}
+
+function completosCoincide(p) {
+  const okGenero = completosGenero === 'todos' || p.genero === completosGenero;
+  const okMarca = completosMarca === 'todas' || p.casa === completosMarca;
+  return okGenero && okMarca;
+}
+
+function renderCompletos() {
+  const contenedor = document.getElementById('completos-grid');
+  const grupos = [
+    { key: 'Caballero', label: 'Caballero' },
+    { key: 'Dama', label: 'Dama' }
+  ];
+
+  const html = grupos.map(g => {
+    const perfumes = PERFUMES_COMPLETOS.filter(p => p.genero === g.key && completosCoincide(p));
+    if (!perfumes.length) return '';
+    return `
+    <div class="completos-tier-header">
+      <span class="completos-tier-titulo">${g.label}</span>
+    </div>
+    <div class="cards-grid">
+      ${perfumes.map(completoCardHTML).join('')}
+    </div>`;
+  }).join('');
+
+  contenedor.innerHTML = html.trim() ? html : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
 }
 
 function carruselSlideHTML(p) {
@@ -128,31 +199,59 @@ function route() {
   const [seccion, filtro] = hash.split('/');
   const vistaHome = document.getElementById('vista-home');
   const vistaCatalogo = document.getElementById('vista-catalogo');
+  const vistaCompletos = document.getElementById('vista-completos');
   const navLinks = document.querySelectorAll('.nav-links a');
+
+  vistaHome.hidden = true;
+  vistaCatalogo.hidden = true;
+  vistaCompletos.hidden = true;
+  let activo = null;
 
   if (seccion === 'catalogo') {
     const genero = filtro || 'todos';
-    vistaHome.hidden = true;
     vistaCatalogo.hidden = false;
     renderCatalogo(genero);
-    navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === genero));
+    activo = genero;
+  } else if (seccion === 'completos') {
+    vistaCompletos.hidden = false;
+    activo = 'completos';
   } else {
     vistaHome.hidden = false;
-    vistaCatalogo.hidden = true;
-    navLinks.forEach(a => a.classList.remove('activo'));
   }
+
+  navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
   window.scrollTo(0, 0);
   cerrarNavMovil();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCarrusel();
+  renderFiltroMarcaCompletos();
+  renderCompletos();
   route();
 
   document.getElementById('nav-toggle').addEventListener('click', () => {
     const nav = document.getElementById('nav-lateral');
     const abierto = nav.classList.toggle('nav-abierto');
     document.getElementById('nav-toggle').setAttribute('aria-expanded', String(abierto));
+  });
+
+  document.getElementById('completos-filtro-genero').addEventListener('click', (e) => {
+    const btn = e.target.closest('.completos-chip');
+    if (!btn) return;
+    completosGenero = btn.dataset.filtroGenero;
+    completosMarca = 'todas';
+    document.querySelectorAll('#completos-filtro-genero .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
+    renderFiltroMarcaCompletos();
+    renderCompletos();
+  });
+
+  document.getElementById('completos-filtro-marca').addEventListener('click', (e) => {
+    const btn = e.target.closest('.completos-chip');
+    if (!btn) return;
+    completosMarca = btn.dataset.marca;
+    document.querySelectorAll('#completos-filtro-marca .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
+    renderCompletos();
   });
 });
 
