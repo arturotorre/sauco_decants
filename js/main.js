@@ -93,6 +93,11 @@ function completoCardHTML(p) {
 
 let completosGenero = 'todos';
 let completosMarca = 'todas';
+let completosBusqueda = '';
+
+function normalizarTexto(s) {
+  return s.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+}
 
 function completosMarcasDisponibles() {
   const base = completosGenero === 'todos'
@@ -112,7 +117,11 @@ function renderFiltroMarcaCompletos() {
 function completosCoincide(p) {
   const okGenero = completosGenero === 'todos' || p.genero === completosGenero;
   const okMarca = completosMarca === 'todas' || p.casa === completosMarca;
-  return okGenero && okMarca;
+  const busqueda = normalizarTexto(completosBusqueda.trim());
+  const okBusqueda = !busqueda
+    || normalizarTexto(p.nombre).includes(busqueda)
+    || normalizarTexto(p.casa).includes(busqueda);
+  return okGenero && okMarca && okBusqueda;
 }
 
 function renderCompletos() {
@@ -251,6 +260,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
     completosMarca = btn.dataset.marca;
     document.querySelectorAll('#completos-filtro-marca .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
+    renderCompletos();
+  });
+
+  document.getElementById('completos-busqueda').addEventListener('input', (e) => {
+    completosBusqueda = e.target.value;
     renderCompletos();
   });
 });
