@@ -87,6 +87,12 @@ function completoCardHTML(p) {
     ? `<div class="card-precio-unico">${p.precio}</div>`
     : `<div class="card-precio-unico card-precio-consultar">¡Pregunta por disponibilidad!</div>`;
 
+  const contenidoHTML = p.contenido ? `
+      <div class="card-notas">
+        <span class="notas-label">Incluye</span>
+        <div class="notas-tags">${p.contenido.map(c => `<span class="nota-tag">${c}</span>`).join('')}</div>
+      </div>` : '';
+
   return `
   <div class="card card-completo">
     <div class="card-foto">
@@ -99,7 +105,8 @@ function completoCardHTML(p) {
         <div class="card-nombre">${p.nombre}</div>
         ${boton}
       </div>
-      <div class="card-genero">${p.concentracion} · ${p.genero}</div>
+      <div class="card-genero">${p.concentracion} · ${p.genero}${p.esSet ? ' · Set de regalo' : ''}</div>
+      ${contenidoHTML}
       <div class="card-divider"></div>
       ${precioHTML}
     </div>
@@ -109,6 +116,7 @@ function completoCardHTML(p) {
 let completosGenero = 'todos';
 let completosMarca = 'todas';
 let completosBusqueda = '';
+let completosSoloSets = false;
 
 function normalizarTexto(s) {
   return s.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
@@ -131,11 +139,12 @@ function renderFiltroMarcaCompletos() {
 
 function completosCoincide(p) {
   const okMarca = completosMarca === 'todas' || p.casa === completosMarca;
+  const okSet = !completosSoloSets || p.esSet === true;
   const busqueda = normalizarTexto(completosBusqueda.trim());
   const okBusqueda = !busqueda
     || normalizarTexto(p.nombre).includes(busqueda)
     || normalizarTexto(p.casa).includes(busqueda);
-  return okMarca && okBusqueda;
+  return okMarca && okSet && okBusqueda;
 }
 
 function renderCompletos() {
@@ -282,6 +291,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('completos-busqueda').addEventListener('input', (e) => {
     completosBusqueda = e.target.value;
+    renderCompletos();
+  });
+
+  document.getElementById('completos-filtro-set').addEventListener('click', (e) => {
+    completosSoloSets = !completosSoloSets;
+    e.currentTarget.classList.toggle('activo', completosSoloSets);
     renderCompletos();
   });
 });

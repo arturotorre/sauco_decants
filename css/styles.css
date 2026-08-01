@@ -72,7 +72,8 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 @media (max-width: 600px) { .completos-tier-titulo { font-size: 21px; letter-spacing: 3px; } }
 
 .completos-filtros { max-width: 900px; margin: 0 auto; padding: 0 2rem 1.5rem; }
-.completos-filtro-genero, .completos-filtro-marca { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.completos-filtro-genero, .completos-filtro-marca, .completos-filtro-extra { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.completos-filtro-extra { margin-top: 0.85rem; }
 .completos-buscador { max-width: 420px; margin: 0.85rem auto 0; }
 .completos-buscador input { width: 100%; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--chocolate); background: #fff; border: 0.5px solid var(--arena); border-radius: 20px; padding: 0.6rem 1.1rem; }
 .completos-buscador input:focus { outline: none; border-color: var(--terracota); }
