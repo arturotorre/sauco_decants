@@ -1,0 +1,5 @@
+# Herramientas internas (revelan quién es el proveedor) — nunca al repo público
+scripts/
+
+# Archivos del sistema
+.DS_Store
