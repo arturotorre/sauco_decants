@@ -127,6 +127,7 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .main-content { background: var(--fondo); flex: 1; }
 .card-completo .card-info { padding-bottom: 0.6rem; }
 .card-precio-unico { text-align: center; padding: 6px 4px; border-radius: 3px; background: var(--fondo); font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--chocolate); }
+.card-precio-consultar { font-style: italic; font-size: 13px; color: var(--terracota); }
 
 /* ===== PERFUMES COMPLETOS ===== */
 .vista-header { padding: 3rem 2rem 0.5rem; text-align: center; }
