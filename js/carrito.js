@@ -35,7 +35,7 @@ function agregarAlCarrito(perfume, tamano) {
   const id = perfumeId(perfume);
   const precioStr = perfume.precios[tamano];
   const precio = precioStr ? Number(precioStr.replace(/[^0-9.]/g, '')) : null;
-  const existente = carrito.find(item => item.perfumeId === id && item.tamano === tamano);
+  const existente = carrito.find(item => item.tipo === 'decant' && item.perfumeId === id && item.tamano === tamano);
 
   if (existente) {
     existente.cantidad += 1;
@@ -46,7 +46,34 @@ function agregarAlCarrito(perfume, tamano) {
       nombre: perfume.nombre,
       imagen: perfume.imagen,
       alt: perfume.alt,
+      tipo: 'decant',
       tamano,
+      precio,
+      cantidad: 1
+    });
+  }
+
+  guardarCarrito();
+  actualizarBadge();
+  renderCarrito();
+}
+
+function agregarCompletoAlCarrito(perfume) {
+  const id = perfumeId(perfume);
+  const precio = perfume.precio ? Number(perfume.precio.replace(/[^0-9.]/g, '')) : null;
+  const existente = carrito.find(item => item.tipo === 'completo' && item.perfumeId === id);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({
+      perfumeId: id,
+      casa: perfume.casa,
+      nombre: perfume.nombre,
+      imagen: perfume.imagen,
+      alt: perfume.alt,
+      tipo: 'completo',
+      tamano: perfume.concentracion,
       precio,
       cantidad: 1
     });
@@ -190,7 +217,7 @@ function checkoutWhatsApp() {
     return `• ${item.casa} ${item.nombre} (${item.tamano})${cantidadTexto} — ${precioTexto}`;
   });
 
-  let mensaje = 'Hola, me gustaría realizar un pedido de los siguientes decants:\n\n'
+  let mensaje = 'Hola, me gustaría realizar el siguiente pedido:\n\n'
     + `Número de pedido: ${numeroPedido}\n\n`
     + lineas.join('\n')
     + `\n\nTotal: ${formatoPrecio(calcularTotal())}`;
@@ -203,9 +230,10 @@ function checkoutWhatsApp() {
 }
 
 document.addEventListener('click', (e) => {
-  const btnCotizar = e.target.closest('.btn-cotizar');
-  if (btnCotizar) {
-    enviarCotizacionPerfume(btnCotizar.dataset.nombre, btnCotizar.dataset.casa, btnCotizar.dataset.concentracion);
+  const btnAgregarCompleto = e.target.closest('.btn-agregar-completo');
+  if (btnAgregarCompleto) {
+    const perfume = PERFUMES_COMPLETOS.find(p => p.casa === btnAgregarCompleto.dataset.casa && p.nombre === btnAgregarCompleto.dataset.nombre);
+    if (perfume) agregarCompletoAlCarrito(perfume);
     return;
   }
 
@@ -247,11 +275,6 @@ document.addEventListener('keydown', (e) => {
 
 function enviarCotizacion(nombrePerfume, marca) {
   const mensaje = `Hola, me gustaría cotizar ${nombrePerfume} de la marca ${marca}, por favor.`;
-  window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
-}
-
-function enviarCotizacionPerfume(nombrePerfume, marca, concentracion) {
-  const mensaje = `¡Hola! Me gustaría cotizar el perfume ${nombrePerfume} de ${marca} en su versión ${concentracion} por favor.`;
   window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
