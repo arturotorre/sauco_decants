@@ -245,7 +245,6 @@ const PERFUMES_COMPLETOS = [
   // ---- DAMA ----
   { casa: "Dior", nombre: "Miss Dior Originale", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/miss_dior_originale.webp", alt: "Miss Dior Originale", precio: "$2,750" },
   { casa: "Dolce & Gabbana", nombre: "Queen", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/queen.webp", alt: "Queen", precio: "$2,450" },
-  { casa: "Dolce & Gabbana", nombre: "Light Blue Capri In Love", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/light_blue_capri_in_love.webp", alt: "Light Blue Capri In Love", precio: "$2,550" },
   { casa: "YSL", nombre: "Libre L'Eau Nue Parfum de Peau", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre_leau_nue_parfum_de_peau.webp", alt: "Libre L'Eau Nue Parfum de Peau", precio: "$2,549" },
   { casa: "Burberry", nombre: "My Burberry Blush", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/my_burberry_blush.webp", alt: "My Burberry Blush", precio: "$2,450" },
   { casa: "Prada", nombre: "Paradoxe Virtual Flower", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/paradoxe_virtual_flower.webp", alt: "Paradoxe Virtual Flower", precio: "$2,995" },
