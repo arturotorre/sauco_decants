@@ -71,6 +71,22 @@ function renderCatalogo(filtro) {
 }
 
 function completoCardHTML(p) {
+  const disponible = p.precio != null;
+
+  const boton = disponible
+    ? `<button class="btn-agregar btn-agregar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Agregar ${p.nombre} al carrito">
+        <span class="btn-agregar-texto">Agregar al carrito</span>
+        <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
+      </button>`
+    : `<button class="btn-agregar btn-consultar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Consultar disponibilidad de ${p.nombre}">
+        <span class="btn-agregar-texto">Consultar</span>
+        <span class="btn-agregar-icono" aria-hidden="true">💬</span>
+      </button>`;
+
+  const precioHTML = disponible
+    ? `<div class="card-precio-unico">${p.precio}</div>`
+    : `<div class="card-precio-unico card-precio-consultar">¡Pregunta por disponibilidad!</div>`;
+
   return `
   <div class="card card-completo">
     <div class="card-foto">
@@ -81,14 +97,11 @@ function completoCardHTML(p) {
       <div class="card-casa">${p.casa}</div>
       <div class="card-nombre-fila">
         <div class="card-nombre">${p.nombre}</div>
-        <button class="btn-agregar btn-agregar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Agregar ${p.nombre} al carrito">
-          <span class="btn-agregar-texto">Agregar al carrito</span>
-          <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
-        </button>
+        ${boton}
       </div>
       <div class="card-genero">${p.concentracion} · ${p.genero}</div>
       <div class="card-divider"></div>
-      <div class="card-precio-unico">${p.precio}</div>
+      ${precioHTML}
     </div>
   </div>`;
 }

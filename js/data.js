@@ -268,5 +268,20 @@ const PERFUMES_COMPLETOS = [
   { casa: "Tom Ford", nombre: "Velvet Orchid", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/velvet_orchid.webp", alt: "Velvet Orchid", precio: "$3,200" },
   { casa: "YSL", nombre: "Libre", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre.webp", alt: "Libre", precio: "$2,950" },
   { casa: "Coach", nombre: "Coach New York", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/coach_new_york.webp", alt: "Coach New York", precio: "$1,760" },
-  { casa: "DKNY", nombre: "Be Delicious", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/be_delicious.webp", alt: "Be Delicious", precio: "$1,500" }
+  { casa: "DKNY", nombre: "Be Delicious", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/be_delicious.webp", alt: "Be Delicious", precio: "$1,500" },
+
+  // ---- NICHO (sin precio fijo — disponibilidad sujeta a proveedor) ----
+  { casa: "Xerjoff", nombre: "Erba Pura", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/erba_pura.webp", alt: "Erba Pura", precio: null },
+  { casa: "Xerjoff", nombre: "Naxos", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/naxos.webp", alt: "Naxos", precio: null },
+  { casa: "Xerjoff", nombre: "Torino 21", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/torino_21.webp", alt: "Torino 21", precio: null },
+  { casa: "Parfums De Marly", nombre: "Althair", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/althair.webp", alt: "Althair", precio: null },
+  { casa: "Parfums De Marly", nombre: "Greenley", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/greenley.webp", alt: "Greenley", precio: null },
+  { casa: "Parfums De Marly", nombre: "Percival", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/percival.webp", alt: "Percival", precio: null },
+  { casa: "Parfums De Marly", nombre: "Layton", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/layton.webp", alt: "Layton", precio: null },
+  { casa: "Parfums De Marly", nombre: "Castley", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/castley.webp", alt: "Castley", precio: null },
+  { casa: "Mancera", nombre: "Instant Crush", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/instant_crush.webp", alt: "Instant Crush", precio: null },
+  { casa: "Mancera", nombre: "Cedrat Boisé", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/cedrat_boise.webp", alt: "Cedrat Boisé", precio: null },
+  { casa: "Francis Kurkdjian", nombre: "Baccarat Rouge 540", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/baccarat_rouge_540.webp", alt: "Baccarat Rouge 540", precio: null },
+  { casa: "Le Labo", nombre: "Santal 33", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/santal_33.webp", alt: "Santal 33", precio: null },
+  { casa: "Le Labo", nombre: "Thé Noir 29", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/the_noir_29.webp", alt: "Thé Noir 29", precio: null }
 ];

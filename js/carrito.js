@@ -230,6 +230,12 @@ function checkoutWhatsApp() {
 }
 
 document.addEventListener('click', (e) => {
+  const btnConsultarCompleto = e.target.closest('.btn-consultar-completo');
+  if (btnConsultarCompleto) {
+    enviarConsultaDisponibilidad(btnConsultarCompleto.dataset.nombre, btnConsultarCompleto.dataset.casa);
+    return;
+  }
+
   const btnAgregarCompleto = e.target.closest('.btn-agregar-completo');
   if (btnAgregarCompleto) {
     const perfume = PERFUMES_COMPLETOS.find(p => p.casa === btnAgregarCompleto.dataset.casa && p.nombre === btnAgregarCompleto.dataset.nombre);
@@ -275,6 +281,11 @@ document.addEventListener('keydown', (e) => {
 
 function enviarCotizacion(nombrePerfume, marca) {
   const mensaje = `Hola, me gustaría cotizar ${nombrePerfume} de la marca ${marca}, por favor.`;
+  window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+function enviarConsultaDisponibilidad(nombrePerfume, marca) {
+  const mensaje = `Hola, estoy interesado en ${nombrePerfume} de ${marca}, ¿me podrían brindar información de costo y tiempo de entrega?`;
   window.open(`https://wa.me/${CARRITO_WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
