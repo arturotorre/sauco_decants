@@ -81,18 +81,25 @@ function completoCardHTML(p) {
       <div class="card-casa">${p.casa}</div>
       <div class="card-nombre-fila">
         <div class="card-nombre">${p.nombre}</div>
-        <button class="btn-agregar btn-cotizar" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Cotizar ${p.nombre}">
-          <span class="btn-agregar-texto">Cotizar</span>
-          <span class="btn-agregar-icono" aria-hidden="true">💬</span>
+        <button class="btn-agregar btn-agregar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Agregar ${p.nombre} al carrito">
+          <span class="btn-agregar-texto">Agregar al carrito</span>
+          <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
         </button>
       </div>
       <div class="card-genero">${p.concentracion} · ${p.genero}</div>
+      <div class="card-divider"></div>
+      <div class="card-precio-unico">${p.precio}</div>
     </div>
   </div>`;
 }
 
 let completosGenero = 'todos';
 let completosMarca = 'todas';
+let completosBusqueda = '';
+
+function normalizarTexto(s) {
+  return s.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+}
 
 function completosMarcasDisponibles() {
   const base = completosGenero === 'todos'
@@ -112,7 +119,11 @@ function renderFiltroMarcaCompletos() {
 function completosCoincide(p) {
   const okGenero = completosGenero === 'todos' || p.genero === completosGenero;
   const okMarca = completosMarca === 'todas' || p.casa === completosMarca;
-  return okGenero && okMarca;
+  const busqueda = normalizarTexto(completosBusqueda.trim());
+  const okBusqueda = !busqueda
+    || normalizarTexto(p.nombre).includes(busqueda)
+    || normalizarTexto(p.casa).includes(busqueda);
+  return okGenero && okMarca && okBusqueda;
 }
 
 function renderCompletos() {
@@ -251,6 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
     completosMarca = btn.dataset.marca;
     document.querySelectorAll('#completos-filtro-marca .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
+    renderCompletos();
+  });
+
+  document.getElementById('completos-busqueda').addEventListener('input', (e) => {
+    completosBusqueda = e.target.value;
     renderCompletos();
   });
 });

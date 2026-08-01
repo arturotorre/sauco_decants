@@ -73,6 +73,10 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 
 .completos-filtros { max-width: 900px; margin: 0 auto; padding: 0 2rem 1.5rem; }
 .completos-filtro-genero, .completos-filtro-marca { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.completos-buscador { max-width: 420px; margin: 0.85rem auto 0; }
+.completos-buscador input { width: 100%; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--chocolate); background: #fff; border: 0.5px solid var(--arena); border-radius: 20px; padding: 0.6rem 1.1rem; }
+.completos-buscador input:focus { outline: none; border-color: var(--terracota); }
+.completos-buscador input::placeholder { color: #9B7B6A; }
 .completos-filtro-marca { margin-top: 0.85rem; }
 .completos-chip { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; color: var(--chocolate); background: #fff; border: 0.5px solid var(--arena); border-radius: 20px; padding: 0.5rem 1.1rem; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .completos-chip:hover { border-color: var(--terracota); }
@@ -121,7 +125,8 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .card-footer-text { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 1.5px; color: #9B7B6A; text-transform: uppercase; }
 
 .main-content { background: var(--fondo); flex: 1; }
-.card-completo .card-info { padding-bottom: 1rem; }
+.card-completo .card-info { padding-bottom: 0.6rem; }
+.card-precio-unico { text-align: center; padding: 6px 4px; border-radius: 3px; background: var(--fondo); font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--chocolate); }
 
 /* ===== PERFUMES COMPLETOS ===== */
 .vista-header { padding: 3rem 2rem 0.5rem; text-align: center; }
