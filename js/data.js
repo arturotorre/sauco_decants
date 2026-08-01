@@ -231,6 +231,16 @@ const PERFUMES_COMPLETOS = [
   { casa: "Jean Paul Gaultier", nombre: "Le Beau Le Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/le_beau_le_parfum.webp", alt: "Le Beau Le Parfum", precio: "$2,699" },
   { casa: "Jean Paul Gaultier", nombre: "Le Beau", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/le_beau_edt.webp", alt: "Le Beau", precio: "$2,299" },
   { casa: "Jean Paul Gaultier", nombre: "Le Male", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/le_male_edt.webp", alt: "Le Male", precio: "$2,199" },
+  { casa: "YSL", nombre: "Y Intense", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/y_intense.webp", alt: "Y Intense", precio: "$2,990" },
+  { casa: "Versace", nombre: "Eros", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/eros_edt.webp", alt: "Eros EDT", precio: "$1,999" },
+  { casa: "Carolina Herrera", nombre: "Bad Boy Elixir", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/bad_boy_elixir.webp", alt: "Bad Boy Elixir", precio: "$2,690" },
+  { casa: "Carolina Herrera", nombre: "Bad Boy Cobalt Elixir", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/bad_boy_cobalt_elixir.webp", alt: "Bad Boy Cobalt Elixir", precio: "$2,690" },
+  { casa: "Carolina Herrera", nombre: "Bad Boy Cobalt", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/bad_boy_cobalt.webp", alt: "Bad Boy Cobalt", precio: "$2,290" },
+  { casa: "Versace", nombre: "Eros", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/eros_edp.webp", alt: "Eros EDP", precio: "$2,490" },
+  { casa: "Guerlain", nombre: "Vetiver", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/vetiver.webp", alt: "Vetiver", precio: "$2,150" },
+  { casa: "Jean Paul Gaultier", nombre: "Le Beau Paradise Garden", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/le_beau_paradise_garden.webp", alt: "Le Beau Paradise Garden", precio: "$2,699" },
+  { casa: "Paco Rabanne", nombre: "Invictus Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_parfum.webp", alt: "Invictus Parfum", precio: "$2,549" },
+  { casa: "Paco Rabanne", nombre: "Invictus Victory", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_victory.webp", alt: "Invictus Victory", precio: "$2,560" },
 
   // ---- DAMA ----
   { casa: "Dior", nombre: "Miss Dior Originale", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/miss_dior_originale.webp", alt: "Miss Dior Originale", precio: "$2,750" },
@@ -249,4 +259,14 @@ const PERFUMES_COMPLETOS = [
   { casa: "Carolina Herrera", nombre: "Very Good Girl", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/very_good_girl.webp", alt: "Very Good Girl", precio: "$2,920" },
   { casa: "Carolina Herrera", nombre: "Good Girl", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/good_girl.webp", alt: "Good Girl", precio: "$2,850" },
   { casa: "Valentino", nombre: "Donna Born In Roma Yellow Dream", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/donna_born_in_roma_yellow_dream.webp", alt: "Donna Born In Roma Yellow Dream", precio: "$2,950" },
+  { casa: "Lancôme", nombre: "La Vie Est Belle", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/la_vie_est_belle.webp", alt: "La Vie Est Belle", precio: "$2,850" },
+  { casa: "Lancôme", nombre: "La Vie Est Belle Iris Absolu", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/la_vie_est_belle_iris_absolu.webp", alt: "La Vie Est Belle Iris Absolu", precio: "$2,850" },
+  { casa: "Paco Rabanne", nombre: "Olympéa", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/olympea.webp", alt: "Olympéa", precio: "$2,500" },
+  { casa: "Paco Rabanne", nombre: "Lady Million", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/lady_million.webp", alt: "Lady Million", precio: "$2,500" },
+  { casa: "Paco Rabanne", nombre: "Olympéa Parfum", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/olympea_parfum.webp", alt: "Olympéa Parfum", precio: "$2,700" },
+  { casa: "Tom Ford", nombre: "Black Orchid", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/black_orchid.webp", alt: "Black Orchid", precio: "$3,200" },
+  { casa: "Tom Ford", nombre: "Velvet Orchid", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/velvet_orchid.webp", alt: "Velvet Orchid", precio: "$3,200" },
+  { casa: "YSL", nombre: "Libre", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre.webp", alt: "Libre", precio: "$2,950" },
+  { casa: "Coach", nombre: "Coach New York", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/coach_new_york.webp", alt: "Coach New York", precio: "$1,760" },
+  { casa: "DKNY", nombre: "Be Delicious", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/be_delicious.webp", alt: "Be Delicious", precio: "$1,500" }
 ];

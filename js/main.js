@@ -104,7 +104,7 @@ function normalizarTexto(s) {
 function completosMarcasDisponibles() {
   const base = completosGenero === 'todos'
     ? PERFUMES_COMPLETOS
-    : PERFUMES_COMPLETOS.filter(p => p.genero === completosGenero);
+    : PERFUMES_COMPLETOS.filter(p => p.genero === completosGenero || p.genero === 'Unisex');
   return Array.from(new Set(base.map(p => p.casa))).sort((a, b) => a.localeCompare(b, 'es'));
 }
 
@@ -117,13 +117,12 @@ function renderFiltroMarcaCompletos() {
 }
 
 function completosCoincide(p) {
-  const okGenero = completosGenero === 'todos' || p.genero === completosGenero;
   const okMarca = completosMarca === 'todas' || p.casa === completosMarca;
   const busqueda = normalizarTexto(completosBusqueda.trim());
   const okBusqueda = !busqueda
     || normalizarTexto(p.nombre).includes(busqueda)
     || normalizarTexto(p.casa).includes(busqueda);
-  return okGenero && okMarca && okBusqueda;
+  return okMarca && okBusqueda;
 }
 
 function renderCompletos() {
@@ -134,7 +133,10 @@ function renderCompletos() {
   ];
 
   const html = grupos.map(g => {
-    const perfumes = PERFUMES_COMPLETOS.filter(p => p.genero === g.key && completosCoincide(p));
+    if (completosGenero !== 'todos' && completosGenero !== g.key) return '';
+    // Los perfumes Unisex (ej. Tom Ford Black Orchid) aparecen en ambas
+    // secciones, igual que los decants unisex en Hombre/Mujer.
+    const perfumes = PERFUMES_COMPLETOS.filter(p => (p.genero === g.key || p.genero === 'Unisex') && completosCoincide(p));
     if (!perfumes.length) return '';
     return `
     <div class="completos-tier-header">
