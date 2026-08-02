@@ -239,12 +239,13 @@ const PERFUMES_COMPLETOS = [
   { casa: "Versace", nombre: "Eros", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/eros_edp.webp", alt: "Eros EDP", precio: "$2,490" },
   { casa: "Guerlain", nombre: "Vetiver", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/vetiver.webp", alt: "Vetiver", precio: "$2,150" },
   { casa: "Jean Paul Gaultier", nombre: "Le Beau Paradise Garden", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/le_beau_paradise_garden.webp", alt: "Le Beau Paradise Garden", precio: "$2,699" },
-  { casa: "Paco Rabanne", nombre: "Invictus Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_parfum.webp", alt: "Invictus Parfum", precio: "$2,549" },
+  { casa: "Carolina Herrera", nombre: "Bad Boy", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/bad_boy.webp", alt: "Bad Boy", precio: "$2,100" },
   { casa: "Paco Rabanne", nombre: "Invictus Victory", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_victory.webp", alt: "Invictus Victory", precio: "$2,560" },
 
   // ---- DAMA ----
   { casa: "Dior", nombre: "Miss Dior Originale", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/miss_dior_originale.webp", alt: "Miss Dior Originale", precio: "$2,750" },
   { casa: "Dolce & Gabbana", nombre: "Queen", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/queen.webp", alt: "Queen", precio: "$2,450" },
+  { casa: "Dolce & Gabbana", nombre: "Light Blue Summer Vibes", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/light_blue_summer_vibes.webp", alt: "Light Blue Summer Vibes", precio: "$2,050" },
   { casa: "YSL", nombre: "Libre L'Eau Nue Parfum de Peau", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre_leau_nue_parfum_de_peau.webp", alt: "Libre L'Eau Nue Parfum de Peau", precio: "$2,549" },
   { casa: "Burberry", nombre: "My Burberry Blush", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/my_burberry_blush.webp", alt: "My Burberry Blush", precio: "$2,450" },
   { casa: "Prada", nombre: "Paradoxe Virtual Flower", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/paradoxe_virtual_flower.webp", alt: "Paradoxe Virtual Flower", precio: "$2,995" },
