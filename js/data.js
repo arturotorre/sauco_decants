@@ -256,6 +256,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Salvatore Ferragamo", nombre: "Signorina Libera", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/signorina_libera.webp", alt: "Signorina Libera", precio: "$2,050" },
   { casa: "Carolina Herrera", nombre: "Very Good Girl Elixir", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/very_good_girl_elixir.webp", alt: "Very Good Girl Elixir", precio: "$2,990" },
   { casa: "Carolina Herrera", nombre: "Good Girl Blush Elixir", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/good_girl_blush_elixir.webp", alt: "Good Girl Blush Elixir", precio: "$2,990" },
+  { casa: "Carolina Herrera", nombre: "Good Girl Blush", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/good_girl_blush.webp", alt: "Good Girl Blush", precio: "$2,920" },
   { casa: "Carolina Herrera", nombre: "Very Good Girl", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/very_good_girl.webp", alt: "Very Good Girl", precio: "$2,920" },
   { casa: "Carolina Herrera", nombre: "Good Girl", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/good_girl.webp", alt: "Good Girl", precio: "$2,850" },
   { casa: "Valentino", nombre: "Donna Born In Roma Yellow Dream", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/donna_born_in_roma_yellow_dream.webp", alt: "Donna Born In Roma Yellow Dream", precio: "$2,950" },
