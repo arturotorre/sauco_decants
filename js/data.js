@@ -240,7 +240,6 @@ const PERFUMES_COMPLETOS = [
   { casa: "Guerlain", nombre: "Vetiver", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/vetiver.webp", alt: "Vetiver", precio: "$2,150" },
   { casa: "Carolina Herrera", nombre: "Bad Boy", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/bad_boy.webp", alt: "Bad Boy", precio: "$2,100" },
   { casa: "Paco Rabanne", nombre: "Invictus Victory", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_victory.webp", alt: "Invictus Victory", precio: "$2,560" },
-  { casa: "Paco Rabanne", nombre: "Invictus Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_parfum.webp", alt: "Invictus Parfum", precio: "$2,549" },
 
   // ---- DAMA ----
   { casa: "Dior", nombre: "Miss Dior Originale", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/miss_dior_originale.webp", alt: "Miss Dior Originale", precio: "$2,750" },
