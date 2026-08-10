@@ -242,7 +242,6 @@ const PERFUMES_COMPLETOS = [
   { casa: "Paco Rabanne", nombre: "Invictus Victory", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_victory.webp", alt: "Invictus Victory", precio: "$2,560" },
 
   // ---- DAMA ----
-  { casa: "Dior", nombre: "Miss Dior Originale", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/miss_dior_originale.webp", alt: "Miss Dior Originale", precio: "$2,750" },
   { casa: "Dolce & Gabbana", nombre: "Queen", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/queen.webp", alt: "Queen", precio: "$2,450" },
   { casa: "Dolce & Gabbana", nombre: "Light Blue Summer Vibes", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/light_blue_summer_vibes.webp", alt: "Light Blue Summer Vibes", precio: "$2,050" },
   { casa: "YSL", nombre: "Libre L'Eau Nue Parfum de Peau", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre_leau_nue_parfum_de_peau.webp", alt: "Libre L'Eau Nue Parfum de Peau", precio: "$2,549" },
@@ -260,6 +259,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Carolina Herrera", nombre: "Good Girl", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/good_girl.webp", alt: "Good Girl", precio: "$2,850" },
   { casa: "Valentino", nombre: "Donna Born In Roma Yellow Dream", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/donna_born_in_roma_yellow_dream.webp", alt: "Donna Born In Roma Yellow Dream", precio: "$2,950" },
   { casa: "Lancôme", nombre: "La Vie Est Belle", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/la_vie_est_belle.webp", alt: "La Vie Est Belle", precio: "$2,850" },
+  { casa: "Lancôme", nombre: "La Vie Est Belle Iris Absolu", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/la_vie_est_belle_iris_absolu.webp", alt: "La Vie Est Belle Iris Absolu", precio: "$2,850" },
   { casa: "Paco Rabanne", nombre: "Olympéa", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/olympea.webp", alt: "Olympéa", precio: "$2,500" },
   { casa: "Paco Rabanne", nombre: "Lady Million", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/lady_million.webp", alt: "Lady Million", precio: "$2,500" },
   { casa: "Paco Rabanne", nombre: "Olympéa Parfum", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/olympea_parfum.webp", alt: "Olympéa Parfum", precio: "$2,700" },
