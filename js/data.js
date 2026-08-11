@@ -231,7 +231,6 @@ const PERFUMES_COMPLETOS = [
   { casa: "Jean Paul Gaultier", nombre: "Le Beau Le Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/le_beau_le_parfum.webp", alt: "Le Beau Le Parfum", precio: "$2,699" },
   { casa: "Jean Paul Gaultier", nombre: "Le Beau", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/le_beau_edt.webp", alt: "Le Beau", precio: "$2,299" },
   { casa: "Jean Paul Gaultier", nombre: "Le Male", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/le_male_edt.webp", alt: "Le Male", precio: "$2,199" },
-  { casa: "YSL", nombre: "Y Intense", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/y_intense.webp", alt: "Y Intense", precio: "$2,990" },
   { casa: "Versace", nombre: "Eros", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/eros_edt.webp", alt: "Eros EDT", precio: "$1,999" },
   { casa: "Carolina Herrera", nombre: "Bad Boy Elixir", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/bad_boy_elixir.webp", alt: "Bad Boy Elixir", precio: "$2,690" },
   { casa: "Carolina Herrera", nombre: "Bad Boy Cobalt Elixir", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/bad_boy_cobalt_elixir.webp", alt: "Bad Boy Cobalt Elixir", precio: "$2,690" },
