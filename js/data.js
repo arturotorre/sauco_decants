@@ -252,7 +252,7 @@ const PERFUMES_COMPLETOS = [
 
   // ---- DAMA ----
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Queen", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/queen.webp", alt: "Queen", precio: "$2,450" },
-  { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue Summer Vibes", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/light_blue_summer_vibes.webp", alt: "Light Blue Summer Vibes", precio: "$2,050" },
+  { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue Summer Vibes", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/light_blue_summer_vibes.webp", alt: "Light Blue Summer Vibes", precio: "$1,850" },
   { casa: "YSL", categoria: "disenador", nombre: "Libre L'Eau Nue Parfum de Peau", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre_leau_nue_parfum_de_peau.webp", alt: "Libre L'Eau Nue Parfum de Peau", precio: "$2,549" },
   { casa: "Burberry", categoria: "disenador", nombre: "My Burberry Blush", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/my_burberry_blush.webp", alt: "My Burberry Blush", precio: "$2,450" },
   { casa: "Prada", categoria: "disenador", nombre: "Paradoxe Virtual Flower", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/paradoxe_virtual_flower.webp", alt: "Paradoxe Virtual Flower", precio: "$2,995" },
@@ -276,6 +276,13 @@ const PERFUMES_COMPLETOS = [
   { casa: "Tom Ford", categoria: "disenador", nombre: "Velvet Orchid", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/velvet_orchid.webp", alt: "Velvet Orchid", precio: "$3,200" },
   { casa: "Coach", categoria: "disenador", nombre: "Coach New York", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/coach_new_york.webp", alt: "Coach New York", precio: "$1,760" },
   { casa: "DKNY", categoria: "disenador", nombre: "Be Delicious", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/be_delicious.webp", alt: "Be Delicious", precio: "$1,500" },
+  { casa: "Jean Paul Gaultier", categoria: "disenador", nombre: "La Belle Paradise Garden", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/la_belle_paradise_garden.webp", alt: "La Belle Paradise Garden", precio: "$2,880" },
+  { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "The Only One Intense", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/the_only_one_intense.webp", alt: "The Only One Intense", precio: "$1,890" },
+  { casa: "Jean Paul Gaultier", categoria: "disenador", nombre: "Divine", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/divine.webp", alt: "Divine", precio: "$2,650" },
+  { casa: "Billie Eilish", categoria: "disenador", nombre: "Billie Eilish", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/billie_eilish.webp", alt: "Billie Eilish", precio: "$1,480" },
+  { casa: "Moschino", categoria: "disenador", nombre: "Fresh Couture Gold", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/fresh_couture_gold.webp", alt: "Fresh Couture Gold", precio: "$1,850" },
+  { casa: "Moschino", categoria: "disenador", nombre: "Fresh Couture", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/fresh_couture.webp", alt: "Fresh Couture", precio: "$1,850" },
+  { casa: "Versace", categoria: "disenador", nombre: "Pour Femme Dylan Blue", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/dylan_blue_femme.webp", alt: "Pour Femme Dylan Blue", precio: "$1,990" },
 
   // ---- NICHO (sin precio fijo — disponibilidad sujeta a proveedor) ----
   { casa: "Xerjoff", categoria: "nicho", nombre: "Erba Pura", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/erba_pura.webp", alt: "Erba Pura", precio: null },
