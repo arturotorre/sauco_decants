@@ -229,6 +229,18 @@ function cerrarNavMovil() {
   toggle.setAttribute('aria-expanded', 'false');
 }
 
+let decantsAbierto = false;
+
+function actualizarNavDecants(activo) {
+  const item = document.getElementById('nav-item-decants');
+  const toggle = document.getElementById('nav-decants-toggle');
+  const esDecants = ['todos', 'hombre', 'mujer'].includes(activo);
+  if (esDecants) decantsAbierto = true;
+  item.classList.toggle('abierto', decantsAbierto);
+  toggle.classList.toggle('activo', esDecants);
+  toggle.setAttribute('aria-expanded', String(decantsAbierto));
+}
+
 function route() {
   const hash = location.hash.replace(/^#\/?/, '');
   const [seccion, filtro] = hash.split('/');
@@ -255,6 +267,7 @@ function route() {
   }
 
   navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
+  actualizarNavDecants(activo);
   window.scrollTo(0, 0);
   cerrarNavMovil();
 }
@@ -269,6 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('nav-lateral');
     const abierto = nav.classList.toggle('nav-abierto');
     document.getElementById('nav-toggle').setAttribute('aria-expanded', String(abierto));
+  });
+
+  document.getElementById('nav-decants-toggle').addEventListener('click', () => {
+    decantsAbierto = !decantsAbierto;
+    document.getElementById('nav-item-decants').classList.toggle('abierto', decantsAbierto);
+    document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', String(decantsAbierto));
   });
 
   document.getElementById('completos-filtro-genero').addEventListener('click', (e) => {

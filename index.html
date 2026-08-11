@@ -17,9 +17,17 @@
   </button>
   <a href="#home" class="nav-marca">Saúco</a>
   <ul class="nav-links">
-    <li><a href="#catalogo/todos" data-genero="todos">Todos</a></li>
-    <li><a href="#catalogo/hombre" data-genero="hombre">Hombre</a></li>
-    <li><a href="#catalogo/mujer" data-genero="mujer">Mujer</a></li>
+    <li class="nav-item-decants" id="nav-item-decants">
+      <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">
+        Decants
+        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-submenu" id="nav-decants-submenu">
+        <li><a href="#catalogo/todos" data-genero="todos">Todos</a></li>
+        <li><a href="#catalogo/hombre" data-genero="hombre">Hombre</a></li>
+        <li><a href="#catalogo/mujer" data-genero="mujer">Mujer</a></li>
+      </ul>
+    </li>
     <li><a href="#completos" data-genero="completos">Perfumes completos</a></li>
   </ul>
 </nav>

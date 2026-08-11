@@ -18,6 +18,14 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .nav-links a { display: block; text-align: center; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 3px; color: var(--arena); text-decoration: none; text-transform: uppercase; padding: 0.4rem 0; border-bottom: 0.5px solid transparent; transition: color 0.2s, border-color 0.2s; }
 .nav-links a:hover { color: var(--terracota); }
 .nav-links a.activo { color: var(--terracota); border-color: var(--terracota); }
+.nav-item-decants { width: 100%; }
+.nav-desplegable { display: flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; background: none; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 3px; color: var(--arena); text-transform: uppercase; padding: 0.4rem 0; }
+.nav-desplegable:hover, .nav-desplegable.activo { color: var(--terracota); }
+.nav-desplegable-flecha { font-size: 9px; transition: transform 0.2s; }
+.nav-item-decants.abierto .nav-desplegable-flecha { transform: rotate(180deg); }
+.nav-submenu { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; width: 100%; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, margin-top 0.25s ease; margin: 0; }
+.nav-item-decants.abierto .nav-submenu { max-height: 200px; margin-top: 0.9rem; }
+.nav-submenu a { font-size: 10px; opacity: 0.85; }
 .nav-hamburguesa { display: none; }
 
 @media (max-width: 860px) {
@@ -26,8 +34,12 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
   .nav-hamburguesa { display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 26px; height: 22px; background: none; border: none; cursor: pointer; padding: 0; order: -1; }
   .nav-hamburguesa span { display: block; height: 1px; background: var(--arena); width: 100%; }
   .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--chocolate); flex-direction: column; align-items: stretch; gap: 0; padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; border-bottom: 0.5px solid rgba(184,115,51,0.25); }
-  .nav-lateral.nav-abierto .nav-links { max-height: 340px; padding: 0.5rem 0 1rem; }
+  .nav-lateral.nav-abierto .nav-links { max-height: 480px; padding: 0.5rem 0 1rem; }
   .nav-links a { padding: 0.75rem 1rem; border-bottom: none; }
+  .nav-desplegable { padding: 0.75rem 1rem; }
+  .nav-submenu { gap: 0; }
+  .nav-item-decants.abierto .nav-submenu { max-height: 220px; margin-top: 0; }
+  .nav-submenu a { padding-left: 2rem; }
 }
 
 /* ===== CONTENIDO (desplazado por el nav) ===== */
