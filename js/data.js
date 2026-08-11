@@ -284,6 +284,9 @@ const PERFUMES_COMPLETOS = [
   { casa: "Moschino", categoria: "disenador", nombre: "Fresh Couture", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/fresh_couture.webp", alt: "Fresh Couture", precio: "$1,850" },
   { casa: "Versace", categoria: "disenador", nombre: "Pour Femme Dylan Blue", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/dylan_blue_femme.webp", alt: "Pour Femme Dylan Blue", precio: "$1,990" },
   { casa: "Valentino", categoria: "disenador", nombre: "Donna", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/donna.webp", alt: "Donna", precio: "$2,950" },
+  { casa: "YSL", categoria: "disenador", nombre: "Mon Paris Intensement", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/mon_paris_intensement.webp", alt: "Mon Paris Intensement", precio: "$2,990" },
+  { casa: "Moschino", categoria: "disenador", nombre: "Fresh Couture Pink", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/fresh_couture_pink.webp", alt: "Fresh Couture Pink", precio: "$1,850" },
+  { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/light_blue.webp", alt: "Light Blue", precio: "$1,764" },
 
   // ---- NICHO (sin precio fijo — disponibilidad sujeta a proveedor) ----
   { casa: "Xerjoff", categoria: "nicho", nombre: "Erba Pura", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/erba_pura.webp", alt: "Erba Pura", precio: null },
