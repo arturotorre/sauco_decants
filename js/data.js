@@ -283,6 +283,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Moschino", categoria: "disenador", nombre: "Fresh Couture Gold", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/fresh_couture_gold.webp", alt: "Fresh Couture Gold", precio: "$1,850" },
   { casa: "Moschino", categoria: "disenador", nombre: "Fresh Couture", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/fresh_couture.webp", alt: "Fresh Couture", precio: "$1,850" },
   { casa: "Versace", categoria: "disenador", nombre: "Pour Femme Dylan Blue", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/dylan_blue_femme.webp", alt: "Pour Femme Dylan Blue", precio: "$1,990" },
+  { casa: "Valentino", categoria: "disenador", nombre: "Donna", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/donna.webp", alt: "Donna", precio: "$2,950" },
 
   // ---- NICHO (sin precio fijo — disponibilidad sujeta a proveedor) ----
   { casa: "Xerjoff", categoria: "nicho", nombre: "Erba Pura", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/erba_pura.webp", alt: "Erba Pura", precio: null },
