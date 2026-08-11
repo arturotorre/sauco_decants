@@ -239,6 +239,16 @@ const PERFUMES_COMPLETOS = [
   { casa: "Guerlain", nombre: "Vetiver", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/vetiver.webp", alt: "Vetiver", precio: "$2,150" },
   { casa: "Carolina Herrera", nombre: "Bad Boy", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/bad_boy.webp", alt: "Bad Boy", precio: "$2,100" },
   { casa: "Paco Rabanne", nombre: "Invictus Victory", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_victory.webp", alt: "Invictus Victory", precio: "$2,560" },
+  { casa: "Dolce & Gabbana", nombre: "Light Blue Pour Homme", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/light_blue_pour_homme.webp", alt: "Light Blue Pour Homme", precio: "$1,980" },
+  { casa: "Dolce & Gabbana", nombre: "Light Blue Capri In Love Pour Homme", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/light_blue_capri_in_love_pour_homme.webp", alt: "Light Blue Capri In Love Pour Homme", precio: "$1,980" },
+  { casa: "Jean Paul Gaultier", nombre: "Scandal Intense", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/scandal_intense.webp", alt: "Scandal Intense", precio: "$2,590" },
+  { casa: "Giorgio Armani", nombre: "Acqua Di Gio", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/acqua_di_gio.webp", alt: "Acqua Di Gio", precio: "$2,100" },
+  { casa: "Giorgio Armani", nombre: "Stronger With You", concentracion: "Parfum", genero: "Caballero", imagen: "imagenes/completos/stronger_with_you.webp", alt: "Stronger With You", precio: "$2,275" },
+  { casa: "Valentino", nombre: "Uomo Born In Roma Coral Fantasy", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/uomo_born_in_roma_coral_fantasy.webp", alt: "Uomo Born In Roma Coral Fantasy", precio: "$2,800" },
+  { casa: "Valentino", nombre: "Uomo", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/uomo.webp", alt: "Uomo", precio: "$2,580" },
+  { casa: "Jean Paul Gaultier", nombre: "Scandal", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/scandal_edp.webp", alt: "Scandal EDP", precio: "$2,375" },
+  { casa: "Jean Paul Gaultier", nombre: "Scandal", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/scandal_edt.webp", alt: "Scandal EDT", precio: "$2,199" },
+  { casa: "Givenchy", nombre: "Pi", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/givenchy_pi.webp", alt: "Givenchy Pi", precio: "$1,380" },
 
   // ---- DAMA ----
   { casa: "Dolce & Gabbana", nombre: "Queen", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/queen.webp", alt: "Queen", precio: "$2,450" },
