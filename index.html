@@ -97,19 +97,58 @@
         <p class="cotizar-nota">En Saúco no manejamos stock para entrega inmediata, por lo que la entrega de tu perfume puede tardar entre 7 y 10 días hábiles.</p>
       </div>
 
-      <div class="completos-filtros">
-        <div class="completos-filtro-genero" id="completos-filtro-genero">
-          <button type="button" class="completos-chip activo" data-filtro-genero="todos">Todos</button>
-          <button type="button" class="completos-chip" data-filtro-genero="Caballero">Caballero</button>
-          <button type="button" class="completos-chip" data-filtro-genero="Dama">Dama</button>
-        </div>
-        <div class="completos-filtro-extra">
-          <button type="button" class="completos-chip" id="completos-filtro-set">🎁 Sets de regalo</button>
-        </div>
+      <div class="completos-barra">
         <div class="completos-buscador">
           <input type="search" id="completos-busqueda" placeholder="Buscar por nombre o marca…" aria-label="Buscar perfume por nombre o marca">
         </div>
-        <div class="completos-filtro-marca" id="completos-filtro-marca"></div>
+
+        <div class="completos-desplegable" id="completos-filtros-wrap">
+          <button type="button" class="completos-desplegable-toggle" id="completos-filtros-toggle" aria-expanded="false" aria-controls="completos-filtros-panel">
+            Filtros
+            <span class="completos-filtros-contador" id="completos-filtros-contador" hidden>0</span>
+            <span class="completos-desplegable-flecha" aria-hidden="true">▾</span>
+          </button>
+          <div class="completos-desplegable-panel" id="completos-filtros-panel" hidden>
+            <div class="completos-filtro-grupo">
+              <span class="completos-filtro-etiqueta">Género</span>
+              <div class="completos-filtro-genero" id="completos-filtro-genero">
+                <button type="button" class="completos-chip activo" data-filtro-genero="todos">Todos</button>
+                <button type="button" class="completos-chip" data-filtro-genero="Caballero">Caballero</button>
+                <button type="button" class="completos-chip" data-filtro-genero="Dama">Dama</button>
+              </div>
+            </div>
+            <div class="completos-filtro-grupo">
+              <span class="completos-filtro-etiqueta">Categoría</span>
+              <div class="completos-filtro-categoria" id="completos-filtro-categoria">
+                <button type="button" class="completos-chip activo" data-categoria="todas">Todas</button>
+                <button type="button" class="completos-chip" data-categoria="nicho">Nicho</button>
+                <button type="button" class="completos-chip" data-categoria="disenador">Diseñador</button>
+                <button type="button" class="completos-chip" data-categoria="arabe">Árabe</button>
+              </div>
+            </div>
+            <div class="completos-filtro-grupo">
+              <span class="completos-filtro-etiqueta">Marca</span>
+              <div class="completos-filtro-marca" id="completos-filtro-marca"></div>
+            </div>
+            <div class="completos-filtro-grupo">
+              <button type="button" class="completos-chip" id="completos-filtro-set">🎁 Sets de regalo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="completos-desplegable" id="completos-orden-wrap">
+          <button type="button" class="completos-desplegable-toggle" id="completos-orden-toggle" aria-expanded="false" aria-controls="completos-orden-panel">
+            Ordenar por
+            <span class="completos-desplegable-flecha" aria-hidden="true">▾</span>
+          </button>
+          <div class="completos-desplegable-panel completos-orden-panel" id="completos-orden-panel" hidden>
+            <button type="button" class="completos-orden-opcion activo" data-orden="relevancia">Predeterminado</button>
+            <button type="button" class="completos-orden-opcion" data-orden="precio-asc">Precio: menor a mayor</button>
+            <button type="button" class="completos-orden-opcion" data-orden="precio-desc">Precio: mayor a menor</button>
+            <button type="button" class="completos-orden-opcion" data-orden="marca">Marca (A–Z)</button>
+            <button type="button" class="completos-orden-opcion" data-orden="nombre">Nombre (A–Z)</button>
+          </div>
+        </div>
       </div>
 
       <div id="completos-grid"></div>

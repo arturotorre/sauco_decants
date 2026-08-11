@@ -83,19 +83,43 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .completos-tier-titulo { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 28px; letter-spacing: 5px; text-transform: uppercase; color: var(--crema); }
 @media (max-width: 600px) { .completos-tier-titulo { font-size: 21px; letter-spacing: 3px; } }
 
-.completos-filtros { max-width: 900px; margin: 0 auto; padding: 0 2rem 1.5rem; }
-.completos-filtro-genero, .completos-filtro-marca, .completos-filtro-extra { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-.completos-filtro-extra { margin-top: 0.85rem; }
-.completos-buscador { max-width: 420px; margin: 0.85rem auto 0; }
+.completos-barra { max-width: 900px; margin: 0 auto; padding: 0 2rem 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.85rem; position: relative; }
+.completos-buscador { flex: 1 1 260px; max-width: 420px; }
 .completos-buscador input { width: 100%; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--chocolate); background: #fff; border: 0.5px solid var(--arena); border-radius: 20px; padding: 0.6rem 1.1rem; }
 .completos-buscador input:focus { outline: none; border-color: var(--terracota); }
 .completos-buscador input::placeholder { color: #9B7B6A; }
-.completos-filtro-marca { margin-top: 0.85rem; }
+
+.completos-desplegable { position: relative; }
+.completos-desplegable-toggle { display: flex; align-items: center; gap: 0.5rem; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; color: var(--chocolate); background: #fff; border: 0.5px solid var(--arena); border-radius: 20px; padding: 0.6rem 1.2rem; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+.completos-desplegable-toggle:hover { border-color: var(--terracota); }
+.completos-desplegable-flecha { font-size: 9px; transition: transform 0.2s; }
+.completos-desplegable-toggle[aria-expanded="true"] .completos-desplegable-flecha { transform: rotate(180deg); }
+.completos-filtros-contador { display: inline-flex; align-items: center; justify-content: center; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 999px; background: var(--terracota); color: #fff; font-size: 10px; letter-spacing: 0; }
+
+.completos-desplegable-panel { position: absolute; top: calc(100% + 8px); left: 0; z-index: 20; background: #fff; border: 0.5px solid var(--arena); border-radius: 14px; box-shadow: 0 12px 30px rgba(58,26,15,0.15); padding: 1.1rem; min-width: 280px; }
+#completos-orden-wrap .completos-desplegable-panel { left: auto; right: 0; }
+
+.completos-filtro-grupo { display: flex; flex-direction: column; gap: 0.5rem; }
+.completos-filtro-grupo + .completos-filtro-grupo { margin-top: 0.9rem; }
+.completos-filtro-etiqueta { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: #9B7B6A; }
+.completos-filtro-genero, .completos-filtro-categoria, .completos-filtro-marca { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.completos-orden-panel:not([hidden]) { display: flex; }
+.completos-orden-panel { flex-direction: column; gap: 2px; min-width: 220px; padding: 0.5rem; }
+.completos-orden-opcion { text-align: left; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300; color: var(--chocolate); background: none; border: none; border-radius: 8px; padding: 0.55rem 0.75rem; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.completos-orden-opcion:hover { background: var(--arena); }
+.completos-orden-opcion.activo { color: var(--terracota); font-weight: 400; }
+
 .completos-chip { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; color: var(--chocolate); background: #fff; border: 0.5px solid var(--arena); border-radius: 20px; padding: 0.5rem 1.1rem; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .completos-chip:hover { border-color: var(--terracota); }
 .completos-chip.activo { background: var(--terracota); border-color: var(--terracota); color: #fff; }
 .completos-chip-marca { font-size: 10px; padding: 0.4rem 0.9rem; }
 .completos-sin-resultados { text-align: center; font-family: 'Jost', sans-serif; font-size: 13px; color: #9B7B6A; padding: 2.5rem; }
+@media (max-width: 600px) {
+  .completos-barra { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .completos-desplegable { position: static; }
+  .completos-desplegable-panel { left: 50%; right: auto; transform: translateX(-50%); width: min(92vw, 340px); min-width: 0; }
+}
 
 .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 0.25rem 2rem 1.5rem; max-width: 900px; margin: 0 auto; }
 

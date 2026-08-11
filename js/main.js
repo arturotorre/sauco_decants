@@ -115,17 +115,21 @@ function completoCardHTML(p) {
 
 let completosGenero = 'todos';
 let completosMarca = 'todas';
+let completosCategoria = 'todas';
 let completosBusqueda = '';
 let completosSoloSets = false;
+let completosOrden = 'relevancia';
 
 function normalizarTexto(s) {
   return s.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
 }
 
 function completosMarcasDisponibles() {
-  const base = completosGenero === 'todos'
-    ? PERFUMES_COMPLETOS
-    : PERFUMES_COMPLETOS.filter(p => p.genero === completosGenero || p.genero === 'Unisex');
+  const base = PERFUMES_COMPLETOS.filter(p =>
+    (completosGenero === 'todos' || p.genero === completosGenero || p.genero === 'Unisex') &&
+    (completosCategoria === 'todas' || p.categoria === completosCategoria) &&
+    (!completosSoloSets || p.esSet === true)
+  );
   return Array.from(new Set(base.map(p => p.casa))).sort((a, b) => a.localeCompare(b, 'es'));
 }
 
@@ -139,12 +143,49 @@ function renderFiltroMarcaCompletos() {
 
 function completosCoincide(p) {
   const okMarca = completosMarca === 'todas' || p.casa === completosMarca;
+  const okCategoria = completosCategoria === 'todas' || p.categoria === completosCategoria;
   const okSet = !completosSoloSets || p.esSet === true;
   const busqueda = normalizarTexto(completosBusqueda.trim());
   const okBusqueda = !busqueda
     || normalizarTexto(p.nombre).includes(busqueda)
     || normalizarTexto(p.casa).includes(busqueda);
-  return okMarca && okSet && okBusqueda;
+  return okMarca && okCategoria && okSet && okBusqueda;
+}
+
+function completosPrecioNumero(p) {
+  if (!p.precio) return null;
+  return Number(p.precio.replace(/[^0-9]/g, ''));
+}
+
+function ordenarCompletos(perfumes) {
+  const arr = perfumes.slice();
+  const porPrecio = (dir) => (a, b) => {
+    const pa = completosPrecioNumero(a);
+    const pb = completosPrecioNumero(b);
+    if (pa === null && pb === null) return 0;
+    if (pa === null) return 1;
+    if (pb === null) return -1;
+    return dir * (pa - pb);
+  };
+  switch (completosOrden) {
+    case 'precio-asc': arr.sort(porPrecio(1)); break;
+    case 'precio-desc': arr.sort(porPrecio(-1)); break;
+    case 'marca': arr.sort((a, b) => a.casa.localeCompare(b.casa, 'es') || a.nombre.localeCompare(b.nombre, 'es')); break;
+    case 'nombre': arr.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es')); break;
+    default: break;
+  }
+  return arr;
+}
+
+function actualizarContadorFiltrosCompletos() {
+  const badge = document.getElementById('completos-filtros-contador');
+  let n = 0;
+  if (completosGenero !== 'todos') n++;
+  if (completosCategoria !== 'todas') n++;
+  if (completosMarca !== 'todas') n++;
+  if (completosSoloSets) n++;
+  badge.textContent = String(n);
+  badge.hidden = n === 0;
 }
 
 function renderCompletos() {
@@ -158,7 +199,7 @@ function renderCompletos() {
     if (completosGenero !== 'todos' && completosGenero !== g.key) return '';
     // Los perfumes Unisex (ej. Tom Ford Black Orchid) aparecen en ambas
     // secciones, igual que los decants unisex en Hombre/Mujer.
-    const perfumes = PERFUMES_COMPLETOS.filter(p => (p.genero === g.key || p.genero === 'Unisex') && completosCoincide(p));
+    const perfumes = ordenarCompletos(PERFUMES_COMPLETOS.filter(p => (p.genero === g.key || p.genero === 'Unisex') && completosCoincide(p)));
     if (!perfumes.length) return '';
     return `
     <div class="completos-tier-header">
@@ -170,6 +211,7 @@ function renderCompletos() {
   }).join('');
 
   contenedor.innerHTML = html.trim() ? html : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
+  actualizarContadorFiltrosCompletos();
 }
 
 function carruselSlideHTML(p) {
@@ -300,6 +342,16 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCompletos();
   });
 
+  document.getElementById('completos-filtro-categoria').addEventListener('click', (e) => {
+    const btn = e.target.closest('.completos-chip');
+    if (!btn) return;
+    completosCategoria = btn.dataset.categoria;
+    completosMarca = 'todas';
+    document.querySelectorAll('#completos-filtro-categoria .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
+    renderFiltroMarcaCompletos();
+    renderCompletos();
+  });
+
   document.getElementById('completos-filtro-marca').addEventListener('click', (e) => {
     const btn = e.target.closest('.completos-chip');
     if (!btn) return;
@@ -316,7 +368,56 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('completos-filtro-set').addEventListener('click', (e) => {
     completosSoloSets = !completosSoloSets;
     e.currentTarget.classList.toggle('activo', completosSoloSets);
+    renderFiltroMarcaCompletos();
     renderCompletos();
+  });
+
+  document.getElementById('completos-orden-panel').addEventListener('click', (e) => {
+    const btn = e.target.closest('.completos-orden-opcion');
+    if (!btn) return;
+    completosOrden = btn.dataset.orden;
+    document.querySelectorAll('.completos-orden-opcion').forEach(b => b.classList.toggle('activo', b === btn));
+    cerrarDesplegablesCompletos();
+    renderCompletos();
+  });
+
+  function cerrarDesplegablesCompletos(exceptoId) {
+    [['completos-filtros-panel', 'completos-filtros-toggle'], ['completos-orden-panel', 'completos-orden-toggle']].forEach(([panelId, toggleId]) => {
+      if (panelId === exceptoId) return;
+      const panel = document.getElementById(panelId);
+      if (!panel.hidden) {
+        panel.hidden = true;
+        document.getElementById(toggleId).setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  document.getElementById('completos-filtros-toggle').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const panel = document.getElementById('completos-filtros-panel');
+    const abrir = panel.hidden;
+    cerrarDesplegablesCompletos(abrir ? 'completos-filtros-panel' : null);
+    panel.hidden = !abrir;
+    e.currentTarget.setAttribute('aria-expanded', String(abrir));
+  });
+
+  document.getElementById('completos-orden-toggle').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const panel = document.getElementById('completos-orden-panel');
+    const abrir = panel.hidden;
+    cerrarDesplegablesCompletos(abrir ? 'completos-orden-panel' : null);
+    panel.hidden = !abrir;
+    e.currentTarget.setAttribute('aria-expanded', String(abrir));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#completos-filtros-wrap') && !e.target.closest('#completos-orden-wrap')) {
+      cerrarDesplegablesCompletos();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') cerrarDesplegablesCompletos();
   });
 });
 
