@@ -150,7 +150,7 @@ const PERFUMES = [
     imagen: "imagenes/born in roma intense donna.webp",
     alt: "Donna Born in Roma Intense",
     notas: ["Bergamota", "Jazmín sambac", "Iris blanco", "Vainilla bourbon", "Almizcle"],
-    precios: { "3ml": "$220", "5ml": "$335", "10ml": "$590" },
+    precios: { "3ml": "$155", "5ml": "$230", "10ml": "$410" },
     bestseller: true
   },
   {
