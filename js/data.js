@@ -210,12 +210,12 @@ const PERFUMES = [
   },
   {
     casa: "Dolce & Gabbana",
-    nombre: "Light Blue EDT",
-    genero: "Femenino",
+    nombre: "Light Blue Pour Homme EDT",
+    genero: "Masculino",
     tier: "disenador",
-    imagen: "imagenes/light blue.webp",
-    alt: "Light Blue",
-    notas: ["Limón siciliano", "Manzana", "Campanilla", "Jazmín", "Ámbar", "Almizcle"],
+    imagen: "imagenes/light blue pour homme.webp",
+    alt: "Light Blue Pour Homme",
+    notas: ["Limón", "Romero", "Pachulí"],
     precios: { "3ml": "$92", "5ml": "$125", "10ml": "$209" },
     bestseller: false
   },
