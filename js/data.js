@@ -288,6 +288,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Moschino", categoria: "disenador", nombre: "Fresh Couture Pink", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/fresh_couture_pink.webp", alt: "Fresh Couture Pink", precio: "$1,850" },
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/light_blue.webp", alt: "Light Blue", precio: "$1,764" },
   { casa: "Dior", categoria: "disenador", nombre: "Miss Dior", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/miss_dior.webp", alt: "Miss Dior", precio: "$3,349" },
+  { casa: "Burberry", categoria: "disenador", nombre: "Her", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/burberry_her.webp", alt: "Burberry Her", precio: "$3,349" },
 
   // ---- NICHO (sin precio fijo — disponibilidad sujeta a proveedor) ----
   { casa: "Xerjoff", categoria: "nicho", nombre: "Erba Pura", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/erba_pura.webp", alt: "Erba Pura", precio: null },
