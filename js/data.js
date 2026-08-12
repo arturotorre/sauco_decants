@@ -161,7 +161,7 @@ const PERFUMES = [
     imagen: "imagenes/y edp.webp",
     alt: "Y EDP",
     notas: ["Manzana", "Jengibre", "Bergamota", "Salvia", "Haba tonka", "Cedro"],
-    precios: { "3ml": "$160", "5ml": "$240", "10ml": "$430" },
+    precios: { "3ml": "$165", "5ml": "$245", "10ml": "$445" },
     bestseller: false
   },
   {
@@ -206,6 +206,39 @@ const PERFUMES = [
     alt: "Olympéa",
     notas: ["Flor de té verde", "Sal marina", "Pimienta blanca", "Vainilla", "Cachemir"],
     precios: { "3ml": "$145", "5ml": "$195", "10ml": "$375" },
+    bestseller: false
+  },
+  {
+    casa: "Dolce & Gabbana",
+    nombre: "Light Blue EDT",
+    genero: "Femenino",
+    tier: "disenador",
+    imagen: "imagenes/light blue.webp",
+    alt: "Light Blue",
+    notas: ["Limón siciliano", "Manzana", "Campanilla", "Jazmín", "Ámbar", "Almizcle"],
+    precios: { "3ml": "$92", "5ml": "$125", "10ml": "$209" },
+    bestseller: false
+  },
+  {
+    casa: "Jean Paul Gaultier",
+    nombre: "Le Beau Le Parfum EDP",
+    genero: "Masculino",
+    tier: "disenador",
+    imagen: "imagenes/le beau le parfum.webp",
+    alt: "Le Beau Le Parfum",
+    notas: ["Piña", "Iris", "Jengibre", "Coco", "Haba tonka", "Sándalo", "Ámbar"],
+    precios: { "3ml": "$137", "5ml": "$200", "10ml": "$360" },
+    bestseller: false
+  },
+  {
+    casa: "Carolina Herrera",
+    nombre: "Good Girl Blush EDP",
+    genero: "Femenino",
+    tier: "disenador",
+    imagen: "imagenes/good girl blush.webp",
+    alt: "Good Girl Blush",
+    notas: ["Lychee", "Pimienta rosa", "Peonía", "Rosa", "Sándalo", "Almizcle blanco"],
+    precios: { "3ml": "$170", "5ml": "$255", "10ml": "$465" },
     bestseller: false
   }
 ];
