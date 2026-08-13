@@ -282,6 +282,9 @@ const PERFUMES_COMPLETOS = [
   { casa: "Jean Paul Gaultier", categoria: "disenador", nombre: "Scandal", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/scandal_edp.webp", alt: "Scandal EDP", precio: "$2,375" },
   { casa: "Jean Paul Gaultier", categoria: "disenador", nombre: "Scandal", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/scandal_edt.webp", alt: "Scandal EDT", precio: "$2,199" },
   { casa: "Givenchy", categoria: "disenador", nombre: "Pi", concentracion: "EDT", genero: "Caballero", imagen: "imagenes/completos/givenchy_pi.webp", alt: "Givenchy Pi", precio: "$1,380" },
+  { casa: "Jean Paul Gaultier", categoria: "disenador", nombre: "Le Beau Paradise Garden", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/le_beau_paradise_garden.webp", alt: "Le Beau Paradise Garden", precio: "$2,699" },
+  { casa: "Paco Rabanne", categoria: "disenador", nombre: "Invictus Parfum", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/invictus_parfum.webp", alt: "Invictus Parfum", precio: "$2,549" },
+  { casa: "YSL", categoria: "disenador", nombre: "Y Intense", concentracion: "EDP", genero: "Caballero", imagen: "imagenes/completos/y_intense.webp", alt: "Y Intense", precio: "$2,990" },
 
   // ---- DAMA ----
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Queen", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/queen.webp", alt: "Queen", precio: "$2,450" },
@@ -322,6 +325,9 @@ const PERFUMES_COMPLETOS = [
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/light_blue.webp", alt: "Light Blue", precio: "$1,764" },
   { casa: "Dior", categoria: "disenador", nombre: "Miss Dior", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/miss_dior.webp", alt: "Miss Dior", precio: "$3,349" },
   { casa: "Burberry", categoria: "disenador", nombre: "Her", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/burberry_her.webp", alt: "Burberry Her", precio: "$3,349" },
+  { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue Capri In Love", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/light_blue_capri_in_love.webp", alt: "Light Blue Capri In Love", precio: "$2,550" },
+  { casa: "YSL", categoria: "disenador", nombre: "Libre", concentracion: "EDP", genero: "Dama", imagen: "imagenes/completos/libre.webp", alt: "Libre", precio: "$2,950" },
+  { casa: "Dior", categoria: "disenador", nombre: "Miss Dior Originale", concentracion: "EDT", genero: "Dama", imagen: "imagenes/completos/miss_dior_originale.webp", alt: "Miss Dior Originale", precio: "$2,750" },
 
   // ---- NICHO (sin precio fijo — disponibilidad sujeta a proveedor) ----
   { casa: "Xerjoff", categoria: "nicho", nombre: "Erba Pura", concentracion: "EDP", genero: "Unisex", imagen: "imagenes/completos/erba_pura.webp", alt: "Erba Pura", precio: null },
