@@ -170,7 +170,12 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 .vista-header { padding: 3rem 2rem 0.5rem; text-align: center; }
 .vista-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 40px; color: var(--chocolate); letter-spacing: 1px; }
 
-.cotizar-section { max-width: 520px; margin: 0 auto; padding: 1.5rem 2rem 3rem; text-align: center; }
+.cotizar-section { max-width: 520px; margin: 0 auto; padding: 1.5rem 2rem; text-align: center; }
+.cotizar-toggle { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; background: var(--crema); border: 0.5px solid var(--arena); border-radius: 20px; padding: 0.7rem 1.2rem; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.5px; color: var(--chocolate); transition: border-color 0.2s; }
+.cotizar-toggle:hover { border-color: var(--terracota); }
+.cotizar-toggle-flecha { font-size: 9px; transition: transform 0.2s; }
+.cotizar-toggle[aria-expanded="true"] .cotizar-toggle-flecha { transform: rotate(180deg); }
+.cotizar-panel { margin-top: 1.25rem; }
 .cotizar-pregunta { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; font-weight: 300; color: var(--chocolate); line-height: 1.6; margin-bottom: 1.5rem; }
 .cotizar-form { display: flex; flex-direction: column; gap: 1rem; }
 .cotizar-campo { display: flex; flex-direction: column; gap: 4px; text-align: left; }

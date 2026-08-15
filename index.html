@@ -93,19 +93,25 @@
       </div>
 
       <div class="cotizar-section">
-        <p class="cotizar-pregunta">¿No encuentras tu perfume en nuestro catálogo? ¡No te preocupes! Envíanos un mensaje con el nombre de tu perfume y te lo cotizamos en este instante.</p>
-        <form id="form-cotizar" class="cotizar-form">
-          <label class="cotizar-campo">
-            <span>Nombre del perfume</span>
-            <input type="text" id="cotizar-nombre" required>
-          </label>
-          <label class="cotizar-campo">
-            <span>Marca (opcional)</span>
-            <input type="text" id="cotizar-marca">
-          </label>
-          <button type="submit" class="cotizar-enviar">Enviar</button>
-        </form>
-        <p class="cotizar-nota">En Saúco no manejamos stock para entrega inmediata, por lo que la entrega de tu perfume puede tardar entre 7 y 10 días hábiles.</p>
+        <button type="button" class="cotizar-toggle" id="cotizar-toggle" aria-expanded="false" aria-controls="cotizar-panel">
+          <span>¿No encuentras tu perfume en nuestro catálogo?</span>
+          <span class="cotizar-toggle-flecha" aria-hidden="true">▾</span>
+        </button>
+        <div class="cotizar-panel" id="cotizar-panel" hidden>
+          <p class="cotizar-pregunta">¡No te preocupes! Envíanos un mensaje con el nombre de tu perfume y te lo cotizamos en este instante.</p>
+          <form id="form-cotizar" class="cotizar-form">
+            <label class="cotizar-campo">
+              <span>Nombre del perfume</span>
+              <input type="text" id="cotizar-nombre" required>
+            </label>
+            <label class="cotizar-campo">
+              <span>Marca (opcional)</span>
+              <input type="text" id="cotizar-marca">
+            </label>
+            <button type="submit" class="cotizar-enviar">Enviar</button>
+          </form>
+          <p class="cotizar-nota">En Saúco no manejamos stock para entrega inmediata, por lo que la entrega de tu perfume puede tardar entre 7 y 10 días hábiles.</p>
+        </div>
       </div>
 
       <div class="completos-barra">

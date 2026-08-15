@@ -392,6 +392,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', 'false');
   });
 
+  document.getElementById('cotizar-toggle').addEventListener('click', () => {
+    const panel = document.getElementById('cotizar-panel');
+    const abrir = panel.hidden;
+    panel.hidden = !abrir;
+    document.getElementById('cotizar-toggle').setAttribute('aria-expanded', String(abrir));
+  });
+
   document.getElementById('completos-filtro-genero').addEventListener('click', (e) => {
     const btn = e.target.closest('.completos-chip');
     if (!btn) return;
