@@ -177,6 +177,40 @@ function ordenarCompletos(perfumes) {
   return arr;
 }
 
+function establecerGeneroCompletos(genero) {
+  completosGenero = genero;
+  completosMarca = 'todas';
+  document.querySelectorAll('#completos-filtro-genero .completos-chip').forEach(b => b.classList.toggle('activo', b.dataset.filtroGenero === genero));
+  renderFiltroMarcaCompletos();
+}
+
+function establecerSetsCompletos(activo) {
+  completosSoloSets = activo;
+  document.getElementById('completos-filtro-set').classList.toggle('activo', activo);
+  renderFiltroMarcaCompletos();
+}
+
+function aplicarFiltroCompletosDesdeNav(sub) {
+  completosBusqueda = '';
+  const buscador = document.getElementById('completos-busqueda');
+  if (buscador) buscador.value = '';
+
+  if (sub === 'dama') {
+    establecerGeneroCompletos('Dama');
+    establecerSetsCompletos(false);
+  } else if (sub === 'caballero') {
+    establecerGeneroCompletos('Caballero');
+    establecerSetsCompletos(false);
+  } else if (sub === 'sets') {
+    establecerGeneroCompletos('todos');
+    establecerSetsCompletos(true);
+  } else {
+    establecerGeneroCompletos('todos');
+    establecerSetsCompletos(false);
+  }
+  renderCompletos();
+}
+
 function actualizarContadorFiltrosCompletos() {
   const badge = document.getElementById('completos-filtros-contador');
   let n = 0;
@@ -272,6 +306,7 @@ function cerrarNavMovil() {
 }
 
 let decantsAbierto = false;
+let completosNavAbierto = false;
 
 function actualizarNavDecants(activo) {
   const item = document.getElementById('nav-item-decants');
@@ -281,6 +316,16 @@ function actualizarNavDecants(activo) {
   item.classList.toggle('abierto', decantsAbierto);
   toggle.classList.toggle('activo', esDecants);
   toggle.setAttribute('aria-expanded', String(decantsAbierto));
+}
+
+function actualizarNavCompletos(activo) {
+  const item = document.getElementById('nav-item-completos');
+  const toggle = document.getElementById('nav-completos-toggle');
+  const esCompletos = typeof activo === 'string' && activo.startsWith('completos-');
+  if (esCompletos) completosNavAbierto = true;
+  item.classList.toggle('abierto', completosNavAbierto);
+  toggle.classList.toggle('activo', esCompletos);
+  toggle.setAttribute('aria-expanded', String(completosNavAbierto));
 }
 
 function route() {
@@ -302,14 +347,17 @@ function route() {
     renderCatalogo(genero);
     activo = genero;
   } else if (seccion === 'completos') {
+    const sub = filtro || 'todos';
     vistaCompletos.hidden = false;
-    activo = 'completos';
+    aplicarFiltroCompletosDesdeNav(sub);
+    activo = 'completos-' + sub;
   } else {
     vistaHome.hidden = false;
   }
 
   navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
   actualizarNavDecants(activo);
+  actualizarNavCompletos(activo);
   window.scrollTo(0, 0);
   cerrarNavMovil();
 }
@@ -330,15 +378,24 @@ document.addEventListener('DOMContentLoaded', () => {
     decantsAbierto = !decantsAbierto;
     document.getElementById('nav-item-decants').classList.toggle('abierto', decantsAbierto);
     document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', String(decantsAbierto));
+    completosNavAbierto = false;
+    document.getElementById('nav-item-completos').classList.remove('abierto');
+    document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', 'false');
+  });
+
+  document.getElementById('nav-completos-toggle').addEventListener('click', () => {
+    completosNavAbierto = !completosNavAbierto;
+    document.getElementById('nav-item-completos').classList.toggle('abierto', completosNavAbierto);
+    document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', String(completosNavAbierto));
+    decantsAbierto = false;
+    document.getElementById('nav-item-decants').classList.remove('abierto');
+    document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', 'false');
   });
 
   document.getElementById('completos-filtro-genero').addEventListener('click', (e) => {
     const btn = e.target.closest('.completos-chip');
     if (!btn) return;
-    completosGenero = btn.dataset.filtroGenero;
-    completosMarca = 'todas';
-    document.querySelectorAll('#completos-filtro-genero .completos-chip').forEach(b => b.classList.toggle('activo', b === btn));
-    renderFiltroMarcaCompletos();
+    establecerGeneroCompletos(btn.dataset.filtroGenero);
     renderCompletos();
   });
 
@@ -365,10 +422,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCompletos();
   });
 
-  document.getElementById('completos-filtro-set').addEventListener('click', (e) => {
-    completosSoloSets = !completosSoloSets;
-    e.currentTarget.classList.toggle('activo', completosSoloSets);
-    renderFiltroMarcaCompletos();
+  document.getElementById('completos-filtro-set').addEventListener('click', () => {
+    establecerSetsCompletos(!completosSoloSets);
     renderCompletos();
   });
 

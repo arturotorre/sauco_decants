@@ -28,7 +28,18 @@
         <li><a href="#catalogo/mujer" data-genero="mujer">Mujer</a></li>
       </ul>
     </li>
-    <li><a href="#completos" data-genero="completos">Perfumes completos</a></li>
+    <li class="nav-item-completos" id="nav-item-completos">
+      <button type="button" class="nav-desplegable" id="nav-completos-toggle" aria-expanded="false" aria-controls="nav-completos-submenu">
+        Perfumes completos
+        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-submenu" id="nav-completos-submenu">
+        <li><a href="#completos/todos" data-genero="completos-todos">Todos</a></li>
+        <li><a href="#completos/dama" data-genero="completos-dama">Dama</a></li>
+        <li><a href="#completos/caballero" data-genero="completos-caballero">Caballero</a></li>
+        <li><a href="#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
