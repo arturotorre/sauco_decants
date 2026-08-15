@@ -151,6 +151,154 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Salidas, citas y eventos formales — especialmente otoño e invierno.",
         "duracion": "Larga duración, buena proyección.",
     },
+    "Xerjoff|Erba Pura EDP": {
+        "slug": "xerjoff-erba-pura",
+        "meta_descripcion": (
+            "Decant de Erba Pura de Xerjoff (3ml, 5ml, 10ml), 100% original. "
+            "Cítrico, afrutado y mediterráneo — unisex, ideal para primavera y "
+            "verano. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Naranja siciliana", "Bergamota", "Limón"],
+        "notas_corazon": ["Frutos mediterráneos"],
+        "notas_fondo": ["Almizcle blanco", "Vainilla", "Ámbar"],
+        "parrafos": [
+            "Erba Pura es una de las fragancias más reconocibles de Xerjoff, con un "
+            "carácter mediterráneo evidente desde el primer momento. Abre con un "
+            "estallido cítrico de naranja siciliana, bergamota calabresa y limón, se "
+            "suaviza en un corazón afrutado inspirado en la canasta de frutas del "
+            "Mediterráneo, y cierra en una base cremosa de almizcle blanco, vainilla "
+            "de Madagascar y ámbar.",
+
+            "Es una fragancia versátil y elegante que rinde especialmente bien en "
+            "primavera y verano, aunque su fondo cálido de vainilla y ámbar le permite "
+            "funcionar también en ocasiones más formales o citas nocturnas. Tiene muy "
+            "buena fijación, entre 8 y 12 horas en piel.",
+        ],
+        "ideal_para": "Primavera y verano — igual de bien para el día a día que para eventos formales o citas.",
+        "duracion": "8 a 12 horas en piel.",
+    },
+    "Francis Kurkdjian|Baccarat Rouge 540 EDP": {
+        "slug": "francis-kurkdjian-baccarat-rouge-540",
+        "meta_descripcion": (
+            "Decant de Baccarat Rouge 540 de Maison Francis Kurkdjian (3ml, 5ml, "
+            "10ml), 100% original. Ámbar, dulce y con una estela enorme — el nicho "
+            "más icónico de la última década. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Azafrán", "Jazmín"],
+        "notas_corazon": ["Madera ambarada", "Ámbar gris", "Hedione"],
+        "notas_fondo": ["Resina de abeto", "Cedro", "Ambroxan"],
+        "parrafos": [
+            "Baccarat Rouge 540 es, sin exagerar, una de las fragancias de nicho más "
+            "icónicas de la última década. Creada por Francis Kurkdjian en 2015, abre "
+            "con azafrán y jazmín en una combinación dulce, luminosa y ligeramente "
+            "metálica, se despliega en un corazón de madera ambarada y ámbar gris, y "
+            "cierra en una base resinosa de cedro, ambroxan y un toque de azúcar.",
+
+            "Es una fragancia abstracta y muy reconocible, con una estela enorme y una "
+            "fijación excepcional (10+ horas). Brilla especialmente en clima frío, de "
+            "noche, y en ocasiones donde quieres destacar — puede resultar intensa "
+            "para el día a día o el trabajo.",
+        ],
+        "ideal_para": "Noche, clima frío y ocasiones especiales — donde quieres destacar.",
+        "duracion": "10+ horas en piel, con proyección muy fuerte.",
+    },
+    "Dior|Sauvage EDT": {
+        "slug": "dior-sauvage",
+        "meta_descripcion": (
+            "Decant de Sauvage EDT de Dior (3ml, 5ml, 10ml), 100% original. Fresco, "
+            "especiado y versátil — de las fragancias masculinas más vendidas del "
+            "mundo. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota de Calabria", "Pimienta de Sichuan"],
+        "notas_corazon": ["Lavanda", "Pimienta rosa", "Vetiver"],
+        "notas_fondo": ["Ambroxan", "Labdanum", "Cedro"],
+        "parrafos": [
+            "Sauvage es una de las fragancias masculinas más vendidas del mundo, "
+            "creada por François Demachy para Dior. La versión Eau de Toilette abre "
+            "con bergamota de Calabria y pimienta de Sichuan, revela un corazón "
+            "especiado de lavanda, pimienta rosa y vetiver, y cierra en una base "
+            "amaderada de ambroxan, labdanum y cedro.",
+
+            "Es una fragancia fresca, especiada y versátil que funciona igual de bien "
+            "de día que de noche, en cualquier época del año — de las opciones más "
+            "seguras para uso diario, oficina o cualquier ocasión casual.",
+        ],
+        "ideal_para": "Uso diario, cualquier ocasión — todo el año.",
+        "duracion": "6 a 8 horas en piel, buena proyección.",
+    },
+    "Chanel|Bleu de Chanel EDP": {
+        "slug": "chanel-bleu-de-chanel",
+        "meta_descripcion": (
+            "Decant de Bleu de Chanel EDP (3ml, 5ml, 10ml), 100% original. "
+            "Amaderado aromático, versátil y fácil de llevar. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Pomelo", "Limón", "Menta", "Bergamota"],
+        "notas_corazon": ["Jengibre", "Jazmín", "Nuez moscada"],
+        "notas_fondo": ["Incienso", "Ámbar", "Sándalo", "Cedro"],
+        "parrafos": [
+            "Bleu de Chanel Eau de Parfum, creada por Jacques Polge en 2014, abre con "
+            "un golpe cítrico brillante de pomelo, limón, menta y bergamota, se "
+            "suaviza en un corazón de jengibre y jazmín, y cierra en una base "
+            "amaderada de incienso, ámbar, sándalo y cedro con un toque salino casi "
+            "marino.",
+
+            "Es una fragancia amaderada aromática muy versátil, fácil de llevar en "
+            "cualquier situación — funciona todo el año y es una de esas opciones "
+            "seguras tanto para el día a día como para ocasiones más formales.",
+        ],
+        "ideal_para": "Uso diario y ocasiones formales — todo el año.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "YSL|Libre EDP": {
+        "slug": "ysl-libre",
+        "meta_descripcion": (
+            "Decant de Libre Eau de Parfum de YSL (3ml, 5ml, 10ml), 100% original. "
+            "Floral con carácter — contraste entre lavanda fresca y vainilla cálida. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lavanda", "Mandarina", "Grosella negra"],
+        "notas_corazon": ["Lavanda", "Flor de azahar", "Jazmín"],
+        "notas_fondo": ["Vainilla de Madagascar", "Almizcle", "Cedro"],
+        "parrafos": [
+            "Libre es la fragancia que representa la libertad femenina para Yves "
+            "Saint Laurent. Abre con lavanda, mandarina y grosella negra frescas, se "
+            "despliega en un corazón floral de flor de azahar marroquí y jazmín sobre "
+            "más lavanda, y cierra en una base cálida de vainilla de Madagascar, "
+            "almizcle y cedro.",
+
+            "Es un contraste deliberado entre lo fresco-aromático de la lavanda y lo "
+            "cálido-sensual de la vainilla — funciona bien tanto de día como de "
+            "noche. Es una fragancia versátil, ideal para quien busca algo floral "
+            "pero con carácter, no empalagoso.",
+        ],
+        "ideal_para": "Día y noche — todo el año, para quien busca un floral con carácter.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Armani|Acqua di Gio Profondo EDP": {
+        "slug": "armani-acqua-di-gio-profondo",
+        "meta_descripcion": (
+            "Decant de Acqua di Gio Profondo de Giorgio Armani (3ml, 5ml, 10ml), "
+            "100% original. Acuático, intenso y mineral — ideal para climas cálidos. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Notas marinas", "Mandarina verde"],
+        "notas_corazon": ["Romero", "Lavanda"],
+        "notas_fondo": ["Notas minerales", "Ámbar gris", "Almizcle", "Cedro"],
+        "parrafos": [
+            "Acqua di Giò Profondo es la versión más intensa y marina de la icónica "
+            "línea Acqua di Giò de Giorgio Armani. Abre con notas marinas y mandarina "
+            "verde vibrantes, revela un corazón herbal de romero y lavanda, y cierra "
+            "en una base mineral de ámbar gris, almizcle, cedro y patchouli.",
+
+            "Es una fragancia acuática intensa que evoca el mar profundo, ideal para "
+            "climas cálidos y días soleados, aunque funciona todo el año como una "
+            "opción masculina madura. Es una gran opción para el día, eventos al aire "
+            "libre o para hacer la transición a una cena casual por la noche.",
+        ],
+        "ideal_para": "Climas cálidos, día a día y eventos al aire libre — todo el año.",
+        "duracion": "6 a 8 horas en piel.",
+    },
 }
 
 
