@@ -11,7 +11,7 @@ function cardHTML(p) {
   return `
   <div class="card">
     <div class="card-foto">
-      <img src="${p.imagen}" alt="${p.alt}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="${p.imagen}" alt="${p.casa} ${p.alt} - decant de perfume ${p.genero.toLowerCase()}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="foto-label" style="display:none">Sin imagen</span>
       <div class="card-tier-dot ${dot}"></div>
     </div>
@@ -96,7 +96,7 @@ function completoCardHTML(p) {
   return `
   <div class="card card-completo">
     <div class="card-foto">
-      <img src="${p.imagen}" alt="${p.alt}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="${p.imagen}" alt="${p.casa} ${p.alt} ${p.concentracion} - perfume ${p.esSet ? 'set de regalo' : 'de botella completa'}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="foto-label" style="display:none">Sin imagen</span>
     </div>
     <div class="card-info">
@@ -246,7 +246,7 @@ function carruselSlideHTML(p) {
   return `
   <div class="card carrusel-slide">
     <div class="card-foto">
-      <img src="${p.imagen}" alt="${p.alt}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="${p.imagen}" alt="${p.casa} ${p.alt} - de los más vendidos en Saúco Decants" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="foto-label" style="display:none">Sin imagen</span>
     </div>
     <div class="card-info">
@@ -322,6 +322,18 @@ function actualizarNavCompletos(activo) {
   toggle.setAttribute('aria-expanded', String(completosNavAbierto));
 }
 
+function actualizarTituloPagina(seccion, filtro) {
+  if (seccion === 'catalogo') {
+    const etiquetas = { todos: 'Todos', hombre: 'Hombre', mujer: 'Mujer' };
+    document.title = `Decants - ${etiquetas[filtro] || 'Todos'} | Saúco`;
+  } else if (seccion === 'completos') {
+    const etiquetas = { dama: 'Dama', caballero: 'Caballero', sets: 'Sets de regalo' };
+    document.title = etiquetas[filtro] ? `Perfumes completos - ${etiquetas[filtro]} | Saúco` : 'Perfumes completos | Saúco';
+  } else {
+    document.title = 'Saúco — Catálogo de Fragancias';
+  }
+}
+
 function route() {
   const hash = location.hash.replace(/^#\/?/, '');
   const [seccion, filtro] = hash.split('/');
@@ -352,6 +364,7 @@ function route() {
   navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
   actualizarNavDecants(activo);
   actualizarNavCompletos(activo);
+  actualizarTituloPagina(seccion, filtro);
   window.scrollTo(0, 0);
   cerrarNavMovil();
 }
