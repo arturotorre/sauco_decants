@@ -443,6 +443,102 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Salidas nocturnas y ocasiones para destacar — otoño e invierno.",
         "duracion": "6 a 8 horas en piel.",
     },
+    "Paco Rabanne|Olympéa EDP": {
+        "slug": "paco-rabanne-olympea",
+        "meta_descripcion": (
+            "Decant de Olympéa de Paco Rabanne (3ml, 5ml, 10ml), 100% original. "
+            "Oriental floral salado y sensual — para la noche. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Flor de té verde", "Pimienta blanca"],
+        "notas_corazon": ["Sal marina", "Vainilla"],
+        "notas_fondo": ["Cachemir"],
+        "parrafos": [
+            "Olympéa, lanzada por Paco Rabanne en 2015, es la versión femenina y "
+            "equivalente de Invictus — inspirada en una diosa griega moderna: "
+            "fuerza, dinamismo y conquista. Abre con flor de té verde y pimienta "
+            "blanca chispeante, se funde en un corazón salado-dulce de sal marina y "
+            "vainilla, y cierra en una base cálida de cachemir.",
+
+            "Es una fragancia oriental floral salada y sensual, pensada para la "
+            "noche y ocasiones especiales — perfecta para una cita o un evento donde "
+            "buscas dejar una impresión memorable. Funciona todo el año.",
+        ],
+        "ideal_para": "Noche y ocasiones especiales — citas, eventos.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Dolce & Gabbana|Light Blue Pour Homme EDT": {
+        "slug": "dolce-gabbana-light-blue-pour-homme",
+        "meta_descripcion": (
+            "Decant de Light Blue Pour Homme de Dolce & Gabbana (3ml, 5ml, 10ml), "
+            "100% original. Amaderado aromático, limpio y mediterráneo. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Limón"],
+        "notas_corazon": ["Romero"],
+        "notas_fondo": ["Pachulí"],
+        "parrafos": [
+            "Light Blue Pour Homme es la versión 2025 del clásico masculino de "
+            "Dolce & Gabbana, reformulada por Alberto Morillas combinando lo mejor "
+            "de la línea Light Blue original, la Intense y la Summer Vibes. Abre con "
+            "limón siciliano vibrante, se funde en un corazón herbal de romero, y "
+            "cierra en una base cálida y terrosa de pachulí.",
+
+            "Es una fragancia amaderada aromática limpia y mediterránea, ideal para "
+            "el día, el verano y climas cálidos — evoca costas soleadas y aguas "
+            "color turquesa. Perfecta para uso diario.",
+        ],
+        "ideal_para": "Día a día, verano y climas cálidos.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Beau Le Parfum EDP": {
+        "slug": "jean-paul-gaultier-le-beau-le-parfum",
+        "meta_descripcion": (
+            "Decant de Le Beau Le Parfum de Jean Paul Gaultier (3ml, 5ml, 10ml), "
+            "100% original. Cálido, ambarado y sofisticado — un verano con giro "
+            "elegante. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Piña", "Iris", "Jengibre"],
+        "notas_corazon": ["Coco"],
+        "notas_fondo": ["Haba tonka", "Sándalo", "Ámbar"],
+        "parrafos": [
+            "Le Beau Le Parfum, de Jean Paul Gaultier, es una versión más intensa y "
+            "sofisticada del clásico veraniego de la casa. Abre con piña jugosa, "
+            "iris y un toque de jengibre, se suaviza en un corazón cremoso de coco, "
+            "y cierra en una base cálida de haba tonka, sándalo y ámbar.",
+
+            "Es un \"verano en una botella\" con un giro más elegante y cálido — "
+            "funciona muy bien en otoño e invierno gracias a su fondo ambarado, "
+            "ideal para cenas románticas, eventos y salidas nocturnas donde buscas "
+            "dejar una impresión duradera.",
+        ],
+        "ideal_para": "Cenas románticas, eventos y salidas nocturnas — otoño e invierno.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Carolina Herrera|Good Girl Blush EDP": {
+        "slug": "carolina-herrera-good-girl-blush",
+        "meta_descripcion": (
+            "Decant de Good Girl Blush de Carolina Herrera (3ml, 5ml, 10ml), 100% "
+            "original. Floral fresco y romántico — ideal para primavera y verano. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lychee", "Pimienta rosa"],
+        "notas_corazon": ["Peonía", "Rosa"],
+        "notas_fondo": ["Sándalo", "Almizcle blanco"],
+        "parrafos": [
+            "Good Girl Blush es la versión más suave y romántica de la icónica Good "
+            "Girl de Carolina Herrera. Abre con un chispazo de lychee y pimienta "
+            "rosa, se despliega en un corazón floral de peonía y rosa, y cierra en "
+            "una base cálida de sándalo y almizcle blanco.",
+
+            "Es una fragancia floral fresca y femenina, ideal para primavera y "
+            "verano, aunque su fondo cálido le permite funcionar también en meses "
+            "más fríos. Perfecta para citas de día, bodas de temporada cálida y "
+            "brunches de fin de semana.",
+        ],
+        "ideal_para": "Primavera y verano — citas de día, bodas, brunch.",
+        "duracion": "6 a 8 horas en piel, proyección moderada.",
+    },
 }
 
 
