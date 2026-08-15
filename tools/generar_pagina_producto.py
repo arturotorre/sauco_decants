@@ -702,6 +702,163 @@ CONTENIDO_COMPLETOS = {
         "ideal_para": "Noche — fiestas, eventos formales, citas, ocasiones especiales.",
         "duracion": "8+ horas en piel, con muy buena proyección.",
     },
+    "Dior|J'adore Parfum d'Eau|EDP": {
+        "slug": "dior-jadore-parfum-deau",
+        "meta_descripcion": (
+            "J'adore Parfum d'Eau de Dior, 100% original, botella completa. "
+            "Bouquet floral fresco sin alcohol, jazmín sambac, neroli y "
+            "magnolia. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Neroli", "Notas verdes"],
+        "notas_corazon": ["Jazmín sambac", "Magnolia", "Madreselva", "Rosa"],
+        "notas_fondo": ["Almizcle blanco"],
+        "parrafos": [
+            "J'adore Parfum d'Eau reinventa el icónico J'adore de Dior en una "
+            "formulación sin alcohol, pensada como una oda fresca y espontánea "
+            "a las flores blancas. Rompe con la estructura clásica de salida, "
+            "corazón y fondo: jazmín sambac, neroli y magnolia se entrelazan "
+            "desde el primer momento en una sincronía floral luminosa.",
+
+            "Es una fragancia floral fresca, abundante y sensual, ideal para "
+            "primavera y verano — su formulación sin alcohol la hace además "
+            "más suave sobre la piel, perfecta para el día a día y cualquier "
+            "ocasión donde busques un aroma limpio y radiante.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — cualquier ocasión.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Tom Ford|Black Orchid|EDP": {
+        "slug": "tom-ford-black-orchid",
+        "meta_descripcion": (
+            "Black Orchid de Tom Ford, 100% original, botella completa. "
+            "Amaderado oriental opulento — orquídea negra, trufa y chocolate. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Trufa negra", "Gardenia", "Grosella negra", "Bergamota"],
+        "notas_corazon": ["Orquídea negra", "Especias", "Ylang-ylang", "Loto"],
+        "notas_fondo": ["Chocolate", "Patchouli", "Vainilla", "Incienso", "Sándalo"],
+        "parrafos": [
+            "Black Orchid, lanzada por Tom Ford en 2006, es una fragancia "
+            "unisex densa y magnética que combina dulzura, calidez y un fondo "
+            "casi gótico. Abre con trufa negra, gardenia y grosella, se funde "
+            "en un corazón de orquídea negra —un acorde creado especialmente "
+            "para evocar una flor que no existe en la naturaleza— con especias "
+            "y flores blancas, y cierra en una base envolvente de chocolate, "
+            "patchouli, incienso y sándalo.",
+
+            "Es una fragancia amaderada oriental opulenta, de gran fijación y "
+            "proyección, ideal para la noche y climas fríos — perfecta para "
+            "eventos especiales y ocasiones donde buscas dejar una huella "
+            "inolvidable.",
+        ],
+        "ideal_para": "Noche, otoño e invierno — eventos especiales.",
+        "duracion": "8+ horas en piel, con excelente proyección.",
+    },
+    "Paco Rabanne|One Million|EDT": {
+        "slug": "paco-rabanne-one-million",
+        "meta_descripcion": (
+            "One Million de Paco Rabanne EDT, 100% original, botella completa. "
+            "Amaderado especiado icónico — canela, cuero y ámbar. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Mandarina sanguina", "Toronja", "Menta"],
+        "notas_corazon": ["Canela", "Especias", "Rosa"],
+        "notas_fondo": ["Ámbar", "Cuero", "Notas amaderadas", "Patchouli"],
+        "parrafos": [
+            "One Million, lanzada por Paco Rabanne en 2008, es una de las "
+            "fragancias masculinas más icónicas de la última década — su "
+            "frasco en forma de lingote de oro es tan reconocible como el "
+            "aroma mismo. Abre con mandarina sanguina, toronja y menta, "
+            "revela un corazón especiado de canela y rosa, y cierra en una "
+            "base amaderada de cuero, ámbar y patchouli indio.",
+
+            "Es una fragancia amaderada especiada versátil, perfecta para "
+            "salidas casuales y formales, especialmente en otoño e invierno "
+            "— aunque su carácter magnético la hace funcionar todo el año, "
+            "de día o de noche.",
+        ],
+        "ideal_para": "Otoño e invierno, día y noche — salidas casuales y formales.",
+        "duracion": "4 a 6 horas en piel.",
+    },
+    "YSL|Libre|EDP": {
+        "slug": "ysl-libre",
+        "meta_descripcion": (
+            "Libre de Yves Saint Laurent, 100% original, botella completa. "
+            "Oriental fougère audaz — lavanda, azahar y vainilla de "
+            "Madagascar. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lavanda", "Mandarina", "Grosella negra", "Petitgrain"],
+        "notas_corazon": ["Flor de azahar", "Jazmín", "Lavanda"],
+        "notas_fondo": ["Vainilla de Madagascar", "Almizcle", "Cedro", "Ámbar gris"],
+        "parrafos": [
+            "Libre, lanzada por Yves Saint Laurent en 2019, reinterpreta la "
+            "lavanda —tradicionalmente masculina— dentro de un bouquet "
+            "floral femenino, creando un contraste audaz entre lo aromático "
+            "y lo sensual. Abre con lavanda, mandarina y grosella negra, se "
+            "despliega en un corazón floral de azahar y jazmín, y cierra en "
+            "una base cálida de vainilla de Madagascar, almizcle y cedro.",
+
+            "Es una fragancia oriental fougère versátil que celebra la "
+            "libertad y la autoexpresión — funciona igual de bien de día que "
+            "de noche, ideal para primavera y verano, aunque su fondo cálido "
+            "la hace válida todo el año.",
+        ],
+        "ideal_para": "Todo el año, día y noche — cualquier ocasión.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Dolce & Gabbana|King|EDP": {
+        "slug": "dolce-gabbana-king",
+        "meta_descripcion": (
+            "K by Dolce&Gabbana Eau de Parfum, 100% original, botella "
+            "completa. Amaderado especiado audaz — higo, lavanda y "
+            "vetiver. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Naranja sanguina", "Bayas de enebro", "Pimienta gorda", "Limón"],
+        "notas_corazon": ["Néctar de higo", "Lavanda", "Geranio", "Salvia"],
+        "notas_fondo": ["Cedro", "Patchouli", "Vetiver", "Nagarmotha"],
+        "parrafos": [
+            "K by Dolce&Gabbana Eau de Parfum ofrece una mirada íntima al "
+            "carácter de un hombre seguro de sí mismo, con una fragancia "
+            "amaderada y especiada. Abre con naranja sanguina, enebro y "
+            "pimienta gorda, revela un corazón inesperado de néctar de higo "
+            "y lavanda, y cierra en una base terrosa de cedro, patchouli y "
+            "vetiver.",
+
+            "Es una fragancia amaderada especiada audaz, ideal para la noche "
+            "— perfecta para cenas, reuniones exclusivas y ocasiones donde "
+            "buscas hacerte notar sin decir una palabra. Funciona bien todo "
+            "el año, especialmente en clima templado y frío.",
+        ],
+        "ideal_para": "Noche, todo el año — cenas, reuniones, ocasiones especiales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Male|EDT": {
+        "slug": "jean-paul-gaultier-le-male",
+        "meta_descripcion": (
+            "Le Male de Jean Paul Gaultier EDT, 100% original, botella "
+            "completa. Oriental fougère icónico — lavanda, vainilla y "
+            "cardamomo. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Artemisia", "Menta", "Cardamomo", "Bergamota"],
+        "notas_corazon": ["Lavanda", "Flor de azahar", "Canela", "Comino"],
+        "notas_fondo": ["Sándalo", "Vainilla", "Cedro", "Haba tonka", "Ámbar"],
+        "parrafos": [
+            "Le Male, lanzada por Jean Paul Gaultier en 1995 y creada por "
+            "Francis Kurkdjian, es uno de los perfumes masculinos más "
+            "influyentes de las últimas tres décadas, reconocible por su "
+            "frasco en forma de torso marinero. Abre con artemisia, menta y "
+            "cardamomo, se desarrolla en un corazón especiado de lavanda y "
+            "canela, y cierra en una base cálida de vainilla, sándalo y haba "
+            "tonka.",
+
+            "Es una fragancia oriental fougère atemporal que combina frescura "
+            "y calidez sensual — versátil para cualquier época del año, de "
+            "día o de noche, perfecta tanto para el uso diario como para "
+            "ocasiones especiales.",
+        ],
+        "ideal_para": "Todo el año, día y noche — uso diario y ocasiones especiales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
 }
 
 
