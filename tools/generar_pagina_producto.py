@@ -1371,6 +1371,516 @@ CONTENIDO_COMPLETOS = {
         "ideal_para": "Primavera y verano, día y noche — salidas y ocasiones sociales.",
         "duracion": "6 a 8 horas en piel, con muy buena proyección.",
     },
+    "Valentino|Uomo Born In Roma Intense|EDP": {
+        "slug": "valentino-uomo-born-in-roma-intense-completo",
+        "meta_descripcion": (
+            "Uomo Born In Roma Intense de Valentino, 100% original, "
+            "botella completa. Oriental vainilla intenso — jengibre, "
+            "lavanda y vainilla salada. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Hoja de violeta", "Jengibre", "Bergamota"],
+        "notas_corazon": ["Lavanda", "Salvia esclarea"],
+        "notas_fondo": ["Vetiver", "Vainilla salada"],
+        "parrafos": [
+            "Uomo Born In Roma Intense lleva el ADN romano y contemporáneo "
+            "de Born In Roma hacia una versión más profunda y sensual. "
+            "Abre con hoja de violeta, jengibre y bergamota vibrantes, se "
+            "despliega en un corazón aromático de lavanda y salvia "
+            "esclarea, y cierra en una base envolvente de vetiver y "
+            "vainilla salada.",
+
+            "Es una fragancia oriental vainilla intensa, un vaivén entre "
+            "frescura explosiva y sensualidad profunda — ideal para otoño "
+            "e invierno, perfecta tanto para reuniones casuales como para "
+            "ocasiones más formales.",
+        ],
+        "ideal_para": "Otoño e invierno — reuniones casuales y ocasiones formales.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Valentino|Donna|EDP": {
+        "slug": "valentino-donna",
+        "meta_descripcion": (
+            "Valentino Donna Eau de Parfum, 100% original, botella "
+            "completa. Chipre floral elegante — rosa, iris y pachulí. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Toronja", "Bergamota", "Grosella negra"],
+        "notas_corazon": ["Rosa", "Durazno", "Iris"],
+        "notas_fondo": ["Pachulí", "Vainilla", "Praliné"],
+        "parrafos": [
+            "Valentino Donna celebra la feminidad en todas sus formas con "
+            "una fragancia chipre floral suave y sensual a la vez. Abre "
+            "con toronja, bergamota y grosella negra chispeantes, revela "
+            "un corazón polvoriento de rosa, durazno e iris, y cierra en "
+            "una base cálida de pachulí, vainilla y praliné.",
+
+            "Es una fragancia elegante y versátil, ideal para todo el año "
+            "— perfecta tanto para el día a día como para ocasiones más "
+            "formales, con un carácter refinado y atemporal.",
+        ],
+        "ideal_para": "Todo el año — uso diario y ocasiones formales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Tom Ford|Velvet Orchid|EDP": {
+        "slug": "tom-ford-velvet-orchid",
+        "meta_descripcion": (
+            "Velvet Orchid de Tom Ford, 100% original, botella completa. "
+            "Floral oriental opulento — orquídea, miel y sándalo. Envíos "
+            "a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota italiana", "Mandarina", "Ron", "Miel"],
+        "notas_corazon": ["Orquídea", "Jazmín", "Flor de azahar", "Rosa turca"],
+        "notas_fondo": ["Bálsamo de Perú", "Mirra", "Labdanum", "Sándalo", "Vainilla"],
+        "parrafos": [
+            "Velvet Orchid, la hermana más luminosa de Black Orchid, "
+            "envuelve a quien la usa en un velo espeso y brillante de "
+            "flores oscuras y dulzura embriagadora. Abre con bergamota "
+            "italiana, mandarina, ron y miel, se despliega en un corazón "
+            "floral de orquídea, jazmín y rosa turca, y cierra en una base "
+            "cálida de bálsamo de Perú, mirra, sándalo y vainilla.",
+
+            "Es una fragancia floral oriental opulenta, ideal para otoño "
+            "e invierno — su carácter cálido y lujoso la hace perfecta "
+            "para la noche y ocasiones donde buscas un aroma memorable y "
+            "sofisticado.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ocasiones sofisticadas.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Prada|Paradoxe Intense|EDP": {
+        "slug": "prada-paradoxe-intense-completo",
+        "meta_descripcion": (
+            "Paradoxe Intense de Prada, 100% original, botella completa. "
+            "Floral oriental intenso — neroli, jazmín y vainilla bourbon. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Neroli", "Pera"],
+        "notas_corazon": ["Neroli", "Jazmín superinfusión", "Musgo"],
+        "notas_fondo": ["Vainilla bourbon", "Almizcle ambarado"],
+        "parrafos": [
+            "Paradoxe Intense celebra la fuerza y la delicadeza como dos "
+            "caras de una misma mujer, en una versión más rica y densa "
+            "del Paradoxe original. Abre con bergamota, neroli y pera "
+            "frescos, se despliega en un corazón floral intenso de neroli "
+            "y jazmín superinfusión, y cierra en una base envolvente de "
+            "vainilla bourbon y almizcle ambarado.",
+
+            "Es una fragancia floral oriental lujosa e intensificada, "
+            "ideal para climas fríos — perfecta para la noche y ocasiones "
+            "especiales donde buscas un aroma que combine fuerza y "
+            "elegancia.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ocasiones especiales.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Prada|Paradoxe Virtual Flower|EDP": {
+        "slug": "prada-paradoxe-virtual-flower",
+        "meta_descripcion": (
+            "Paradoxe Virtual Flower de Prada, 100% original, botella "
+            "completa. Floral almizclado luminoso — bergamota, jazmín y "
+            "ambretta. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota"],
+        "notas_corazon": ["Jazmín", "Neroli"],
+        "notas_fondo": ["Almizcle", "Ambretta"],
+        "parrafos": [
+            "Paradoxe Virtual Flower reinterpreta el jazmín a través de "
+            "una lente moderna y luminosa, con una fórmula desarrollada "
+            "con apoyo de inteligencia artificial. Abre con bergamota "
+            "fresca y cítrica, se despliega en un corazón floral aéreo de "
+            "jazmín y neroli, y cierra en una base limpia de almizcle y "
+            "ambretta.",
+
+            "Es una fragancia floral almizclada ligera y de gran "
+            "fijación, ideal para primavera y verano — perfecta para el "
+            "uso diario, con un carácter fresco, luminoso y moderno.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — fresca y luminosa.",
+        "duracion": "8+ horas en piel.",
+    },
+    "YSL|Y Intense|EDP": {
+        "slug": "ysl-y-intense",
+        "meta_descripcion": (
+            "Y Intense de Yves Saint Laurent, 100% original, botella "
+            "completa. Aromático amaderado maduro — enebro, lavanda y "
+            "pachulí. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bayas de enebro"],
+        "notas_corazon": ["Lavanda", "Geranio"],
+        "notas_fondo": ["Cedro", "Pachulí"],
+        "parrafos": [
+            "Y Intense lleva el ADN del Y original hacia una versión más "
+            "madura y potente, con mayor peso amaderado y aromático. Abre "
+            "con bayas de enebro, se despliega en un corazón de lavanda y "
+            "geranio, y cierra en una base terrosa de cedro y pachulí.",
+
+            "Comparada con el Y EDP, la versión Intense es más rica, "
+            "amaderada y menos dulce — una propuesta sofisticada y adulta "
+            "que funciona todo el año, ideal para quien busca un aroma "
+            "con carácter e impacto duradero.",
+        ],
+        "ideal_para": "Todo el año — carácter sofisticado y adulto.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "YSL|Mon Paris Intensement|EDP": {
+        "slug": "ysl-mon-paris-intensement",
+        "meta_descripcion": (
+            "Mon Paris Intensément de Yves Saint Laurent, 100% original, "
+            "botella completa. Chipre floral amaderado apasionado — "
+            "grosella negra, rosa y vainilla. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Frambuesa", "Grosella negra", "Pera", "Naranja", "Bergamota"],
+        "notas_corazon": ["Rosa de mayo", "Rosa búlgara", "Peonía", "Datura", "Fresia"],
+        "notas_fondo": ["Vainilla", "Pachulí", "Almizcle blanco", "Benjuí", "Cashmerán"],
+        "parrafos": [
+            "Mon Paris Intensément intensifica la declaración de amor de "
+            "Mon Paris con una versión más rica y de mayor fijación. Abre "
+            "con frambuesa, grosella negra y pera jugosas, se despliega en "
+            "un corazón rosado sensual y elegante de rosa de mayo y "
+            "peonía, y cierra en una base envolvente de vainilla, pachulí "
+            "y almizcle blanco.",
+
+            "Es una fragancia chipre floral amaderada intensa, ideal para "
+            "la noche y climas fríos — perfecta para ocasiones donde "
+            "buscas un aroma apasionado y de larga duración.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ocasiones especiales.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "YSL|Libre L'Eau Nue Parfum de Peau|EDP": {
+        "slug": "ysl-libre-eau-nue",
+        "meta_descripcion": (
+            "Libre L'Eau Nue Parfum de Peau de Yves Saint Laurent, 100% "
+            "original, botella completa. Fresco cítrico floral sin "
+            "alcohol — mandarina, azahar y lavanda. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Mandarina verde", "Bergamota"],
+        "notas_corazon": ["Flor de azahar"],
+        "notas_fondo": ["Lavanda"],
+        "parrafos": [
+            "Libre L'Eau Nue Parfum de Peau es la primera versión sin "
+            "alcohol de Libre, formulada para sentirse como luz de sol "
+            "sobre la piel desnuda. Abre con mandarina verde y bergamota "
+            "frescas, se despliega en un corazón luminoso de flor de "
+            "azahar, y cierra en una base de lavanda que aporta el toque "
+            "característico de la línea Libre.",
+
+            "Es una fragancia cítrica floral fresca y cercana a la piel, "
+            "ideal para primavera y verano — perfecta para el uso diario "
+            "con un carácter limpio, moderno y nada empalagoso.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — fresca y cercana a la piel.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Versace|Pour Homme Dylan Blue|EDT": {
+        "slug": "versace-pour-homme-dylan-blue",
+        "meta_descripcion": (
+            "Dylan Blue Pour Homme de Versace, 100% original, botella "
+            "completa. Aromático acuático fresco — toronja, higuera y "
+            "ámbar. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Toronja", "Hoja de higuera", "Notas acuáticas", "Pimienta negra"],
+        "notas_corazon": ["Hoja de violeta", "Papiro", "Pachulí", "Ámbar"],
+        "notas_fondo": ["Almizcle", "Azafrán", "Incienso", "Haba tonka"],
+        "parrafos": [
+            "Dylan Blue Pour Homme, lanzada por Versace en 2016, es una "
+            "fragancia aromática acuática fresca y contemporánea. Abre con "
+            "toronja, hoja de higuera y notas acuáticas vivaces, se "
+            "desarrolla en un corazón de hoja de violeta, papiro y "
+            "pachulí, y cierra en una base cálida de almizcle, azafrán e "
+            "incienso.",
+
+            "Es una fragancia fresca y limpia, ideal para primavera y "
+            "verano — perfecta para la oficina y salidas de día, aunque su "
+            "base amaderada y almizclada la hace funcionar también en "
+            "citas nocturnas.",
+        ],
+        "ideal_para": "Primavera y verano, día y noche — oficina y citas.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Versace|Pour Femme Dylan Blue|EDP": {
+        "slug": "versace-pour-femme-dylan-blue",
+        "meta_descripcion": (
+            "Dylan Blue Pour Femme de Versace, 100% original, botella "
+            "completa. Floral acuático refrescante — grosella negra, "
+            "manzana y rosa. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Grosella negra", "Manzana verde", "Trébol"],
+        "notas_corazon": ["Rosa silvestre", "Jazmín", "Durazno"],
+        "notas_fondo": ["Pachulí", "Estoraque", "Musgo blanco", "Almizcle"],
+        "parrafos": [
+            "Dylan Blue Pour Femme equilibra acordes frescos y acuáticos "
+            "con un corazón floral delicado. Abre con grosella negra, "
+            "manzana verde y trébol, se despliega en un corazón de rosa "
+            "silvestre, jazmín y durazno helado, y cierra en una base "
+            "cremosa de pachulí, estoraque y musgo blanco.",
+
+            "Es una fragancia floral acuática refinada y sensual, ideal "
+            "para primavera y verano — su base amaderada y almizclada "
+            "también le da suficiente calidez para el otoño, perfecta "
+            "para el día a día.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — fresca y sensual.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Invictus Victory|EDP": {
+        "slug": "paco-rabanne-invictus-victory",
+        "meta_descripcion": (
+            "Invictus Victory de Paco Rabanne, 100% original, botella "
+            "completa. Aromático amaderado triunfal — pimienta rosa, "
+            "incienso y vainilla. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Cítricos", "Pimienta rosa"],
+        "notas_corazon": ["Incienso", "Lavanda"],
+        "notas_fondo": ["Haba tonka", "Ámbar exótico", "Vainilla"],
+        "parrafos": [
+            "Invictus Victory celebra el espíritu de la victoria con una "
+            "fragancia que combina energía y calidez. Abre con un golpe "
+            "cítrico y de pimienta rosa vigorizante, se desarrolla en un "
+            "corazón floral e incienso con lavanda, y cierra en una base "
+            "envolvente de haba tonka, ámbar exótico y vainilla.",
+
+            "Es una fragancia aromática amaderada versátil, con carácter "
+            "vigorizante y a la vez reconfortante — ideal para otoño e "
+            "invierno, perfecta para quien busca sentirse como un "
+            "campeón en cualquier ocasión.",
+        ],
+        "ideal_para": "Otoño e invierno — energía y confianza en cualquier ocasión.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Olympéa Parfum|EDP": {
+        "slug": "paco-rabanne-olympea-parfum",
+        "meta_descripcion": (
+            "Olympéa Parfum de Paco Rabanne, 100% original, botella "
+            "completa. Más intenso que la versión EDP clásica — jazmín "
+            "acuático, vainilla salada y sándalo. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Jazmín acuático", "Mandarina verde", "Flor de jengibre"],
+        "notas_corazon": ["Vainilla", "Sal"],
+        "notas_fondo": ["Madera de cachemira", "Ámbar gris", "Sándalo"],
+        "parrafos": [
+            "Olympéa Parfum comparte el mismo ADN salado y floral que la "
+            "Olympéa EDP original, pero en una concentración mayor que le "
+            "da más riqueza y fijación en piel. Abre con jazmín acuático, "
+            "mandarina verde y flor de jengibre, se despliega en un "
+            "corazón de vainilla salada, y cierra en una base de madera de "
+            "cachemira, ámbar gris y sándalo.",
+
+            "Comparada con la EDP, esta versión Parfum es más densa y "
+            "duradera — ideal para climas fríos y uso nocturno, perfecta "
+            "para quien ya conoce Olympéa y busca mayor intensidad.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — mayor intensidad y duración.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Paco Rabanne|One Million Parfum|EDP": {
+        "slug": "paco-rabanne-one-million-parfum",
+        "meta_descripcion": (
+            "One Million Parfum de Paco Rabanne, 100% original, botella "
+            "completa. Amaderado especiado intenso — cuero, tuberosa y "
+            "ámbar. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Toronja", "Cardamomo", "Artemisia", "Pimienta rosa"],
+        "notas_corazon": ["Cuero", "Tuberosa", "Notas amaderadas"],
+        "notas_fondo": ["Ámbar", "Cashmerán", "Labdanum"],
+        "parrafos": [
+            "One Million Parfum lleva el icónico ADN de One Million hacia "
+            "una versión más intensa y sensual, dominada por un cuero "
+            "curtido al sol. Abre con toronja, cardamomo y pimienta rosa, "
+            "se desarrolla en un corazón inesperado de cuero y tuberosa, y "
+            "cierra en una base cálida de ámbar, cashmerán y labdanum.",
+
+            "Es una fragancia amaderada especiada intensa y magnética, "
+            "ideal para otoño e invierno y uso nocturno — perfecta para "
+            "quien busca una versión más audaz y madura del clásico One "
+            "Million.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — versión audaz y madura.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Salvatore Ferragamo|Signorina Libera|EDP": {
+        "slug": "salvatore-ferragamo-signorina-libera",
+        "meta_descripcion": (
+            "Signorina Libera de Salvatore Ferragamo, 100% original, "
+            "botella completa. Floral afrutado luminoso — pera, ciruela y "
+            "cashmerán. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pera", "Bergamota", "Elemí"],
+        "notas_corazon": ["Iris", "Ciruela", "Rosa"],
+        "notas_fondo": ["Azúcar", "Ambroxan", "Cashmerán"],
+        "parrafos": [
+            "Signorina Libera celebra la libertad y el optimismo con una "
+            "fragancia floral afrutada luminosa y vibrante como la luz del "
+            "sol. Abre con pera, bergamota y elemí, se despliega en un "
+            "corazón de iris, ciruela y rosa, y cierra en una base dulce "
+            "de azúcar, ambroxan y cashmerán.",
+
+            "Es una fragancia solar y optimista, ideal para primavera y "
+            "verano — perfecta para el uso diario de una mujer libre y "
+            "segura de sí misma.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — luminosa y optimista.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Salvatore Ferragamo|Signorina Unica|EDP": {
+        "slug": "salvatore-ferragamo-signorina-unica",
+        "meta_descripcion": (
+            "Signorina Unica de Salvatore Ferragamo, 100% original, "
+            "botella completa. Floral gourmand amaderado moderno — "
+            "mandarina, violeta y tiramisú. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Mandarina", "Caña de azúcar", "Notas marinas", "Bergamota"],
+        "notas_corazon": ["Madera de cachemira", "Violeta", "Grosella negra", "Azalea blanca"],
+        "notas_fondo": ["Ambroxan", "Tiramisú", "Vainilla absoluta", "Haba tonka", "Pachulí"],
+        "parrafos": [
+            "Signorina Unica celebra la individualidad de la mujer moderna "
+            "con una fragancia floral gourmand amaderada poco convencional. "
+            "Abre con mandarina, caña de azúcar y notas marinas, se "
+            "despliega en un corazón de madera de cachemira, violeta y "
+            "grosella negra, y cierra en una base golosa de tiramisú, "
+            "vainilla y haba tonka.",
+
+            "Es una fragancia gourmand amaderada original y contemporánea, "
+            "ideal para otoño e invierno — perfecta para quien busca "
+            "distinguirse con un aroma fuera de lo común.",
+        ],
+        "ideal_para": "Otoño e invierno — un aroma distintivo y original.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|Scandal Intense|EDP": {
+        "slug": "jean-paul-gaultier-scandal-pour-homme-intense",
+        "meta_descripcion": (
+            "Scandal Pour Homme Intense de Jean Paul Gaultier, 100% "
+            "original, botella completa. Amaderado cuero potente — salvia "
+            "esclarea, vetiver y cuero. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Salvia esclarea"],
+        "notas_corazon": ["Vetiver"],
+        "notas_fondo": ["Cuero"],
+        "parrafos": [
+            "Scandal Pour Homme Intense construye sobre el acorde de "
+            "salvia esclarea y vetiver de la línea Scandal, enriquecido "
+            "con un acorde de cuero profundo y sensual. Abre con un golpe "
+            "revitalizante de salvia esclarea, se desarrolla en un corazón "
+            "aromático y ligeramente dulce de vetiver, y seca en un fondo "
+            "terroso donde el cuero se vuelve protagonista.",
+
+            "Es una fragancia amaderada de cuero potente y carismática, "
+            "ideal para climas fríos y uso nocturno — perfecta para quien "
+            "busca destacar la fuerza de su carácter.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — fuerza de carácter.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Jean Paul Gaultier|Le Male Elixir|Parfum": {
+        "slug": "jean-paul-gaultier-le-male-elixir",
+        "meta_descripcion": (
+            "Le Male Elixir de Jean Paul Gaultier, 100% original, botella "
+            "completa. Fougère ámbar adictivo — lavanda, miel y tabaco. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lavanda", "Menta"],
+        "notas_corazon": ["Vainilla", "Benjuí"],
+        "notas_fondo": ["Miel", "Haba tonka", "Tabaco"],
+        "parrafos": [
+            "Le Male Elixir es una de las versiones más golosas y "
+            "adictivas de la línea Le Male. Abre con lavanda y menta "
+            "frescas que rápidamente dan paso a un corazón rico de "
+            "vainilla y benjuí, y cierra en una base cálida y ligeramente "
+            "ahumada de miel, haba tonka y tabaco.",
+
+            "Es una fragancia fougère ámbar cálida y envolvente, ideal "
+            "para otoño e invierno y para la noche — perfecta para citas, "
+            "fiestas y ocasiones donde buscas un aroma dulce e "
+            "inconfundible.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — citas y fiestas.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Lancôme|La Vie Est Belle Iris Absolu|EDP": {
+        "slug": "lancome-la-vie-est-belle-iris-absolu",
+        "meta_descripcion": (
+            "La Vie Est Belle Iris Absolu de Lancôme, 100% original, "
+            "botella completa. Floral afrutado gourmand con iris — "
+            "grosella negra, higo y pachulí. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Grosella negra", "Higo", "Flor de azahar"],
+        "notas_corazon": ["Flor de azahar", "Jazmín"],
+        "notas_fondo": ["Iris", "Acorde gourmand", "Pachulí"],
+        "parrafos": [
+            "La Vie Est Belle Iris Absolu enriquece el ADN floral gourmand "
+            "de La Vie Est Belle con una concentración diez veces mayor de "
+            "iris. Abre con grosella negra, higo y flor de azahar, se "
+            "despliega en un corazón floral de azahar y jazmín, y cierra "
+            "en una base de iris pallida, acorde gourmand y pachulí.",
+
+            "Es una fragancia floral afrutada gourmand radiante, ideal "
+            "para primavera y verano, aunque su base dulce y cálida "
+            "también funciona muy bien en noches de otoño — perfecta para "
+            "quien ama La Vie Est Belle y busca una versión más elegante.",
+        ],
+        "ideal_para": "Primavera y verano, noches de otoño — versión más elegante.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Giorgio Armani|Stronger With You|Parfum": {
+        "slug": "armani-stronger-with-you",
+        "meta_descripcion": (
+            "Stronger With You Parfum de Giorgio Armani, 100% original, "
+            "botella completa. Fougère oriental cálido — pimienta rosa, "
+            "canela y cuero. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pimienta rosa", "Mandarina"],
+        "notas_corazon": ["Lavanda", "Canela", "Salvia"],
+        "notas_fondo": ["Castaña", "Vainilla", "Cuero"],
+        "parrafos": [
+            "Stronger With You Parfum lleva el romance cálido de la línea "
+            "a una versión más rica y envolvente, ideal para las noches "
+            "más frías. Abre con pimienta rosa y mandarina, se despliega "
+            "en un corazón especiado de lavanda y canela, y cierra en una "
+            "base golosa de castaña, vainilla y cuero.",
+
+            "Es una fragancia fougère oriental cálida e íntima, perfecta "
+            "para el invierno y ocasiones nocturnas — ideal para citas y "
+            "momentos especiales donde buscas un aroma envolvente y "
+            "romántico.",
+        ],
+        "ideal_para": "Invierno, noche — citas y momentos especiales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Guerlain|Vetiver|EDT": {
+        "slug": "guerlain-vetiver",
+        "meta_descripcion": (
+            "Vetiver de Guerlain, 100% original, botella completa. "
+            "Amaderado aromático clásico — bergamota, vetiver y tabaco. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Cilantro", "Limón", "Mandarina", "Neroli"],
+        "notas_corazon": ["Vetiver", "Nuez moscada", "Pimienta"],
+        "notas_fondo": ["Tabaco", "Haba tonka", "Cedro"],
+        "parrafos": [
+            "Vetiver, creada por Jean-Paul Guerlain en 1961 y relanzada en "
+            "2000, es un clásico absoluto de la perfumería masculina — "
+            "elegancia inglesa y sofisticación francesa en un solo frasco. "
+            "Abre con bergamota, cilantro y neroli frescos, se despliega "
+            "en un corazón especiado y refinado de vetiver, nuez moscada y "
+            "pimienta, y cierra en una base terrosa de tabaco, haba tonka "
+            "y cedro.",
+
+            "Es una fragancia amaderada aromática atemporal, elegante y "
+            "confiable más que llamativa — ideal para otoño e invierno, "
+            "perfecta para la oficina y ocasiones formales donde buscas un "
+            "aroma clásico y sofisticado.",
+        ],
+        "ideal_para": "Otoño e invierno — oficina y ocasiones formales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
 }
 
 
