@@ -311,6 +311,8 @@ a.card-nombre:hover { color: var(--terracota); }
 .producto-notas-detalle .notas-label { font-size: 12px; letter-spacing: 2px; color: #9C5A1E; margin-bottom: 6px; }
 .producto-info .precio-ml { font-size: 13px; letter-spacing: 1px; color: #9C5A1E; }
 .producto-info .precio-val { font-size: 22px; }
+.producto-precio-unico { text-align: left; padding: 0; background: none; font-size: 28px; }
+.producto-set-incluye { margin-top: 0.5rem; }
 
 @media (max-width: 600px) {
   .producto-detalle { padding: 1.5rem 1.25rem 3rem; }

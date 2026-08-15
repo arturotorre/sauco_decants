@@ -268,7 +268,7 @@ const PERFUMES = [
 // por WhatsApp. Fotos pendientes de agregar en imagenes/completos/<archivo>.
 const PERFUMES_COMPLETOS = [
   // ---- CABALLERO ----
-  { casa: "Paco Rabanne", categoria: "disenador", nombre: "Invictus", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/invictus.webp", alt: "Invictus", precio: "$1,950" },
+  { casa: "Paco Rabanne", categoria: "disenador", nombre: "Invictus", slug: "paco-rabanne-invictus", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/invictus.webp", alt: "Invictus", precio: "$1,950" },
   { casa: "Azzaro", categoria: "disenador", nombre: "The Most Wanted", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/the_most_wanted.webp", alt: "The Most Wanted", precio: "$1,630" },
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "King", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/king.webp", alt: "King", precio: "$1,940" },
   { casa: "Dior", categoria: "disenador", nombre: "Sauvage", concentracion: "Parfum", genero: "Caballero", imagen: "/imagenes/completos/sauvage_parfum.webp", alt: "Sauvage Parfum", precio: "$3,950" },
@@ -276,7 +276,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Valentino", categoria: "disenador", nombre: "Uomo Born In Roma Yellow Dream", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/uomo_born_in_roma_yellow_dream.webp", alt: "Uomo Born In Roma Yellow Dream", precio: "$2,649" },
   { casa: "Valentino", categoria: "disenador", nombre: "Uomo Born In Roma Green Stravaganza", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/uomo_born_in_roma_green_stravaganza.webp", alt: "Uomo Born In Roma Green Stravaganza", precio: "$2,800" },
   { casa: "Jean Paul Gaultier", categoria: "disenador", nombre: "Le Male Elixir", concentracion: "Parfum", genero: "Caballero", imagen: "/imagenes/completos/le_male_elixir.webp", alt: "Le Male Elixir", precio: "$2,422" },
-  { casa: "Dior", categoria: "disenador", nombre: "Sauvage", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/sauvage_edp.webp", alt: "Sauvage EDP", precio: "$3,494" },
+  { casa: "Dior", categoria: "disenador", nombre: "Sauvage", slug: "dior-sauvage-edp", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/sauvage_edp.webp", alt: "Sauvage EDP", precio: "$3,494" },
   { casa: "Lacoste", categoria: "disenador", nombre: "Blanc", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/blanc.webp", alt: "Blanc", precio: "$1,890" },
   { casa: "Versace", categoria: "disenador", nombre: "Pour Homme Dylan Blue", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/dylan_blue.webp", alt: "Pour Homme Dylan Blue", precio: "$1,990" },
   { casa: "Paco Rabanne", categoria: "disenador", nombre: "One Million Parfum", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/one_million_parfum.webp", alt: "One Million Parfum", precio: "$2,580" },
@@ -289,9 +289,9 @@ const PERFUMES_COMPLETOS = [
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Bad Boy Elixir", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/bad_boy_elixir.webp", alt: "Bad Boy Elixir", precio: "$2,690" },
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Bad Boy Cobalt Elixir", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/bad_boy_cobalt_elixir.webp", alt: "Bad Boy Cobalt Elixir", precio: "$2,690" },
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Bad Boy Cobalt", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/bad_boy_cobalt.webp", alt: "Bad Boy Cobalt", precio: "$2,290" },
-  { casa: "Versace", categoria: "disenador", nombre: "Eros", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/eros_edp.webp", alt: "Eros EDP", precio: "$2,490" },
+  { casa: "Versace", categoria: "disenador", nombre: "Eros", slug: "versace-eros-edp", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/eros_edp.webp", alt: "Eros EDP", precio: "$2,490" },
   { casa: "Guerlain", categoria: "disenador", nombre: "Vetiver", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/vetiver.webp", alt: "Vetiver", precio: "$2,150" },
-  { casa: "Carolina Herrera", categoria: "disenador", nombre: "Bad Boy", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/bad_boy.webp", alt: "Bad Boy", precio: "$2,100" },
+  { casa: "Carolina Herrera", categoria: "disenador", nombre: "Bad Boy", slug: "carolina-herrera-bad-boy", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/bad_boy.webp", alt: "Bad Boy", precio: "$2,100" },
   { casa: "Paco Rabanne", categoria: "disenador", nombre: "Invictus Victory", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/invictus_victory.webp", alt: "Invictus Victory", precio: "$2,560" },
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue Pour Homme", concentracion: "EDT", genero: "Caballero", imagen: "/imagenes/completos/light_blue_pour_homme.webp", alt: "Light Blue Pour Homme", precio: "$1,980" },
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue Capri In Love Pour Homme", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/light_blue_capri_in_love_pour_homme.webp", alt: "Light Blue Capri In Love Pour Homme", precio: "$1,980" },
@@ -322,7 +322,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Good Girl Blush Elixir", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/good_girl_blush_elixir.webp", alt: "Good Girl Blush Elixir", precio: "$2,990" },
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Good Girl Blush", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/good_girl_blush.webp", alt: "Good Girl Blush", precio: "$2,920" },
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Very Good Girl", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/very_good_girl.webp", alt: "Very Good Girl", precio: "$2,920" },
-  { casa: "Carolina Herrera", categoria: "disenador", nombre: "Good Girl", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/good_girl.webp", alt: "Good Girl", precio: "$2,850" },
+  { casa: "Carolina Herrera", categoria: "disenador", nombre: "Good Girl", slug: "carolina-herrera-good-girl", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/good_girl.webp", alt: "Good Girl", precio: "$2,850" },
   { casa: "Valentino", categoria: "disenador", nombre: "Donna Born In Roma Yellow Dream", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/donna_born_in_roma_yellow_dream.webp", alt: "Donna Born In Roma Yellow Dream", precio: "$2,950" },
   { casa: "Lancôme", categoria: "disenador", nombre: "La Vie Est Belle", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/la_vie_est_belle.webp", alt: "La Vie Est Belle", precio: "$2,850" },
   { casa: "Lancôme", categoria: "disenador", nombre: "La Vie Est Belle Iris Absolu", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/la_vie_est_belle_iris_absolu.webp", alt: "La Vie Est Belle Iris Absolu", precio: "$2,850" },
@@ -366,7 +366,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Le Labo", categoria: "nicho", nombre: "Thé Noir 29", concentracion: "EDP", genero: "Unisex", imagen: "/imagenes/completos/the_noir_29.webp", alt: "Thé Noir 29", precio: null },
 
   // ---- SETS DE REGALO ----
-  { casa: "Paco Rabanne", categoria: "disenador", nombre: "Lady Million Estuche 2 Piezas", concentracion: "EDP", genero: "Dama", esSet: true, contenido: ["EDP 80ml", "Loción corporal 100ml"], imagen: "/imagenes/completos/lady_million_estuche.webp", alt: "Lady Million Estuche 2 Piezas", precio: "$2,800" },
+  { casa: "Paco Rabanne", categoria: "disenador", nombre: "Lady Million Estuche 2 Piezas", slug: "paco-rabanne-lady-million-estuche", concentracion: "EDP", genero: "Dama", esSet: true, contenido: ["EDP 80ml", "Loción corporal 100ml"], imagen: "/imagenes/completos/lady_million_estuche.webp", alt: "Lady Million Estuche 2 Piezas", precio: "$2,800" },
   { casa: "Paco Rabanne", categoria: "disenador", nombre: "Olympéa Estuche 2 Piezas", concentracion: "EDP", genero: "Dama", esSet: true, contenido: ["EDP 80ml", "Loción corporal 100ml"], imagen: "/imagenes/completos/olympea_estuche.webp", alt: "Olympéa Estuche 2 Piezas", precio: "$2,700" },
   { casa: "Paco Rabanne", categoria: "disenador", nombre: "Million Gold For Her Estuche 3 Piezas", concentracion: "EDP", genero: "Dama", esSet: true, contenido: ["EDP 90ml", "Loción corporal 100ml", "Miniatura 5ml"], imagen: "/imagenes/completos/million_gold_for_her_estuche.webp", alt: "Million Gold For Her Estuche 3 Piezas", precio: "$2,800" },
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Very Good Girl Elixir Estuche 3 Piezas", concentracion: "EDP", genero: "Dama", esSet: true, contenido: ["EDP 80ml", "Loción corporal 100ml", "Miniatura 10ml"], imagen: "/imagenes/completos/very_good_girl_elixir_estuche.webp", alt: "Very Good Girl Elixir Estuche 3 Piezas", precio: "$3,250" },

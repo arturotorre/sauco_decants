@@ -541,6 +541,169 @@ CONTENIDO_DECANTS = {
     },
 }
 
+# --- Contenido editorial para Perfumes completos (botella completa) -----
+# clave: "casa|nombre|concentracion" tal como aparece en js/data.js
+# (PERFUMES_COMPLETOS) — a diferencia de los decants, el nombre NO incluye
+# la concentración, así que hace falta para desambiguar (ej. Scandal EDP
+# vs Scandal EDT). Solo se generan páginas para productos con precio fijo.
+CONTENIDO_COMPLETOS = {
+    "Carolina Herrera|Good Girl|EDP": {
+        "slug": "carolina-herrera-good-girl",
+        "meta_descripcion": (
+            "Good Girl de Carolina Herrera, 100% original, botella completa. "
+            "Floriental gourmand icónico — tuberosa, jazmín y haba tonka "
+            "tostada. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Almendra", "Café", "Bergamota", "Limón"],
+        "notas_corazon": ["Tuberosa", "Jazmín sambac", "Flor de azahar", "Rosa búlgara"],
+        "notas_fondo": ["Haba tonka", "Cacao", "Vainilla", "Sándalo"],
+        "parrafos": [
+            "Good Girl, lanzada por Carolina Herrera en 2016, es una de las "
+            "fragancias femeninas más reconocibles del mercado — su icónico "
+            "frasco en forma de zapato de tacón es tan famoso como el perfume "
+            "mismo. Abre con almendra, café y bergamota, revela un corazón "
+            "floral intenso de tuberosa y jazmín sambac, y cierra en una base "
+            "gourmand de haba tonka tostada, cacao y vainilla.",
+
+            "Es una fragancia floriental gourmand que representa el contraste "
+            "entre luz y oscuridad, dulzura y sensualidad — funciona mejor de "
+            "noche, especialmente en otoño e invierno, aunque su carácter "
+            "statement la hace perfecta para cualquier ocasión donde quieras "
+            "dejar una impresión memorable.",
+        ],
+        "ideal_para": "Noche, otoño e invierno — ocasiones donde quieres notarse.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Paco Rabanne|Invictus|EDT": {
+        "slug": "paco-rabanne-invictus",
+        "meta_descripcion": (
+            "Invictus de Paco Rabanne EDT, 100% original, botella completa. "
+            "Amaderado aromático, fresco y versátil. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Pomelo", "Mandarina", "Acorde marino"],
+        "notas_corazon": ["Laurel", "Jazmín (hedione)"],
+        "notas_fondo": ["Madera de guayaco", "Patchouli", "Musgo de roble"],
+        "parrafos": [
+            "Invictus, lanzada por Paco Rabanne en 2013, es una de las fragancias "
+            "masculinas más populares de la casa — energía, vitalidad y espíritu "
+            "de victoria en un frasco. Abre con pomelo fresco, mandarina y un "
+            "acorde marino, se desarrolla en un corazón aromático de laurel y "
+            "jazmín hedione, y cierra en una base amaderada de guayaco, patchouli "
+            "y musgo de roble.",
+
+            "Es una fragancia amaderada aromática versátil, ideal para primavera "
+            "y verano, aunque funciona bien todo el año tanto de día como de "
+            "noche — perfecta para el trabajo, salidas casuales o eventos "
+            "sociales.",
+        ],
+        "ideal_para": "Primavera y verano, día y noche — trabajo, salidas casuales, eventos.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Dior|Sauvage|EDP": {
+        "slug": "dior-sauvage-edp",
+        "meta_descripcion": (
+            "Sauvage Eau de Parfum de Dior, 100% original, botella completa. "
+            "Más intenso y cálido que la versión EDT. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Pimienta de Sichuan"],
+        "notas_corazon": ["Lavanda", "Pimienta rosa", "Geranio"],
+        "notas_fondo": ["Ambroxan", "Cedro", "Labdanum"],
+        "parrafos": [
+            "Sauvage Eau de Parfum es la versión más intensa y duradera del "
+            "clásico de Dior — mismo ADN que la versión EDT, pero más cálida y "
+            "especiada. Abre con bergamota y pimienta de Sichuan, revela un "
+            "corazón de lavanda, pimienta rosa y geranio, y cierra en una base "
+            "envolvente de ambroxan, cedro y labdanum.",
+
+            "Comparada con la EDT (más fresca y cítrica), la EDP es más dulce, "
+            "rica y magnética — ideal para clima frío, ocasiones especiales y "
+            "uso nocturno, aunque funciona bien todo el año. Tiene una fijación "
+            "excelente, de 8 a 10 horas.",
+        ],
+        "ideal_para": "Ocasiones especiales, clima frío, uso nocturno — todo el año.",
+        "duracion": "8 a 10 horas en piel, con muy buena proyección.",
+    },
+    "Versace|Eros|EDP": {
+        "slug": "versace-eros-edp",
+        "meta_descripcion": (
+            "Eros Eau de Parfum de Versace, 100% original, botella completa. "
+            "Amaderado aromático, audaz y magnético. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Menta", "Manzana verde", "Limón"],
+        "notas_corazon": ["Haba tonka", "Ambroxan", "Geranio", "Rosa"],
+        "notas_fondo": ["Vainilla", "Vetiver", "Musgo de roble", "Cedro de Atlas"],
+        "parrafos": [
+            "Eros Eau de Parfum es la versión más intensa y sensual del icónico "
+            "Eros de Versace — inspirada en el dios griego del amor y el deseo. "
+            "Abre con menta, manzana verde y limón frescos, se despliega en un "
+            "corazón dulce de haba tonka, ambroxan, geranio y rosa, y cierra en "
+            "una base cálida de vainilla, vetiver y musgo de roble.",
+
+            "Es una fragancia amaderada aromática audaz y magnética, con muy "
+            "buena proyección y fijación. Brilla especialmente en primavera y "
+            "verano por su apertura fresca, aunque su base amaderada le permite "
+            "funcionar también en otoño — ideal para citas, salidas nocturnas y "
+            "eventos especiales.",
+        ],
+        "ideal_para": "Citas, salidas nocturnas y eventos — primavera, verano y otoño.",
+        "duracion": "8+ horas en piel, con excelente proyección.",
+    },
+    "Carolina Herrera|Bad Boy|EDT": {
+        "slug": "carolina-herrera-bad-boy",
+        "meta_descripcion": (
+            "Bad Boy de Carolina Herrera EDT, 100% original, botella completa. "
+            "Oriental especiado, ahumado y seductor. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Pimienta negra", "Pimienta blanca"],
+        "notas_corazon": ["Cedro", "Salvia"],
+        "notas_fondo": ["Haba tonka", "Madera ambarada", "Cacao"],
+        "parrafos": [
+            "Bad Boy, lanzada por Carolina Herrera en 2019, es una fragancia "
+            "oriental especiada con una personalidad seductora y ligeramente "
+            "rebelde. Abre con bergamota y un dúo de pimienta negra y blanca, se "
+            "desarrolla en un corazón de cedro y salvia, y cierra en una base "
+            "cálida de haba tonka, madera ambarada y cacao.",
+
+            "Es una fragancia especiada, ahumada y sensual, ideal para uso "
+            "nocturno — funciona muy bien en otoño e invierno, aunque también se "
+            "puede usar de día. Perfecta para salidas, citas y ocasiones donde "
+            "buscas proyectar confianza.",
+        ],
+        "ideal_para": "Noche, otoño e invierno — salidas, citas, ocasiones para destacar.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Lady Million Estuche 2 Piezas|EDP": {
+        "slug": "paco-rabanne-lady-million-estuche",
+        "meta_descripcion": (
+            "Set de regalo Lady Million de Paco Rabanne (EDP 80ml + loción "
+            "corporal 100ml), 100% original. Floral afrutado, opulento y "
+            "festivo. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Frambuesa", "Limón de Amalfi", "Neroli"],
+        "notas_corazon": ["Jazmín", "Flor de azahar", "Gardenia"],
+        "notas_fondo": ["Miel", "Patchouli", "Ámbar"],
+        "parrafos": [
+            "Lady Million, lanzada por Paco Rabanne en 2010, es una fragancia "
+            "floral afrutada opulenta y sensual, con un frasco icónico en forma "
+            "de anillo dorado. Abre con frambuesa, limón de Amalfi y neroli "
+            "chispeantes, se despliega en un corazón floral lechoso de jazmín, "
+            "flor de azahar y gardenia, y cierra en una base cálida de miel, "
+            "patchouli y ámbar.",
+
+            "Es una fragancia festiva y sensual, ideal para la noche — perfecta "
+            "para fiestas, eventos formales, citas y ocasiones especiales. Este "
+            "set incluye el Eau de Parfum de 80ml más loción corporal de 100ml, "
+            "ideal para regalo.",
+        ],
+        "ideal_para": "Noche — fiestas, eventos formales, citas, ocasiones especiales.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+}
+
 
 def leer_catalogo_propio():
     """Igual que en verificar_precios.py: no se puede eval() directo porque
@@ -564,6 +727,80 @@ def precios_html(precios):
             f'<span class="precio-val">{precios.get(ml, "")}</span></div>'
         )
     return "".join(filas)
+
+
+NAV_HTML = """<nav class="nav-lateral" id="nav-lateral">
+  <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="/#home" class="nav-marca">Saúco</a>
+  <ul class="nav-links">
+    <li class="nav-item-decants" id="nav-item-decants">
+      <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">
+        Decants
+        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-submenu" id="nav-decants-submenu">
+        <li><a href="/#catalogo/todos" data-genero="todos">Todos</a></li>
+        <li><a href="/#catalogo/hombre" data-genero="hombre">Hombre</a></li>
+        <li><a href="/#catalogo/mujer" data-genero="mujer">Mujer</a></li>
+      </ul>
+    </li>
+    <li class="nav-item-completos" id="nav-item-completos">
+      <button type="button" class="nav-desplegable" id="nav-completos-toggle" aria-expanded="false" aria-controls="nav-completos-submenu">
+        Perfumes completos
+        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
+      </button>
+      <ul class="nav-submenu" id="nav-completos-submenu">
+        <li><a href="/#completos/todos" data-genero="completos-todos">Todos</a></li>
+        <li><a href="/#completos/dama" data-genero="completos-dama">Dama</a></li>
+        <li><a href="/#completos/caballero" data-genero="completos-caballero">Caballero</a></li>
+        <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>"""
+
+CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
+  <span aria-hidden="true">🛒</span>
+  <span id="carrito-contador" hidden>0</span>
+</button>
+
+<div id="carrito-overlay" hidden></div>
+<aside id="carrito-panel" hidden aria-label="Carrito de compras">
+  <div class="carrito-panel-header">
+    <h2>Tu carrito</h2>
+    <button class="carrito-cerrar" aria-label="Cerrar carrito">×</button>
+  </div>
+  <div id="carrito-items"></div>
+  <div class="carrito-panel-footer">
+    <div id="carrito-total"></div>
+    <button id="carrito-checkout-whatsapp">Confirmar Pedido</button>
+  </div>
+</aside>
+
+<div id="selector-tamano" hidden></div>
+
+<div class="footer-global">
+  <div class="footer-nombre">Saúco</div>
+  <div class="footer-linea"></div>
+  <div class="footer-linea2"></div>
+  <div class="footer-sub">Decants · Monterrey · Envíos a todo México</div>
+  <div class="footer-contacto">Escríbenos por WhatsApp o DM de Instagram para hacer tu pedido</div>
+  <div class="footer-redes">
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Facebook</span><span class="red-handle-dark"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Saúco Decants</a></span></div>
+    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">WhatsApp</span><span class="red-handle-dark"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
+  </div>
+</div>
+
+<script src="/js/data.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/carrito.js"></script>
+</body>
+</html>
+"""
 
 
 def render_pagina(perfume, contenido):
@@ -640,37 +877,7 @@ def render_pagina(perfume, contenido):
 </head>
 <body>
 
-<nav class="nav-lateral" id="nav-lateral">
-  <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="/#home" class="nav-marca">Saúco</a>
-  <ul class="nav-links">
-    <li class="nav-item-decants" id="nav-item-decants">
-      <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">
-        Decants
-        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
-      </button>
-      <ul class="nav-submenu" id="nav-decants-submenu">
-        <li><a href="/#catalogo/todos" data-genero="todos">Todos</a></li>
-        <li><a href="/#catalogo/hombre" data-genero="hombre">Hombre</a></li>
-        <li><a href="/#catalogo/mujer" data-genero="mujer">Mujer</a></li>
-      </ul>
-    </li>
-    <li class="nav-item-completos" id="nav-item-completos">
-      <button type="button" class="nav-desplegable" id="nav-completos-toggle" aria-expanded="false" aria-controls="nav-completos-submenu">
-        Perfumes completos
-        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
-      </button>
-      <ul class="nav-submenu" id="nav-completos-submenu">
-        <li><a href="/#completos/todos" data-genero="completos-todos">Todos</a></li>
-        <li><a href="/#completos/dama" data-genero="completos-dama">Dama</a></li>
-        <li><a href="/#completos/caballero" data-genero="completos-caballero">Caballero</a></li>
-        <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+{NAV_HTML}
 
 <div class="main-content producto-detalle">
   <nav class="breadcrumb" aria-label="Ruta de navegación">
@@ -719,55 +926,147 @@ def render_pagina(perfume, contenido):
   </div>
 </div>
 
-<button id="carrito-boton" aria-label="Ver carrito">
-  <span aria-hidden="true">🛒</span>
-  <span id="carrito-contador" hidden>0</span>
-</button>
+{CARRITO_Y_FOOTER_HTML}"""
 
-<div id="carrito-overlay" hidden></div>
-<aside id="carrito-panel" hidden aria-label="Carrito de compras">
-  <div class="carrito-panel-header">
-    <h2>Tu carrito</h2>
-    <button class="carrito-cerrar" aria-label="Cerrar carrito">×</button>
+
+def render_pagina_completo(perfume, contenido):
+    casa = perfume["casa"]
+    nombre_mostrar = contenido.get("nombre_mostrar") or perfume["nombre"]
+    genero = perfume["genero"]
+    concentracion = perfume["concentracion"]
+    categoria = perfume["categoria"]
+    categoria_label = {"nicho": "Nicho", "disenador": "Diseñador", "arabe": "Árabe"}.get(categoria, "Diseñador")
+    dot = "dot-nicho" if categoria == "nicho" else "dot-disenador"
+    es_set = bool(perfume.get("esSet"))
+    imagen_rel = perfume["imagen"]
+    titulo = f"{casa} {nombre_mostrar} {concentracion} — Perfume {genero} | Saúco Decants"
+    meta_desc = contenido["meta_descripcion"]
+    url = f"https://saucodecants.com/completos/{contenido['slug']}/"
+    alt_img = f"{casa} {nombre_mostrar} {concentracion} - perfume {'set de regalo' if es_set else 'de botella completa'}"
+
+    parrafos_html = "".join(f"<p>{p}</p>" for p in contenido["parrafos"])
+
+    precio_num = perfume["precio"].replace("$", "").replace(",", "")
+    oferta = f'''  "offers": {{
+    "@type": "Offer",
+    "price": "{precio_num}",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "{url}"
+  }}'''
+
+    genero_linea = f"{concentracion} · {genero}" + (" · Set de regalo" if es_set else "")
+    contenido_set_html = ""
+    if es_set and perfume.get("contenido"):
+        tags = "".join(f'<span class="nota-tag">{c}</span>' for c in perfume["contenido"])
+        contenido_set_html = f'''
+      <div class="producto-set-incluye">
+        <span class="notas-label">Incluye</span>
+        <div class="notas-tags">{tags}</div>
+      </div>'''
+
+    return f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>{titulo}</title>
+<meta name="description" content="{meta_desc}">
+<link rel="canonical" href="{url}">
+<meta name="theme-color" content="#3D2314">
+
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Saúco Decants">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="{url}">
+<meta property="og:title" content="{titulo}">
+<meta property="og:description" content="{meta_desc}">
+<meta property="og:image" content="https://saucodecants.com{perfume['imagen']}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{titulo}">
+<meta name="twitter:description" content="{meta_desc}">
+<meta name="twitter:image" content="https://saucodecants.com{perfume['imagen']}">
+
+<link rel="icon" type="image/png" href="/imagenes/Saúco_2.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="/css/styles.css" rel="stylesheet">
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{casa} {nombre_mostrar} {concentracion}",
+  "brand": {{ "@type": "Brand", "name": "{casa}" }},
+  "description": "{meta_desc}",
+  "image": "https://saucodecants.com{perfume['imagen']}",
+  "url": "{url}",
+{oferta}
+}}
+</script>
+</head>
+<body>
+
+{NAV_HTML}
+
+<div class="main-content producto-detalle">
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <a href="/">Inicio</a> › <a href="/#completos/todos">Perfumes completos</a> › <span>{nombre_mostrar}</span>
+  </nav>
+
+  <div class="producto-hero">
+    <div class="producto-foto card-foto">
+      <img src="{imagen_rel}" alt="{alt_img}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="foto-label" style="display:none">Sin imagen</span>
+      <div class="card-tier-dot {dot}"></div>
+    </div>
+    <div class="producto-info">
+      <div class="card-casa">{casa}</div>
+      <h1 class="producto-nombre">{nombre_mostrar}</h1>
+      <div class="card-genero">{genero_linea}</div>{contenido_set_html}
+      <div class="card-divider"></div>
+      <div class="card-precio-unico producto-precio-unico">{perfume['precio']}</div>
+      <button class="btn-agregar btn-agregar-completo producto-btn-agregar" data-casa="{casa}" data-nombre="{perfume['nombre']}" data-concentracion="{concentracion}" aria-label="Agregar {nombre_mostrar} al carrito">
+        <span class="btn-agregar-texto">Agregar al carrito</span>
+        <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
+      </button>
+      <div class="card-footer-text">{categoria_label} · Original</div>
+    </div>
   </div>
-  <div id="carrito-items"></div>
-  <div class="carrito-panel-footer">
-    <div id="carrito-total"></div>
-    <button id="carrito-checkout-whatsapp">Confirmar Pedido</button>
-  </div>
-</aside>
 
-<div id="selector-tamano" hidden></div>
+  <div class="producto-editorial">
+    <h2>Sobre esta fragancia</h2>
+    {parrafos_html}
 
-<div class="footer-global">
-  <div class="footer-nombre">Saúco</div>
-  <div class="footer-linea"></div>
-  <div class="footer-linea2"></div>
-  <div class="footer-sub">Decants · Monterrey · Envíos a todo México</div>
-  <div class="footer-contacto">Escríbenos por WhatsApp o DM de Instagram para hacer tu pedido</div>
-  <div class="footer-redes">
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Facebook</span><span class="red-handle-dark"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Saúco Decants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">WhatsApp</span><span class="red-handle-dark"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
+    <div class="producto-notas-detalle">
+      <div><span class="notas-label">Notas de salida</span><div class="notas-tags">{notas_tags_html(contenido["notas_salida"])}</div></div>
+      <div><span class="notas-label">Notas de corazón</span><div class="notas-tags">{notas_tags_html(contenido["notas_corazon"])}</div></div>
+      <div><span class="notas-label">Notas de fondo</span><div class="notas-tags">{notas_tags_html(contenido["notas_fondo"])}</div></div>
+    </div>
+
+    <div class="producto-datos">
+      <div><strong>Ideal para</strong>{contenido["ideal_para"]}</div>
+      <div><strong>Duración</strong>{contenido["duracion"]}</div>
+    </div>
+
+    <div class="producto-volver">
+      <a href="/#completos/todos">← Ver todos los perfumes completos</a>
+    </div>
   </div>
 </div>
 
-<script src="/js/data.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/carrito.js"></script>
-</body>
-</html>
-"""
+{CARRITO_Y_FOOTER_HTML}"""
 
 
-def generar_sitemap(slugs):
+def generar_sitemap(slugs, slugs_completos=None):
     """Reescribe sitemap.xml con la home + una entrada por cada página de
     producto generada, para que quede sincronizado automáticamente en cada
     corrida en vez de mantenerse a mano y quedar desactualizado."""
-    urls = ["https://saucodecants.com/"] + [
-        f"https://saucodecants.com/decants/{slug}/" for slug in sorted(slugs)
-    ]
+    urls = (
+        ["https://saucodecants.com/"]
+        + [f"https://saucodecants.com/decants/{slug}/" for slug in sorted(slugs)]
+        + [f"https://saucodecants.com/completos/{slug}/" for slug in sorted(slugs_completos or [])]
+    )
     entradas = "\n".join(
         f'  <url>\n    <loc>{u}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>{"1.0" if u.endswith(".com/") else "0.8"}</priority>\n  </url>'
         for u in urls
@@ -784,13 +1083,16 @@ def generar_sitemap(slugs):
 def main():
     catalogo = leer_catalogo_propio()
     perfumes_por_clave = {f"{p['casa']}|{p['nombre']}": p for p in catalogo["PERFUMES"]}
+    completos_por_clave = {
+        f"{p['casa']}|{p['nombre']}|{p['concentracion']}": p for p in catalogo["PERFUMES_COMPLETOS"]
+    }
 
     generados = []
     slugs = []
     for clave, contenido in CONTENIDO_DECANTS.items():
         perfume = perfumes_por_clave.get(clave)
         if not perfume:
-            print(f"  ⚠ no encontrado en js/data.js, se omite: {clave}")
+            print(f"  ⚠ no encontrado en js/data.js (PERFUMES), se omite: {clave}")
             continue
         html = render_pagina(perfume, contenido)
         destino = RAIZ / "decants" / contenido["slug"] / "index.html"
@@ -799,12 +1101,32 @@ def main():
         generados.append(destino.relative_to(RAIZ))
         slugs.append(contenido["slug"])
 
-    generar_sitemap(slugs)
+    generados_completos = []
+    slugs_completos = []
+    for clave, contenido in CONTENIDO_COMPLETOS.items():
+        perfume = completos_por_clave.get(clave)
+        if not perfume:
+            print(f"  ⚠ no encontrado en js/data.js (PERFUMES_COMPLETOS), se omite: {clave}")
+            continue
+        if not perfume.get("precio"):
+            print(f"  ⚠ sin precio fijo, se omite por ahora: {clave}")
+            continue
+        html = render_pagina_completo(perfume, contenido)
+        destino = RAIZ / "completos" / contenido["slug"] / "index.html"
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        destino.write_text(html, encoding="utf-8")
+        generados_completos.append(destino.relative_to(RAIZ))
+        slugs_completos.append(contenido["slug"])
 
-    print(f"Generadas {len(generados)} página(s):")
+    generar_sitemap(slugs, slugs_completos)
+
+    print(f"Generadas {len(generados)} página(s) de decants:")
     for g in generados:
         print(f"  - {g}")
-    print(f"sitemap.xml actualizado con {len(slugs) + 1} URLs.")
+    print(f"Generadas {len(generados_completos)} página(s) de perfumes completos:")
+    for g in generados_completos:
+        print(f"  - {g}")
+    print(f"sitemap.xml actualizado con {len(slugs) + len(slugs_completos) + 1} URLs.")
 
 
 if __name__ == "__main__":

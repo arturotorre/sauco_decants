@@ -102,16 +102,25 @@ function completoCardHTML(p) {
         <div class="notas-tags">${p.contenido.map(c => `<span class="nota-tag">${c}</span>`).join('')}</div>
       </div>` : '';
 
+  const urlProducto = p.slug ? `/completos/${p.slug}/` : null;
+  const fotoImg = `<img src="${p.imagen}" alt="${p.casa} ${p.alt} ${p.concentracion} - perfume ${p.esSet ? 'set de regalo' : 'de botella completa'}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="foto-label" style="display:none">Sin imagen</span>`;
+  const fotoHTML = urlProducto
+    ? `<a class="card-foto-link" href="${urlProducto}" aria-label="Ver detalles de ${p.nombre}">${fotoImg}</a>`
+    : fotoImg;
+  const nombreHTML = urlProducto
+    ? `<a class="card-nombre" href="${urlProducto}">${p.nombre}</a>`
+    : `<div class="card-nombre">${p.nombre}</div>`;
+
   return `
   <div class="card card-completo">
     <div class="card-foto">
-      <img src="${p.imagen}" alt="${p.casa} ${p.alt} ${p.concentracion} - perfume ${p.esSet ? 'set de regalo' : 'de botella completa'}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="foto-label" style="display:none">Sin imagen</span>
+      ${fotoHTML}
     </div>
     <div class="card-info">
       <div class="card-casa">${p.casa}</div>
       <div class="card-nombre-fila">
-        <div class="card-nombre">${p.nombre}</div>
+        ${nombreHTML}
         ${boton}
       </div>
       <div class="card-genero">${p.concentracion} · ${p.genero}${p.esSet ? ' · Set de regalo' : ''}</div>
