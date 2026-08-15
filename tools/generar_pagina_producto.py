@@ -53,6 +53,104 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Uso diario, citas y salidas nocturnas — todo el año, especialmente otoño e invierno.",
         "duracion": "6 a 8 horas en piel, con estela moderada.",
     },
+    "Valentino|Uomo Born in Roma Intense EDP": {
+        "slug": "valentino-uomo-born-in-roma-intense",
+        "meta_descripcion": (
+            "Decant de Uomo Born In Roma Intense de Valentino (3ml, 5ml, 10ml), 100% "
+            "original. Cálido, especiado y amaderado — pensado para la noche. Envíos "
+            "a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Vainilla", "Jengibre"],
+        "notas_corazon": ["Lavanda"],
+        "notas_fondo": ["Vetiver ahumado"],
+        "parrafos": [
+            "Uomo Born In Roma Intense es la versión más intensa y nocturna de la línea "
+            "Born In Roma de Valentino, lanzada en 2023. Abre con una infusión de "
+            "vainilla y jengibre que sorprende por su dulzor especiado, se asienta en un "
+            "corazón de lavanda vibrante, y cierra con vetiver ahumado — una combinación "
+            "cálida, especiada y profundamente amaderada.",
+
+            "Es una fragancia intensa, pensada para la noche: perfecta para salidas "
+            "nocturnas y ocasiones especiales donde quieres dejar una estela notable. "
+            "Tiene gran fijación y proyección, especialmente en las primeras horas.",
+        ],
+        "ideal_para": "Salidas nocturnas y ocasiones especiales — otoño e invierno.",
+        "duracion": "8 a 10 horas en piel, con proyección fuerte.",
+    },
+    "Chanel|Chance Eau Tendre EDP": {
+        "slug": "chanel-chance-eau-tendre",
+        "meta_descripcion": (
+            "Decant de Chance Eau Tendre de Chanel (3ml, 5ml, 10ml), 100% original. "
+            "Floral afrutado, fresco y romántico — ideal para el día a día. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Membrillo", "Pomelo"],
+        "notas_corazon": ["Rosa", "Jazmín"],
+        "notas_fondo": ["Almizcle blanco"],
+        "parrafos": [
+            "Chance Eau Tendre es la versión más suave y luminosa de la familia Chance "
+            "de Chanel, lanzada en 2010 (con una versión Eau de Parfum en 2019) por el "
+            "perfumista Olivier Polge. Abre con membrillo y pomelo frescos, se suaviza "
+            "en un corazón floral de rosa y jazmín, y cierra en un fondo de almizcle "
+            "blanco limpio y delicado.",
+
+            "\"Eau Tendre\" — agua tierna — describe bien su carácter: es una fragancia "
+            "floral afrutada, fresca y romántica, ideal para el día a día. Funciona muy "
+            "bien en primavera y verano, para un brunch, una primera cita o cualquier "
+            "ocasión ligera.",
+        ],
+        "ideal_para": "Uso diario, primavera y verano — brunch, primeras citas, oficina.",
+        "duracion": "5 a 7 horas en piel, estela discreta y fresca.",
+    },
+    "Prada|Paradoxe Intense EDP": {
+        "slug": "prada-paradoxe-intense",
+        "meta_descripcion": (
+            "Decant de Paradoxe Intense de Prada (3ml, 5ml, 10ml), 100% original. "
+            "Floral ambarado, cálido y sensual — de día o de noche. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Neroli", "Pera"],
+        "notas_corazon": ["Neroli", "Jazmín", "Musgo"],
+        "notas_fondo": ["Ámbar", "Vainilla", "Almizcle blanco"],
+        "parrafos": [
+            "Paradoxe Intense es la versión nocturna y más profunda del Paradoxe "
+            "original de Prada, lanzada en 2023. Abre con bergamota, neroli y pera, se "
+            "despliega en un corazón floral de jazmín y neroli realzado con un toque de "
+            "musgo, y cierra en una base cálida de ámbar, vainilla y almizcle blanco.",
+
+            "Es una fragancia floral ambarada más dulce, sensual e intensa que la "
+            "versión original, con muy buena fijación. Funciona tanto de día como de "
+            "noche, y es una gran opción para reuniones importantes, citas románticas "
+            "o eventos nocturnos donde buscas dejar huella.",
+        ],
+        "ideal_para": "Día o noche — citas, eventos y reuniones importantes.",
+        "duracion": "6+ horas en piel, buena proyección.",
+    },
+    "Valentino|Donna Born in Roma Intense EDP": {
+        "slug": "valentino-donna-born-in-roma-intense",
+        "meta_descripcion": (
+            "Decant de Donna Born In Roma Intense de Valentino (3ml, 5ml, 10ml), 100% "
+            "original. Floral ambarado, magnético e intenso. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Grosella negra", "Bergamota"],
+        "notas_corazon": ["Té de jazmín", "Jazmín sambac"],
+        "notas_fondo": ["Vainilla bourbon", "Ámbar", "Benjuí"],
+        "parrafos": [
+            "Donna Born In Roma Intense es la versión más intensa de la línea femenina "
+            "Born In Roma de Valentino, lanzada en 2023. Abre con grosella negra y "
+            "bergamota frescas junto a vainilla bourbon y ámbar, revela un corazón "
+            "floral de jazmín (té de jazmín y jazmín sambac), y cierra en una base "
+            "envolvente de benjuí, vainilla bourbon y ámbar gris.",
+
+            "Es una fragancia floral ambarada magnética, pensada para personalidades "
+            "intensas y apasionadas. Aunque se puede usar todo el año, su carácter "
+            "cálido brilla especialmente en otoño e invierno — ideal para salidas, "
+            "citas románticas y eventos formales.",
+        ],
+        "ideal_para": "Salidas, citas y eventos formales — especialmente otoño e invierno.",
+        "duracion": "Larga duración, buena proyección.",
+    },
 }
 
 
