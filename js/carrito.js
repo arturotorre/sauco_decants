@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
   actualizarBadge();
 
   const formCotizar = document.getElementById('form-cotizar');
-  formCotizar.addEventListener('submit', (e) => {
+  formCotizar?.addEventListener('submit', (e) => {
     e.preventDefault();
     const nombrePerfume = document.getElementById('cotizar-nombre').value.trim();
     const marca = document.getElementById('cotizar-marca').value.trim() || 'N/A';

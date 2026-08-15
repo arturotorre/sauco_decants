@@ -270,3 +270,29 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
   .cards-grid { break-before: avoid; page-break-before: avoid; }
 }
 @media (max-width: 400px) { .cards-grid { grid-template-columns: 1fr; } }
+
+/* ===== PÁGINA DE PRODUCTO (detalle SEO) ===== */
+.producto-detalle { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+.breadcrumb { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 1px; color: #9B7B6A; margin-bottom: 2rem; }
+.breadcrumb a { color: var(--cobre); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.producto-hero { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.producto-foto { flex: 1 1 320px; max-width: 380px; }
+.producto-info { flex: 1 1 320px; display: flex; flex-direction: column; gap: 0.75rem; }
+.producto-nombre { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 38px; color: var(--chocolate); }
+.producto-btn-agregar { align-self: flex-start; margin-top: 0.5rem; }
+.producto-editorial { max-width: 700px; }
+.producto-editorial h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 24px; color: var(--chocolate); margin-bottom: 1rem; }
+.producto-editorial p { font-family: 'Jost', sans-serif; font-size: 14px; line-height: 1.8; color: var(--chocolate); margin-bottom: 1.25rem; }
+.producto-notas-detalle { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0; }
+.producto-notas-detalle > div { flex: 1 1 160px; }
+.producto-datos { display: flex; flex-direction: column; gap: 0.6rem; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--chocolate); margin: 1.5rem 0; }
+.producto-datos strong { display: block; color: var(--cobre); font-weight: 400; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; margin-bottom: 2px; }
+.producto-volver { margin-top: 2.5rem; }
+.producto-volver a { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 1px; color: var(--terracota); text-decoration: none; }
+.producto-volver a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .producto-detalle { padding: 1.5rem 1.25rem 3rem; }
+  .producto-nombre { font-size: 30px; }
+  .producto-hero { gap: 1.5rem; }
+}

@@ -135,6 +135,7 @@ function completosMarcasDisponibles() {
 
 function renderFiltroMarcaCompletos() {
   const cont = document.getElementById('completos-filtro-marca');
+  if (!cont) return;
   const marcas = completosMarcasDisponibles();
   cont.innerHTML = ['<button type="button" class="completos-chip completos-chip-marca activo" data-marca="todas">Todas las marcas</button>']
     .concat(marcas.map(m => `<button type="button" class="completos-chip completos-chip-marca" data-marca="${m}">${m}</button>`))
@@ -231,6 +232,7 @@ function actualizarContadorFiltrosCompletos() {
 
 function renderCompletos() {
   const contenedor = document.getElementById('completos-grid');
+  if (!contenedor) return;
   const perfumes = ordenarCompletos(PERFUMES_COMPLETOS.filter(p => {
     const okGenero = completosGenero === 'todos' || p.genero === completosGenero || p.genero === 'Unisex';
     return okGenero && completosCoincide(p);
@@ -335,9 +337,11 @@ function actualizarTituloPagina(seccion, filtro) {
 }
 
 function route() {
+  const vistaHome = document.getElementById('vista-home');
+  if (!vistaHome) return; // esta página no es la SPA (ej. una página de producto standalone)
+
   const hash = location.hash.replace(/^#\/?/, '');
   const [seccion, filtro] = hash.split('/');
-  const vistaHome = document.getElementById('vista-home');
   const vistaCatalogo = document.getElementById('vista-catalogo');
   const vistaCompletos = document.getElementById('vista-completos');
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -370,18 +374,22 @@ function route() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Nota: main.js se incluye tanto en la SPA (index.html) como en páginas
+  // de producto standalone (ej. /decants/<slug>/) que reutilizan la misma
+  // nav pero no tienen los elementos del catálogo/completos. Por eso cada
+  // listener de abajo se engancha solo si su elemento existe en esta página.
   renderCarrusel();
   renderFiltroMarcaCompletos();
   renderCompletos();
   route();
 
-  document.getElementById('nav-toggle').addEventListener('click', () => {
+  document.getElementById('nav-toggle')?.addEventListener('click', () => {
     const nav = document.getElementById('nav-lateral');
     const abierto = nav.classList.toggle('nav-abierto');
     document.getElementById('nav-toggle').setAttribute('aria-expanded', String(abierto));
   });
 
-  document.getElementById('nav-decants-toggle').addEventListener('click', () => {
+  document.getElementById('nav-decants-toggle')?.addEventListener('click', () => {
     decantsAbierto = !decantsAbierto;
     document.getElementById('nav-item-decants').classList.toggle('abierto', decantsAbierto);
     document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', String(decantsAbierto));
@@ -390,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', 'false');
   });
 
-  document.getElementById('nav-completos-toggle').addEventListener('click', () => {
+  document.getElementById('nav-completos-toggle')?.addEventListener('click', () => {
     completosNavAbierto = !completosNavAbierto;
     document.getElementById('nav-item-completos').classList.toggle('abierto', completosNavAbierto);
     document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', String(completosNavAbierto));
@@ -399,21 +407,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', 'false');
   });
 
-  document.getElementById('cotizar-toggle').addEventListener('click', () => {
+  document.getElementById('cotizar-toggle')?.addEventListener('click', () => {
     const panel = document.getElementById('cotizar-panel');
     const abrir = panel.hidden;
     panel.hidden = !abrir;
     document.getElementById('cotizar-toggle').setAttribute('aria-expanded', String(abrir));
   });
 
-  document.getElementById('completos-filtro-genero').addEventListener('click', (e) => {
+  document.getElementById('completos-filtro-genero')?.addEventListener('click', (e) => {
     const btn = e.target.closest('.completos-chip');
     if (!btn) return;
     establecerGeneroCompletos(btn.dataset.filtroGenero);
     renderCompletos();
   });
 
-  document.getElementById('completos-filtro-categoria').addEventListener('click', (e) => {
+  document.getElementById('completos-filtro-categoria')?.addEventListener('click', (e) => {
     const btn = e.target.closest('.completos-chip');
     if (!btn) return;
     completosCategoria = btn.dataset.categoria;
@@ -423,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCompletos();
   });
 
-  document.getElementById('completos-filtro-marca').addEventListener('click', (e) => {
+  document.getElementById('completos-filtro-marca')?.addEventListener('click', (e) => {
     const btn = e.target.closest('.completos-chip');
     if (!btn) return;
     completosMarca = btn.dataset.marca;
@@ -431,17 +439,17 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCompletos();
   });
 
-  document.getElementById('completos-busqueda').addEventListener('input', (e) => {
+  document.getElementById('completos-busqueda')?.addEventListener('input', (e) => {
     completosBusqueda = e.target.value;
     renderCompletos();
   });
 
-  document.getElementById('completos-filtro-set').addEventListener('click', () => {
+  document.getElementById('completos-filtro-set')?.addEventListener('click', () => {
     establecerSetsCompletos(!completosSoloSets);
     renderCompletos();
   });
 
-  document.getElementById('completos-orden-panel').addEventListener('click', (e) => {
+  document.getElementById('completos-orden-panel')?.addEventListener('click', (e) => {
     const btn = e.target.closest('.completos-orden-opcion');
     if (!btn) return;
     completosOrden = btn.dataset.orden;
@@ -454,6 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
     [['completos-filtros-panel', 'completos-filtros-toggle'], ['completos-orden-panel', 'completos-orden-toggle']].forEach(([panelId, toggleId]) => {
       if (panelId === exceptoId) return;
       const panel = document.getElementById(panelId);
+      if (!panel) return;
       if (!panel.hidden) {
         panel.hidden = true;
         document.getElementById(toggleId).setAttribute('aria-expanded', 'false');
@@ -461,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.getElementById('completos-filtros-toggle').addEventListener('click', (e) => {
+  document.getElementById('completos-filtros-toggle')?.addEventListener('click', (e) => {
     e.stopPropagation();
     const panel = document.getElementById('completos-filtros-panel');
     const abrir = panel.hidden;
@@ -470,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.currentTarget.setAttribute('aria-expanded', String(abrir));
   });
 
-  document.getElementById('completos-orden-toggle').addEventListener('click', (e) => {
+  document.getElementById('completos-orden-toggle')?.addEventListener('click', (e) => {
     e.stopPropagation();
     const panel = document.getElementById('completos-orden-panel');
     const abrir = panel.hidden;
