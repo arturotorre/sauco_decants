@@ -859,6 +859,518 @@ CONTENIDO_COMPLETOS = {
         "ideal_para": "Todo el año, día y noche — uso diario y ocasiones especiales.",
         "duracion": "6 a 8 horas en piel.",
     },
+    "Carolina Herrera|Bad Boy Cobalt|EDP": {
+        "slug": "carolina-herrera-bad-boy-cobalt",
+        "meta_descripcion": (
+            "Bad Boy Cobalt de Carolina Herrera, 100% original, botella "
+            "completa. Amaderado aromático audaz — pimienta rosa, ciruela "
+            "y trufa. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pimienta rosa", "Lavanda"],
+        "notas_corazon": ["Geranio", "Ciruela", "Trufa"],
+        "notas_fondo": ["Vetiver", "Cedro", "Haba tonka"],
+        "parrafos": [
+            "Bad Boy Cobalt reinterpreta el icónico Bad Boy de Carolina "
+            "Herrera con un carácter más mineral y audaz, en un frasco azul "
+            "cobalto. Abre con pimienta rosa y lavanda, revela un corazón "
+            "floral-masculino de geranio y ciruela anclado por un acorde de "
+            "trufa ahumada, y cierra en una base de vetiver, cedro y haba "
+            "tonka.",
+
+            "Es una fragancia amaderada aromática versátil, con carácter "
+            "bold y sofisticado a la vez — funciona igual de bien de día "
+            "que de noche, ideal para cualquier época del año.",
+        ],
+        "ideal_para": "Todo el año, día y noche — versátil para cualquier ocasión.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Carolina Herrera|Bad Boy Elixir|EDP": {
+        "slug": "carolina-herrera-bad-boy-elixir",
+        "meta_descripcion": (
+            "Bad Boy Elixir de Carolina Herrera, 100% original, botella "
+            "completa. Oriental amaderado intenso — cuero, iris y "
+            "franquincienso. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Salvia", "Lavanda"],
+        "notas_corazon": ["Cuero", "Iris"],
+        "notas_fondo": ["Cedro", "Franquincienso", "Haba tonka"],
+        "parrafos": [
+            "Bad Boy Elixir lleva el ADN de Bad Boy hacia una versión más "
+            "concentrada e intensa, con un cuero limpio y magnético en el "
+            "centro de la composición. Abre con salvia y lavanda, se "
+            "despliega en un corazón de cuero e iris, y cierra en una base "
+            "cálida de cedro, franquincienso y haba tonka.",
+
+            "Es una fragancia oriental amaderada de gran fijación, ideal "
+            "para climas fríos y uso nocturno — perfecta para quien busca "
+            "una versión más fuerte y sofisticada del Bad Boy original.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — versión intensa y sofisticada.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Carolina Herrera|Good Girl Blush|EDP": {
+        "slug": "carolina-herrera-good-girl-blush",
+        "meta_descripcion": (
+            "Good Girl Blush de Carolina Herrera, 100% original, botella "
+            "completa. Floral chipre luminoso — peonía, ylang ylang y "
+            "vainilla. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Almendra amarga"],
+        "notas_corazon": ["Peonía", "Ylang ylang"],
+        "notas_fondo": ["Vainilla", "Cumarina"],
+        "parrafos": [
+            "Good Girl Blush reinterpreta el universo Good Girl con una "
+            "versión más ligera, radiante y polvorienta, en un frasco rosa "
+            "pastel. Abre con bergamota y almendra amarga, revela un "
+            "corazón floral de peonía y ylang ylang, y cierra en una base "
+            "cálida de vainilla y cumarina.",
+
+            "Es una fragancia floral chipre luminosa, ideal para primavera "
+            "y verano, aunque su fondo cálido la hace funcionar todo el "
+            "año — perfecta para el día a día con un toque femenino y "
+            "sofisticado.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — con un toque sofisticado.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Carolina Herrera|Very Good Girl|EDP": {
+        "slug": "carolina-herrera-very-good-girl",
+        "meta_descripcion": (
+            "Very Good Girl de Carolina Herrera, 100% original, botella "
+            "completa. Floral afrutado sensual — lichi, rosa y vainilla. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lichi", "Grosella roja"],
+        "notas_corazon": ["Rosa"],
+        "notas_fondo": ["Vainilla", "Vetiver"],
+        "parrafos": [
+            "Very Good Girl es una versión más frutal y sensual dentro del "
+            "universo Good Girl de Carolina Herrera. Abre con lichi y "
+            "grosella roja jugosos, se despliega en un corazón de rosa, y "
+            "cierra en una base cálida de vainilla y vetiver.",
+
+            "Es una fragancia floral afrutada versátil, dulce sin ser "
+            "empalagosa — funciona bien todo el año, tanto de día como de "
+            "noche, ideal para quien busca un Good Girl más fresco y "
+            "juguetón.",
+        ],
+        "ideal_para": "Todo el año, día y noche — versátil y juguetona.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Dior|Miss Dior|EDP": {
+        "slug": "dior-miss-dior",
+        "meta_descripcion": (
+            "Miss Dior Eau de Parfum, 100% original, botella completa. "
+            "Floral oriental romántico — rosa centifolia, peonía y "
+            "vainilla. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Iris", "Peonía", "Lirio de los valles"],
+        "notas_corazon": ["Rosa centifolia", "Chabacano", "Durazno"],
+        "notas_fondo": ["Vainilla", "Almizcle", "Haba tonka", "Sándalo", "Benjuí"],
+        "parrafos": [
+            "Miss Dior Eau de Parfum reinterpreta el icónico perfume de "
+            "Dior como una oda floral moderna y romántica. Abre con iris, "
+            "peonía y lirio de los valles, se despliega en un corazón "
+            "aterciopelado de rosa centifolia con toques de chabacano y "
+            "durazno, y cierra en una base cálida de vainilla, almizcle y "
+            "sándalo.",
+
+            "Es una fragancia floral oriental delicada y a la vez intensa, "
+            "ideal para cualquier época del año — perfecta tanto para el "
+            "día a día como para ocasiones especiales donde buscas un "
+            "aroma romántico y memorable.",
+        ],
+        "ideal_para": "Todo el año — uso diario y ocasiones especiales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Dior|Miss Dior Originale|EDT": {
+        "slug": "dior-miss-dior-originale",
+        "meta_descripcion": (
+            "Miss Dior Originale Eau de Toilette, 100% original, botella "
+            "completa. Chipre floral fresco y refinado — galbanum, jazmín "
+            "y pachulí. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Galbanum"],
+        "notas_corazon": ["Jazmín sambac", "Rosa de Grasse"],
+        "notas_fondo": ["Pachulí"],
+        "parrafos": [
+            "Miss Dior Originale (antes simplemente Miss Dior) es la "
+            "versión más clásica y refinada de la línea, con un carácter "
+            "verde y chipre atemporal. Abre con la frescura penetrante del "
+            "galbanum, revela un corazón floral de jazmín sambac y rosa de "
+            "Grasse, y cierra en una base de pachulí que le da su "
+            "personalidad distintiva.",
+
+            "Es una fragancia chipre floral elegante y sutil, con "
+            "proyección moderada — ideal para quien busca sofisticación "
+            "discreta más que un aroma que se imponga, funciona bien todo "
+            "el año.",
+        ],
+        "ideal_para": "Todo el año — sofisticación discreta, uso diario.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Dior|Sauvage|Parfum": {
+        "slug": "dior-sauvage-parfum",
+        "meta_descripcion": (
+            "Sauvage Parfum de Dior, 100% original, botella completa. La "
+            "versión más cálida y envolvente del icónico Sauvage — "
+            "sándalo, vainilla y olíbano. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Mandarina"],
+        "notas_corazon": ["Sándalo"],
+        "notas_fondo": ["Olíbano", "Vainilla", "Haba tonka"],
+        "parrafos": [
+            "Sauvage Parfum es la interpretación más cálida y envolvente "
+            "del ADN Sauvage de Dior, con un carácter más suave y cremoso "
+            "que la EDT y la EDP. Abre con bergamota y mandarina frescas, "
+            "revela un corazón de sándalo aterciopelado, y cierra en una "
+            "base especiada de olíbano, vainilla y haba tonka.",
+
+            "Es una fragancia amaderada oriental refinada, ideal para "
+            "otoño e invierno y ocasiones especiales — la elección "
+            "perfecta para quien ya conoce el Sauvage EDT o EDP y busca "
+            "una versión más pulida y sofisticada.",
+        ],
+        "ideal_para": "Otoño e invierno, ocasiones especiales — versión más pulida.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Dolce & Gabbana|Light Blue|EDT": {
+        "slug": "dolce-gabbana-light-blue",
+        "meta_descripcion": (
+            "Light Blue Eau de Toilette de Dolce&Gabbana, 100% original, "
+            "botella completa. Fresco frutal-amaderado icónico — manzana, "
+            "cedro y jazmín. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Manzana", "Limón siciliano", "Campanilla"],
+        "notas_corazon": ["Bambú", "Jazmín", "Manzana verde"],
+        "notas_fondo": ["Cedro", "Almizcle", "Ámbar"],
+        "parrafos": [
+            "Light Blue, lanzada por Dolce&Gabbana en 2001, es una de las "
+            "fragancias femeninas más icónicas del mercado — el aroma del "
+            "verano en Capri en un frasco. Abre con manzana verde jugosa, "
+            "limón siciliano y campanilla, se despliega en un corazón "
+            "floral de bambú y jazmín, y cierra en una base de cedro, "
+            "almizcle y ámbar.",
+
+            "Es una fragancia fresca y afrutada-amaderada, perfecta para "
+            "primavera y verano — ligera, energizante y versátil, ideal "
+            "para el uso diario de día.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — energizante y fresca.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Dolce & Gabbana|Light Blue Pour Homme|EDT": {
+        "slug": "dolce-gabbana-light-blue-pour-homme",
+        "meta_descripcion": (
+            "Light Blue Pour Homme de Dolce&Gabbana, 100% original, "
+            "botella completa. Fresco mediterráneo icónico — toronja, "
+            "romero y almizcle. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Toronja", "Bergamota", "Mandarina siciliana", "Enebro"],
+        "notas_corazon": ["Pimienta", "Romero", "Palo de rosa brasileño"],
+        "notas_fondo": ["Almizcle", "Incienso", "Musgo de roble"],
+        "parrafos": [
+            "Light Blue Pour Homme, lanzada en 2007, captura el espíritu "
+            "aventurero y dinámico del hombre mediterráneo moderno. Abre "
+            "con toronja, bergamota y mandarina siciliana, se desarrolla "
+            "en un corazón aromático de pimienta y romero envuelto por "
+            "palo de rosa brasileño, y cierra en una base de almizcle, "
+            "incienso y musgo de roble.",
+
+            "Es una fragancia fresca y vibrante, ideal para climas cálidos "
+            "— funciona igual de bien para la oficina de día que para "
+            "reuniones casuales de noche, especialmente en primavera y "
+            "verano.",
+        ],
+        "ideal_para": "Primavera y verano, día y noche — oficina y salidas casuales.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Giorgio Armani|Acqua Di Gio|EDT": {
+        "slug": "armani-acqua-di-gio",
+        "meta_descripcion": (
+            "Acqua Di Gio Eau de Toilette de Giorgio Armani, 100% "
+            "original, botella completa. Acuático fresco clásico — "
+            "bergamota, jazmín y pachulí. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota calabresa", "Neroli", "Mandarina verde"],
+        "notas_corazon": ["Jazmín", "Rosa", "Salvia"],
+        "notas_fondo": ["Pachulí", "Ámbar gris", "Almizcle"],
+        "parrafos": [
+            "Acqua Di Gio, lanzada por Giorgio Armani en 1996, es una de "
+            "las fragancias masculinas más vendidas de la historia y un "
+            "referente absoluto del género acuático fresco. Abre con "
+            "bergamota calabresa, neroli y mandarina verde, revela un "
+            "corazón marino de jazmín, rosa y salvia, y cierra en una base "
+            "amaderada de pachulí, ámbar gris y almizcle.",
+
+            "Es una fragancia acuática fresca perfecta para climas "
+            "cálidos y húmedos — ideal para el día a día, la oficina o "
+            "unas vacaciones en la playa, ligera pero reconocible.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — playa, oficina, clima cálido.",
+        "duracion": "3 a 5 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Beau|EDT": {
+        "slug": "jean-paul-gaultier-le-beau",
+        "meta_descripcion": (
+            "Le Beau Eau de Toilette de Jean Paul Gaultier, 100% "
+            "original, botella completa. Amaderado aromático tropical — "
+            "bergamota, coco y haba tonka. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota"],
+        "notas_corazon": ["Coco"],
+        "notas_fondo": ["Haba tonka"],
+        "parrafos": [
+            "Le Beau, lanzada por Jean Paul Gaultier en 2019, es una "
+            "fragancia amaderada aromática con un carácter tropical y "
+            "solar poco común en perfumería masculina. Abre con bergamota "
+            "ácida que se funde en un corazón lechoso y cálido de coco, y "
+            "cierra en una base dulce de haba tonka.",
+
+            "Es una fragancia veraniega por excelencia, fresca y "
+            "envolvente a la vez — perfecta para vacaciones, playa y "
+            "clima cálido, con un carácter relajado y magnético.",
+        ],
+        "ideal_para": "Primavera y verano — playa, vacaciones, clima cálido.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Beau Le Parfum|EDP": {
+        "slug": "jean-paul-gaultier-le-beau-le-parfum",
+        "meta_descripcion": (
+            "Le Beau Le Parfum de Jean Paul Gaultier, 100% original, "
+            "botella completa. Oriental amaderado intenso — piña, coco y "
+            "ámbar gris. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Piña", "Iris", "Jengibre", "Ciprés"],
+        "notas_corazon": ["Coco", "Notas amaderadas"],
+        "notas_fondo": ["Haba tonka", "Sándalo", "Ámbar", "Ámbar gris"],
+        "parrafos": [
+            "Le Beau Le Parfum intensifica el ADN tropical de Le Beau con "
+            "una versión más rica, cálida y de mayor fijación. Abre con "
+            "piña, iris y jengibre, se despliega en un corazón lechoso de "
+            "coco y maderas, y cierra en una base envolvente de haba "
+            "tonka, sándalo y ámbar gris.",
+
+            "Es una fragancia oriental amaderada adictiva, ideal para "
+            "noches de verano donde el calor ayuda a que el coco y el "
+            "ámbar se abran por completo, aunque también funciona bien en "
+            "otoño e invierno gracias a su base cálida.",
+        ],
+        "ideal_para": "Noches de verano, otoño e invierno — base cálida y envolvente.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Jean Paul Gaultier|Scandal|EDT": {
+        "slug": "jean-paul-gaultier-scandal-pour-homme-edt",
+        "meta_descripcion": (
+            "Scandal Pour Homme Eau de Toilette de Jean Paul Gaultier, "
+            "100% original, botella completa. Ambarado amaderado dulce — "
+            "mandarina, caramelo y vetiver. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Salvia esclarea", "Mandarina"],
+        "notas_corazon": ["Caramelo", "Haba tonka"],
+        "notas_fondo": ["Vetiver"],
+        "parrafos": [
+            "Scandal Pour Homme, lanzada en 2021, lleva el carácter "
+            "provocador de Scandal al universo masculino con una "
+            "fragancia ambarada amaderada dulce y energética. Abre con "
+            "salvia esclarea y mandarina, revela un corazón goloso de "
+            "caramelo y haba tonka, y cierra en una base terrosa de "
+            "vetiver.",
+
+            "Es una fragancia dulce con carácter, ideal para climas fríos "
+            "— funciona muy bien de noche, perfecta para salidas y "
+            "ocasiones donde buscas un aroma magnético y fácil de "
+            "reconocer.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — salidas y ocasiones para destacar.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|Scandal|EDP": {
+        "slug": "jean-paul-gaultier-scandal-pour-homme-edp",
+        "meta_descripcion": (
+            "Scandal Pour Homme Eau de Parfum de Jean Paul Gaultier, 100% "
+            "original, botella completa. Más intenso y dulce que la "
+            "versión EDT. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Salvia esclarea", "Mandarina"],
+        "notas_corazon": ["Caramelo", "Haba tonka"],
+        "notas_fondo": ["Vetiver"],
+        "parrafos": [
+            "Scandal Pour Homme Eau de Parfum comparte el mismo ADN dulce "
+            "y ambarado que la versión EDT, pero con mayor concentración, "
+            "riqueza y fijación en piel. Abre con salvia esclarea y "
+            "mandarina, se despliega en un corazón de caramelo y haba "
+            "tonka, y cierra en una base envolvente de vetiver.",
+
+            "Comparada con la EDT, la EDP es más densa e intensa — ideal "
+            "para clima frío y uso nocturno, perfecta para quien quiere "
+            "una mayor duración y proyección sin perder el carácter dulce "
+            "característico de la línea.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — mayor duración y proyección.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Lancôme|La Vie Est Belle|EDP": {
+        "slug": "lancome-la-vie-est-belle",
+        "meta_descripcion": (
+            "La Vie Est Belle de Lancôme, 100% original, botella "
+            "completa. Floral gourmand icónico — iris, praliné y "
+            "vainilla. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Grosella negra", "Pera"],
+        "notas_corazon": ["Iris", "Jazmín", "Flor de azahar"],
+        "notas_fondo": ["Praliné", "Vainilla", "Pachulí", "Haba tonka"],
+        "parrafos": [
+            "La Vie Est Belle, lanzada por Lancôme en 2012, es una de las "
+            "fragancias femeninas más exitosas de la última década — un "
+            "manifiesto floral gourmand sobre la felicidad. Abre con "
+            "grosella negra y pera jugosas, se despliega en un corazón "
+            "floral de iris, jazmín y flor de azahar, y cierra en una base "
+            "golosa de praliné, vainilla y pachulí.",
+
+            "Es una fragancia floral gourmand dulce y envolvente, ideal "
+            "para otoño e invierno, aunque su carácter alegre la hace "
+            "funcionar todo el año — perfecta para el uso diario y "
+            "ocasiones donde buscas un aroma cálido y memorable.",
+        ],
+        "ideal_para": "Otoño e invierno, uso diario — cálida y memorable.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Paco Rabanne|Invictus Parfum|EDP": {
+        "slug": "paco-rabanne-invictus-parfum",
+        "meta_descripcion": (
+            "Invictus Parfum de Paco Rabanne, 100% original, botella "
+            "completa. Aromático acuático — notas marinas, lavanda y "
+            "sándalo. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Notas marinas", "Lavanda", "Pimienta rosa"],
+        "notas_corazon": ["Jabón", "Hoja de violeta", "Mirto"],
+        "notas_fondo": ["Almizcle", "Cashmerán", "Sándalo"],
+        "parrafos": [
+            "Invictus Parfum lleva el espíritu de victoria de la línea "
+            "Invictus a una versión más rica y sofisticada. Abre con "
+            "notas marinas, lavanda y pimienta rosa que dan una apertura "
+            "fresca y enérgica, se desarrolla en un corazón limpio de "
+            "jabón, hoja de violeta y mirto, y cierra en una base cálida "
+            "de almizcle, cashmerán y sándalo.",
+
+            "Es una fragancia aromática acuática con carácter atlético y "
+            "refinado a la vez — funciona bien todo el año, tanto de día "
+            "como de noche, ideal para quien busca un Invictus con mayor "
+            "profundidad y fijación.",
+        ],
+        "ideal_para": "Todo el año, día y noche — versión con mayor profundidad.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Lady Million|EDP": {
+        "slug": "paco-rabanne-lady-million",
+        "meta_descripcion": (
+            "Lady Million de Paco Rabanne, 100% original, botella "
+            "completa. Floral afrutado glamoroso — frambuesa, jazmín y "
+            "miel blanca. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Frambuesa", "Neroli", "Limón de Amalfi"],
+        "notas_corazon": ["Jazmín", "Azahar africano", "Gardenia"],
+        "notas_fondo": ["Miel blanca", "Pachulí", "Ámbar"],
+        "parrafos": [
+            "Lady Million, lanzada por Paco Rabanne en 2010, es una "
+            "fragancia floral afrutada glamorosa y segura de sí misma, "
+            "con un frasco icónico en forma de anillo dorado. Abre con "
+            "frambuesa, neroli y limón de Amalfi chispeantes, se despliega "
+            "en un corazón floral de jazmín, azahar africano y gardenia, y "
+            "cierra en una base cálida de miel blanca, pachulí y ámbar.",
+
+            "Es una fragancia opulenta y femenina, ideal para otoño e "
+            "invierno y para uso nocturno — perfecta para eventos "
+            "especiales, citas y ocasiones donde buscas proyectar "
+            "confianza y lujo.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — eventos especiales y citas.",
+        "duracion": "7 a 10 horas en piel, con muy buena proyección.",
+    },
+    "Paco Rabanne|Olympéa|EDP": {
+        "slug": "paco-rabanne-olympea",
+        "meta_descripcion": (
+            "Olympéa de Paco Rabanne, 100% original, botella completa. "
+            "Oriental fresco salado — jazmín acuático, vainilla y sal. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Jazmín acuático", "Mandarina verde", "Flor de jengibre"],
+        "notas_corazon": ["Vainilla", "Sal"],
+        "notas_fondo": ["Madera de cachemira", "Ámbar gris", "Sándalo"],
+        "parrafos": [
+            "Olympéa, lanzada por Paco Rabanne en 2015, es la contraparte "
+            "femenina de Invictus, inspirada en el concepto de una diosa "
+            "griega moderna — fuerza, dinamismo y conquista. Abre con "
+            "jazmín acuático, mandarina verde y flor de jengibre "
+            "chispeantes, se despliega en un corazón inesperado de "
+            "vainilla salada, y cierra en una base de madera de cachemira, "
+            "ámbar gris y sándalo.",
+
+            "Es una fragancia oriental fresca con un toque salado único, "
+            "ideal para primavera y verano por las noches — magnética y "
+            "moderna, perfecta para salidas y ocasiones donde buscas "
+            "destacar.",
+        ],
+        "ideal_para": "Primavera y verano, noche — salidas y ocasiones para destacar.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Valentino|Uomo|EDT": {
+        "slug": "valentino-uomo",
+        "meta_descripcion": (
+            "Valentino Uomo Eau de Toilette, 100% original, botella "
+            "completa. Amaderado aromático elegante — bergamota, café y "
+            "avellana. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Mirto"],
+        "notas_corazon": ["Café", "Chocolate", "Nuez moscada", "Avellana"],
+        "notas_fondo": ["Vainilla", "Vetiver", "Cedro"],
+        "parrafos": [
+            "Valentino Uomo, lanzada en 2014, encarna la elegancia "
+            "italiana clásica con un toque contemporáneo y gourmand. Abre "
+            "con bergamota y mirto frescos, se despliega en un corazón "
+            "cálido de café y chocolate con nuez moscada y avellana, y "
+            "cierra en una base envolvente de vainilla, vetiver y cedro.",
+
+            "Es una fragancia amaderada aromática sofisticada, ideal para "
+            "otoño e invierno — perfecta para la oficina, cenas y "
+            "ocasiones formales donde buscas un aroma elegante y "
+            "reconfortante.",
+        ],
+        "ideal_para": "Otoño e invierno — oficina, cenas, ocasiones formales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Versace|Eros|EDT": {
+        "slug": "versace-eros-edt",
+        "meta_descripcion": (
+            "Eros Eau de Toilette de Versace, 100% original, botella "
+            "completa. Fougère oriental fresco y potente — menta, "
+            "manzana verde y vainilla. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Menta", "Manzana verde", "Limón"],
+        "notas_corazon": ["Haba tonka", "Ambroxan", "Geranio", "Rosa"],
+        "notas_fondo": ["Vainilla", "Vetiver", "Musgo de roble", "Cedro atlas"],
+        "parrafos": [
+            "Eros, lanzada por Versace en 2012 e inspirada en el dios "
+            "griego del amor, es una de las fragancias masculinas más "
+            "populares y reconocibles del mercado. Abre con menta, "
+            "manzana verde y limón vibrantes, se desarrolla en un corazón "
+            "cálido de haba tonka, ambroxan y geranio, y cierra en una "
+            "base envolvente de vainilla, vetiver y musgo de roble.",
+
+            "Es una fragancia fougère oriental fresca y potente, con gran "
+            "proyección — ideal para primavera y verano de día, aunque su "
+            "base cálida también funciona bien en otoño, perfecta para "
+            "salidas y ocasiones donde buscas dejar una impresión.",
+        ],
+        "ideal_para": "Primavera y verano, día y noche — salidas y ocasiones sociales.",
+        "duracion": "6 a 8 horas en piel, con muy buena proyección.",
+    },
 }
 
 
