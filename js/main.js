@@ -83,11 +83,11 @@ function completoCardHTML(p) {
   const disponible = p.precio != null;
 
   const boton = disponible
-    ? `<button class="btn-agregar btn-agregar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Agregar ${p.nombre} al carrito">
+    ? `<button class="btn-agregar btn-agregar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Agregar ${p.nombre} al carrito">
         <span class="btn-agregar-texto">Agregar al carrito</span>
         <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
       </button>`
-    : `<button class="btn-agregar btn-consultar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Consultar disponibilidad de ${p.nombre}">
+    : `<button class="btn-agregar btn-consultar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Consultar disponibilidad de ${p.nombre}">
         <span class="btn-agregar-texto">Consultar</span>
         <span class="btn-agregar-icono" aria-hidden="true">💬</span>
       </button>`;

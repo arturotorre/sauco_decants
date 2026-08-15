@@ -5,7 +5,12 @@ const CARRITO_STORAGE_KEY = 'sauco_carrito';
 const CARRITO_WHATSAPP_NUMERO = '525612567245';
 
 function perfumeId(p) {
-  return (p.casa + ' ' + p.nombre)
+  // p.concentracion solo existe en PERFUMES_COMPLETOS (los decants ya llevan
+  // la concentración incluida en el nombre, ej. "Scandal Intense EDP"). Sin
+  // esto, dos productos completos que comparten casa+nombre pero difieren
+  // en concentración (ej. Scandal EDP vs Scandal EDT) colisionarían en el
+  // mismo perfumeId y se mezclarían en el carrito.
+  return (p.casa + ' ' + p.nombre + ' ' + (p.concentracion || ''))
     .toLowerCase()
     .normalize('NFD').replace(/\p{Diacritic}/gu, '')
     .replace(/[^a-z0-9]+/g, '-')
@@ -238,7 +243,7 @@ document.addEventListener('click', (e) => {
 
   const btnAgregarCompleto = e.target.closest('.btn-agregar-completo');
   if (btnAgregarCompleto) {
-    const perfume = PERFUMES_COMPLETOS.find(p => p.casa === btnAgregarCompleto.dataset.casa && p.nombre === btnAgregarCompleto.dataset.nombre);
+    const perfume = PERFUMES_COMPLETOS.find(p => p.casa === btnAgregarCompleto.dataset.casa && p.nombre === btnAgregarCompleto.dataset.nombre && p.concentracion === btnAgregarCompleto.dataset.concentracion);
     if (perfume) agregarCompletoAlCarrito(perfume);
     return;
   }
