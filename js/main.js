@@ -190,6 +190,12 @@ function establecerSetsCompletos(activo) {
   renderFiltroMarcaCompletos();
 }
 
+function actualizarTituloCompletos(sub) {
+  const etiquetas = { dama: 'Dama', caballero: 'Caballero', sets: 'Sets de regalo' };
+  const el = document.getElementById('completos-titulo-texto');
+  el.textContent = etiquetas[sub] ? `Perfumes completos - ${etiquetas[sub]}` : 'Perfumes completos';
+}
+
 function aplicarFiltroCompletosDesdeNav(sub) {
   completosBusqueda = '';
   const buscador = document.getElementById('completos-busqueda');
@@ -208,6 +214,7 @@ function aplicarFiltroCompletosDesdeNav(sub) {
     establecerGeneroCompletos('todos');
     establecerSetsCompletos(false);
   }
+  actualizarTituloCompletos(sub);
   renderCompletos();
 }
 
@@ -224,27 +231,14 @@ function actualizarContadorFiltrosCompletos() {
 
 function renderCompletos() {
   const contenedor = document.getElementById('completos-grid');
-  const grupos = [
-    { key: 'Caballero', label: 'Caballero' },
-    { key: 'Dama', label: 'Dama' }
-  ];
+  const perfumes = ordenarCompletos(PERFUMES_COMPLETOS.filter(p => {
+    const okGenero = completosGenero === 'todos' || p.genero === completosGenero || p.genero === 'Unisex';
+    return okGenero && completosCoincide(p);
+  }));
 
-  const html = grupos.map(g => {
-    if (completosGenero !== 'todos' && completosGenero !== g.key) return '';
-    // Los perfumes Unisex (ej. Tom Ford Black Orchid) aparecen en ambas
-    // secciones, igual que los decants unisex en Hombre/Mujer.
-    const perfumes = ordenarCompletos(PERFUMES_COMPLETOS.filter(p => (p.genero === g.key || p.genero === 'Unisex') && completosCoincide(p)));
-    if (!perfumes.length) return '';
-    return `
-    <div class="completos-tier-header">
-      <span class="completos-tier-titulo">${g.label}</span>
-    </div>
-    <div class="cards-grid">
-      ${perfumes.map(completoCardHTML).join('')}
-    </div>`;
-  }).join('');
-
-  contenedor.innerHTML = html.trim() ? html : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
+  contenedor.innerHTML = perfumes.length
+    ? `<div class="cards-grid">${perfumes.map(completoCardHTML).join('')}</div>`
+    : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
   actualizarContadorFiltrosCompletos();
 }
 
