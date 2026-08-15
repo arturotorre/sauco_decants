@@ -934,15 +934,17 @@ def render_pagina_completo(perfume, contenido):
     nombre_mostrar = contenido.get("nombre_mostrar") or perfume["nombre"]
     genero = perfume["genero"]
     concentracion = perfume["concentracion"]
+    tamano = perfume.get("tamano")
     categoria = perfume["categoria"]
     categoria_label = {"nicho": "Nicho", "disenador": "Diseñador", "arabe": "Árabe"}.get(categoria, "Diseñador")
     dot = "dot-nicho" if categoria == "nicho" else "dot-disenador"
     es_set = bool(perfume.get("esSet"))
     imagen_rel = perfume["imagen"]
-    titulo = f"{casa} {nombre_mostrar} {concentracion} — Perfume {genero} | Saúco Decants"
+    conc_y_tamano = f"{concentracion} {tamano}" if tamano else concentracion
+    titulo = f"{casa} {nombre_mostrar} {conc_y_tamano} — Perfume {genero} | Saúco Decants"
     meta_desc = contenido["meta_descripcion"]
     url = f"https://saucodecants.com/completos/{contenido['slug']}/"
-    alt_img = f"{casa} {nombre_mostrar} {concentracion} - perfume {'set de regalo' if es_set else 'de botella completa'}"
+    alt_img = f"{casa} {nombre_mostrar} {conc_y_tamano} - perfume {'set de regalo' if es_set else 'de botella completa'}"
 
     parrafos_html = "".join(f"<p>{p}</p>" for p in contenido["parrafos"])
 
@@ -955,7 +957,7 @@ def render_pagina_completo(perfume, contenido):
     "url": "{url}"
   }}'''
 
-    genero_linea = f"{concentracion} · {genero}" + (" · Set de regalo" if es_set else "")
+    genero_linea = f"{conc_y_tamano} · {genero}" + (" · Set de regalo" if es_set else "")
     contenido_set_html = ""
     if es_set and perfume.get("contenido"):
         tags = "".join(f'<span class="nota-tag">{c}</span>' for c in perfume["contenido"])
@@ -996,7 +998,7 @@ def render_pagina_completo(perfume, contenido):
 {{
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "{casa} {nombre_mostrar} {concentracion}",
+  "name": "{casa} {nombre_mostrar} {conc_y_tamano}",
   "brand": {{ "@type": "Brand", "name": "{casa}" }},
   "description": "{meta_desc}",
   "image": "https://saucodecants.com{perfume['imagen']}",

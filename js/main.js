@@ -123,7 +123,7 @@ function completoCardHTML(p) {
         ${nombreHTML}
         ${boton}
       </div>
-      <div class="card-genero">${p.concentracion} · ${p.genero}${p.esSet ? ' · Set de regalo' : ''}</div>
+      <div class="card-genero">${p.concentracion}${p.tamano ? ' ' + p.tamano : ''} · ${p.genero}${p.esSet ? ' · Set de regalo' : ''}</div>
       ${contenidoHTML}
       <div class="card-divider"></div>
       ${precioHTML}
