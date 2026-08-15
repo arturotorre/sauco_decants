@@ -299,6 +299,150 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Climas cálidos, día a día y eventos al aire libre — todo el año.",
         "duracion": "6 a 8 horas en piel.",
     },
+    "Maison Margiela|Replica By the Fireplace EDT": {
+        "slug": "maison-margiela-replica-by-the-fireplace",
+        "meta_descripcion": (
+            "Decant de Replica By the Fireplace de Maison Margiela (3ml, 5ml, "
+            "10ml), 100% original. Ahumado, gourmand y unisex — para noches "
+            "frías. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pimienta rosa", "Clavo", "Bergamota"],
+        "notas_corazon": ["Castaña", "Madera de guayaco"],
+        "notas_fondo": ["Vainilla", "Bálsamo de Perú"],
+        "parrafos": [
+            "Replica By the Fireplace, de la línea Replica de Maison Margiela, busca "
+            "recrear la sensación exacta de estar sentado frente a una chimenea en "
+            "una noche de invierno. Abre con pimienta rosa, clavo y bergamota, se "
+            "calienta en un corazón de castaña asada y madera de guayaco, y cierra en "
+            "una base envolvente de vainilla y bálsamo de Perú.",
+
+            "Es una fragancia unisex ahumada, gourmand y amaderada, hecha para los "
+            "meses fríos — perfecta para el otoño e invierno, noches relajadas o "
+            "reuniones frente al fuego. Tiene muy buena fijación, entre 8 y 10 horas.",
+        ],
+        "ideal_para": "Otoño e invierno — noches frías, reuniones relajadas.",
+        "duracion": "8 a 10 horas en piel, con proyección moderada-fuerte.",
+    },
+    "Louis Vuitton|Imagination EDP": {
+        "slug": "louis-vuitton-imagination",
+        "meta_descripcion": (
+            "Decant de Imagination de Louis Vuitton (3ml, 5ml, 10ml), 100% "
+            "original. Cítrico, aromático y elegante — ideal para climas cálidos. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Cidra", "Bergamota de Calabria", "Naranja siciliana"],
+        "notas_corazon": ["Neroli", "Jengibre", "Canela de Ceylán"],
+        "notas_fondo": ["Té negro chino", "Ambroxan", "Madera de guayaco"],
+        "parrafos": [
+            "Imagination, creada por Jacques Cavallier Belletrud en 2021, es una oda "
+            "al viaje y la mente sin límites. Abre con un cítrico luminoso de cidra, "
+            "bergamota de Calabria y naranja siciliana, revela un corazón especiado "
+            "de neroli, jengibre y canela de Ceylán, y cierra en una base de té negro "
+            "chino, ambroxan y madera de guayaco.",
+
+            "Es una fragancia cítrica-aromática fresca y elegante, con muy buen "
+            "rendimiento en clima cálido — ideal para primavera y verano, uso diario "
+            "o cualquier ocasión donde quieras un cítrico con carácter.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — climas cálidos.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Louis Vuitton|L'Immensité EDP": {
+        "slug": "louis-vuitton-limmensite",
+        "meta_descripcion": (
+            "Decant de L'Immensité de Louis Vuitton (3ml, 5ml, 10ml), 100% "
+            "original. Fresco, especiado y ligero — ideal para el día. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pomelo", "Bergamota", "Jengibre"],
+        "notas_corazon": ["Romero", "Salvia", "Geranio"],
+        "notas_fondo": ["Ambroxan", "Ámbar", "Labdanum"],
+        "parrafos": [
+            "L'Immensité, también de Jacques Cavallier Belletrud (2018), evoca la "
+            "sensación de libertad y horizontes abiertos. Abre con pomelo, bergamota "
+            "y jengibre chispeante, se suaviza en un corazón herbal de romero, salvia "
+            "y geranio, y cierra en una base ambarada de ambroxan y labdanum.",
+
+            "Es una fragancia fresca-especiada de buen rendimiento diurno, "
+            "especialmente pensada para climas cálidos y uso ligero — ideal para "
+            "primavera y verano, día a día.",
+        ],
+        "ideal_para": "Primavera y verano, día a día — uso ligero.",
+        "duracion": "5 a 7 horas en piel, proyección moderada.",
+    },
+    "YSL|Y EDP": {
+        "slug": "ysl-y",
+        "meta_descripcion": (
+            "Decant de Y Eau de Parfum de YSL (3ml, 5ml, 10ml), 100% original. "
+            "Fresco, especiado y versátil — para cualquier ocasión. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Manzana", "Jengibre", "Bergamota"],
+        "notas_corazon": ["Salvia", "Bayas de enebro", "Geranio"],
+        "notas_fondo": ["Madera ambarada", "Haba tonka", "Cedro", "Vetiver"],
+        "parrafos": [
+            "Y Eau de Parfum, creada por Dominique Ropion en 2018, es la "
+            "interpretación de YSL de la masculinidad moderna. Abre con un golpe "
+            "fresco de bergamota, manzana y jengibre, se desarrolla en un corazón "
+            "limpio de salvia, bayas de enebro y geranio, y cierra en una base "
+            "ligeramente dulce de madera ambarada, haba tonka, cedro y vetiver.",
+
+            "Es una fragancia aromática fougère versátil y de excelente rendimiento "
+            "— funciona para la escuela, el trabajo, un día casual o una salida "
+            "nocturna, prácticamente cualquier ocasión, todo el año.",
+        ],
+        "ideal_para": "Cualquier ocasión — trabajo, día casual, salidas nocturnas, todo el año.",
+        "duracion": "8 a 10 horas en piel, con buena proyección.",
+    },
+    "Lancôme|La Vie Est Belle EDP": {
+        "slug": "lancome-la-vie-est-belle",
+        "meta_descripcion": (
+            "Decant de La Vie Est Belle de Lancôme (3ml, 5ml, 10ml), 100% "
+            "original. Floral afrutado gourmand, cálido y envolvente. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Grosella negra", "Pera"],
+        "notas_corazon": ["Iris", "Jazmín", "Flor de azahar"],
+        "notas_fondo": ["Praline", "Vainilla", "Patchouli", "Haba tonka"],
+        "parrafos": [
+            "La Vie Est Belle, lanzada por Lancôme en 2012, es una de las fragancias "
+            "femeninas más exitosas de la última década. Abre con grosella negra y "
+            "pera jugosas, se despliega en un corazón floral de iris, jazmín y flor "
+            "de azahar, y cierra en una base gourmand de praline, vainilla, "
+            "patchouli y haba tonka.",
+
+            "Es una fragancia floral afrutada gourmand cálida y envolvente, ideal "
+            "para ocasiones especiales — citas, fiestas, bodas. Su carácter dulce y "
+            "acogedor la hace brillar especialmente en otoño e invierno, aunque se "
+            "puede usar todo el año.",
+        ],
+        "ideal_para": "Ocasiones especiales — citas, fiestas — sobre todo otoño e invierno.",
+        "duracion": "8+ horas en piel, buena proyección.",
+    },
+    "Paco Rabanne|1 Million EDT": {
+        "slug": "paco-rabanne-1-million",
+        "meta_descripcion": (
+            "Decant de 1 Million de Paco Rabanne (3ml, 5ml, 10ml), 100% original. "
+            "Especiado, amaderado y statement — una de las fragancias masculinas "
+            "más icónicas. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Mandarina sangre", "Pomelo", "Menta"],
+        "notas_corazon": ["Canela", "Especias", "Rosa"],
+        "notas_fondo": ["Ámbar", "Cuero", "Patchouli"],
+        "parrafos": [
+            "1 Million, lanzada por Paco Rabanne en 2008, es una de las fragancias "
+            "masculinas más icónicas y reconocibles del mercado. Abre con mandarina "
+            "sangre, pomelo y menta frescos, se calienta en un corazón especiado de "
+            "canela y rosa, y cierra en una base de ámbar, cuero y patchouli.",
+
+            "Es una fragancia especiada-amaderada audaz y statement, con muy buena "
+            "fijación (6 a 8 horas). Funciona todo el año, aunque su carácter cálido "
+            "y especiado brilla especialmente en otoño e invierno, ideal para "
+            "salidas nocturnas y ocasiones donde quieres notarse.",
+        ],
+        "ideal_para": "Salidas nocturnas y ocasiones para destacar — otoño e invierno.",
+        "duracion": "6 a 8 horas en piel.",
+    },
 }
 
 
