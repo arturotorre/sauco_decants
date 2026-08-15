@@ -330,7 +330,7 @@ function actualizarTituloPagina(seccion, filtro) {
     const etiquetas = { dama: 'Dama', caballero: 'Caballero', sets: 'Sets de regalo' };
     document.title = etiquetas[filtro] ? `Perfumes completos - ${etiquetas[filtro]} | Saúco` : 'Perfumes completos | Saúco';
   } else {
-    document.title = 'Saúco Decants — Perfumes Originales en Decants | Monterrey';
+    document.title = 'Saúco Decants — Perfumes 100% Originales | Envíos a todo México';
   }
 }
 
