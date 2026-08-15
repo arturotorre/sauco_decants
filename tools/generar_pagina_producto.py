@@ -1881,6 +1881,1084 @@ CONTENIDO_COMPLETOS = {
         "ideal_para": "Otoño e invierno — oficina y ocasiones formales.",
         "duracion": "6 a 8 horas en piel.",
     },
+    "Adolfo Domínguez|Jazmín Tonka|EDP": {
+        "slug": "adolfo-dominguez-jazmin-tonka",
+        "meta_descripcion": (
+            "Jazmín Tonka de Adolfo Domínguez, 100% original, botella "
+            "completa. Floral polvoriento amaderado — jazmín egipcio, "
+            "ylang ylang y haba tonka. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Durazno", "Alcaravea", "Mandarina", "Naranja"],
+        "notas_corazon": ["Jazmín egipcio", "Fresia", "Ylang ylang", "Magnolia"],
+        "notas_fondo": ["Almizcle", "Cashmerán", "Haba tonka", "Notas amaderadas"],
+        "parrafos": [
+            "Jazmín Tonka, lanzada por Adolfo Domínguez en 2023, es una "
+            "fragancia floral blanca y polvorienta con un fondo cálido y "
+            "amaderado. Abre con durazno, alcaravea y cítricos, se "
+            "despliega en un corazón de jazmín egipcio, fresia y ylang "
+            "ylang, y cierra en una base envolvente de almizcle, "
+            "cashmerán y haba tonka.",
+
+            "Es una fragancia floral polvorienta elegante y versátil, "
+            "ideal para todo el año — perfecta para el uso diario con un "
+            "carácter suave, femenino y fácil de llevar.",
+        ],
+        "ideal_para": "Todo el año, uso diario — suave y femenina.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Azzaro|The Most Wanted|EDT": {
+        "slug": "azzaro-the-most-wanted",
+        "meta_descripcion": (
+            "The Most Wanted de Azzaro, 100% original, botella completa. "
+            "Oriental especiado audaz — cardamomo, toffee y madera "
+            "ambarada. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Cardamomo"],
+        "notas_corazon": ["Toffee"],
+        "notas_fondo": ["Madera ambarada"],
+        "parrafos": [
+            "The Most Wanted, de Azzaro, es una fragancia masculina "
+            "traviesa, sexy y audaz que combina especias, dulzura y "
+            "madera en una composición simple pero magnética. Abre con "
+            "cardamomo vibrante y especiado, se despliega en un corazón "
+            "goloso de toffee lechoso, y cierra en una base de madera "
+            "ambarada agresiva y duradera.",
+
+            "Es una fragancia oriental especiada con carácter fuerte, "
+            "ideal para otoño e invierno y uso nocturno — perfecta para "
+            "quien busca destacar con un aroma dulce pero masculino.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — destacar con carácter.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Billie Eilish|Billie Eilish|EDP": {
+        "slug": "billie-eilish",
+        "meta_descripcion": (
+            "Eilish de Billie Eilish, 100% original, botella completa. "
+            "Ámbar gourmand cálido — bayas rojas, vainilla bourbon y "
+            "musgo cremoso. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bayas rojas", "Mandarina", "Pétalos azucarados"],
+        "notas_corazon": ["Vainilla bourbon", "Especias suaves", "Cacao"],
+        "notas_fondo": ["Almizcle cálido", "Maderas cremosas", "Haba tonka"],
+        "parrafos": [
+            "Eilish, el primer perfume de Billie Eilish lanzado en 2021, "
+            "es un ámbar gourmand cálido y magnético diseñado para todos. "
+            "Abre con bayas rojas, mandarina y pétalos azucarados, se "
+            "despliega en un corazón de vainilla bourbon, especias suaves "
+            "y cacao, y cierra en una base envolvente de almizcle cálido, "
+            "maderas cremosas y haba tonka.",
+
+            "Es una fragancia ámbar gourmand sensual y cercana a la piel, "
+            "ideal para otoño e invierno — perfecta para quien busca un "
+            "aroma cálido, dulce y con personalidad propia.",
+        ],
+        "ideal_para": "Otoño e invierno — cálida y cercana a la piel.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Burberry|Her|EDP": {
+        "slug": "burberry-her",
+        "meta_descripcion": (
+            "Burberry Her Eau de Parfum, 100% original, botella completa. "
+            "Floral afrutado gourmand londinense — moras, jazmín y ámbar. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Zarzamora", "Arándano", "Frambuesa"],
+        "notas_corazon": ["Jazmín", "Violeta"],
+        "notas_fondo": ["Ámbar seco", "Almizcle"],
+        "parrafos": [
+            "Burberry Her, creada por Francis Kurkdjian, es la primera "
+            "fragancia gourmand de la casa con un toque muy británico, "
+            "inspirada en el espíritu joven, creativo y aventurero de "
+            "Londres. Abre con un estallido de frutos rojos y oscuros — "
+            "zarzamora, arándano y frambuesa —, se despliega en un "
+            "corazón floral de jazmín y violeta, y cierra en una base "
+            "cálida de ámbar seco y almizcle.",
+
+            "Es una fragancia floral afrutada gourmand luminosa, ideal "
+            "para el uso diario — perfecta para la oficina, salidas "
+            "casuales o cenas informales, con un carácter dulce sin ser "
+            "empalagoso.",
+        ],
+        "ideal_para": "Todo el año, uso diario — oficina y salidas casuales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Burberry|My Burberry Blush|EDP": {
+        "slug": "burberry-my-burberry-blush",
+        "meta_descripcion": (
+            "My Burberry Blush de Burberry, 100% original, botella "
+            "completa. Floral afrutado fresco — granada, manzana verde y "
+            "jazmín. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Granada", "Limón"],
+        "notas_corazon": ["Manzana verde", "Pétalos de rosa", "Geranio"],
+        "notas_fondo": ["Glicina", "Jazmín"],
+        "parrafos": [
+            "My Burberry Blush, creada por Francis Kurkdjian, evoca un "
+            "jardín londinense despertando con la primera luz del día. "
+            "Abre con granada y limón frescos, se despliega en un corazón "
+            "de manzana verde, pétalos de rosa y geranio, y cierra en una "
+            "base delicada de glicina y jazmín.",
+
+            "Es una fragancia floral afrutada fresca y radiante, ideal "
+            "para primavera y verano — perfecta para el día, con un "
+            "carácter alegre y elegante a la vez.",
+        ],
+        "ideal_para": "Primavera y verano, día — alegre y elegante.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Carolina Herrera|Bad Boy Cobalt Elixir|EDP": {
+        "slug": "carolina-herrera-bad-boy-cobalt-elixir",
+        "meta_descripcion": (
+            "Bad Boy Cobalt Elixir de Carolina Herrera, 100% original, "
+            "botella completa. Amaderado especiado intenso — pimienta "
+            "negra, trufa y franquincienso. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Pimienta negra", "Salvia"],
+        "notas_corazon": ["Trufa", "Notas amaderadas"],
+        "notas_fondo": ["Vainilla", "Franquincienso"],
+        "parrafos": [
+            "Bad Boy Cobalt Elixir lleva el carácter mineral de Bad Boy "
+            "Cobalt hacia una versión más rica, intensa y de mayor "
+            "fijación. Abre con pimienta negra y salvia, se despliega en "
+            "un corazón de trufa y maderas, y cierra en una base "
+            "resinosa de vainilla y franquincienso.",
+
+            "Es una fragancia amaderada especiada de alta concentración, "
+            "ideal para climas fríos y uso nocturno — perfecta para quien "
+            "busca la versión más audaz e intensa dentro de la línea "
+            "Cobalt.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — versión más audaz de Cobalt.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Carolina Herrera|Good Girl Blush Elixir|EDP": {
+        "slug": "carolina-herrera-good-girl-blush-elixir",
+        "meta_descripcion": (
+            "Good Girl Blush Elixir de Carolina Herrera, 100% original, "
+            "botella completa. Chipre ambarado intenso — rosa, vainilla y "
+            "pachulí. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Naranja mandarina"],
+        "notas_corazon": ["Ylang ylang", "Rosa"],
+        "notas_fondo": ["Vainilla", "Pachulí"],
+        "parrafos": [
+            "Good Girl Blush Elixir intensifica el ADN luminoso de Good "
+            "Girl Blush con una concentración mayor de rosa, vainilla y "
+            "pachulí. Abre con bergamota y mandarina, se despliega en un "
+            "corazón de ylang ylang y rosa, y cierra en una base "
+            "incandescente de vainilla y pachulí ahumado.",
+
+            "Es una fragancia chipre ambarada intensa y misteriosa a la "
+            "vez, ideal para el día y la noche — perfecta para quien "
+            "busca una versión más envolvente de Good Girl Blush.",
+        ],
+        "ideal_para": "Todo el año, día y noche — versión más envolvente.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Coach|Coach New York|EDP": {
+        "slug": "coach-new-york",
+        "meta_descripcion": (
+            "Coach New York Eau de Parfum, 100% original, botella "
+            "completa. Floral afrutado urbano — frambuesa, rosa turca y "
+            "sándalo. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Hoja de frambuesa", "Pera", "Pimienta rosa"],
+        "notas_corazon": ["Rosa turca", "Gardenia", "Ciclamen"],
+        "notas_fondo": ["Ante", "Almizcle", "Cashmerán", "Sándalo"],
+        "parrafos": [
+            "Coach New York captura la energía espontánea y el estilo "
+            "cool de Nueva York en una fragancia floral afrutada "
+            "moderna. Abre con hoja de frambuesa, pera y pimienta rosa "
+            "chispeantes, se despliega en un corazón floral de rosa "
+            "turca, gardenia y ciclamen, y cierra en una base cálida de "
+            "ante, almizcle y sándalo.",
+
+            "Es una fragancia versátil y urbana, ideal para todo el año "
+            "— perfecta para el día a día con un carácter fresco por "
+            "arriba y cálido por debajo.",
+        ],
+        "ideal_para": "Todo el año, uso diario — carácter urbano y versátil.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "DKNY|Be Delicious|EDP": {
+        "slug": "dkny-be-delicious",
+        "meta_descripcion": (
+            "Be Delicious de DKNY, 100% original, botella completa. "
+            "Fresco afrutado icónico — manzana verde, pepino y sándalo. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pepino", "Toronja", "Magnolia", "Manzana verde"],
+        "notas_corazon": ["Tuberosa", "Violeta", "Muguete", "Rosa"],
+        "notas_fondo": ["Ámbar blanco", "Maderas", "Sándalo", "Almizcle"],
+        "parrafos": [
+            "Be Delicious, lanzada por DKNY en 2004, es una fragancia "
+            "icónica que capturó la energía fresca y urbana de Nueva "
+            "York en un frasco con forma de manzana. Abre con pepino, "
+            "toronja y manzana verde crujiente, se despliega en un "
+            "corazón floral de tuberosa, violeta y muguete, y cierra en "
+            "una base limpia de ámbar blanco, sándalo y almizcle.",
+
+            "Es una fragancia fresca y afrutada juvenil, ideal para "
+            "primavera y verano — perfecta para el día a día, ligera y "
+            "vibrante.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — fresca y vibrante.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Dolce & Gabbana|Light Blue Capri In Love Pour Homme|EDP": {
+        "slug": "dolce-gabbana-light-blue-capri-in-love-pour-homme",
+        "meta_descripcion": (
+            "Light Blue Capri In Love Pour Homme de Dolce&Gabbana, 100% "
+            "original, botella completa. Amaderado especiado "
+            "mediterráneo — pimienta negra, higo y pachulí. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pimienta negra"],
+        "notas_corazon": ["Higo verde"],
+        "notas_fondo": ["Pachulí"],
+        "parrafos": [
+            "Light Blue Capri In Love Pour Homme transporta a la brisa "
+            "salada y la luz dorada de Capri en una fragancia "
+            "mediterránea masculina. Abre con el calor sutil de la "
+            "pimienta negra, se despliega en un corazón verde y jugoso de "
+            "higo de Capri, y cierra en una base elegante y masculina de "
+            "pachulí.",
+
+            "Es una fragancia amaderada especiada fresca, ideal para "
+            "primavera y verano — perfecta para escapadas a la playa y "
+            "días soleados con un carácter mediterráneo relajado.",
+        ],
+        "ideal_para": "Primavera y verano — playa y días soleados.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Dolce & Gabbana|Light Blue Capri In Love|EDP": {
+        "slug": "dolce-gabbana-light-blue-capri-in-love",
+        "meta_descripcion": (
+            "Light Blue Capri In Love de Dolce&Gabbana, 100% original, "
+            "botella completa. Floral especiado romántico — té de "
+            "jazmín, manzana y longoza. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Té de jazmín"],
+        "notas_corazon": ["Manzana"],
+        "notas_fondo": ["Longoza"],
+        "parrafos": [
+            "Light Blue Capri In Love crea un romance mediterráneo "
+            "veraniego con una fragancia floral especiada delicada. Abre "
+            "con el aroma calmante del té de jazmín, se despliega en un "
+            "corazón crujiente de manzana, y cierra en una base "
+            "especiada y sofisticada de longoza.",
+
+            "Es una fragancia floral especiada romántica y luminosa, "
+            "ideal para primavera y verano — perfecta para noches de "
+            "verano mediterráneo, ligera y envolvente a la vez.",
+        ],
+        "ideal_para": "Primavera y verano — noches de verano mediterráneo.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Dolce & Gabbana|Light Blue Summer Vibes|EDT": {
+        "slug": "dolce-gabbana-light-blue-summer-vibes",
+        "meta_descripcion": (
+            "Light Blue Summer Vibes de Dolce&Gabbana, 100% original, "
+            "botella completa. Floral amaderado almizclado veraniego — "
+            "bergamota, durazno y cedro. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota calabresa"],
+        "notas_corazon": ["Durazno"],
+        "notas_fondo": ["Cedro"],
+        "parrafos": [
+            "Light Blue Summer Vibes, edición veraniega de la línea "
+            "Light Blue, captura la energía vibrante del verano "
+            "italiano. Abre con un estallido vivaz de bergamota "
+            "calabresa, se despliega en un corazón jugoso y aterciopelado "
+            "de durazno, y cierra en una base amaderada de cedro.",
+
+            "Es una fragancia floral amaderada almizclada perfecta para "
+            "el calor — ideal para primavera y verano, ligera, dulce y "
+            "energizante para el uso diario.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — ligera y energizante.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Dolce & Gabbana|Queen|EDP": {
+        "slug": "dolce-gabbana-queen",
+        "meta_descripcion": (
+            "Q by Dolce&Gabbana Eau de Parfum, 100% original, botella "
+            "completa. Floral afrutado audaz — limón siciliano, cereza y "
+            "cedro. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Limón siciliano", "Naranja sanguina", "Jazmín"],
+        "notas_corazon": ["Cereza", "Heliotropo"],
+        "notas_fondo": ["Almizcle", "Cedro"],
+        "parrafos": [
+            "Q by Dolce&Gabbana celebra a la mujer contemporánea como una "
+            "reina moderna, en un frasco coronado con un icónico tapón "
+            "dorado. Abre con limón siciliano, naranja sanguina y "
+            "jazmín, se despliega en un corazón contrastante de cereza y "
+            "heliotropo, y cierra en una base de almizcle y cedro.",
+
+            "Es una fragancia floral afrutada refinada pero audaz, ideal "
+            "para primavera y verano — perfecta para el día a día con un "
+            "carácter seguro y radiante.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — segura y radiante.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Dolce & Gabbana|The Only One Intense|EDP": {
+        "slug": "dolce-gabbana-the-only-one-intense",
+        "meta_descripcion": (
+            "The Only One Intense de Dolce&Gabbana, 100% original, "
+            "botella completa. Floral oriental sensual — azahar dorado y "
+            "vainilla negra. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Neroli", "Manzana verde", "Mandarina italiana"],
+        "notas_corazon": ["Jazmín", "Coco", "Flor de azahar"],
+        "notas_fondo": ["Vainilla", "Madera de cachemira", "Cedro"],
+        "parrafos": [
+            "The Only One Intense sorprende con el contraste entre un "
+            "deslumbrante azahar dorado y una vainilla negra hipnótica. "
+            "Abre con neroli, manzana verde y mandarina italiana, se "
+            "despliega en un corazón de jazmín, coco y flor de azahar, y "
+            "cierra en una base envolvente de vainilla, madera de "
+            "cachemira y cedro.",
+
+            "Es una fragancia floral oriental adictiva y magnética, "
+            "ideal para la noche y ocasiones especiales — perfecta para "
+            "primavera, verano y otoños templados donde buscas dejar una "
+            "impresión duradera.",
+        ],
+        "ideal_para": "Noche, ocasiones especiales — magnética y duradera.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Givenchy|Pi|EDT": {
+        "slug": "givenchy-pi",
+        "meta_descripcion": (
+            "Pi de Givenchy EDT, 100% original, botella completa. "
+            "Amaderado ámbar clásico — romero, muguete y vainilla. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Romero", "Albahaca", "Estragón", "Mandarina"],
+        "notas_corazon": ["Muguete", "Neroli", "Geranio", "Anís"],
+        "notas_fondo": ["Vainilla", "Almendra", "Haba tonka", "Cedro", "Benjuí"],
+        "parrafos": [
+            "Pi, lanzada por Givenchy en 1998, es un clásico de la "
+            "perfumería masculina de los noventa con un corazón "
+            "magnético entre lo aromático y lo dulce. Abre con romero, "
+            "albahaca y mandarina frescos, se despliega en un corazón "
+            "floral de muguete, neroli y geranio, y cierra en una base "
+            "cálida de vainilla, almendra y haba tonka.",
+
+            "Es una fragancia amaderada ámbar seductora y clásica, ideal "
+            "para climas fríos — perfecta para el invierno, con un "
+            "carácter cómodo, versátil y fácil de llevar a diario.",
+        ],
+        "ideal_para": "Otoño e invierno — cómoda y fácil de llevar a diario.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|Divine|EDP": {
+        "slug": "jean-paul-gaultier-divine",
+        "meta_descripcion": (
+            "Gaultier Divine de Jean Paul Gaultier, 100% original, "
+            "botella completa. Floral gourmand marino — jazmín, "
+            "ylang-ylang y merengue. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Bayas rojas", "Calypsone"],
+        "notas_corazon": ["Jazmín", "Ylang-ylang", "Lirio"],
+        "notas_fondo": ["Almizcle", "Pachulí", "Merengue"],
+        "parrafos": [
+            "Gaultier Divine celebra la divinidad y singularidad de cada "
+            "mujer con una fragancia floral gourmand y marina en el "
+            "icónico frasco de corsé de la casa. Abre con bergamota y "
+            "bayas rojas frescas, se despliega en un corazón radiante de "
+            "lirio, jazmín y ylang-ylang, y cierra en una base golosa de "
+            "almizcle, pachulí y un toque de merengue.",
+
+            "Es una fragancia floral gourmand acuática y polvorienta, "
+            "ideal para primavera y verano — perfecta para el día a día, "
+            "fresca y dulce sin ser empalagosa.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — fresca y dulce.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|La Belle Paradise Garden|EDP": {
+        "slug": "jean-paul-gaultier-la-belle-paradise-garden",
+        "meta_descripcion": (
+            "La Belle Paradise Garden de Jean Paul Gaultier, 100% "
+            "original, botella completa. Floral ambarado — loto azul, "
+            "iris y vainilla. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Loto azul"],
+        "notas_corazon": ["Iris"],
+        "notas_fondo": ["Vainilla"],
+        "parrafos": [
+            "La Belle Paradise Garden transporta al jardín exuberante y "
+            "flamboyante inspirado en las pasarelas de Jean Paul "
+            "Gaultier, lleno de flores misteriosas y criaturas únicas. "
+            "Abre con el aroma acuático y misterioso del loto azul, se "
+            "despliega en un corazón delicado de iris, y cierra en una "
+            "base sensual de vainilla.",
+
+            "Es una fragancia floral ambarada dulce y delicada, ideal "
+            "para primavera y verano — perfecta para quien busca un "
+            "aroma fresco, romántico y ligeramente goloso.",
+        ],
+        "ideal_para": "Primavera y verano — fresca, romántica y delicada.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Beau Paradise Garden|EDP": {
+        "slug": "jean-paul-gaultier-le-beau-paradise-garden",
+        "meta_descripcion": (
+            "Le Beau Paradise Garden de Jean Paul Gaultier, 100% "
+            "original, botella completa. Amaderado acuático tropical — "
+            "coco, higo y sándalo. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Notas verdes", "Notas acuáticas", "Menta", "Jengibre"],
+        "notas_corazon": ["Coco", "Higo", "Sal"],
+        "notas_fondo": ["Sándalo", "Haba tonka"],
+        "parrafos": [
+            "Le Beau Paradise Garden encapsula la esencia de un paraíso "
+            "tropical directo del jardín de Gaultier. Abre con notas "
+            "verdes, acuáticas, menta y jengibre vivaces, se despliega "
+            "en un corazón salado y jugoso de coco e higo verde, y "
+            "cierra en una base cálida de sándalo y haba tonka bañada "
+            "por el sol.",
+
+            "Es una fragancia amaderada acuática verde y tropical, ideal "
+            "para primavera y verano — perfecta para vacaciones y días "
+            "de playa con un carácter fresco y solar.",
+        ],
+        "ideal_para": "Primavera y verano — vacaciones y playa.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Lacoste|Blanc|EDT": {
+        "slug": "lacoste-blanc",
+        "meta_descripcion": (
+            "L.12.12 Blanc de Lacoste, 100% original, botella completa. "
+            "Amaderado aromático fresco y audaz — toronja, tuberosa y "
+            "cuero. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Toronja", "Romero", "Cardamomo"],
+        "notas_corazon": ["Ylang-ylang", "Tuberosa"],
+        "notas_fondo": ["Cedro de Virginia", "Ante", "Vetiver", "Cuero"],
+        "parrafos": [
+            "L.12.12 Blanc, inspirada en la icónica polo blanca de "
+            "Lacoste, es una fragancia masculina limpia y elegante con "
+            "un giro amaderado inesperado. Abre con toronja, romero y "
+            "cardamomo frescos, se despliega en un corazón floral de "
+            "ylang-ylang y tuberosa, y cierra en una base de cedro de "
+            "Virginia, ante y cuero.",
+
+            "Es una fragancia amaderada aromática fresca y audaz a la "
+            "vez, ideal para primavera y verano de día — perfecta para "
+            "el trabajo y salidas casuales con un carácter limpio y "
+            "confiable.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — trabajo y salidas casuales.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Montblanc|Explorer|EDP": {
+        "slug": "montblanc-explorer",
+        "meta_descripcion": (
+            "Explorer de Montblanc, 100% original, botella completa. "
+            "Amaderado aromático aventurero — bergamota, cuero y cacao. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Pimienta rosa", "Salvia esclarea"],
+        "notas_corazon": ["Vetiver", "Cuero"],
+        "notas_fondo": ["Ambroxan", "Akigalawood", "Pachulí", "Cacao"],
+        "parrafos": [
+            "Explorer, lanzada por Montblanc en 2019, evoca el espíritu "
+            "aventurero de conquistar nuevas alturas en una fragancia "
+            "amaderada aromática cálida y sofisticada. Abre con "
+            "bergamota, pimienta rosa y salvia esclarea, se despliega en "
+            "un corazón terroso de vetiver y cuero, y cierra en una base "
+            "envolvente de ambroxan, pachulí y cacao.",
+
+            "Es una fragancia amaderada cálida y magnética, ideal para "
+            "otoño e invierno — perfecta para la oficina y ocasiones "
+            "formales donde buscas proyectar sofisticación aventurera.",
+        ],
+        "ideal_para": "Otoño e invierno — oficina y ocasiones formales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Moschino|Fresh Couture Gold|EDP": {
+        "slug": "moschino-fresh-couture-gold",
+        "meta_descripcion": (
+            "Gold Fresh Couture de Moschino, 100% original, botella "
+            "completa. Floral afrutado amaderado — pera, mango y jazmín. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pera", "Mango", "Durazno blanco", "Mandarina"],
+        "notas_corazon": ["Orquídea", "Jazmín", "Muguete"],
+        "notas_fondo": ["Vainilla", "Almizcle", "Sándalo", "Pachulí"],
+        "parrafos": [
+            "Gold Fresh Couture, presentada en el icónico frasco con "
+            "forma de producto de limpieza de Moschino, es una versión "
+            "más rica y dorada de Fresh Couture. Abre con pera, mango y "
+            "durazno blanco jugosos, se despliega en un corazón floral "
+            "de orquídea, jazmín y muguete, y cierra en una base cálida "
+            "de vainilla, almizcle y sándalo.",
+
+            "Es una fragancia floral afrutada amaderada dulce y "
+            "luminosa, ideal para primavera y verano, aunque su fondo "
+            "cálido funciona bien todo el año — perfecta para el uso "
+            "diario con un carácter juguetón.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — dulce y juguetona.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Moschino|Fresh Couture Pink|EDT": {
+        "slug": "moschino-fresh-couture-pink",
+        "meta_descripcion": (
+            "Pink Fresh Couture de Moschino, 100% original, botella "
+            "completa. Cítrico floral afrutado — toronja rosa, granada y "
+            "musgo blanco. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Toronja rosa", "Grosella negra", "Muguete"],
+        "notas_corazon": ["Granada", "Jacinto rosa", "Rosa silvestre"],
+        "notas_fondo": ["Cedro", "Ambrox", "Almizcle"],
+        "parrafos": [
+            "Pink Fresh Couture lleva el ADN limpio y fresco de Fresh "
+            "Couture hacia una versión más frutal y rosada. Abre con "
+            "toronja rosa, grosella negra y muguete chispeantes, se "
+            "despliega en un corazón de granada y jacinto rosa, y cierra "
+            "en una base ligera de cedro, ambrox y almizcle.",
+
+            "Es una fragancia cítrica floral afrutada fresca y juguetona, "
+            "ideal para primavera y verano — perfecta para el día a día "
+            "con un carácter vibrante y femenino.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — vibrante y femenina.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Moschino|Fresh Couture|EDT": {
+        "slug": "moschino-fresh-couture",
+        "meta_descripcion": (
+            "Fresh Couture de Moschino, 100% original, botella completa. "
+            "Floral afrutado limpio — bergamota, peonía y cedro. Envíos "
+            "a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Mandarina", "Ylang-ylang"],
+        "notas_corazon": ["Peonía", "Frambuesa", "Osmanthus"],
+        "notas_fondo": ["Cedro", "Ambrox", "Pachulí"],
+        "parrafos": [
+            "Fresh Couture, presentada en el icónico frasco con forma de "
+            "producto de limpieza de Moschino, es una fragancia floral "
+            "afrutada vibrante y con espíritu vanguardista. Abre con "
+            "bergamota, mandarina y ylang-ylang, se despliega en un "
+            "corazón de peonía, frambuesa y osmanthus, y cierra en una "
+            "base limpia de cedro, ambrox y pachulí.",
+
+            "Es una fragancia ligera y aireada, ideal para primavera y "
+            "verano — perfecta para el uso diario con un carácter fresco, "
+            "juguetón y desenfadado.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — fresca y desenfadada.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Salvatore Ferragamo|Signorina Estuche 3 Piezas|EDP": {
+        "slug": "salvatore-ferragamo-signorina-estuche",
+        "meta_descripcion": (
+            "Set de regalo Signorina de Salvatore Ferragamo (EDP + "
+            "loción corporal + miniatura), 100% original. Floral "
+            "afrutado chic — grosella negra, rosa y panna cotta. Envíos "
+            "a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Rosa", "Pimienta rosa", "Grosella negra"],
+        "notas_corazon": ["Jazmín", "Peonía", "Rosa"],
+        "notas_fondo": ["Pachulí", "Almizcle", "Panna cotta"],
+        "parrafos": [
+            "Signorina, lanzada por Salvatore Ferragamo en 2011, celebra "
+            "a la mujer chic e independiente con una fragancia floral "
+            "afrutada sofisticada y golosa a la vez. Abre con grosella "
+            "negra y pimienta rosa, se despliega en un corazón floral de "
+            "jazmín, peonía y rosa, y cierra en una base cremosa de "
+            "pachulí, almizcle y un original acorde de panna cotta.",
+
+            "Es una fragancia versátil que funciona igual en la oficina "
+            "que en una salida nocturna, ideal para todo el año. Este "
+            "set incluye el Eau de Parfum, loción corporal y una "
+            "miniatura de viaje, ideal para regalo.",
+        ],
+        "ideal_para": "Todo el año, día y noche — oficina y salidas.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Valentino|Donna Born In Roma Yellow Dream|EDP": {
+        "slug": "valentino-donna-born-in-roma-yellow-dream",
+        "meta_descripcion": (
+            "Donna Born In Roma Yellow Dream de Valentino, 100% "
+            "original, botella completa. Floral fresco romano — limón, "
+            "rosa turca y almizcle blanco. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Limón", "Bergamota"],
+        "notas_corazon": ["Rosa turca"],
+        "notas_fondo": ["Almizcle blanco", "Vainilla de Madagascar", "Cedro de Virginia"],
+        "parrafos": [
+            "Donna Born In Roma Yellow Dream reinterpreta el estilo "
+            "callejero romano con una fragancia fresca, limpia y "
+            "femenina, inspirada en la luz cálida de las mañanas en "
+            "Roma. Abre con limón y bergamota vibrantes, se despliega en "
+            "un corazón delicado de rosa turca, y cierra en una base "
+            "suave de almizcle blanco, vainilla y cedro.",
+
+            "Es una fragancia floral fresca y espontánea, ideal para "
+            "primavera y verano — perfecta para el uso diario casual con "
+            "un carácter joven y radiante.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — joven y radiante.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Valentino|Uomo Born In Roma Coral Fantasy|EDT": {
+        "slug": "valentino-uomo-born-in-roma-coral-fantasy",
+        "meta_descripcion": (
+            "Uomo Born In Roma Coral Fantasy de Valentino, 100% "
+            "original, botella completa. Amaderado aromático fresco — "
+            "manzana roja, salvia y tabaco. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Manzana roja"],
+        "notas_corazon": ["Geranio", "Salvia esclarea"],
+        "notas_fondo": ["Pachulí", "Tabaco"],
+        "parrafos": [
+            "Uomo Born In Roma Coral Fantasy celebra la diversidad y los "
+            "atardeceres deslumbrantes de Roma en una fragancia fresca y "
+            "con carácter. Abre con un toque afrutado y moderno de "
+            "manzana roja, se despliega en un corazón herbal y terroso "
+            "de geranio y salvia esclarea, y cierra en una base ahumada "
+            "de pachulí y tabaco.",
+
+            "Es una fragancia amaderada aromática fresca con un fondo "
+            "cálido inesperado, ideal para primavera y verano — perfecta "
+            "para el día a día con un carácter moderno y desenfadado.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — moderna y desenfadada.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Valentino|Uomo Born In Roma Green Stravaganza|EDT": {
+        "slug": "valentino-uomo-born-in-roma-green-stravaganza",
+        "meta_descripcion": (
+            "Uomo Born In Roma Green Stravaganza de Valentino, 100% "
+            "original, botella completa. Fougère ambarado vibrante — "
+            "bergamota calabresa, café y vetiver. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota calabresa"],
+        "notas_corazon": ["Acorde de café"],
+        "notas_fondo": ["Vetiver"],
+        "parrafos": [
+            "Uomo Born In Roma Green Stravaganza revela un carácter "
+            "magnético a través de la frescura verde de la bergamota "
+            "calabresa combinada con la energía de un acorde de café. "
+            "Abre con bergamota vibrante y verde, se despliega en un "
+            "corazón enérgico de café, y cierra en una base elegante y "
+            "amaderada de vetiver.",
+
+            "Es una fragancia fougère ambarada fresca y vigorizante, "
+            "ideal para primavera y verano — perfecta para el uso diario "
+            "con un carácter joven y lleno de energía.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — joven y enérgica.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Valentino|Uomo Born In Roma Yellow Dream|EDT": {
+        "slug": "valentino-uomo-born-in-roma-yellow-dream",
+        "meta_descripcion": (
+            "Uomo Born In Roma Yellow Dream de Valentino, 100% original, "
+            "botella completa. Oriental especiado vibrante — piña, "
+            "jengibre y vainilla. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Piña", "Mandarina"],
+        "notas_corazon": ["Especias", "Pan de jengibre", "Jengibre"],
+        "notas_fondo": ["Vainilla absoluta", "Cedro"],
+        "parrafos": [
+            "Uomo Born In Roma Yellow Dream aporta un carácter vibrante "
+            "y afrutado a la línea Born In Roma con un giro especiado "
+            "inesperado. Abre con piña y mandarina jugosas, se despliega "
+            "en un corazón cálido de especias, pan de jengibre y "
+            "jengibre, y cierra en una base dulce de vainilla absoluta y "
+            "cedro.",
+
+            "Es una fragancia oriental especiada vibrante y afrutada, "
+            "ideal para primavera y verano — perfecta como fragancia "
+            "casual diaria con un carácter divertido y radiante.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario casual — divertida y radiante.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Carolina Herrera|Bad Boy Cobalt Estuche 3 Piezas|EDP": {
+        "slug": "carolina-herrera-bad-boy-cobalt-estuche",
+        "meta_descripcion": (
+            "Set de regalo Bad Boy Cobalt de Carolina Herrera (EDP + gel "
+            "de baño + miniatura), 100% original. Amaderado aromático "
+            "audaz — pimienta rosa, ciruela y trufa. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Pimienta rosa", "Lavanda"],
+        "notas_corazon": ["Geranio", "Ciruela", "Trufa"],
+        "notas_fondo": ["Vetiver", "Cedro", "Haba tonka"],
+        "parrafos": [
+            "Bad Boy Cobalt reinterpreta el icónico Bad Boy de Carolina "
+            "Herrera con un carácter más mineral y audaz, en un frasco "
+            "azul cobalto. Abre con pimienta rosa y lavanda, revela un "
+            "corazón floral-masculino de geranio y ciruela anclado por "
+            "un acorde de trufa ahumada, y cierra en una base de "
+            "vetiver, cedro y haba tonka.",
+
+            "Es una fragancia amaderada aromática versátil, ideal para "
+            "cualquier época del año. Este set incluye el Eau de Parfum, "
+            "gel de baño a juego y una miniatura de viaje, ideal para "
+            "regalo.",
+        ],
+        "ideal_para": "Todo el año, día y noche — ideal para regalo.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Carolina Herrera|Bad Boy Elixir Estuche 3 Piezas|EDP": {
+        "slug": "carolina-herrera-bad-boy-elixir-estuche",
+        "meta_descripcion": (
+            "Set de regalo Bad Boy Elixir de Carolina Herrera (EDP + gel "
+            "de baño + miniatura), 100% original. Oriental amaderado "
+            "intenso — cuero, iris y franquincienso. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Salvia", "Lavanda"],
+        "notas_corazon": ["Cuero", "Iris"],
+        "notas_fondo": ["Cedro", "Franquincienso", "Haba tonka"],
+        "parrafos": [
+            "Bad Boy Elixir lleva el ADN de Bad Boy hacia una versión "
+            "más concentrada e intensa, con un cuero limpio y magnético "
+            "en el centro de la composición. Abre con salvia y lavanda, "
+            "se despliega en un corazón de cuero e iris, y cierra en una "
+            "base cálida de cedro, franquincienso y haba tonka.",
+
+            "Es una fragancia oriental amaderada de gran fijación, ideal "
+            "para climas fríos y uso nocturno. Este set incluye el Eau "
+            "de Parfum, gel de baño a juego y una miniatura de viaje, "
+            "ideal para regalo.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ideal para regalo.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Carolina Herrera|Bad Boy Estuche 3 Piezas|EDT": {
+        "slug": "carolina-herrera-bad-boy-estuche",
+        "meta_descripcion": (
+            "Set de regalo Bad Boy de Carolina Herrera EDT (perfume + "
+            "gel de baño + miniatura), 100% original. Oriental "
+            "especiado, ahumado y seductor. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Pimienta negra", "Pimienta blanca"],
+        "notas_corazon": ["Cedro", "Salvia"],
+        "notas_fondo": ["Haba tonka", "Madera ambarada", "Cacao"],
+        "parrafos": [
+            "Bad Boy, lanzada por Carolina Herrera en 2019, es una "
+            "fragancia oriental especiada con una personalidad "
+            "seductora y ligeramente rebelde. Abre con bergamota y un "
+            "dúo de pimienta negra y blanca, se desarrolla en un "
+            "corazón de cedro y salvia, y cierra en una base cálida de "
+            "haba tonka, madera ambarada y cacao.",
+
+            "Es una fragancia especiada, ahumada y sensual, ideal para "
+            "uso nocturno. Este set incluye el Eau de Toilette, gel de "
+            "baño a juego y una miniatura de viaje, ideal para regalo.",
+        ],
+        "ideal_para": "Noche, otoño e invierno — ideal para regalo.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Carolina Herrera|Good Girl Estuche 3 Piezas|EDP": {
+        "slug": "carolina-herrera-good-girl-estuche",
+        "meta_descripcion": (
+            "Set de regalo Good Girl de Carolina Herrera (EDP + loción "
+            "corporal + miniatura), 100% original. Floriental gourmand "
+            "icónico — tuberosa, jazmín y haba tonka tostada. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Almendra", "Café", "Bergamota", "Limón"],
+        "notas_corazon": ["Tuberosa", "Jazmín sambac", "Flor de azahar", "Rosa búlgara"],
+        "notas_fondo": ["Haba tonka", "Cacao", "Vainilla", "Sándalo"],
+        "parrafos": [
+            "Good Girl, lanzada por Carolina Herrera en 2016, es una de "
+            "las fragancias femeninas más reconocibles del mercado — su "
+            "icónico frasco en forma de zapato de tacón es tan famoso "
+            "como el perfume mismo. Abre con almendra, café y bergamota, "
+            "revela un corazón floral intenso de tuberosa y jazmín "
+            "sambac, y cierra en una base gourmand de haba tonka "
+            "tostada, cacao y vainilla.",
+
+            "Es una fragancia floriental gourmand icónica, ideal para la "
+            "noche. Este set incluye el Eau de Parfum, loción corporal a "
+            "juego y una miniatura de viaje, ideal para regalo.",
+        ],
+        "ideal_para": "Noche, otoño e invierno — ideal para regalo.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Carolina Herrera|Very Good Girl Elixir Estuche 3 Piezas|EDP": {
+        "slug": "carolina-herrera-very-good-girl-elixir-estuche",
+        "meta_descripcion": (
+            "Set de regalo Very Good Girl Elixir de Carolina Herrera "
+            "(EDP + loción corporal + miniatura), 100% original. "
+            "Floriental gourmand intenso — cereza negra, rosa y cacao. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Cereza negra", "Almendra amarga"],
+        "notas_corazon": ["Rosa", "Tuberosa"],
+        "notas_fondo": ["Vainilla", "Cacao"],
+        "parrafos": [
+            "Very Good Girl Elixir intensifica el carácter frutal de "
+            "Very Good Girl con una versión más golosa y sensual. Abre "
+            "con cereza negra y almendra amarga, se despliega en un "
+            "corazón floral de rosa y tuberosa, y cierra en una base "
+            "envolvente de vainilla y cacao.",
+
+            "Es una fragancia floriental gourmand intensa, ideal para "
+            "otoño e invierno. Este set incluye el Eau de Parfum, loción "
+            "corporal a juego y una miniatura de viaje, ideal para "
+            "regalo.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ideal para regalo.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Carolina Herrera|Very Good Girl Elixir|EDP": {
+        "slug": "carolina-herrera-very-good-girl-elixir",
+        "meta_descripcion": (
+            "Very Good Girl Elixir de Carolina Herrera, 100% original, "
+            "botella completa. Floriental gourmand intenso — cereza "
+            "negra, rosa y cacao. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Cereza negra", "Almendra amarga"],
+        "notas_corazon": ["Rosa", "Tuberosa"],
+        "notas_fondo": ["Vainilla", "Cacao"],
+        "parrafos": [
+            "Very Good Girl Elixir, lanzada en 2024, intensifica el "
+            "carácter frutal de Very Good Girl con una versión más "
+            "golosa y sensual. Abre con cereza negra y almendra amarga, "
+            "se despliega en un corazón floral de rosa y tuberosa, y "
+            "cierra en una base envolvente de vainilla y cacao.",
+
+            "Es una fragancia floriental gourmand intensa, ideal para "
+            "otoño e invierno y uso nocturno — perfecta para quien busca "
+            "una versión más rica y sensual de Very Good Girl.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — versión más rica y sensual.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Carolina Herrera|Very Good Girl Estuche 3 Piezas|EDP": {
+        "slug": "carolina-herrera-very-good-girl-estuche",
+        "meta_descripcion": (
+            "Set de regalo Very Good Girl de Carolina Herrera (EDP + "
+            "loción corporal + miniatura), 100% original. Floral "
+            "afrutado sensual — lichi, rosa y vainilla. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Lichi", "Grosella roja"],
+        "notas_corazon": ["Rosa"],
+        "notas_fondo": ["Vainilla", "Vetiver"],
+        "parrafos": [
+            "Very Good Girl es una versión más frutal y sensual dentro "
+            "del universo Good Girl de Carolina Herrera. Abre con lichi "
+            "y grosella roja jugosos, se despliega en un corazón de "
+            "rosa, y cierra en una base cálida de vainilla y vetiver.",
+
+            "Es una fragancia floral afrutada versátil, dulce sin ser "
+            "empalagosa. Este set incluye el Eau de Parfum, loción "
+            "corporal a juego y una miniatura de viaje, ideal para "
+            "regalo.",
+        ],
+        "ideal_para": "Todo el año, día y noche — ideal para regalo.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Beau Estuche 2 Piezas|EDT": {
+        "slug": "jean-paul-gaultier-le-beau-estuche",
+        "meta_descripcion": (
+            "Set de regalo Le Beau de Jean Paul Gaultier (EDT + "
+            "miniatura), 100% original. Amaderado aromático tropical — "
+            "bergamota, coco y haba tonka. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota"],
+        "notas_corazon": ["Coco"],
+        "notas_fondo": ["Haba tonka"],
+        "parrafos": [
+            "Le Beau, lanzada por Jean Paul Gaultier en 2019, es una "
+            "fragancia amaderada aromática con un carácter tropical y "
+            "solar poco común en perfumería masculina. Abre con "
+            "bergamota ácida que se funde en un corazón lechoso y cálido "
+            "de coco, y cierra en una base dulce de haba tonka.",
+
+            "Es una fragancia veraniega por excelencia, fresca y "
+            "envolvente a la vez. Este set incluye el Eau de Toilette "
+            "más una miniatura de viaje, ideal para regalo.",
+        ],
+        "ideal_para": "Primavera y verano — ideal para regalo.",
+        "duracion": "5 a 7 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Male Estuche 3 Piezas|EDT": {
+        "slug": "jean-paul-gaultier-le-male-estuche",
+        "meta_descripcion": (
+            "Set de regalo Le Male de Jean Paul Gaultier (EDT + "
+            "desodorante + gel de baño), 100% original. Oriental "
+            "fougère icónico — lavanda, vainilla y cardamomo. Envíos a "
+            "todo México desde Monterrey."
+        ),
+        "notas_salida": ["Artemisia", "Menta", "Cardamomo", "Bergamota"],
+        "notas_corazon": ["Lavanda", "Flor de azahar", "Canela", "Comino"],
+        "notas_fondo": ["Sándalo", "Vainilla", "Cedro", "Haba tonka", "Ámbar"],
+        "parrafos": [
+            "Le Male, lanzada por Jean Paul Gaultier en 1995 y creada "
+            "por Francis Kurkdjian, es uno de los perfumes masculinos "
+            "más influyentes de las últimas tres décadas, reconocible "
+            "por su frasco en forma de torso marinero. Abre con "
+            "artemisia, menta y cardamomo, se desarrolla en un corazón "
+            "especiado de lavanda y canela, y cierra en una base cálida "
+            "de vainilla, sándalo y haba tonka.",
+
+            "Es una fragancia oriental fougère atemporal que combina "
+            "frescura y calidez sensual. Este set incluye el Eau de "
+            "Toilette, desodorante y gel de baño a juego, ideal para "
+            "regalo.",
+        ],
+        "ideal_para": "Todo el año, día y noche — ideal para regalo.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Invictus Estuche 3 Piezas|EDT": {
+        "slug": "paco-rabanne-invictus-estuche",
+        "meta_descripcion": (
+            "Set de regalo Invictus de Paco Rabanne (EDT + desodorante "
+            "+ miniatura), 100% original. Amaderado aromático, fresco y "
+            "versátil. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pomelo", "Mandarina", "Acorde marino"],
+        "notas_corazon": ["Laurel", "Jazmín (hedione)"],
+        "notas_fondo": ["Madera de guayaco", "Patchouli", "Musgo de roble"],
+        "parrafos": [
+            "Invictus, lanzada por Paco Rabanne en 2013, es una de las "
+            "fragancias masculinas más populares de la casa — energía, "
+            "vitalidad y espíritu de victoria en un frasco. Abre con "
+            "pomelo fresco, mandarina y un acorde marino, se desarrolla "
+            "en un corazón aromático de laurel y jazmín hedione, y "
+            "cierra en una base amaderada de guayaco, patchouli y musgo "
+            "de roble.",
+
+            "Es una fragancia amaderada aromática versátil, ideal para "
+            "primavera y verano. Este set incluye el Eau de Toilette, "
+            "desodorante y una miniatura de viaje, ideal para regalo.",
+        ],
+        "ideal_para": "Primavera y verano, día y noche — ideal para regalo.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Invictus Victory Estuche 2 Piezas|EDP": {
+        "slug": "paco-rabanne-invictus-victory-estuche",
+        "meta_descripcion": (
+            "Set de regalo Invictus Victory de Paco Rabanne (EDP + "
+            "shampoo), 100% original. Aromático amaderado triunfal — "
+            "pimienta rosa, incienso y vainilla. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Cítricos", "Pimienta rosa"],
+        "notas_corazon": ["Incienso", "Lavanda"],
+        "notas_fondo": ["Haba tonka", "Ámbar exótico", "Vainilla"],
+        "parrafos": [
+            "Invictus Victory celebra el espíritu de la victoria con una "
+            "fragancia que combina energía y calidez. Abre con un golpe "
+            "cítrico y de pimienta rosa vigorizante, se desarrolla en un "
+            "corazón floral e incienso con lavanda, y cierra en una base "
+            "envolvente de haba tonka, ámbar exótico y vainilla.",
+
+            "Es una fragancia aromática amaderada versátil, con carácter "
+            "vigorizante y a la vez reconfortante. Este set incluye el "
+            "Eau de Parfum más shampoo a juego, ideal para regalo.",
+        ],
+        "ideal_para": "Otoño e invierno — ideal para regalo.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Million Gold For Her Estuche 3 Piezas|EDP": {
+        "slug": "paco-rabanne-million-gold-for-her-estuche",
+        "meta_descripcion": (
+            "Set de regalo Million Gold For Her de Paco Rabanne (EDP + "
+            "loción corporal + miniatura), 100% original. Floral "
+            "afrutado sensual — pera, rosa y vainilla. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Pera", "Rosa", "Lavanda"],
+        "notas_corazon": ["Ylang-ylang", "Jazmín"],
+        "notas_fondo": ["Vainilla", "Almizcle", "Musgo"],
+        "parrafos": [
+            "Million Gold For Her irradia la energía dorada y "
+            "resplandeciente del universo Million en una fragancia "
+            "floral afrutada intensamente sensual. Abre con pera, rosa "
+            "chispeante y lavanda, se despliega en un corazón de flores "
+            "blancas de ylang-ylang y jazmín, y cierra en una base "
+            "envolvente de vainilla, almizcle mineral y musgo.",
+
+            "Es una fragancia floral afrutada opulenta y adictiva, "
+            "ideal para otoño e invierno y uso nocturno. Este set "
+            "incluye el Eau de Parfum, loción corporal a juego y una "
+            "miniatura de viaje, ideal para regalo.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ideal para regalo.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Paco Rabanne|Olympéa Estuche 2 Piezas|EDP": {
+        "slug": "paco-rabanne-olympea-estuche",
+        "meta_descripcion": (
+            "Set de regalo Olympéa de Paco Rabanne (EDP + loción "
+            "corporal), 100% original. Oriental fresco salado — jazmín "
+            "acuático, vainilla y sal. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Jazmín acuático", "Mandarina verde", "Flor de jengibre"],
+        "notas_corazon": ["Vainilla", "Sal"],
+        "notas_fondo": ["Madera de cachemira", "Ámbar gris", "Sándalo"],
+        "parrafos": [
+            "Olympéa, lanzada por Paco Rabanne en 2015, es la "
+            "contraparte femenina de Invictus, inspirada en el concepto "
+            "de una diosa griega moderna. Abre con jazmín acuático, "
+            "mandarina verde y flor de jengibre chispeantes, se "
+            "despliega en un corazón inesperado de vainilla salada, y "
+            "cierra en una base de madera de cachemira, ámbar gris y "
+            "sándalo.",
+
+            "Es una fragancia oriental fresca con un toque salado único, "
+            "ideal para primavera y verano por las noches. Este set "
+            "incluye el Eau de Parfum más loción corporal a juego, ideal "
+            "para regalo.",
+        ],
+        "ideal_para": "Primavera y verano, noche — ideal para regalo.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|One Million Estuche 3 Piezas|EDT": {
+        "slug": "paco-rabanne-one-million-estuche",
+        "meta_descripcion": (
+            "Set de regalo One Million de Paco Rabanne (EDT + "
+            "desodorante + miniatura), 100% original. Amaderado "
+            "especiado icónico — canela, cuero y ámbar. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Mandarina sanguina", "Toronja", "Menta"],
+        "notas_corazon": ["Canela", "Especias", "Rosa"],
+        "notas_fondo": ["Ámbar", "Cuero", "Notas amaderadas", "Patchouli"],
+        "parrafos": [
+            "One Million, lanzada por Paco Rabanne en 2008, es una de "
+            "las fragancias masculinas más icónicas de la última década "
+            "— su frasco en forma de lingote de oro es tan reconocible "
+            "como el aroma mismo. Abre con mandarina sanguina, toronja y "
+            "menta, revela un corazón especiado de canela y rosa, y "
+            "cierra en una base amaderada de cuero, ámbar y patchouli "
+            "indio.",
+
+            "Es una fragancia amaderada especiada versátil, perfecta "
+            "para salidas casuales y formales. Este set incluye el Eau "
+            "de Toilette, desodorante y una miniatura de viaje, ideal "
+            "para regalo.",
+        ],
+        "ideal_para": "Otoño e invierno, día y noche — ideal para regalo.",
+        "duracion": "4 a 6 horas en piel.",
+    },
 }
 
 
