@@ -761,11 +761,32 @@ def render_pagina(perfume, contenido):
 """
 
 
+def generar_sitemap(slugs):
+    """Reescribe sitemap.xml con la home + una entrada por cada página de
+    producto generada, para que quede sincronizado automáticamente en cada
+    corrida en vez de mantenerse a mano y quedar desactualizado."""
+    urls = ["https://saucodecants.com/"] + [
+        f"https://saucodecants.com/decants/{slug}/" for slug in sorted(slugs)
+    ]
+    entradas = "\n".join(
+        f'  <url>\n    <loc>{u}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>{"1.0" if u.endswith(".com/") else "0.8"}</priority>\n  </url>'
+        for u in urls
+    )
+    contenido = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{entradas}\n"
+        "</urlset>\n"
+    )
+    (RAIZ / "sitemap.xml").write_text(contenido, encoding="utf-8")
+
+
 def main():
     catalogo = leer_catalogo_propio()
     perfumes_por_clave = {f"{p['casa']}|{p['nombre']}": p for p in catalogo["PERFUMES"]}
 
     generados = []
+    slugs = []
     for clave, contenido in CONTENIDO_DECANTS.items():
         perfume = perfumes_por_clave.get(clave)
         if not perfume:
@@ -776,10 +797,14 @@ def main():
         destino.parent.mkdir(parents=True, exist_ok=True)
         destino.write_text(html, encoding="utf-8")
         generados.append(destino.relative_to(RAIZ))
+        slugs.append(contenido["slug"])
+
+    generar_sitemap(slugs)
 
     print(f"Generadas {len(generados)} página(s):")
     for g in generados:
         print(f"  - {g}")
+    print(f"sitemap.xml actualizado con {len(slugs) + 1} URLs.")
 
 
 if __name__ == "__main__":

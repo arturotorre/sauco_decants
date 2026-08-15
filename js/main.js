@@ -8,17 +8,26 @@ function cardHTML(p) {
   const precios = ['3ml', '5ml', '10ml'].map(ml => `
         <div class="precio-item"><span class="precio-ml">${ml}</span><span class="precio-val">${p.precios[ml] || ''}</span></div>`).join('');
 
+  const urlProducto = p.slug ? `/decants/${p.slug}/` : null;
+  const fotoImg = `<img src="${p.imagen}" alt="${p.casa} ${p.alt} - decant de perfume ${p.genero.toLowerCase()}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="foto-label" style="display:none">Sin imagen</span>`;
+  const fotoHTML = urlProducto
+    ? `<a class="card-foto-link" href="${urlProducto}" aria-label="Ver detalles de ${p.nombre}">${fotoImg}</a>`
+    : fotoImg;
+  const nombreHTML = urlProducto
+    ? `<a class="card-nombre" href="${urlProducto}">${p.nombre}</a>`
+    : `<div class="card-nombre">${p.nombre}</div>`;
+
   return `
   <div class="card">
     <div class="card-foto">
-      <img src="${p.imagen}" alt="${p.casa} ${p.alt} - decant de perfume ${p.genero.toLowerCase()}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="foto-label" style="display:none">Sin imagen</span>
+      ${fotoHTML}
       <div class="card-tier-dot ${dot}"></div>
     </div>
     <div class="card-info">
       <div class="card-casa">${p.casa}</div>
       <div class="card-nombre-fila">
-        <div class="card-nombre">${p.nombre}</div>
+        ${nombreHTML}
         <button class="btn-agregar" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Agregar ${p.nombre} al carrito">
           <span class="btn-agregar-texto">Agregar al carrito</span>
           <span class="btn-agregar-icono" aria-hidden="true">🛒</span>

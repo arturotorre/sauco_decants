@@ -3,3 +3,4 @@ scripts/
 
 # Archivos del sistema
 .DS_Store
+__pycache__/

@@ -128,6 +128,7 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 
 .card-foto { width: 100%; aspect-ratio: 3 / 2; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 0.5px solid var(--arena); position: relative; overflow: hidden;}
 .card-foto img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; padding: 20px; background: #fff; }
+.card-foto-link { display: block; width: 100%; height: 100%; }
 .foto-label { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 3px; color: var(--cobre); text-transform: uppercase; margin-top: 8px; opacity: 0.5; }
 .card-tier-dot { position: absolute; top: 12px; right: 12px; width: 8px; height: 8px; border-radius: 50%; z-index: 2; }
 .dot-nicho { background: #6B5B9E; }
@@ -135,7 +136,8 @@ body { background: var(--chocolate); font-family: 'Jost', sans-serif; color: var
 
 .card-info { padding: 0.6rem 0.85rem 0.4rem; }
 .card-casa { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 3px; color: var(--cobre); text-transform: uppercase; margin-bottom: 4px; }
-.card-nombre { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--chocolate); line-height: 1.2; }
+.card-nombre { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--chocolate); line-height: 1.2; text-decoration: none; }
+a.card-nombre:hover { color: var(--terracota); }
 .card-nombre-fila { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; margin-bottom: 3px; }
 .card-genero { font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 2px; color: #9B7B6A; text-transform: uppercase; }
 .card-divider { height: 0.5px; background: var(--arena); margin: 0.5rem 0; }

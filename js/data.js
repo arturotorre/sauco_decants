@@ -11,6 +11,7 @@ const PERFUMES = [
   {
     casa: "Xerjoff",
     nombre: "Erba Pura EDP",
+    slug: "xerjoff-erba-pura",
     genero: "Unisex",
     tier: "nicho",
     imagen: "/imagenes/erba pura.webp",
@@ -22,6 +23,7 @@ const PERFUMES = [
   {
     casa: "Le Labo",
     nombre: "Santal 33 EDP",
+    slug: "le-labo-santal-33",
     genero: "Unisex",
     tier: "nicho",
     imagen: "/imagenes/santal 33.webp",
@@ -33,6 +35,7 @@ const PERFUMES = [
   {
     casa: "Francis Kurkdjian",
     nombre: "Baccarat Rouge 540 EDP",
+    slug: "francis-kurkdjian-baccarat-rouge-540",
     genero: "Unisex",
     tier: "nicho",
     imagen: "/imagenes/baccarat rouge 540.webp",
@@ -46,6 +49,7 @@ const PERFUMES = [
   {
     casa: "Maison Margiela",
     nombre: "Replica By the Fireplace EDT",
+    slug: "maison-margiela-replica-by-the-fireplace",
     genero: "Unisex",
     tier: "disenador",
     imagen: "/imagenes/replica by the fireplace.webp",
@@ -57,6 +61,7 @@ const PERFUMES = [
   {
     casa: "Louis Vuitton",
     nombre: "Imagination EDP",
+    slug: "louis-vuitton-imagination",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/imagination.webp",
@@ -68,6 +73,7 @@ const PERFUMES = [
   {
     casa: "Louis Vuitton",
     nombre: "L'Immensité EDP",
+    slug: "louis-vuitton-limmensite",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/limmensité.webp",
@@ -79,6 +85,7 @@ const PERFUMES = [
   {
     casa: "Dior",
     nombre: "Sauvage EDT",
+    slug: "dior-sauvage",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/sauvage.webp",
@@ -90,6 +97,7 @@ const PERFUMES = [
   {
     casa: "Chanel",
     nombre: "Bleu de Chanel EDP",
+    slug: "chanel-bleu-de-chanel",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/bleu de chanel.webp",
@@ -101,6 +109,7 @@ const PERFUMES = [
   {
     casa: "YSL",
     nombre: "Libre EDP",
+    slug: "ysl-libre",
     genero: "Femenino",
     tier: "disenador",
     imagen: "/imagenes/libre.webp",
@@ -112,6 +121,7 @@ const PERFUMES = [
   {
     casa: "Valentino",
     nombre: "Uomo Born in Roma Intense EDP",
+    slug: "valentino-uomo-born-in-roma-intense",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/born in roma intense.webp",
@@ -123,6 +133,7 @@ const PERFUMES = [
   {
     casa: "Chanel",
     nombre: "Chance Eau Tendre EDP",
+    slug: "chanel-chance-eau-tendre",
     genero: "Femenino",
     tier: "disenador",
     imagen: "/imagenes/chance eau tendre.webp",
@@ -134,6 +145,7 @@ const PERFUMES = [
   {
     casa: "Prada",
     nombre: "Paradoxe Intense EDP",
+    slug: "prada-paradoxe-intense",
     genero: "Femenino",
     tier: "disenador",
     imagen: "/imagenes/paradoxe.webp",
@@ -145,6 +157,7 @@ const PERFUMES = [
   {
     casa: "Valentino",
     nombre: "Donna Born in Roma Intense EDP",
+    slug: "valentino-donna-born-in-roma-intense",
     genero: "Femenino",
     tier: "disenador",
     imagen: "/imagenes/born in roma intense donna.webp",
@@ -156,6 +169,7 @@ const PERFUMES = [
   {
     casa: "YSL",
     nombre: "Y EDP",
+    slug: "ysl-y",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/y edp.webp",
@@ -167,6 +181,7 @@ const PERFUMES = [
   {
     casa: "Armani",
     nombre: "Acqua di Gio Profondo EDP",
+    slug: "armani-acqua-di-gio-profondo",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/acqua di gio profondo.webp",
@@ -178,6 +193,7 @@ const PERFUMES = [
   {
     casa: "Lancôme",
     nombre: "La Vie Est Belle EDP",
+    slug: "lancome-la-vie-est-belle",
     genero: "Femenino",
     tier: "disenador",
     imagen: "/imagenes/la vie est belle.webp",
@@ -189,6 +205,7 @@ const PERFUMES = [
   {
     casa: "Paco Rabanne",
     nombre: "1 Million EDT",
+    slug: "paco-rabanne-1-million",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/1 million.webp",
@@ -200,6 +217,7 @@ const PERFUMES = [
   {
     casa: "Paco Rabanne",
     nombre: "Olympéa EDP",
+    slug: "paco-rabanne-olympea",
     genero: "Femenino",
     tier: "disenador",
     imagen: "/imagenes/olympea.webp",
@@ -211,6 +229,7 @@ const PERFUMES = [
   {
     casa: "Dolce & Gabbana",
     nombre: "Light Blue Pour Homme EDT",
+    slug: "dolce-gabbana-light-blue-pour-homme",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/light blue pour homme.webp",
@@ -222,6 +241,7 @@ const PERFUMES = [
   {
     casa: "Jean Paul Gaultier",
     nombre: "Le Beau Le Parfum EDP",
+    slug: "jean-paul-gaultier-le-beau-le-parfum",
     genero: "Masculino",
     tier: "disenador",
     imagen: "/imagenes/le beau le parfum.webp",
@@ -233,6 +253,7 @@ const PERFUMES = [
   {
     casa: "Carolina Herrera",
     nombre: "Good Girl Blush EDP",
+    slug: "carolina-herrera-good-girl-blush",
     genero: "Femenino",
     tier: "disenador",
     imagen: "/imagenes/good girl blush.webp",
