@@ -2959,6 +2959,189 @@ CONTENIDO_COMPLETOS = {
         "ideal_para": "Otoño e invierno, día y noche — ideal para regalo.",
         "duracion": "4 a 6 horas en piel.",
     },
+    "Carolina Herrera|Bad Boy Cobalt Absolute|EDP": {
+        "slug": "carolina-herrera-bad-boy-cobalt-absolute",
+        "meta_descripcion": (
+            "Bad Boy Cobalt Absolute de Carolina Herrera, 100% original, "
+            "botella completa. Oriental amaderado intenso — lavanda "
+            "azul, trufa y oud. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lavanda azul", "Salvia azul", "Elemí"],
+        "notas_corazon": ["Trufa", "Geranio", "Oud"],
+        "notas_fondo": ["Vainilla", "Roble", "Vetiver"],
+        "parrafos": [
+            "Bad Boy Cobalt Absolute, lanzada en 2025, ofrece la "
+            "interpretación más intensa y seductora dentro de la línea "
+            "Bad Boy Cobalt. Abre con lavanda azul, salvia azul y elemí "
+            "frescos, se despliega en un corazón denso de trufa, "
+            "geranio y oud, y cierra en una base cálida de vainilla, "
+            "roble y vetiver.",
+
+            "Es una fragancia oriental amaderada de gran profundidad y "
+            "fijación, ideal para climas fríos y uso nocturno — "
+            "perfecta para quien busca una versión más audaz y "
+            "concentrada dentro de la línea Cobalt.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — versión más audaz de Cobalt.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Jean Paul Gaultier|Le Beau Narcisse|EDP": {
+        "slug": "jean-paul-gaultier-le-beau-narcisse",
+        "meta_descripcion": (
+            "Le Beau Narcisse de Jean Paul Gaultier, 100% original, "
+            "botella completa. Floral amaderado almizclado — bergamota, "
+            "coco y flor de azahar. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Coco"],
+        "notas_corazon": ["Almizcle", "Flor de azahar"],
+        "notas_fondo": ["Vainilla", "Haba tonka", "Vetiver"],
+        "parrafos": [
+            "Le Beau Narcisse construye sobre el ADN tropical de Le "
+            "Beau con una composición ambarada-almizclada definida por "
+            "calidez e intensidad discreta. Abre con un chispazo fresco "
+            "de bergamota y coco, se despliega en un corazón carnal de "
+            "almizcle suavizado por flor de azahar, y cierra en una "
+            "base envolvente de vainilla, haba tonka y vetiver.",
+
+            "Es una fragancia floral amaderada almizclada cálida y "
+            "adictiva, ideal para primavera y noches templadas — "
+            "perfecta para quien busca una versión más floral y sutil "
+            "dentro del universo Le Beau.",
+        ],
+        "ideal_para": "Primavera, noche — cálida y adictiva.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Jean Paul Gaultier|Le Male Elixir Absolu|Parfum": {
+        "slug": "jean-paul-gaultier-le-male-elixir-absolu",
+        "meta_descripcion": (
+            "Le Male Elixir Absolu de Jean Paul Gaultier, 100% "
+            "original, botella completa. Amaderado aromático intenso — "
+            "ciruela, lavanda y haba tonka. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Ciruela", "Canela", "Cardamomo", "Bergamota"],
+        "notas_corazon": ["Lavanda", "Davana", "Artemisia"],
+        "notas_fondo": ["Haba tonka", "Benjuí", "Ambrette", "Patchouli", "Labdanum"],
+        "parrafos": [
+            "Le Male Elixir Absolu, lanzada en 2025, lleva el carácter "
+            "goloso de la línea Elixir hacia una versión más profunda y "
+            "sofisticada. Abre con un golpe crujiente de lavanda que da "
+            "paso a un corazón jugoso de ciruela, canela y cardamomo, y "
+            "cierra en una base rica de haba tonka, benjuí, ambrette y "
+            "patchouli.",
+
+            "Es una fragancia amaderada aromática cálida, dulce y "
+            "especiada, ideal para otoño e invierno y uso nocturno — "
+            "con suficiente elegancia para no resultar abrumadora, "
+            "perfecta para ocasiones especiales.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ocasiones especiales.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
+    "Jean Paul Gaultier|La Belle Rosea|EDP": {
+        "slug": "jean-paul-gaultier-la-belle-rosea",
+        "meta_descripcion": (
+            "La Belle Rosea de Jean Paul Gaultier, 100% original, "
+            "botella completa. Floral acuático ambarado — peonía, rosa "
+            "y vainilla. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Notas acuáticas", "Bergamota"],
+        "notas_corazon": ["Peonía", "Rosa", "Violeta"],
+        "notas_fondo": ["Vainilla", "Almizcle", "Cedro"],
+        "parrafos": [
+            "La Belle Rosea equilibra frescura y sensualidad suave en "
+            "una fragancia floral acuática luminosa. Abre con un acorde "
+            "acuático cristalino y bergamota, se despliega en un "
+            "corazón radiante de peonía, rosa y violeta, y cierra en "
+            "una base cálida de vainilla, almizcle y cedro que deja una "
+            "estela sedosa y delicada.",
+
+            "Es una fragancia floral acuática fresca y femenina, ideal "
+            "para primavera y verano — perfecta para el día a día con "
+            "un carácter luminoso y romántico.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — luminosa y romántica.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Carolina Herrera|CH Swing|EDP": {
+        "slug": "carolina-herrera-ch-swing",
+        "meta_descripcion": (
+            "CH Swing de Carolina Herrera, 100% original, botella "
+            "completa. Oriental vainilla vibrante — lima, pera y coco. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lima", "Pera"],
+        "notas_corazon": ["Coco", "Ylang ylang"],
+        "notas_fondo": ["Sándalo", "Avellana", "Cedro", "Vainilla"],
+        "parrafos": [
+            "CH Swing, edición limitada de Carolina Herrera inspirada "
+            "en la precisión y energía del golf, reinterpreta CH con un "
+            "carácter vibrante y adictivo. Abre con lima y pera "
+            "chispeantes, se despliega en un corazón cremoso de coco y "
+            "ylang ylang, y cierra en una base cálida de sándalo, "
+            "avellana y vainilla.",
+
+            "Es una fragancia oriental vainilla enérgica y golosa, "
+            "ideal para primavera y verano — perfecta para el día a día "
+            "con un carácter fresco, moderno y distintivo.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — fresca y distintiva.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Million Gold For Her Pure Diamonds|EDP": {
+        "slug": "paco-rabanne-million-gold-pure-diamonds",
+        "meta_descripcion": (
+            "Million Gold For Her Pure Diamonds de Paco Rabanne, 100% "
+            "original, botella completa. Floral afrutado radiante — "
+            "durazno, ylang ylang y vainilla. Envíos a todo México "
+            "desde Monterrey."
+        ),
+        "notas_salida": ["Durazno", "Bergamota"],
+        "notas_corazon": ["Ylang ylang", "Jazmín"],
+        "notas_fondo": ["Vainilla", "Almizcle"],
+        "parrafos": [
+            "Million Gold For Her Pure Diamonds, edición limitada "
+            "lanzada para celebrar los 60 años de la maison, rinde "
+            "tributo a la maestría de Paco Rabanne con los diamantes. "
+            "Abre con durazno y bergamota jugosos, se despliega en un "
+            "corazón floral de ylang ylang y jazmín, y cierra en una "
+            "base cálida de vainilla y almizcle.",
+
+            "Es una fragancia floral afrutada radiante y dulce, ideal "
+            "para primavera y verano — perfecta para el día a día con "
+            "un carácter luminoso y festivo.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — luminosa y festiva.",
+        "duracion": "6 a 8 horas en piel.",
+    },
+    "Paco Rabanne|Million Gold For Her|Parfum": {
+        "slug": "paco-rabanne-million-gold-parfum",
+        "meta_descripcion": (
+            "Million Gold For Her Parfum de Paco Rabanne, 100% "
+            "original, botella completa. Oriental floral intenso — "
+            "rosa, jazmín y sándalo. Envíos a todo México desde "
+            "Monterrey."
+        ),
+        "notas_salida": ["Jazmín", "Rosa", "Cítricos", "Limón"],
+        "notas_corazon": ["Ylang-ylang", "Notas solares", "Lavanda"],
+        "notas_fondo": ["Sándalo", "Vainilla"],
+        "parrafos": [
+            "Million Gold For Her Parfum lleva el ADN dorado y sensual "
+            "de Million Gold hacia una concentración mayor, más rica y "
+            "duradera. Abre con jazmín, rosa y cítricos vibrantes, se "
+            "despliega en un corazón floral de ylang-ylang con notas "
+            "solares y lavanda, y cierra en una base envolvente de "
+            "sándalo y vainilla.",
+
+            "Es una fragancia oriental floral opulenta e intensa, ideal "
+            "para otoño e invierno y uso nocturno — perfecta para "
+            "quien busca una versión más rica y sofisticada dentro del "
+            "universo Million Gold.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — versión rica y sofisticada.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
 }
 
 
