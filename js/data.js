@@ -17,7 +17,7 @@ const PERFUMES = [
     imagen: "/imagenes/erba pura.webp",
     alt: "Erba Pura",
     notas: ["Naranja siciliana", "Bergamota", "Limón", "Vainilla", "Ámbar", "Almizcle blanco"],
-    precios: { "3ml": "$360", "5ml": "$575", "10ml": "$1,093" },
+    precios: { "3ml": "$280", "5ml": "$440", "10ml": "$844" },
     bestseller: false
   },
   {
@@ -29,7 +29,7 @@ const PERFUMES = [
     imagen: "/imagenes/santal 33.webp",
     alt: "Santal 33",
     notas: ["Cardamomo", "Iris", "Violeta", "Sándalo", "Cuero", "Almizcle", "Cedro"],
-    precios: { "3ml": "$390", "5ml": "$620", "10ml": "$1,159" },
+    precios: { "3ml": "$350", "5ml": "$554", "10ml": "$1,080" },
     bestseller: true
   },
   {
@@ -103,7 +103,7 @@ const PERFUMES = [
     imagen: "/imagenes/bleu de chanel.webp",
     alt: "Bleu de Chanel",
     notas: ["Limón", "Menta", "Jengibre", "Jazmín", "Incienso", "Sándalo", "Cedro"],
-    precios: { "3ml": "$245", "5ml": "$390", "10ml": "$680" },
+    precios: { "3ml": "$225", "5ml": "$350", "10ml": "$650" },
     bestseller: false
   },
   {
@@ -115,7 +115,7 @@ const PERFUMES = [
     imagen: "/imagenes/libre.webp",
     alt: "Libre",
     notas: ["Lavanda", "Mandarina", "Vainilla", "Almizcle blanco", "Cedro"],
-    precios: { "3ml": "$220", "5ml": "$360", "10ml": "$595" },
+    precios: { "3ml": "$176", "5ml": "$266", "10ml": "$495" },
     bestseller: false
   },
   {
@@ -127,7 +127,7 @@ const PERFUMES = [
     imagen: "/imagenes/born in roma intense.webp",
     alt: "Born in Roma Intense",
     notas: ["Vainilla bourbon", "Lavanda", "Vetiver", "Madera ambarada"],
-    precios: { "3ml": "$220", "5ml": "$335", "10ml": "$590" },
+    precios: { "3ml": "$220", "5ml": "$374", "10ml": "$707" },
     bestseller: true
   },
   {
@@ -139,7 +139,7 @@ const PERFUMES = [
     imagen: "/imagenes/chance eau tendre.webp",
     alt: "Chance Eau Tendre",
     notas: ["Pomelo", "Jacinto", "Jazmín", "Almizcle blanco", "Cedro"],
-    precios: { "3ml": "$245", "5ml": "$390", "10ml": "$680" },
+    precios: { "3ml": "$245", "5ml": "$375", "10ml": "$700" },
     bestseller: true
   },
   {
@@ -151,7 +151,7 @@ const PERFUMES = [
     imagen: "/imagenes/paradoxe.webp",
     alt: "Paradoxe",
     notas: ["Neroli", "Flor de azahar", "Almizcle blanco", "Sándalo", "Ámbar"],
-    precios: { "3ml": "$290", "5ml": "$390", "10ml": "$700" },
+    precios: { "3ml": "$170", "5ml": "$250", "10ml": "$458" },
     bestseller: true
   },
   {
@@ -175,7 +175,7 @@ const PERFUMES = [
     imagen: "/imagenes/y edp.webp",
     alt: "Y EDP",
     notas: ["Manzana", "Jengibre", "Bergamota", "Salvia", "Haba tonka", "Cedro"],
-    precios: { "3ml": "$165", "5ml": "$245", "10ml": "$445" },
+    precios: { "3ml": "$150", "5ml": "$220", "10ml": "$395" },
     bestseller: false
   },
   {
@@ -187,7 +187,7 @@ const PERFUMES = [
     imagen: "/imagenes/acqua di gio profondo.webp",
     alt: "Acqua di Gio",
     notas: ["Bergamota", "Menta acuática", "Lavanda marina", "Patchouli", "Almizcle"],
-    precios: { "3ml": "$190", "5ml": "$295", "10ml": "$550" },
+    precios: { "3ml": "$140", "5ml": "$210", "10ml": "$361" },
     bestseller: false
   },
   {
@@ -199,7 +199,7 @@ const PERFUMES = [
     imagen: "/imagenes/la vie est belle.webp",
     alt: "La Vie Est Belle",
     notas: ["Iris", "Jazmín", "Praline", "Vainilla", "Patchouli", "Gourmand"],
-    precios: { "3ml": "$165", "5ml": "$260", "10ml": "$470" },
+    precios: { "3ml": "$150", "5ml": "$220", "10ml": "$386" },
     bestseller: false
   },
   {
@@ -211,7 +211,7 @@ const PERFUMES = [
     imagen: "/imagenes/1 million.webp",
     alt: "1 Million",
     notas: ["Menta", "Pomelo", "Rosa", "Canela", "Cuero", "Ámbar", "Patchouli"],
-    precios: { "3ml": "$145", "5ml": "$195", "10ml": "$375" },
+    precios: { "3ml": "$145", "5ml": "$210", "10ml": "$375" },
     bestseller: false
   },
   {
@@ -223,7 +223,7 @@ const PERFUMES = [
     imagen: "/imagenes/olympea.webp",
     alt: "Olympéa",
     notas: ["Flor de té verde", "Sal marina", "Pimienta blanca", "Vainilla", "Cachemir"],
-    precios: { "3ml": "$145", "5ml": "$195", "10ml": "$375" },
+    precios: { "3ml": "$130", "5ml": "$185", "10ml": "$324" },
     bestseller: false
   },
   {
@@ -235,7 +235,7 @@ const PERFUMES = [
     imagen: "/imagenes/light blue pour homme.webp",
     alt: "Light Blue Pour Homme",
     notas: ["Limón", "Romero", "Pachulí"],
-    precios: { "3ml": "$92", "5ml": "$125", "10ml": "$209" },
+    precios: { "3ml": "$92", "5ml": "$130", "10ml": "$210" },
     bestseller: false
   },
   {
@@ -247,7 +247,7 @@ const PERFUMES = [
     imagen: "/imagenes/le beau le parfum.webp",
     alt: "Le Beau Le Parfum",
     notas: ["Piña", "Iris", "Jengibre", "Coco", "Haba tonka", "Sándalo", "Ámbar"],
-    precios: { "3ml": "$137", "5ml": "$200", "10ml": "$360" },
+    precios: { "3ml": "$120", "5ml": "$170", "10ml": "$295" },
     bestseller: false
   },
   {
@@ -259,7 +259,7 @@ const PERFUMES = [
     imagen: "/imagenes/good girl blush.webp",
     alt: "Good Girl Blush",
     notas: ["Lychee", "Pimienta rosa", "Peonía", "Rosa", "Sándalo", "Almizcle blanco"],
-    precios: { "3ml": "$170", "5ml": "$255", "10ml": "$465" },
+    precios: { "3ml": "$170", "5ml": "$255", "10ml": "$466" },
     bestseller: false
   }
 ];
