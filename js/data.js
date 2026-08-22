@@ -33,6 +33,18 @@ const PERFUMES = [
     bestseller: true
   },
   {
+    casa: "Le Labo",
+    nombre: "Another 13 EDP",
+    slug: "le-labo-another-13",
+    genero: "Unisex",
+    tier: "nicho",
+    imagen: "/imagenes/another 13.webp",
+    alt: "Another 13",
+    notas: ["Pera", "Manzana", "Cítricos", "Jazmín", "Musgo", "Ámbar gris", "Almizcle"],
+    precios: { "3ml": "$350", "5ml": "$554", "10ml": "$1,080" },
+    bestseller: false
+  },
+  {
     casa: "Francis Kurkdjian",
     nombre: "Baccarat Rouge 540 EDP",
     slug: "francis-kurkdjian-baccarat-rouge-540",

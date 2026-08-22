@@ -51,6 +51,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://saucodecants.com/decants/le-labo-another-13/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://saucodecants.com/decants/le-labo-santal-33/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

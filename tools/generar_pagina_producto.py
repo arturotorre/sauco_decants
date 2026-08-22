@@ -53,6 +53,32 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Uso diario, citas y salidas nocturnas — todo el año, especialmente otoño e invierno.",
         "duracion": "6 a 8 horas en piel, con estela moderada.",
     },
+    "Le Labo|Another 13 EDP": {
+        "slug": "le-labo-another-13",
+        "meta_descripcion": (
+            "Decant de Another 13 de Le Labo (3ml, 5ml, 10ml), 100% original. "
+            "Amaderado ambarado y almizclado, unisex — nacido de la colaboración "
+            "con AnOther Magazine. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Pera", "Manzana", "Cítricos"],
+        "notas_corazon": ["Ambreta", "Musgo", "Jazmín"],
+        "notas_fondo": ["Ámbar gris", "Almizcle", "Madera"],
+        "parrafos": [
+            "Another 13, lanzada en 2010 por Le Labo en colaboración con AnOther "
+            "Magazine, es una fragancia moderna y adictiva construida alrededor de "
+            "un acorde de ámbar gris y almizcle. Abre con pera, manzana y cítricos "
+            "jugosos, se despliega en un corazón limpio de ambreta, musgo y jazmín, "
+            "y cierra en una base envolvente de ámbar gris, almizcle y madera que "
+            "recuerda a piel recién lavada.",
+
+            "Es completamente unisex y funciona todo el año — un perfume "
+            "'segunda piel' discreto pero magnético, ideal tanto para el día a día "
+            "como para capas con otros perfumes gracias a su carácter limpio y "
+            "adictivo.",
+        ],
+        "ideal_para": "Uso diario, todo el año — discreto, limpio y magnético.",
+        "duracion": "6 a 8 horas en piel, con estela moderada.",
+    },
     "Valentino|Uomo Born in Roma Intense EDP": {
         "slug": "valentino-uomo-born-in-roma-intense",
         "meta_descripcion": (
