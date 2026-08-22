@@ -3142,6 +3142,32 @@ CONTENIDO_COMPLETOS = {
         "ideal_para": "Otoño e invierno, noche — versión rica y sofisticada.",
         "duracion": "8+ horas en piel, con muy buena proyección.",
     },
+    "YSL|Y|EDP": {
+        "slug": "ysl-y-completo",
+        "meta_descripcion": (
+            "Y de Yves Saint Laurent Eau de Parfum, 100% original, "
+            "botella completa. Aromático herbal fresco — bergamota, "
+            "jengibre y vetiver. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Bergamota", "Jengibre", "Manzana"],
+        "notas_corazon": ["Salvia", "Geranio", "Bayas de enebro"],
+        "notas_fondo": ["Vetiver", "Cedro", "Haba tonka", "Madera ambarada", "Olíbano"],
+        "parrafos": [
+            "Y, lanzada por Yves Saint Laurent en 2018, celebra al "
+            "hombre que se atreve a labrar su propio camino con una "
+            "fragancia aromática herbal fresca y moderna. Abre con "
+            "bergamota, jengibre y manzana vibrantes, se despliega en "
+            "un corazón limpio de salvia, geranio y bayas de enebro, y "
+            "cierra en una base amaderada de vetiver, cedro y haba "
+            "tonka con un toque dulce de madera ambarada.",
+
+            "Es una fragancia aromática versátil y de gran fijación, "
+            "ideal para todo el año — funciona igual de bien en la "
+            "oficina que en una salida casual o un evento nocturno.",
+        ],
+        "ideal_para": "Todo el año, día y noche — oficina, salidas y eventos.",
+        "duracion": "8 a 10 horas en piel, con muy buena proyección.",
+    },
 }
 
 

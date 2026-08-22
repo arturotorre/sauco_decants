@@ -306,6 +306,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Jean Paul Gaultier", categoria: "disenador", nombre: "Le Beau Paradise Garden", slug: "jean-paul-gaultier-le-beau-paradise-garden", tamano: "125ml", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/le_beau_paradise_garden.webp", alt: "Le Beau Paradise Garden", precio: "$2,699" },
   { casa: "Paco Rabanne", categoria: "disenador", nombre: "Invictus Parfum", slug: "paco-rabanne-invictus-parfum", tamano: "100ml", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/invictus_parfum.webp", alt: "Invictus Parfum", precio: "$2,549" },
   { casa: "YSL", categoria: "disenador", nombre: "Y Intense", slug: "ysl-y-intense", tamano: "100ml", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/y_intense.webp", alt: "Y Intense", precio: "$2,990" },
+  { casa: "YSL", categoria: "disenador", nombre: "Y", slug: "ysl-y-completo", tamano: "100ml", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/y_edp.webp", alt: "Y", precio: "$2,950" },
 
   // ---- DAMA ----
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Queen", slug: "dolce-gabbana-queen", tamano: "100ml", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/queen.webp", alt: "Queen", precio: "$2,450" },
