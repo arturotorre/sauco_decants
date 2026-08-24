@@ -239,6 +239,30 @@ const PERFUMES = [
     bestseller: false
   },
   {
+    casa: "Guerlain",
+    nombre: "Mon Guerlain EDP",
+    slug: "guerlain-mon-guerlain",
+    genero: "Femenino",
+    tier: "disenador",
+    imagen: "/imagenes/mon guerlain.webp",
+    alt: "Mon Guerlain",
+    notas: ["Lavanda", "Bergamota", "Iris", "Jazmín sambac", "Rosa", "Vainilla", "Sándalo"],
+    precios: { "3ml": "$130", "5ml": "$185", "10ml": "$330" },
+    bestseller: false
+  },
+  {
+    casa: "Dolce & Gabbana",
+    nombre: "Light Blue EDT",
+    slug: "dolce-gabbana-light-blue-decant",
+    genero: "Femenino",
+    tier: "disenador",
+    imagen: "/imagenes/light blue.webp",
+    alt: "Light Blue",
+    notas: ["Limón siciliano", "Manzana verde", "Campanilla", "Rosa blanca", "Bambú", "Ámbar", "Almizcle"],
+    precios: { "3ml": "$92", "5ml": "$130", "10ml": "$210" },
+    bestseller: false
+  },
+  {
     casa: "Dolce & Gabbana",
     nombre: "Light Blue Pour Homme EDT",
     slug: "dolce-gabbana-light-blue-pour-homme",
@@ -359,7 +383,7 @@ const PERFUMES_COMPLETOS = [
   { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue", slug: "dolce-gabbana-light-blue", tamano: "100ml", concentracion: "EDT", genero: "Dama", imagen: "/imagenes/completos/light_blue.webp", alt: "Light Blue", precio: "$1,764" },
   { casa: "Dior", categoria: "disenador", nombre: "Miss Dior", slug: "dior-miss-dior", tamano: "100ml", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/miss_dior.webp", alt: "Miss Dior", precio: "$3,349" },
   { casa: "Burberry", categoria: "disenador", nombre: "Her", slug: "burberry-her", tamano: "100ml", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/burberry_her.webp", alt: "Burberry Her", precio: "$3,349" },
-  { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue Capri In Love", slug: "dolce-gabbana-light-blue-capri-in-love", tamano: "100ml", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/light_blue_capri_in_love.webp", alt: "Light Blue Capri In Love", precio: "$2,550" },
+  { casa: "Dolce & Gabbana", categoria: "disenador", nombre: "Light Blue Capri In Love", slug: "dolce-gabbana-light-blue-capri-in-love", tamano: "100ml", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/light_blue_capri_in_love.webp", alt: "Light Blue Capri In Love", precio: "$1,980" },
   { casa: "YSL", categoria: "disenador", nombre: "Libre", slug: "ysl-libre", tamano: "90ml", concentracion: "EDP", genero: "Dama", imagen: "/imagenes/completos/libre.webp", alt: "Libre", precio: "$2,950" },
   { casa: "Dior", categoria: "disenador", nombre: "Miss Dior Originale", slug: "dior-miss-dior-originale", tamano: "100ml", concentracion: "EDT", genero: "Dama", imagen: "/imagenes/completos/miss_dior_originale.webp", alt: "Miss Dior Originale", precio: "$2,750" },
   { casa: "Carolina Herrera", categoria: "disenador", nombre: "Bad Boy Cobalt Absolute", slug: "carolina-herrera-bad-boy-cobalt-absolute", tamano: "100ml", concentracion: "EDP", genero: "Caballero", imagen: "/imagenes/completos/bad_boy_cobalt_absolute.webp", alt: "Bad Boy Cobalt Absolute", precio: "$2,500" },

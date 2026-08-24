@@ -565,6 +565,57 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Primavera y verano — citas de día, bodas, brunch.",
         "duracion": "6 a 8 horas en piel, proyección moderada.",
     },
+    "Guerlain|Mon Guerlain EDP": {
+        "slug": "guerlain-mon-guerlain",
+        "meta_descripcion": (
+            "Decant de Mon Guerlain de Guerlain (3ml, 5ml, 10ml), 100% original. "
+            "Amaderado oriental dulce y polvoriento — lavanda, iris y vainilla. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Lavanda", "Bergamota"],
+        "notas_corazon": ["Iris", "Jazmín sambac", "Rosa"],
+        "notas_fondo": ["Vainilla de Tahití", "Sándalo", "Regaliz", "Benjuí", "Pachulí"],
+        "parrafos": [
+            "Mon Guerlain, lanzada en 2017 por Thierry Wasser y Delphine Jelk, "
+            "reinterpreta la lavanda —tradicionalmente masculina en la casa "
+            "Guerlain— dentro de un bouquet floral femenino y contemporáneo. Abre "
+            "con lavanda y bergamota frescas, se despliega en un corazón "
+            "polvoriento de iris, jazmín sambac y rosa, y cierra en una base "
+            "gourmand de vainilla de Tahití, sándalo y regaliz.",
+
+            "Es una fragancia amaderada oriental dulce y envolvente, con un "
+            "carácter moderno que combina frescura aromática y calidez golosa — "
+            "funciona todo el año, ideal para el uso diario y también para la "
+            "noche.",
+        ],
+        "ideal_para": "Uso diario y noche — todo el año.",
+        "duracion": "6 a 8 horas en piel, proyección moderada.",
+    },
+    "Dolce & Gabbana|Light Blue EDT": {
+        "slug": "dolce-gabbana-light-blue-decant",
+        "meta_descripcion": (
+            "Decant de Light Blue de Dolce&Gabbana (3ml, 5ml, 10ml), 100% "
+            "original. Fresco frutal-amaderado icónico — limón siciliano, "
+            "manzana y jazmín. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Limón siciliano", "Manzana verde", "Campanilla"],
+        "notas_corazon": ["Rosa blanca", "Bambú", "Jazmín"],
+        "notas_fondo": ["Ámbar", "Almizcle", "Cedro"],
+        "parrafos": [
+            "Light Blue, lanzada por Dolce&Gabbana en 2001, es una de las "
+            "fragancias femeninas más icónicas del mercado — el aroma del "
+            "verano en Capri en un frasco. Abre con limón siciliano, manzana "
+            "verde y campanilla, se despliega en un corazón floral de rosa "
+            "blanca, bambú y jazmín, y cierra en una base de ámbar, almizcle y "
+            "cedro.",
+
+            "Es una fragancia fresca y afrutada-amaderada, perfecta para "
+            "primavera y verano — ligera, energizante y versátil, ideal para el "
+            "uso diario de día.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — energizante y fresca.",
+        "duracion": "5 a 7 horas en piel.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----
