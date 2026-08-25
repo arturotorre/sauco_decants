@@ -641,6 +641,30 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Primavera y verano, uso diario — oficina, gimnasio, día a día.",
         "duracion": "4 a 6 horas en piel.",
     },
+    "Lacoste|Red EDT": {
+        "slug": "lacoste-red",
+        "meta_descripcion": (
+            "Decant de Lacoste Red (3ml, 5ml, 10ml), 100% original. Fougère "
+            "afrutado energético — manzana, pino y patchouli. Envíos a todo "
+            "México desde Monterrey."
+        ),
+        "notas_salida": ["Manzana", "Cedro"],
+        "notas_corazon": ["Pino", "Jazmín"],
+        "notas_fondo": ["Patchouli", "Vetiver"],
+        "parrafos": [
+            "Lacoste Red, lanzada en 2004, es una fragancia fougère afrutada "
+            "pensada para el hombre activo. Abre con manzana verde crujiente "
+            "que se equilibra con un toque de cedro, se despliega en un "
+            "corazón herbal de pino y jazmín, y cierra en una base amaderada "
+            "de patchouli y vetiver.",
+
+            "Es una fragancia enérgica y versátil, ideal para primavera y "
+            "verano de día — perfecta para el uso diario, deportivo o "
+            "casual, con un carácter fresco y directo.",
+        ],
+        "ideal_para": "Primavera y verano, día — uso diario, deportivo y casual.",
+        "duracion": "5 a 7 horas en piel.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----

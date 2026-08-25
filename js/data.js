@@ -275,6 +275,18 @@ const PERFUMES = [
     bestseller: false
   },
   {
+    casa: "Lacoste",
+    nombre: "Red EDT",
+    slug: "lacoste-red",
+    genero: "Masculino",
+    tier: "disenador",
+    imagen: "/imagenes/lacoste red.webp",
+    alt: "Lacoste Red",
+    notas: ["Manzana", "Cedro", "Pino", "Jazmín", "Patchouli", "Vetiver"],
+    precios: { "3ml": "$94", "5ml": "$129", "10ml": "$217" },
+    bestseller: false
+  },
+  {
     casa: "Dolce & Gabbana",
     nombre: "Light Blue Pour Homme EDT",
     slug: "dolce-gabbana-light-blue-pour-homme",
