@@ -616,6 +616,31 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Primavera y verano, uso diario — energizante y fresca.",
         "duracion": "5 a 7 horas en piel.",
     },
+    "Calvin Klein|CK One EDT": {
+        "slug": "calvin-klein-ck-one",
+        "meta_descripcion": (
+            "Decant de CK One de Calvin Klein (3ml, 5ml, 10ml), 100% original. "
+            "Fresco cítrico floral unisex, el clásico de los 90 que definió la "
+            "categoría. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Limón", "Bergamota", "Piña", "Cardamomo", "Papaya"],
+        "notas_corazon": ["Muguete", "Jazmín", "Violeta", "Rosa", "Nuez moscada"],
+        "notas_fondo": ["Almizcle", "Cedro", "Sándalo", "Musgo de roble", "Ámbar"],
+        "parrafos": [
+            "CK One, lanzada por Calvin Klein en 1994, fue una de las primeras "
+            "fragancias unisex en volverse un fenómeno masivo y sigue siendo un "
+            "clásico imprescindible. Abre con limón, bergamota y piña frescos, "
+            "se despliega en un corazón floral verde de muguete, jazmín y "
+            "violeta, y cierra en una base limpia de almizcle, cedro y musgo "
+            "de roble.",
+
+            "Es una fragancia fresca, ligera y versátil, ideal para primavera "
+            "y verano — perfecta para el uso diario, la oficina o el gimnasio, "
+            "con ese carácter limpio e inconfundible que la volvió icónica.",
+        ],
+        "ideal_para": "Primavera y verano, uso diario — oficina, gimnasio, día a día.",
+        "duracion": "4 a 6 horas en piel.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----

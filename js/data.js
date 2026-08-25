@@ -263,6 +263,18 @@ const PERFUMES = [
     bestseller: false
   },
   {
+    casa: "Calvin Klein",
+    nombre: "CK One EDT",
+    slug: "calvin-klein-ck-one",
+    genero: "Unisex",
+    tier: "disenador",
+    imagen: "/imagenes/ck one.webp",
+    alt: "CK One",
+    notas: ["Limón", "Bergamota", "Piña", "Muguete", "Jazmín", "Violeta", "Almizcle", "Cedro", "Ámbar"],
+    precios: { "3ml": "$57", "5ml": "$67", "10ml": "$92" },
+    bestseller: false
+  },
+  {
     casa: "Dolce & Gabbana",
     nombre: "Light Blue Pour Homme EDT",
     slug: "dolce-gabbana-light-blue-pour-homme",
