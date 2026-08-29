@@ -56,6 +56,18 @@ const PERFUMES = [
     precios: { "3ml": "$490", "5ml": "$790", "10ml": "$1,390" },
     bestseller: false
   },
+  {
+    casa: "Armani Privé",
+    nombre: "Oud Royal EDP",
+    slug: "armani-prive-oud-royal",
+    genero: "Unisex",
+    tier: "nicho",
+    imagen: "/imagenes/oud royal.webp",
+    alt: "Oud Royal",
+    notas: ["Azafrán", "Incienso", "Rosa", "Ámbar", "Sándalo", "Oud"],
+    precios: { "3ml": "$379", "5ml": "$607", "10ml": "$1,179" },
+    bestseller: false
+  },
 
   // ---- DISEÑADOR ----
   {

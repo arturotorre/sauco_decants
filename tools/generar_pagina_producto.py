@@ -665,6 +665,32 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Primavera y verano, día — uso diario, deportivo y casual.",
         "duracion": "5 a 7 horas en piel.",
     },
+    "Armani Privé|Oud Royal EDP": {
+        "slug": "armani-prive-oud-royal",
+        "meta_descripcion": (
+            "Decant de Oud Royal de Armani Privé (3ml, 5ml, 10ml), 100% "
+            "original. Oriental amaderado de lujo — azafrán, rosa y oud de "
+            "Laos. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Azafrán", "Incienso"],
+        "notas_corazon": ["Rosa", "Especias orientales", "Ámbar"],
+        "notas_fondo": ["Sándalo", "Oud", "Mirra"],
+        "parrafos": [
+            "Oud Royal, parte de la colección Armani Privé Les Mille et Une "
+            "Nuits, alberga la preciosa y excepcional madera de oud de Laos "
+            "en un elixir oriental cautivador. Abre con azafrán e incienso "
+            "envolventes, se despliega en un corazón de rosa y especias "
+            "orientales sobre un fondo de ámbar, y cierra en una base "
+            "profunda de sándalo y oud.",
+
+            "Es una fragancia oriental amaderada intensa y lujosa, ideal "
+            "para otoño e invierno — perfecta para la noche y ocasiones "
+            "especiales donde buscas un aroma memorable con carácter de "
+            "alta perfumería.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — ocasiones especiales.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----
