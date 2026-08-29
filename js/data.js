@@ -92,6 +92,18 @@ const PERFUMES = [
     precios: { "3ml": "$350", "5ml": "$554", "10ml": "$1,080" },
     bestseller: false
   },
+  {
+    casa: "Kilian",
+    nombre: "Black Phantom “Memento Mori” EDP",
+    slug: "kilian-black-phantom-memento-mori",
+    genero: "Unisex",
+    tier: "nicho",
+    imagen: "/imagenes/black phantom.webp",
+    alt: "Black Phantom Memento Mori",
+    notas: ["Ron", "Café", "Vetiver", "Ámbar", "Caña de azúcar", "Sándalo"],
+    precios: { "3ml": "$542", "5ml": "$875", "10ml": "$1,708" },
+    bestseller: false
+  },
 
   // ---- DISEÑADOR ----
   {

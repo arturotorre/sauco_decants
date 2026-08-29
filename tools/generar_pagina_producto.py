@@ -745,6 +745,33 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Uso diario, todo el año — discreta y sofisticada.",
         "duracion": "6 a 8 horas en piel, con estela moderada.",
     },
+    "Kilian|Black Phantom “Memento Mori” EDP": {
+        "slug": "kilian-black-phantom-memento-mori",
+        "nombre_mostrar": "Black Phantom “Memento Mori”",
+        "meta_descripcion": (
+            "Decant de Black Phantom “Memento Mori” de Kilian (3ml, 5ml, "
+            "10ml), 100% original. Oriental vainilla intenso — ron, café y "
+            "sándalo. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Ron"],
+        "notas_corazon": ["Café", "Vetiver"],
+        "notas_fondo": ["Ámbar", "Caña de azúcar", "Sándalo"],
+        "parrafos": [
+            "Black Phantom “Memento Mori”, parte de la colección The "
+            "Cellars de Kilian, evoca la aventura pirata y los tesoros "
+            "escondidos tras aguas negras y misteriosas. Abre con un "
+            "acorde de ron que recuerda la bebida favorita de la era "
+            "pirata, se despliega en un corazón intenso de café equilibrado "
+            "por vetiver, y cierra en una base golosa de caña de azúcar y "
+            "sándalo cremoso.",
+
+            "Es una fragancia oriental vainilla intensa y adictiva, ideal "
+            "para otoño e invierno y uso nocturno — perfecta para quien "
+            "busca un nicho con carácter dulce, oscuro y memorable.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — carácter dulce y memorable.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----
