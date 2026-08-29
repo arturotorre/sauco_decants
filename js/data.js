@@ -68,6 +68,18 @@ const PERFUMES = [
     precios: { "3ml": "$379", "5ml": "$607", "10ml": "$1,179" },
     bestseller: false
   },
+  {
+    casa: "Nasomatto",
+    nombre: "Black Afgano Parfum",
+    slug: "nasomatto-black-afgano",
+    genero: "Unisex",
+    tier: "nicho",
+    imagen: "/imagenes/black afgano.webp",
+    alt: "Black Afgano",
+    notas: ["Cannabis", "Azafrán", "Tabaco", "Café", "Oud", "Incienso", "Ámbar", "Vainilla"],
+    precios: { "3ml": "$570", "5ml": "$920", "10ml": "$1,800" },
+    bestseller: false
+  },
 
   // ---- DISEÑADOR ----
   {

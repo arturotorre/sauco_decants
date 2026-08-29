@@ -691,6 +691,34 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Otoño e invierno, noche — ocasiones especiales.",
         "duracion": "8+ horas en piel, con muy buena proyección.",
     },
+    "Nasomatto|Black Afgano Parfum": {
+        "slug": "nasomatto-black-afgano",
+        "nombre_mostrar": "Black Afgano",
+        "meta_descripcion": (
+            "Decant de Black Afgano de Nasomatto (3ml, 5ml, 10ml), 100% "
+            "original. Oriental amaderado resinoso y ahumado — cannabis, "
+            "tabaco y oud. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Cannabis", "Notas verdes", "Azafrán", "Tomillo"],
+        "notas_corazon": ["Resinas", "Tabaco", "Café", "Canela"],
+        "notas_fondo": ["Oud", "Incienso", "Ámbar", "Almizcle", "Vainilla"],
+        "parrafos": [
+            "Black Afgano, lanzada en 2009 por Alessandro Gualtieri tras "
+            "seis años de desarrollo, es una de las fragancias más "
+            "hipnóticas y poco convencionales de la perfumería de nicho, "
+            "inspirada en el hachís de alta calidad. Abre con cannabis y "
+            "notas verdes crudas, se despliega en un corazón ahumado de "
+            "resinas, tabaco y café, y cierra en una base densa de oud, "
+            "incienso y ámbar.",
+
+            "Es una fragancia oriental amaderada oscura e intensa, con una "
+            "estela que dura horas — ideal para otoño e invierno y uso "
+            "nocturno, pensada para quien busca un aroma verdaderamente "
+            "distinto y de carácter.",
+        ],
+        "ideal_para": "Otoño e invierno, noche — para un carácter distinto y audaz.",
+        "duracion": "10+ horas en piel, con proyección muy fuerte.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----
