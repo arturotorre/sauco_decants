@@ -119,6 +119,18 @@ const PERFUMES = [
     bestseller: false
   },
   {
+    casa: "Maison Margiela",
+    nombre: "Replica Autumn Vibes EDT",
+    slug: "maison-margiela-replica-autumn-vibes",
+    genero: "Unisex",
+    tier: "disenador",
+    imagen: "/imagenes/autumn vibes.webp",
+    alt: "Autumn Vibes",
+    notas: ["Cardamomo", "Pimienta rosa", "Nuez moscada", "Semillas de zanahoria", "Arce", "Cedro", "Musgo"],
+    precios: { "3ml": "$150", "5ml": "$210", "10ml": "$375" },
+    bestseller: false
+  },
+  {
     casa: "Louis Vuitton",
     nombre: "Imagination EDP",
     slug: "louis-vuitton-imagination",

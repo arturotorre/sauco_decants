@@ -772,6 +772,31 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Otoño e invierno, noche — carácter dulce y memorable.",
         "duracion": "8+ horas en piel, con muy buena proyección.",
     },
+    "Maison Margiela|Replica Autumn Vibes EDT": {
+        "slug": "maison-margiela-replica-autumn-vibes",
+        "meta_descripcion": (
+            "Decant de Replica Autumn Vibes de Maison Margiela (3ml, 5ml, "
+            "10ml), 100% original. Amaderado especiado otoñal — cardamomo, "
+            "nuez moscada y cedro. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Cardamomo", "Pimienta rosa"],
+        "notas_corazon": ["Nuez moscada", "Semillas de zanahoria", "Arce"],
+        "notas_fondo": ["Cedro", "Musgo"],
+        "parrafos": [
+            "Replica Autumn Vibes, lanzada en 2021 por la perfumista Fanny "
+            "Bal, recrea la sensación de escapar a un bosque en otoño. "
+            "Abre con cardamomo y pimienta rosa vivaces, se despliega en "
+            "un corazón especiado de nuez moscada, semillas de zanahoria "
+            "y arce, y cierra en una base terrosa de cedro y musgo.",
+
+            "Es una fragancia amaderada especiada ligeramente resinosa y "
+            "terrosa, ideal para otoño — perfecta para el uso diario, con "
+            "un carácter fresco y evocador que recuerda el crujido de "
+            "hojas doradas bajo los pies.",
+        ],
+        "ideal_para": "Otoño, uso diario — fresca y evocadora.",
+        "duracion": "5 a 7 horas en piel.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----
