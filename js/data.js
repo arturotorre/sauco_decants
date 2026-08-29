@@ -80,6 +80,18 @@ const PERFUMES = [
     precios: { "3ml": "$570", "5ml": "$920", "10ml": "$1,800" },
     bestseller: false
   },
+  {
+    casa: "Le Labo",
+    nombre: "Tonka 25 EDP",
+    slug: "le-labo-tonka-25",
+    genero: "Unisex",
+    tier: "nicho",
+    imagen: "/imagenes/tonka 25.webp",
+    alt: "Tonka 25",
+    notas: ["Flor de azahar", "Cedro", "Estoraque", "Haba tonka", "Almizcle", "Vainilla"],
+    precios: { "3ml": "$350", "5ml": "$554", "10ml": "$1,080" },
+    bestseller: false
+  },
 
   // ---- DISEÑADOR ----
   {

@@ -719,6 +719,32 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Otoño e invierno, noche — para un carácter distinto y audaz.",
         "duracion": "10+ horas en piel, con proyección muy fuerte.",
     },
+    "Le Labo|Tonka 25 EDP": {
+        "slug": "le-labo-tonka-25",
+        "meta_descripcion": (
+            "Decant de Tonka 25 de Le Labo (3ml, 5ml, 10ml), 100% original. "
+            "Amaderado almizclado cálido — flor de azahar, cedro y haba "
+            "tonka. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Flor de azahar"],
+        "notas_corazon": ["Cedro", "Estoraque"],
+        "notas_fondo": ["Haba tonka", "Almizcle", "Vainilla"],
+        "parrafos": [
+            "Tonka 25, lanzada en 2018 por la perfumista Daphné Bugey, "
+            "evoca la calidez de la piel y la madera resinosa en una "
+            "composición sutil y adictiva. Abre con flor de azahar, se "
+            "despliega en un corazón de cedro y estoraque, y cierra en una "
+            "base de haba tonka tratada con contención — revelando su "
+            "carácter suave y polvoriento en vez del gourmand dulzón que "
+            "muchos esperarían de un nombre 'tonka'.",
+
+            "Es una fragancia amaderada almizclada cálida y cercana a la "
+            "piel, ideal para todo el año — perfecta para quien busca un "
+            "nicho discreto pero magnético, más sofisticado que dulce.",
+        ],
+        "ideal_para": "Uso diario, todo el año — discreta y sofisticada.",
+        "duracion": "6 a 8 horas en piel, con estela moderada.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----
