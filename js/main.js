@@ -53,30 +53,43 @@ function coincideGenero(p, filtro) {
   return true;
 }
 
+let catalogoFiltroGenero = 'todos';
+let catalogoBusqueda = '';
+
+function catalogoCoincideBusqueda(p) {
+  const busqueda = normalizarTexto(catalogoBusqueda.trim());
+  return !busqueda
+    || normalizarTexto(p.nombre).includes(busqueda)
+    || normalizarTexto(p.casa).includes(busqueda);
+}
+
 function renderCatalogo(filtro) {
-  const contenedor = document.getElementById('vista-catalogo');
+  const contenedor = document.getElementById('catalogo-grid');
+  if (!contenedor) return;
+  catalogoFiltroGenero = filtro;
+
   const etiquetasGenero = { todos: 'Todos', hombre: 'Hombre', mujer: 'Mujer' };
+  const tituloEl = document.getElementById('catalogo-titulo-texto');
+  if (tituloEl) tituloEl.textContent = `Decants - ${etiquetasGenero[filtro] || 'Todos'}`;
+
   const tiers = [
     { key: 'nicho', clase: 'tier-nicho', label: 'Nicho' },
     { key: 'disenador', clase: 'tier-disenador', label: 'Diseñador' }
   ];
 
-  const html = tiers.map(t => {
-    const perfumes = PERFUMES.filter(p => p.tier === t.key && coincideGenero(p, filtro));
-    if (!perfumes.length) return '';
-    return `
+  const gruposConResultados = tiers
+    .map(t => ({ t, perfumes: PERFUMES.filter(p => p.tier === t.key && coincideGenero(p, filtro) && catalogoCoincideBusqueda(p)) }))
+    .filter(g => g.perfumes.length);
+
+  contenedor.innerHTML = gruposConResultados.length
+    ? gruposConResultados.map(({ t, perfumes }) => `
     <div class="tier-header ${t.clase}">
       <div class="tier-line"></div><span class="tier-title">${t.label}</span><div class="tier-line"></div>
     </div>
     <div class="cards-grid">
       ${perfumes.map(cardHTML).join('')}
-    </div>`;
-  }).join('');
-
-  contenedor.innerHTML = `<div class="main-content">
-    <div class="vista-header"><h1>Decants - ${etiquetasGenero[filtro] || 'Todos'}</h1></div>
-    ${html}
-  </div>`;
+    </div>`).join('')
+    : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
 }
 
 function completoCardHTML(p) {
@@ -372,6 +385,9 @@ function route() {
   if (seccion === 'catalogo') {
     const genero = filtro || 'todos';
     vistaCatalogo.hidden = false;
+    catalogoBusqueda = '';
+    const catalogoInputBusqueda = document.getElementById('catalogo-busqueda');
+    if (catalogoInputBusqueda) catalogoInputBusqueda.value = '';
     renderCatalogo(genero);
     activo = genero;
   } else if (seccion === 'completos') {
@@ -460,6 +476,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('completos-busqueda')?.addEventListener('input', (e) => {
     completosBusqueda = e.target.value;
     renderCompletos();
+  });
+
+  document.getElementById('catalogo-busqueda')?.addEventListener('input', (e) => {
+    catalogoBusqueda = e.target.value;
+    renderCatalogo(catalogoFiltroGenero);
   });
 
   document.getElementById('completos-filtro-set')?.addEventListener('click', () => {
