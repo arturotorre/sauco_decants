@@ -797,6 +797,33 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Otoño, uso diario — fresca y evocadora.",
         "duracion": "5 a 7 horas en piel.",
     },
+    "Burberry|Her EDP": {
+        "slug": "burberry-her-decant",
+        "meta_descripcion": (
+            "Decant de Burberry Her (3ml, 5ml, 10ml), 100% original. "
+            "Floral afrutado gourmand londinense — moras, jazmín y ámbar. "
+            "Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Zarzamora", "Arándano", "Frambuesa"],
+        "notas_corazon": ["Jazmín", "Violeta"],
+        "notas_fondo": ["Ámbar seco", "Almizcle"],
+        "parrafos": [
+            "Burberry Her, creada por Francis Kurkdjian, es la primera "
+            "fragancia gourmand de la casa con un toque muy británico, "
+            "inspirada en el espíritu joven, creativo y aventurero de "
+            "Londres. Abre con un estallido de frutos rojos y oscuros — "
+            "zarzamora, arándano y frambuesa —, se despliega en un "
+            "corazón floral de jazmín y violeta, y cierra en una base "
+            "cálida de ámbar seco y almizcle.",
+
+            "Es una fragancia floral afrutada gourmand luminosa, ideal "
+            "para el uso diario — perfecta para la oficina, salidas "
+            "casuales o cenas informales, con un carácter dulce sin ser "
+            "empalagoso.",
+        ],
+        "ideal_para": "Todo el año, uso diario — oficina y salidas casuales.",
+        "duracion": "6 a 8 horas en piel.",
+    },
 }
 
 # --- Contenido editorial para Perfumes completos (botella completa) -----

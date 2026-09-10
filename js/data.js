@@ -131,6 +131,18 @@ const PERFUMES = [
     bestseller: false
   },
   {
+    casa: "Burberry",
+    nombre: "Her EDP",
+    slug: "burberry-her-decant",
+    genero: "Femenino",
+    tier: "disenador",
+    imagen: "/imagenes/burberry her.webp",
+    alt: "Burberry Her",
+    notas: ["Zarzamora", "Arándano", "Frambuesa", "Jazmín", "Violeta", "Ámbar seco", "Almizcle"],
+    precios: { "3ml": "$156", "5ml": "$235", "10ml": "$425" },
+    bestseller: false
+  },
+  {
     casa: "Louis Vuitton",
     nombre: "Imagination EDP",
     slug: "louis-vuitton-imagination",
