@@ -228,29 +228,30 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Noche, clima frío y ocasiones especiales — donde quieres destacar.",
         "duracion": "10+ horas en piel, con proyección muy fuerte.",
     },
-    "Dior|Sauvage EDT": {
-        "slug": "dior-sauvage",
+    "Tom Ford|Ombré Leather EDP": {
+        "slug": "tom-ford-ombre-leather",
         "meta_descripcion": (
-            "Decant de Sauvage EDT de Dior (3ml, 5ml, 10ml), 100% original. Fresco, "
-            "especiado y versátil — de las fragancias masculinas más vendidas del "
-            "mundo. Envíos a todo México desde Monterrey."
+            "Decant de Ombré Leather de Tom Ford (3ml, 5ml, 10ml), 100% original. "
+            "Amaderado de cuero intenso y unisex — cardamomo, jazmín y cuero. "
+            "Envíos a todo México desde Monterrey."
         ),
-        "notas_salida": ["Bergamota de Calabria", "Pimienta de Sichuan"],
-        "notas_corazon": ["Lavanda", "Pimienta rosa", "Vetiver"],
-        "notas_fondo": ["Ambroxan", "Labdanum", "Cedro"],
+        "notas_salida": ["Cardamomo"],
+        "notas_corazon": ["Jazmín", "Cuero"],
+        "notas_fondo": ["Patchouli", "Ámbar", "Musgo de roble"],
         "parrafos": [
-            "Sauvage es una de las fragancias masculinas más vendidas del mundo, "
-            "creada por François Demachy para Dior. La versión Eau de Toilette abre "
-            "con bergamota de Calabria y pimienta de Sichuan, revela un corazón "
-            "especiado de lavanda, pimienta rosa y vetiver, y cierra en una base "
-            "amaderada de ambroxan, labdanum y cedro.",
+            "Ombré Leather, lanzada por Tom Ford en 2018, es un símbolo de "
+            "libertad que combina cuero y flores en un nectar unisex "
+            "envolvente. Abre con cardamomo impetuoso, revela un corazón "
+            "audaz de jazmín y cuero, y cierra en una base sensual de "
+            "patchouli, ámbar y musgo de roble.",
 
-            "Es una fragancia fresca, especiada y versátil que funciona igual de bien "
-            "de día que de noche, en cualquier época del año — de las opciones más "
-            "seguras para uso diario, oficina o cualquier ocasión casual.",
+            "Es una fragancia amaderada de cuero intensa y versátil, ideal "
+            "para otoño e invierno — perfecta para uso nocturno y "
+            "ocasiones donde buscas un aroma con carácter y gran "
+            "fijación.",
         ],
-        "ideal_para": "Uso diario, cualquier ocasión — todo el año.",
-        "duracion": "6 a 8 horas en piel, buena proyección.",
+        "ideal_para": "Otoño e invierno, noche — ocasiones con carácter.",
+        "duracion": "8+ horas en piel, con muy buena proyección.",
     },
     "Chanel|Bleu de Chanel EDP": {
         "slug": "chanel-bleu-de-chanel",

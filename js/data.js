@@ -167,15 +167,15 @@ const PERFUMES = [
     bestseller: false
   },
   {
-    casa: "Dior",
-    nombre: "Sauvage EDT",
-    slug: "dior-sauvage",
-    genero: "Masculino",
+    casa: "Tom Ford",
+    nombre: "Ombré Leather EDP",
+    slug: "tom-ford-ombre-leather",
+    genero: "Unisex",
     tier: "disenador",
-    imagen: "/imagenes/sauvage.webp",
-    alt: "Sauvage",
-    notas: ["Bergamota", "Pimienta", "Lavanda", "Ambroxan", "Cedro", "Patchouli"],
-    precios: { "3ml": "$140", "5ml": "$240", "10ml": "$440" },
+    imagen: "/imagenes/ombre leather.webp",
+    alt: "Ombré Leather",
+    notas: ["Cardamomo", "Jazmín", "Cuero", "Patchouli", "Ámbar", "Musgo de roble"],
+    precios: { "3ml": "$226", "5ml": "$349", "10ml": "$657" },
     bestseller: false
   },
   {

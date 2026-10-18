@@ -41,11 +41,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saucodecants.com/decants/dior-sauvage/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://saucodecants.com/decants/dolce-gabbana-light-blue-decant/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -137,6 +132,11 @@
   </url>
   <url>
     <loc>https://saucodecants.com/decants/prada-paradoxe-intense/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://saucodecants.com/decants/tom-ford-ombre-leather/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
