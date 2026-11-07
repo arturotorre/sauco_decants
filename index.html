@@ -87,43 +87,83 @@
 
 <div id="app">
 
-  <div id="vista-home">
-    <div class="portada">
-      <p class="portada-subtitulo">Catálogo de Fragancias</p>
-      <div class="portada-linea"></div>
-      <h1 class="portada-nombre">Saúco</h1>
-      <div class="portada-linea"></div>
-      <p class="portada-subtitulo">Decants</p>
-      <p class="portada-tagline">El lujo que mereces, en tu medida preferida.</p>
-      <div class="portada-redes">
-        <div class="red-item"><span class="red-icon" style="color:var(--cobre)">Instagram</span><span class="red-handle-light"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
-        <div class="red-item"><span class="red-icon" style="color:var(--cobre)">TikTok</span><span class="red-handle-light"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
-        <div class="red-item"><span class="red-icon" style="color:var(--cobre)">Facebook</span><span class="red-handle-light"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Saúco Decants</a></span></div>
-        <div class="red-item"><span class="red-icon" style="color:var(--cobre)">WhatsApp</span><span class="red-handle-light"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
+  <div id="vista-home" class="atelier">
+    <section class="atelier-portada" aria-labelledby="portada-titulo">
+      <div class="atelier-texto">
+        <h1 id="portada-titulo" class="atelier-nombre">Saúco</h1>
+        <p class="atelier-lema">El lujo que mereces, en tu medida preferida.</p>
+        <p class="atelier-sub">Perfumes 100% originales en decants de 3, 5 y 10&nbsp;ml. Envíos a todo México desde Monterrey.</p>
       </div>
-      <div class="portada-info">Monterrey · Envíos a todo México</div>
-    </div>
 
-    <div class="main-content">
-      <div class="intro-section">
-        <p>Fragancias 100% originales, en la presentación que tú eliges. Sin compromiso, sin riesgo.</p>
-        <div class="presentaciones-bar">
-          <div class="pres-item"><span class="pres-ml">3ml</span><span class="pres-label">Muestra</span><span class="pres-atomizaciones">~60 atomizaciones</span></div>
-          <div class="pres-item"><span class="pres-ml">5ml</span><span class="pres-label">Viaje</span><span class="pres-atomizaciones">~90 atomizaciones</span></div>
-          <div class="pres-item"><span class="pres-ml">10ml</span><span class="pres-label">Mensual</span><span class="pres-atomizaciones">~180 atomizaciones</span></div>
+      <div class="atelier-escena">
+        <figure class="repisa">
+          <a class="repisa-frasco" id="repisa-frasco" href="/decants/le-labo-santal-33/">
+            <img id="repisa-img" src="/imagenes/santal%2033.webp" alt="Le Labo Santal 33, el decant más vendido de Saúco" width="1946" height="1946" fetchpriority="high">
+          </a>
+          <figcaption class="repisa-etiqueta"><strong id="repisa-nombre">Le Labo Santal&nbsp;33</strong>, el más vendido</figcaption>
+        </figure>
+
+        <div class="tiras" role="group" aria-label="Elige tu medida">
+          <button type="button" class="tira" data-ml="3ml" aria-pressed="false"><span class="tira-ml">3</span><span class="tira-unidad">ml</span><span class="tira-nombre">Muestra</span></button>
+          <button type="button" class="tira" data-ml="5ml" aria-pressed="true"><span class="tira-ml">5</span><span class="tira-unidad">ml</span><span class="tira-nombre">Viaje</span></button>
+          <button type="button" class="tira" data-ml="10ml" aria-pressed="false"><span class="tira-ml">10</span><span class="tira-unidad">ml</span><span class="tira-nombre">Mensual</span></button>
+        </div>
+        <p class="tira-lectura" id="tira-lectura" aria-live="polite"><strong>≈ 90 atomizaciones</strong> · Santal 33 en 5&nbsp;ml: $554</p>
+      </div>
+
+      <div class="atelier-acciones">
+        <a class="btn-principal" href="/#catalogo/todos">Explorar decants</a>
+        <a class="enlace-secundario" href="/#completos/todos">Perfumes completos</a>
+      </div>
+    </section>
+
+    <section class="atelier-seccion" aria-labelledby="vendidos-titulo">
+      <div class="atelier-cabeza">
+        <h2 id="vendidos-titulo" class="atelier-h2">Los más vendidos</h2>
+        <a class="enlace-secundario" href="/#catalogo/todos">Ver todos los decants</a>
+      </div>
+      <div class="estante" id="estante-vendidos"></div>
+    </section>
+
+    <section class="atelier-seccion" aria-label="Dos formas de empezar">
+      <div class="rutas">
+        <div class="ruta">
+          <h2 class="ruta-h3">Para tu viaje o evento</h2>
+          <p>Un decant de 5&nbsp;ml rinde unas 90 atomizaciones y cabe en cualquier bolsillo: tu perfume de siempre, sin cargar la botella.</p>
+          <div class="ruta-frascos" id="ruta-viaje"></div>
+          <a class="enlace-secundario" href="/#catalogo/todos/disenador">Ver decants de diseñador</a>
+        </div>
+        <div class="ruta">
+          <h2 class="ruta-h3">Prueba el nicho</h2>
+          <p>Conoce perfumes de casas de nicho en 3 o 5&nbsp;ml antes de decidirte por la botella completa.</p>
+          <div class="ruta-frascos" id="ruta-nicho"></div>
+          <a class="enlace-secundario" href="/#catalogo/todos/nicho">Ver decants de nicho</a>
         </div>
       </div>
+    </section>
 
-      <div class="tier-header tier-vendidos">
-        <div class="tier-line"></div><span class="tier-title">Los más vendidos</span><div class="tier-line"></div>
+    <section class="atelier-seccion originalidad" aria-labelledby="originalidad-titulo">
+      <h2 id="originalidad-titulo" class="originalidad-sello">100% originales</h2>
+      <p class="atelier-texto-largo">Así garantizamos la originalidad: cada decant de Saúco se saca de la botella original del perfume. Recibes exactamente la misma fragancia que se vende en tienda, solo que en la medida que tú eliges.</p>
+      <!-- Espacio para las fotos reales de Saúco (botella original, decantado, empaque).
+           Reemplazar cada figura con la foto y quitar el atributo hidden. -->
+      <div class="originalidad-fotos" hidden>
+        <figure data-pendiente="botella-original"></figure>
+        <figure data-pendiente="decantado"></figure>
+        <figure data-pendiente="empaque"></figure>
       </div>
-      <div class="carrusel-viewport">
-        <button class="carrusel-flecha carrusel-prev" id="carrusel-prev" aria-label="Anterior">‹</button>
-        <div class="carrusel-track" id="carrusel-track"></div>
-        <button class="carrusel-flecha carrusel-next" id="carrusel-next" aria-label="Siguiente">›</button>
-        <div class="carrusel-dots" id="carrusel-dots"></div>
+    </section>
+
+    <section class="atelier-seccion atelier-seccion-final" aria-labelledby="pedir-titulo">
+      <div class="atelier-cabeza">
+        <h2 id="pedir-titulo" class="atelier-h2">Cómo pedir</h2>
       </div>
-    </div>
+      <ol class="pasos">
+        <li class="paso"><span class="paso-titulo">Elige tu perfume</span><span class="paso-texto">Y tu medida: 3&nbsp;ml para probar, 5&nbsp;ml para viajar o 10&nbsp;ml para todo el mes.</span></li>
+        <li class="paso"><span class="paso-titulo">Agrégalo al carrito</span><span class="paso-texto">Puedes sumar varios perfumes y medidas en un mismo pedido.</span></li>
+        <li class="paso"><span class="paso-titulo">Envía tu pedido por WhatsApp</span><span class="paso-texto">Ahí coordinamos el pago y el envío a todo México. También puedes escribirnos al <a href="https://wa.me/525612567245">56&nbsp;1256&nbsp;7245</a>.</span></li>
+      </ol>
+    </section>
   </div>
 
   <div id="vista-catalogo" hidden>
@@ -255,10 +295,10 @@
   <div class="footer-sub">Decants · Monterrey · Envíos a todo México</div>
   <div class="footer-contacto">Escríbenos por WhatsApp o DM de Instagram para hacer tu pedido</div>
   <div class="footer-redes">
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Facebook</span><span class="red-handle-dark"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Saúco Decants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">WhatsApp</span><span class="red-handle-dark"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
+    <div class="red-item"><span class="red-icon">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
+    <div class="red-item"><span class="red-icon">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
+    <div class="red-item"><span class="red-icon">Facebook</span><span class="red-handle-dark"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Saúco Decants</a></span></div>
+    <div class="red-item"><span class="red-icon">WhatsApp</span><span class="red-handle-dark"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
   </div>
 </div>
 

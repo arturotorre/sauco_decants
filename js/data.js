@@ -4,7 +4,9 @@
 // genero: "Masculino" | "Femenino" | "Unisex"
 // tier:   "nicho" | "disenador"
 // precios: deja "" en un valor si el decant aún no tiene precio (se verá vacío en la tarjeta)
-// bestseller: true marca los perfumes que aparecen en el carrusel "Los más vendidos"
+// bestseller: true marca los perfumes que aparecen en "Los más vendidos" de la portada
+// escala (opcional): tamaño relativo de la foto en las repisas de la portada
+//   (1 = normal). Úsalo cuando una foto se vea demasiado grande junto a las demás.
 
 const PERFUMES = [
   // ---- NICHO ----
@@ -234,6 +236,7 @@ const PERFUMES = [
     tier: "disenador",
     imagen: "/imagenes/paradoxe.webp",
     alt: "Paradoxe",
+    escala: 0.72,
     notas: ["Neroli", "Flor de azahar", "Almizcle blanco", "Sándalo", "Ámbar"],
     precios: { "3ml": "$170", "5ml": "$250", "10ml": "$458" },
     bestseller: true

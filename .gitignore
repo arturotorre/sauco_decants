@@ -1,6 +1,19 @@
 # Herramientas internas (revelan quién es el proveedor) — nunca al repo público
 scripts/
 
+# Config local de Claude Code: historial de permisos con URLs del proveedor
+# y rutas de máquina — nunca al repo público.
+.claude/
+
+# Impeccable: solo lo compartido se versiona (config, sistema de diseño,
+# contexto de producto y reseñas); caché, capturas, mocks y estado de
+# sesión se quedan locales.
+.impeccable/*
+!.impeccable/config.json
+!.impeccable/design.json
+!.impeccable/surfaces
+!.impeccable/critique
+
 # Archivos del sistema
 .DS_Store
 __pycache__/

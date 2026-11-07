@@ -1,4 +1,4 @@
-// Render de tarjetas, filtro por género, carrusel autoplay y ruteo por hash.
+// Render de tarjetas, filtro por género, portada y ruteo por hash.
 // Los datos viven en js/data.js (const PERFUMES).
 
 function cardHTML(p) {
@@ -83,7 +83,7 @@ function renderCatalogo(filtro) {
 
   contenedor.innerHTML = gruposConResultados.length
     ? gruposConResultados.map(({ t, perfumes }) => `
-    <div class="tier-header ${t.clase}">
+    <div class="tier-header ${t.clase}" id="tier-${t.key}">
       <div class="tier-line"></div><span class="tier-title">${t.label}</span><div class="tier-line"></div>
     </div>
     <div class="cards-grid">
@@ -275,54 +275,70 @@ function renderCompletos() {
   actualizarContadorFiltrosCompletos();
 }
 
-function carruselSlideHTML(p) {
-  return `
-  <div class="card carrusel-slide">
-    <div class="card-foto">
-      <img src="${p.imagen}" alt="${p.casa} ${p.alt} - de los más vendidos en Saúco Decants" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="foto-label" style="display:none">Sin imagen</span>
-    </div>
-    <div class="card-info">
-      <div class="card-casa">${p.casa}</div>
-      <div class="card-nombre">${p.nombre}</div>
-    </div>
-  </div>`;
+// ===== Portada «Atelier del perfumista» =====
+const ATOMIZACIONES = { '3ml': 60, '5ml': 90, '10ml': 180 };
+
+function precioDesde(p) {
+  return p.precios['3ml'] || p.precios['5ml'] || p.precios['10ml'] || '';
 }
 
-function renderCarrusel() {
-  const destacados = PERFUMES.filter(p => p.bestseller);
-  const track = document.getElementById('carrusel-track');
-  const dotsWrap = document.getElementById('carrusel-dots');
-  if (!track || !destacados.length) return;
+function frascoHTML(p, clase) {
+  return `<a class="${clase}" href="/decants/${p.slug}/" aria-label="${p.casa} ${p.alt}" style="--escala:${p.escala || 1}">
+    <img src="${p.imagen}" alt="${p.casa} ${p.alt}" loading="lazy" onerror="this.style.visibility='hidden'">
+  </a>`;
+}
 
-  dotsWrap.innerHTML = destacados.map((_, i) => `<button class="carrusel-dot" data-i="${i}" aria-label="Ir al perfume ${i + 1}"></button>`).join('');
-  const dots = Array.from(dotsWrap.children);
+function estanteItemHTML(p) {
+  const desde = precioDesde(p);
+  return `<a class="estante-item" href="/decants/${p.slug}/" style="--escala:${p.escala || 1}">
+    <span class="estante-foto"><img src="${p.imagen}" alt="${p.casa} ${p.alt}, decant" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+    <span class="estante-texto">
+      <span class="estante-casa">${p.casa}</span>
+      <span class="estante-nombre">${p.alt}</span>
+      <span class="estante-precio">${desde ? 'Desde ' + desde + ' · 3 ml' : 'Precio a consultar'}</span>
+    </span>
+  </a>`;
+}
 
-  let indice = 0;
-  let timer = null;
+function renderPortada() {
+  const estante = document.getElementById('estante-vendidos');
+  if (!estante) return; // no es la portada
 
-  function mostrar(i) {
-    indice = (i + destacados.length) % destacados.length;
-    track.innerHTML = carruselSlideHTML(destacados[indice]);
-    dots.forEach((d, idx) => d.classList.toggle('activo', idx === indice));
+  const conFicha = PERFUMES.filter(p => p.slug);
+  const destacados = conFicha.filter(p => p.bestseller);
+  const heroe = destacados[0] || conFicha[0];
+
+  // Repisa principal: el más vendido
+  if (heroe) {
+    document.getElementById('repisa-frasco').href = `/decants/${heroe.slug}/`;
+    const img = document.getElementById('repisa-img');
+    if (img.getAttribute('src') !== heroe.imagen) img.src = heroe.imagen;
+    img.alt = `${heroe.casa} ${heroe.alt}, el decant más vendido de Saúco`;
+    document.getElementById('repisa-nombre').textContent = `${heroe.casa} ${heroe.alt.replace(/ (\S+)$/, '\u00a0$1')}`;
   }
 
-  function iniciarAutoplay() { timer = setInterval(() => mostrar(indice + 1), 4500); }
-  function detenerAutoplay() { clearInterval(timer); }
-  function reiniciarAutoplay() { detenerAutoplay(); iniciarAutoplay(); }
+  // Tiras de prueba: elegir medida
+  const lectura = document.getElementById('tira-lectura');
+  const tiras = Array.from(document.querySelectorAll('.tira'));
+  function elegir(ml) {
+    tiras.forEach(t => t.setAttribute('aria-pressed', String(t.dataset.ml === ml)));
+    const precio = heroe && heroe.precios[ml];
+    const medida = ml.replace('ml', '\u00a0ml');
+    lectura.innerHTML = `<strong>≈ ${ATOMIZACIONES[ml]} atomizaciones</strong>` +
+      (heroe ? ` · ${heroe.alt} en ${medida}: ${precio || 'precio a consultar'}` : '');
+  }
+  tiras.forEach(t => t.addEventListener('click', () => elegir(t.dataset.ml)));
+  elegir((tiras.find(t => t.getAttribute('aria-pressed') === 'true') || tiras[1]).dataset.ml);
 
-  document.getElementById('carrusel-next').addEventListener('click', () => { mostrar(indice + 1); reiniciarAutoplay(); });
-  document.getElementById('carrusel-prev').addEventListener('click', () => { mostrar(indice - 1); reiniciarAutoplay(); });
-  dots.forEach(d => d.addEventListener('click', () => { mostrar(Number(d.dataset.i)); reiniciarAutoplay(); }));
+  // Estante de más vendidos
+  estante.innerHTML = (destacados.length ? destacados : conFicha.slice(0, 5)).map(estanteItemHTML).join('');
 
-  const viewport = document.querySelector('.carrusel-viewport');
-  viewport.addEventListener('mouseenter', detenerAutoplay);
-  viewport.addEventListener('mouseleave', iniciarAutoplay);
-  viewport.addEventListener('touchstart', detenerAutoplay, { passive: true });
-  viewport.addEventListener('touchend', iniciarAutoplay);
-
-  mostrar(0);
-  iniciarAutoplay();
+  // Rutas: viaje (diseñador) y nicho
+  const viaje = conFicha.filter(p => p.tier === 'disenador' && p.bestseller)
+    .concat(conFicha.filter(p => p.tier === 'disenador' && !p.bestseller)).slice(0, 3);
+  const nicho = conFicha.filter(p => p.tier === 'nicho').slice(0, 3);
+  document.getElementById('ruta-viaje').innerHTML = viaje.map(p => frascoHTML(p, '')).join('');
+  document.getElementById('ruta-nicho').innerHTML = nicho.map(p => frascoHTML(p, '')).join('');
 }
 
 function cerrarNavMovil() {
@@ -372,7 +388,7 @@ function route() {
   if (!vistaHome) return; // esta página no es la SPA (ej. una página de producto standalone)
 
   const hash = location.hash.replace(/^#\/?/, '');
-  const [seccion, filtro] = hash.split('/');
+  const [seccion, filtro, ancla] = hash.split('/');
   const vistaCatalogo = document.getElementById('vista-catalogo');
   const vistaCompletos = document.getElementById('vista-completos');
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -404,6 +420,9 @@ function route() {
   actualizarNavCompletos(activo);
   actualizarTituloPagina(seccion, filtro);
   window.scrollTo(0, 0);
+  if (seccion === 'catalogo' && ancla) {
+    document.getElementById('tier-' + ancla)?.scrollIntoView();
+  }
   cerrarNavMovil();
 }
 
@@ -412,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // de producto standalone (ej. /decants/<slug>/) que reutilizan la misma
   // nav pero no tienen los elementos del catálogo/completos. Por eso cada
   // listener de abajo se engancha solo si su elemento existe en esta página.
-  renderCarrusel();
+  renderPortada();
   renderFiltroMarcaCompletos();
   renderCompletos();
   route();

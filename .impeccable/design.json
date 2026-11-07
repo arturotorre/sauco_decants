@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T00:00:00Z",
+  "title": "Design System: Saúco Decants",
+  "extensions": {
+    "colorMeta": {
+      "tinta": {
+        "role": "primary",
+        "displayName": "Tinta chocolate",
+        "canonical": "#3B2318",
+        "tonalRamp": [
+          "#1E110B",
+          "#2A170E",
+          "#3B2318",
+          "#5A3E30",
+          "#7A5F50",
+          "#9D8577",
+          "#C4B2A7",
+          "#E9E0DA"
+        ]
+      },
+      "tinta-hondo": {
+        "role": "primary",
+        "displayName": "Chocolate hondo",
+        "canonical": "#2A170E"
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Tinta suave",
+        "canonical": "#64503F",
+        "tonalRamp": [
+          "#2A2019",
+          "#3E3027",
+          "#52402F",
+          "#64503F",
+          "#80705F",
+          "#A09282",
+          "#C4B9AD",
+          "#E6E0D9"
+        ]
+      },
+      "linea": {
+        "role": "neutral",
+        "displayName": "Línea",
+        "canonical": "rgba(59,35,24,0.16)"
+      },
+      "yeso": {
+        "role": "neutral",
+        "displayName": "Yeso",
+        "canonical": "#E2E1DE",
+        "tonalRamp": [
+          "#2B2A28",
+          "#474643",
+          "#64625F",
+          "#82807C",
+          "#A2A09C",
+          "#C2C0BC",
+          "#E2E1DE",
+          "#F2F1EF"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#FFFFFF"
+      },
+      "roble": {
+        "role": "secondary",
+        "displayName": "Roble",
+        "canonical": "#B08A5A",
+        "tonalRamp": [
+          "#33261A",
+          "#4E3B27",
+          "#6E5436",
+          "#8F6E47",
+          "#B08A5A",
+          "#C6A57C",
+          "#DCC4A6",
+          "#F1E6D7"
+        ]
+      },
+      "roble-claro": {
+        "role": "secondary",
+        "displayName": "Roble claro",
+        "canonical": "#CDAE86"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nombre «Saúco» en portada y sello «100% originales»."
+      },
+      "numeral": {
+        "displayName": "Cifra de medida",
+        "purpose": "Medidas 3·5·10 en las tiras y números de los pasos."
+      },
+      "headline": {
+        "displayName": "Título de sección",
+        "purpose": "Encabezados de sección de la portada."
+      },
+      "title": {
+        "displayName": "Subtítulo",
+        "purpose": "Subtítulos de rutas por ocasión."
+      },
+      "body-lg": {
+        "displayName": "Texto largo",
+        "purpose": "Párrafos de lectura, máx. 60ch."
+      },
+      "body": {
+        "displayName": "Texto",
+        "purpose": "Descripciones, precios, enlaces del nav."
+      },
+      "label": {
+        "displayName": "Etiqueta",
+        "purpose": "Marca del perfume, nombres de tiras, desplegables del nav, redes del pie; mayúsculas."
+      },
+      "button": {
+        "displayName": "Botón",
+        "purpose": "Etiqueta del botón principal; mayúsculas."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sombra-papel",
+        "value": "drop-shadow(0 6px 8px rgba(59,35,24,0.18))",
+        "purpose": "Filtro sobre el grupo de tiras de papel."
+      },
+      {
+        "name": "sombra-repisa",
+        "value": "0 14px 18px -12px rgba(59,35,24,0.45)",
+        "purpose": "Bajo la repisa principal de la portada."
+      },
+      {
+        "name": "sombra-carrito",
+        "value": "0 4px 14px -6px rgba(59,35,24,0.35)",
+        "purpose": "Botón flotante de carrito en escritorio."
+      },
+      {
+        "name": "sombra-menu",
+        "value": "0 18px 30px -18px rgba(59,35,24,0.35)",
+        "purpose": "Menú desplegado en móvil."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-atelier",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Ease-out para abanico, elevación de tiras, fotos y flecha del nav."
+      },
+      {
+        "name": "abanico",
+        "value": "0.9s",
+        "purpose": "Apertura única de las tiras al cargar."
+      },
+      {
+        "name": "tira-elegir",
+        "value": "0.45s",
+        "purpose": "Elevación de la tira elegida; relleno de roble 0.5s."
+      },
+      {
+        "name": "estado",
+        "value": "0.2s",
+        "purpose": "Hover de color y fondo."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "rejillas",
+        "value": "640px"
+      },
+      {
+        "name": "nav-portada",
+        "value": "861px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal (Explorar decants). Chocolate como tinta.",
+      "html": "<a class=\"ds-btn-principal\" href=\"#\">Explorar decants</a>",
+      "css": ".ds-btn-principal { display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 1.75rem; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; transition:background 0.2s, transform 0.2s; } .ds-btn-principal:hover { background:#2A170E; } .ds-btn-principal:active { transform:translateY(1px); } .ds-btn-principal:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Enlace secundario",
+      "kind": "button",
+      "refersTo": "link-secondary",
+      "description": "Acción secundaria como texto subrayado.",
+      "html": "<a class=\"ds-enlace\" href=\"#\">Perfumes completos</a>",
+      "css": ".ds-enlace { padding:0.6rem 0.5rem; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; color:var(--tinta,#3B2318); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:5px; } .ds-enlace:hover { text-decoration-thickness:2px; } .ds-enlace:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Tiras de prueba",
+      "kind": "custom",
+      "refersTo": "tira",
+      "description": "Selector de medida 3·5·10 como tiras de papel en abanico; la elegida se levanta.",
+      "html": "<div class=\"ds-tiras\"><button class=\"ds-tira\" style=\"--giro:-8deg\" aria-pressed=\"false\"><span class=\"ds-tira-ml\">3</span><span class=\"ds-tira-u\">ml</span><span class=\"ds-tira-n\">Muestra</span></button><button class=\"ds-tira\" aria-pressed=\"true\"><span class=\"ds-tira-ml\">5</span><span class=\"ds-tira-u\">ml</span><span class=\"ds-tira-n\">Viaje</span></button><button class=\"ds-tira\" style=\"--giro:8deg\" aria-pressed=\"false\"><span class=\"ds-tira-ml\">10</span><span class=\"ds-tira-u\">ml</span><span class=\"ds-tira-n\">Mensual</span></button></div>",
+      "css": ".ds-tiras { display:flex; justify-content:center; gap:10px; padding:24px; background:var(--yeso,#E2E1DE); filter:drop-shadow(0 6px 8px rgba(59,35,24,0.18)); } .ds-tira { --giro:0deg; position:relative; width:68px; height:180px; border:0; padding:14px 0 0; cursor:pointer; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; display:flex; flex-direction:column; align-items:center; clip-path:polygon(0 0,100% 0,100% 90%,50% 100%,0 90%); transform-origin:50% 140%; transform:rotate(var(--giro)); transition:transform 0.45s cubic-bezier(.16,1,.3,1); } .ds-tira::after { content:''; position:absolute; left:0; right:0; bottom:0; height:42%; background:var(--roble-claro,#CDAE86); opacity:0.55; transform:scaleY(0); transform-origin:50% 100%; transition:transform 0.5s cubic-bezier(.16,1,.3,1); } .ds-tira[aria-pressed='true'] { transform:rotate(var(--giro)) translateY(-16px); } .ds-tira[aria-pressed='true']::after { transform:scaleY(1); } .ds-tira:hover { transform:rotate(var(--giro)) translateY(-6px); } .ds-tira:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--tinta,#3B2318); } .ds-tira-ml { font-stretch:112%; font-weight:200; font-size:40px; line-height:1; letter-spacing:-0.03em; } .ds-tira[aria-pressed='true'] .ds-tira-ml { font-weight:500; } .ds-tira-u { font-size:13px; font-weight:500; margin-top:2px; } .ds-tira-n { position:relative; z-index:1; font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; margin-top:12px; writing-mode:vertical-rl; transform:rotate(180deg); }"
+    },
+    {
+      "name": "Estante de producto",
+      "kind": "card",
+      "description": "Foto real sobre repisa de roble con canto chocolate; sin tarjeta.",
+      "html": "<a class=\"ds-estante\" href=\"#\"><div class=\"ds-estante-foto\"><svg width=\"60\" height=\"120\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#C9B48E\"/></svg></div><span class=\"ds-estante-casa\">Le Labo</span><span class=\"ds-estante-nombre\">Santal 33</span><span class=\"ds-estante-precio\">Desde $350 · 3 ml</span></a>",
+      "css": ".ds-estante { display:block; width:220px; color:var(--tinta,#3B2318); text-decoration:none; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; background:var(--yeso,#E2E1DE); } .ds-estante-foto { height:160px; display:flex; align-items:flex-end; justify-content:center; border-bottom:12px solid var(--roble,#B08A5A); box-shadow:0 3px 0 var(--tinta,#3B2318); } .ds-estante-foto svg { transform:translateY(4%); transition:transform 0.4s cubic-bezier(.16,1,.3,1); } .ds-estante:hover .ds-estante-foto svg { transform:translateY(0); } .ds-estante-casa { display:block; padding:1.1rem 0.75rem 0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-estante-nombre { display:block; margin-top:4px; padding:0 0.75rem; font-size:18px; font-weight:500; } .ds-estante:hover .ds-estante-nombre { text-decoration:underline; text-underline-offset:4px; } .ds-estante-precio { display:block; margin-top:6px; padding:0 0.75rem; font-size:15px; color:var(--tinta-suave,#64503F); } .ds-estante:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Botón de carrito",
+      "kind": "button",
+      "refersTo": "cart-button",
+      "description": "Círculo papel con bolsa SVG y contador tinta.",
+      "html": "<button class=\"ds-carrito\" aria-label=\"Carrito\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"><path d=\"M5 8.5h14l-1.1 11.5H6.1L5 8.5z\"/><path d=\"M9 8.5V7a3 3 0 0 1 6 0v1.5\"/></svg><span class=\"ds-carrito-n\">2</span></button>",
+      "css": ".ds-carrito { position:relative; width:44px; height:44px; border-radius:50%; background:var(--papel,#fff); border:1px solid rgba(59,35,24,0.16); color:var(--tinta,#3B2318); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px -6px rgba(59,35,24,0.35); transition:border-color 0.2s; } .ds-carrito:hover { border-color:var(--tinta,#3B2318); } .ds-carrito:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-carrito-n { position:absolute; top:-5px; right:-5px; min-width:20px; height:20px; padding:0 5px; border-radius:10px; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:12px; font-weight:600; display:flex; align-items:center; justify-content:center; }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Columna lateral de yeso en escritorio; marca extendida, desplegables en etiqueta.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-marca\" href=\"#\">Saúco</a><span class=\"ds-nav-grupo\">Decants</span><a class=\"ds-nav-link activo\" href=\"#\">Todos</a><a class=\"ds-nav-link\" href=\"#\">Hombre</a><a class=\"ds-nav-link\" href=\"#\">Mujer</a></nav>",
+      "css": ".ds-nav { width:200px; padding:2rem 1.5rem; background:var(--yeso,#E2E1DE); border-right:1px solid rgba(59,35,24,0.16); display:flex; flex-direction:column; gap:0.4rem; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-nav-marca { font-stretch:125%; font-size:22px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; color:var(--tinta,#3B2318); text-decoration:none; margin-bottom:2rem; } .ds-nav-grupo { font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--tinta,#3B2318); padding:0.5rem 0; } .ds-nav-link { font-size:15px; color:var(--tinta-suave,#64503F); text-decoration:none; padding:0.4rem 0 0.4rem 0.85rem; border-left:1px solid rgba(59,35,24,0.16); transition:color 0.2s; } .ds-nav-link:hover { color:var(--tinta,#3B2318); } .ds-nav-link.activo { color:var(--tinta,#3B2318); border-left-color:var(--tinta,#3B2318); text-decoration:underline; text-underline-offset:5px; } .ds-nav-link:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Pie",
+      "kind": "custom",
+      "refersTo": "footer",
+      "description": "Única superficie chocolate del sitio.",
+      "html": "<footer class=\"ds-pie\"><div class=\"ds-pie-nombre\">Saúco</div><div class=\"ds-pie-linea\"></div><div class=\"ds-pie-sub\">Decants · Monterrey · Envíos a todo México</div><div class=\"ds-pie-red\"><span>Instagram</span><a href=\"#\">@sauco.decants</a></div></footer>",
+      "css": ".ds-pie { background:var(--tinta,#3B2318); color:var(--yeso,#E2E1DE); padding:3.5rem 1.5rem 3rem; text-align:center; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-pie-nombre { font-stretch:125%; font-size:40px; font-weight:200; text-transform:uppercase; letter-spacing:0.06em; } .ds-pie-linea { width:120px; height:1px; background:var(--roble-claro,#CDAE86); margin:1rem auto 1.5rem; } .ds-pie-sub { font-size:13px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#D7CABD; } .ds-pie-red { margin-top:2rem; display:flex; flex-direction:column; gap:4px; } .ds-pie-red span { font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--roble-claro,#CDAE86); } .ds-pie-red a { color:var(--yeso,#E2E1DE); font-size:15px; text-decoration:none; } .ds-pie-red a:hover { text-decoration:underline; text-underline-offset:4px; } .ds-pie-red a:focus-visible { outline:2px solid var(--roble-claro,#CDAE86); outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El atelier del perfumista",
+    "overview": "Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.\n\nLa voz tipográfica es una sola familia, Archivo, en dos anchos: extendida y delgada para el nombre, los títulos y las cifras; ancho normal para leer. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.\n\nAlcance actual: este mundo cubre la portada (vista-home de `index.html`), el nav global, el botón de carrito y el pie. El catálogo (`#catalogo`, `#completos`), el panel del carrito y las fichas (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.",
+    "keyCharacteristics": [
+      "Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.",
+      "Chocolate como tinta: texto, líneas, botón principal y pie.",
+      "Archivo variable: ancho 125 % y peso 200–300 para nombre, títulos y cifras; ancho normal para texto.",
+      "Repisas de roble con canto chocolate como soporte de toda foto de producto.",
+      "Tiras de papel blanco como selector de medida, con la cifra como protagonista.",
+      "Fotos reales de frascos fundidas al muro con `multiply`; sin tarjetas ni marcos."
+    ],
+    "rules": [
+      {
+        "name": "The Chocolate Is Ink Rule",
+        "body": "El chocolate escribe; no pinta paredes. Ninguna sección completa lleva fondo chocolate salvo el pie global.",
+        "section": "colors"
+      },
+      {
+        "name": "The Neutral Plaster Rule",
+        "body": "El yeso es #E2E1DE a propósito. Un yeso más cálido (#E5E2DD, #E6E3DF) se lee como crema y el detector lo marca; no lo calientes.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Cream, No Terracotta Rule",
+        "body": "Crema, arena, terracota y cobre pertenecen al sistema heredado y no entran en superficies nuevas.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Widths Rule",
+        "body": "El ancho extendido (112–125 %) y los pesos 200–300 son para el nombre, los títulos y las cifras; todo lo que se lee va en ancho normal y peso 400–600.",
+        "section": "typography"
+      },
+      {
+        "name": "The Number Is the Product Rule",
+        "body": "La medida se compone como cifra grande y delgada, con la unidad (ml) pequeña debajo. Precios y lecturas de atomizaciones usan cifras tabulares.",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects Cast Shadows Rule",
+        "body": "Solo los objetos del atelier (papel, repisa) y las capas flotantes (carrito, menú abierto) tienen sombra, siempre teñida de chocolate. Las secciones y los textos son planos.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do usar yeso (#E2E1DE) como fondo de toda sección y reservar el fondo chocolate para el pie.",
+      "Do poner cada foto de producto sobre una repisa de roble con canto chocolate, fundida con `multiply`.",
+      "Do componer medidas y números con Archivo extendido y delgado, y el texto de lectura en ancho normal.",
+      "Do teñir toda sombra con chocolate (rgba(59,35,24,…)) y limitarla a objetos y capas flotantes.",
+      "Do mantener el botón principal visible sin desplazarse en el primer viewport del celular.",
+      "Do dejar fijo todo movimiento con `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "Don't usar el chocolate como fondo de sección fuera del pie.",
+      "Don't calentar el yeso hacia crema (#E5E2DD, #E6E3DF se leen como crema).",
+      "Don't usar crema, arena, terracota, cobre ni los puntos morado/verde del sistema heredado en superficies nuevas.",
+      "Don't usar emoji como íconos; los íconos son SVG de trazo en tinta.",
+      "Don't encerrar fotos de producto en tarjetas con borde o esquinas redondeadas.",
+      "Don't introducir Cormorant Garamond ni Jost en superficies nuevas."
+    ]
+  }
+}
