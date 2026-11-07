@@ -115,7 +115,7 @@ Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido
 
 La voz tipográfica es una sola familia, Archivo, en dos anchos: extendida y delgada para el nombre, los títulos y las cifras; ancho normal para leer. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.
 
-Alcance actual: este mundo cubre la portada (vista-home de `index.html`), el nav global, el botón de carrito y el pie. El catálogo (`#catalogo`, `#completos`), el panel del carrito y las fichas (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.
+Alcance actual: este mundo cubre la portada (vista-home de `index.html`), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. El catálogo (`#catalogo`, `#completos`) y las fichas (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.
 
 **Key Characteristics:**
 - Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.
@@ -216,6 +216,12 @@ Soporte de toda foto de producto. Fotos reales en `object-fit: contain` con `mix
 - **Escritorio:** columna de yeso de 200px con borde derecho en línea; «SAÚCO» en Archivo ancho 125 %, 22px/300, mayúsculas; desplegables Decants y Perfumes completos como etiquetas 13px/600 con flecha de trazo; enlaces 15px en tinta suave, tinta en hover, activo subrayado y con borde izquierdo tinta.
 - **Móvil:** barra de 56px (hamburguesa de tres trazos, marca, carrito); el menú cae como panel de yeso con sombra.
 
+### Panel del carrito
+Diálogo lateral (`role="dialog"`, `aria-modal`) de yeso, 400px máx., que entra desde la derecha con ease-out; al abrirse bloquea el scroll de la página, lleva el foco al botón de cerrar (aspa dibujada con dos trazos), lo atrapa dentro y lo devuelve al cerrar. Cada artículo: foto sobre una mini repisa de roble, marca en etiqueta, nombre 16px/500, medida y precio unitario, control de cantidad −/+ (botones de 40px sobre papel, − deshabilitado en 1) y subtotal; «Quitar» como enlace de texto. Pie: total con número de artículos y monto en Archivo 112 %, nota de precios por confirmar, botón principal «Enviar pedido por WhatsApp» (deshabilitado con el carrito vacío) y una línea que explica qué pasa al enviarlo. Vacío: mensaje y enlace «Explorar decants».
+
+### Selector de medida y aviso
+El selector flotante de medida es una lista de papel con opciones de 48px (medida en Archivo 112 %, precio en tinta suave); recibe el foco al abrirse y lo devuelve al botón de origen. Al agregar aparece un aviso tinta en la parte baja («Santal 33 · 5 ml agregado al carrito» + botón papel «Ver carrito»), anunciado por `role="status"`, que se retira solo a los 5 s.
+
 ### Botón de carrito
 Círculo papel de 44px (40px en móvil) con borde en línea y un ícono de bolsa en SVG de trazo 1.6. El contador es una píldora tinta con cifra papel 12px/600, oculta cuando está vacía.
 
@@ -240,6 +246,6 @@ La única superficie chocolate. «SAÚCO» en Archivo ancho 125 %, 40px/200, col
 - **Don't** encerrar fotos de producto en tarjetas con borde o esquinas redondeadas.
 - **Don't** introducir Cormorant Garamond ni Jost en superficies nuevas.
 
-**Sistema heredado (deuda de migración, no normativo):** el catálogo, completos, el panel del carrito y las fichas siguen en Cormorant Garamond + Jost con `--chocolate` #3D2314, `--terracota`, `--cobre`, `--arena`, `--crema` y `--fondo`, y puntos de nivel morado (#6B5B9E) y verde (#1D7A5A). Al migrar cada superficie, pásala a los tokens de arriba y retira los heredados.
+**Sistema heredado (deuda de migración, no normativo):** el catálogo, completos y las fichas siguen en Cormorant Garamond + Jost con `--chocolate` #3D2314, `--terracota`, `--cobre`, `--arena`, `--crema` y `--fondo`, y puntos de nivel morado (#6B5B9E) y verde (#1D7A5A). Al migrar cada superficie, pásala a los tokens de arriba y retira los heredados.
 
 **Pendiente:** el logo definitivo. Mientras tanto, «Saúco» se compone en Archivo extendido peso 200; no lo trates como logotipo final.

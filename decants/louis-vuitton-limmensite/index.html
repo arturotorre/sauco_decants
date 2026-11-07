@@ -150,19 +150,21 @@
 </button>
 
 <div id="carrito-overlay" hidden></div>
-<aside id="carrito-panel" hidden aria-label="Carrito de compras">
+<aside id="carrito-panel" hidden role="dialog" aria-modal="true" aria-labelledby="carrito-titulo">
   <div class="carrito-panel-header">
-    <h2>Tu carrito</h2>
-    <button class="carrito-cerrar" aria-label="Cerrar carrito">×</button>
+    <h2 id="carrito-titulo">Tu carrito</h2>
+    <button type="button" class="carrito-cerrar" aria-label="Cerrar carrito"></button>
   </div>
   <div id="carrito-items"></div>
   <div class="carrito-panel-footer">
     <div id="carrito-total"></div>
-    <button id="carrito-checkout-whatsapp">Confirmar Pedido</button>
+    <button type="button" id="carrito-checkout-whatsapp">Enviar pedido por WhatsApp</button>
+    <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido ya escrito. Ahí te respondemos para coordinar el pago y el envío.</p>
   </div>
 </aside>
 
 <div id="selector-tamano" hidden></div>
+<div id="carrito-aviso" class="carrito-aviso" role="status" aria-live="polite" hidden></div>
 
 <div class="footer-global">
   <div class="footer-nombre">Saúco</div>

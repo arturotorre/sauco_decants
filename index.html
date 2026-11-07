@@ -161,7 +161,7 @@
       <ol class="pasos">
         <li class="paso"><span class="paso-titulo">Elige tu perfume</span><span class="paso-texto">Y tu medida: 3&nbsp;ml para probar, 5&nbsp;ml para viajar o 10&nbsp;ml para todo el mes.</span></li>
         <li class="paso"><span class="paso-titulo">Agrégalo al carrito</span><span class="paso-texto">Puedes sumar varios perfumes y medidas en un mismo pedido.</span></li>
-        <li class="paso"><span class="paso-titulo">Envía tu pedido por WhatsApp</span><span class="paso-texto">Ahí coordinamos el pago y el envío a todo México. También puedes escribirnos al <a href="https://wa.me/525612567245">56&nbsp;1256&nbsp;7245</a>.</span></li>
+        <li class="paso"><span class="paso-titulo">Envía tu pedido por WhatsApp</span><span class="paso-texto">Ahí te respondemos para coordinar el pago y el envío a todo México. También puedes escribirnos al <a href="https://wa.me/525612567245">56&nbsp;1256&nbsp;7245</a>.</span></li>
       </ol>
     </section>
   </div>
@@ -274,19 +274,21 @@
 </button>
 
 <div id="carrito-overlay" hidden></div>
-<aside id="carrito-panel" hidden aria-label="Carrito de compras">
+<aside id="carrito-panel" hidden role="dialog" aria-modal="true" aria-labelledby="carrito-titulo">
   <div class="carrito-panel-header">
-    <h2>Tu carrito</h2>
-    <button class="carrito-cerrar" aria-label="Cerrar carrito">×</button>
+    <h2 id="carrito-titulo">Tu carrito</h2>
+    <button type="button" class="carrito-cerrar" aria-label="Cerrar carrito"></button>
   </div>
   <div id="carrito-items"></div>
   <div class="carrito-panel-footer">
     <div id="carrito-total"></div>
-    <button id="carrito-checkout-whatsapp">Confirmar Pedido</button>
+    <button type="button" id="carrito-checkout-whatsapp">Enviar pedido por WhatsApp</button>
+    <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido ya escrito. Ahí te respondemos para coordinar el pago y el envío.</p>
   </div>
 </aside>
 
 <div id="selector-tamano" hidden></div>
+<div id="carrito-aviso" class="carrito-aviso" role="status" aria-live="polite" hidden></div>
 
 <div class="footer-global">
   <div class="footer-nombre">Saúco</div>

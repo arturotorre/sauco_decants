@@ -42,6 +42,8 @@ Saúco no se posiciona por precio bajo. Ningún texto debe venderlo como "el má
 - Términos: "decant", "perfume completo", "atomizaciones" (3 ml ≈ 60, 5 ml ≈ 90, 10 ml ≈ 180), "Dama/Caballero" en completos y "Hombre/Mujer" en decants.
 - Idioma: español de México (`lang="es"`, `es_MX`).
 - No hay backend ni base de datos. El carrito vive en el navegador.
+- El pago y el envío se coordinan por WhatsApp: el cliente manda su pedido desde el sitio y Saúco le responde para acordar ambos.
+- **Pendiente (TODO):** que el cliente capture sus datos de envío al hacer el pedido en el sitio, para que lleguen incluidos en el mensaje de WhatsApp.
 
 ## Brand Commitments
 
