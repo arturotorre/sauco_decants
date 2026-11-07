@@ -48,6 +48,7 @@ Saúco no se posiciona por precio bajo. Ningún texto debe venderlo como "el má
 ## Brand Commitments
 
 - Nombre: **Saúco** / Saúco Decants, con acento.
+- Logo (rediseñado y aprobado por el dueño el 2026-11-07, porque el anterior «no inspiraba nada a perfumes»): dos marcas. **El ramillete de saúco + «Saúco»** es la marca principal (menú, pie, imagen al compartir, empaque); **el sello «S»** es el monograma (avatar de redes, ícono, etiquetas, sello). Solo «Saúco», sin «Decants».
 - Lema: "El lujo que mereces, en tu medida preferida."
 - Las promesas "100% originales" y "Envíos a todo México desde Monterrey" se mantienen.
 - Tono: lujo accesible, cercano y en español, con trato de "tú".
@@ -56,7 +57,7 @@ Saúco no se posiciona por precio bajo. Ningún texto debe venderlo como "el má
 ## Evidence on Hand
 
 - Existen y se pueden pedir al dueño: **reseñas reales de clientes**, **fotos propias** de decants, empaques y botellas, y **números del negocio** (pedidos, clientes, tiempo operando). Ninguno está en el repositorio todavía. No se debe publicar ninguna reseña, cifra ni foto "propia" hasta que el dueño la entregue.
-- Ya están en el repo: fichas de producto con descripciones y notas olfativas (`decants/*/index.html`, `completos/*/index.html`), imágenes de producto en `imagenes/` y el logo `imagenes/Saúco_2.png`.
+- Ya están en el repo: fichas de producto con descripciones y notas olfativas (`decants/*/index.html`, `completos/*/index.html`), imágenes de producto en `imagenes/` y el logo (ramillete y sello) en `imagenes/logo/`; el logo anterior `imagenes/Saúco_2.png` queda solo como archivo histórico.
 
 ## Product Principles
 

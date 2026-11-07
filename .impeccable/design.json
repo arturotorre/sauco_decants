@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-07T00:00:00Z",
+  "generatedAt": "2026-11-07T18:00:00Z",
   "title": "Design System: Saúco Decants",
   "extensions": {
     "colorMeta": {
@@ -88,19 +88,19 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Nombre «Saúco» en portada y sello «100% originales»."
+        "purpose": "Nombre «Saúco» en portada (Bodoni Moda 400) y sello «100% originales»; marca del nav (22px) y del pie (40px)."
       },
       "numeral": {
         "displayName": "Cifra de medida",
-        "purpose": "Medidas 3·5·10 en las tiras y números de los pasos."
+        "purpose": "Medidas 3·5·10 en las tiras (Bodoni 400, 600 elegida), números de los pasos, total del carrito, precio de la ficha y medida del selector."
       },
       "headline": {
         "displayName": "Título de sección",
-        "purpose": "Encabezados de sección de la portada; título de página de los catálogos (clamp(2.125rem, 9vw, 3.25rem)) y títulos de lista a 24px."
+        "purpose": "Encabezados de sección de la portada en Bodoni Moda 400; título de página de los catálogos (clamp(2.125rem, 9vw, 3.25rem)) y títulos de lista a 24px. En la ficha, «Sobre esta fragancia» a clamp(1.6rem, 6vw, 2.25rem); el nombre del perfume usa la misma voz a clamp(2.1rem, 9.5vw, 3.75rem) / clamp(3.25rem, 5.2vw, 5rem)."
       },
       "title": {
         "displayName": "Subtítulo",
-        "purpose": "Subtítulos de rutas por ocasión y titular del estado sin resultados."
+        "purpose": "Subtítulos de rutas por ocasión y titular del estado sin resultados (Bodoni Moda 500)."
       },
       "body-lg": {
         "displayName": "Texto largo",
@@ -108,15 +108,15 @@
       },
       "body": {
         "displayName": "Texto",
-        "purpose": "Descripciones, precios, enlaces del nav."
+        "purpose": "Descripciones, precios de renglón y botón, enlaces del nav (Hanken Grotesk)."
       },
       "label": {
         "displayName": "Etiqueta",
-        "purpose": "Marca del perfume, nombres de tiras, desplegables del nav, redes del pie; mayúsculas."
+        "purpose": "Marca del perfume, nombres de tiras, desplegables del nav, redes del pie; Hanken 600 en mayúsculas."
       },
       "button": {
         "displayName": "Botón",
-        "purpose": "Etiqueta del botón principal; mayúsculas."
+        "purpose": "Etiqueta del botón principal; Hanken 600 en mayúsculas."
       }
     },
     "shadows": [
@@ -144,6 +144,11 @@
         "name": "sombra-desplegable",
         "value": "0 14px 30px -12px rgba(59,35,24,0.4)",
         "purpose": "Paneles de filtros y orden de perfumes completos."
+      },
+      {
+        "name": "sombra-repisa-ficha",
+        "value": "0 3px 0 #3B2318, 0 16px 20px -12px rgba(59,35,24,0.4)",
+        "purpose": "Repisa fija de la ficha en escritorio (canto + sombra corta); en móvil solo el canto."
       }
     ],
     "motion": [
@@ -179,7 +184,8 @@
       },
       {
         "name": "nav-portada",
-        "value": "861px"
+        "value": "861px",
+        "purpose": "Nav lateral, portada en dos columnas, márgenes de catálogo y ficha con repisa fija."
       }
     ]
   },
@@ -190,7 +196,7 @@
       "refersTo": "button-primary",
       "description": "Acción principal (Explorar decants). Chocolate como tinta.",
       "html": "<a class=\"ds-btn-principal\" href=\"#\">Explorar decants</a>",
-      "css": ".ds-btn-principal { display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 1.75rem; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; transition:background 0.2s, transform 0.2s; } .ds-btn-principal:hover { background:#2A170E; } .ds-btn-principal:active { transform:translateY(1px); } .ds-btn-principal:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-btn-principal { display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 1.75rem; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; transition:background 0.2s, transform 0.2s; } .ds-btn-principal:hover { background:#2A170E; } .ds-btn-principal:active { transform:translateY(1px); } .ds-btn-principal:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Enlace secundario",
@@ -198,7 +204,7 @@
       "refersTo": "link-secondary",
       "description": "Acción secundaria como texto subrayado.",
       "html": "<a class=\"ds-enlace\" href=\"#\">Perfumes completos</a>",
-      "css": ".ds-enlace { padding:0.6rem 0.5rem; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; color:var(--tinta,#3B2318); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:5px; } .ds-enlace:hover { text-decoration-thickness:2px; } .ds-enlace:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-enlace { padding:0.6rem 0.5rem; font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; color:var(--tinta,#3B2318); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:5px; } .ds-enlace:hover { text-decoration-thickness:2px; } .ds-enlace:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Tiras de prueba",
@@ -206,14 +212,14 @@
       "refersTo": "tira",
       "description": "Selector de medida 3·5·10 como tiras de papel en abanico; la elegida se levanta.",
       "html": "<div class=\"ds-tiras\"><button class=\"ds-tira\" style=\"--giro:-8deg\" aria-pressed=\"false\"><span class=\"ds-tira-ml\">3</span><span class=\"ds-tira-u\">ml</span><span class=\"ds-tira-n\">Muestra</span></button><button class=\"ds-tira\" aria-pressed=\"true\"><span class=\"ds-tira-ml\">5</span><span class=\"ds-tira-u\">ml</span><span class=\"ds-tira-n\">Viaje</span></button><button class=\"ds-tira\" style=\"--giro:8deg\" aria-pressed=\"false\"><span class=\"ds-tira-ml\">10</span><span class=\"ds-tira-u\">ml</span><span class=\"ds-tira-n\">Mensual</span></button></div>",
-      "css": ".ds-tiras { display:flex; justify-content:center; gap:10px; padding:24px; background:var(--yeso,#E2E1DE); filter:drop-shadow(0 6px 8px rgba(59,35,24,0.18)); } .ds-tira { --giro:0deg; position:relative; width:68px; height:180px; border:0; padding:14px 0 0; cursor:pointer; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; display:flex; flex-direction:column; align-items:center; clip-path:polygon(0 0,100% 0,100% 90%,50% 100%,0 90%); transform-origin:50% 140%; transform:rotate(var(--giro)); transition:transform 0.45s cubic-bezier(.16,1,.3,1); } .ds-tira::after { content:''; position:absolute; left:0; right:0; bottom:0; height:42%; background:var(--roble-claro,#CDAE86); opacity:0.55; transform:scaleY(0); transform-origin:50% 100%; transition:transform 0.5s cubic-bezier(.16,1,.3,1); } .ds-tira[aria-pressed='true'] { transform:rotate(var(--giro)) translateY(-16px); } .ds-tira[aria-pressed='true']::after { transform:scaleY(1); } .ds-tira:hover { transform:rotate(var(--giro)) translateY(-6px); } .ds-tira:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--tinta,#3B2318); } .ds-tira-ml { font-stretch:112%; font-weight:200; font-size:40px; line-height:1; letter-spacing:-0.03em; } .ds-tira[aria-pressed='true'] .ds-tira-ml { font-weight:500; } .ds-tira-u { font-size:13px; font-weight:500; margin-top:2px; } .ds-tira-n { position:relative; z-index:1; font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; margin-top:12px; writing-mode:vertical-rl; transform:rotate(180deg); }"
+      "css": ".ds-tiras { display:flex; justify-content:center; gap:10px; padding:24px; background:var(--yeso,#E2E1DE); filter:drop-shadow(0 6px 8px rgba(59,35,24,0.18)); } .ds-tira { --giro:0deg; position:relative; width:68px; height:180px; border:0; padding:14px 0 0; cursor:pointer; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; display:flex; flex-direction:column; align-items:center; clip-path:polygon(0 0,100% 0,100% 90%,50% 100%,0 90%); transform-origin:50% 140%; transform:rotate(var(--giro)); transition:transform 0.45s cubic-bezier(.16,1,.3,1); } .ds-tira::after { content:''; position:absolute; left:0; right:0; bottom:0; height:42%; background:var(--roble-claro,#CDAE86); opacity:0.55; transform:scaleY(0); transform-origin:50% 100%; transition:transform 0.5s cubic-bezier(.16,1,.3,1); } .ds-tira[aria-pressed='true'] { transform:rotate(var(--giro)) translateY(-16px); } .ds-tira[aria-pressed='true']::after { transform:scaleY(1); } .ds-tira:hover { transform:rotate(var(--giro)) translateY(-6px); } .ds-tira:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--tinta,#3B2318); } .ds-tira-ml { font-family:'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif; font-weight:400; font-size:40px; line-height:1; letter-spacing:-0.03em; } .ds-tira[aria-pressed='true'] .ds-tira-ml { font-weight:600; } .ds-tira-u { font-size:13px; font-weight:500; margin-top:2px; } .ds-tira-n { position:relative; z-index:1; font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; margin-top:12px; writing-mode:vertical-rl; transform:rotate(180deg); }"
     },
     {
       "name": "Estante de producto",
       "kind": "card",
       "description": "Foto real sobre repisa de roble con canto chocolate; sin tarjeta.",
       "html": "<a class=\"ds-estante\" href=\"#\"><div class=\"ds-estante-foto\"><svg width=\"60\" height=\"120\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#C9B48E\"/></svg></div><span class=\"ds-estante-casa\">Le Labo</span><span class=\"ds-estante-nombre\">Santal 33</span><span class=\"ds-estante-precio\">Desde $350 · 3 ml</span></a>",
-      "css": ".ds-estante { display:block; width:220px; color:var(--tinta,#3B2318); text-decoration:none; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; background:var(--yeso,#E2E1DE); } .ds-estante-foto { height:160px; display:flex; align-items:flex-end; justify-content:center; border-bottom:12px solid var(--roble,#B08A5A); box-shadow:0 3px 0 var(--tinta,#3B2318); } .ds-estante-foto svg { transform:translateY(4%); transition:transform 0.4s cubic-bezier(.16,1,.3,1); } .ds-estante:hover .ds-estante-foto svg { transform:translateY(0); } .ds-estante-casa { display:block; padding:1.1rem 0.75rem 0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-estante-nombre { display:block; margin-top:4px; padding:0 0.75rem; font-size:18px; font-weight:500; } .ds-estante:hover .ds-estante-nombre { text-decoration:underline; text-underline-offset:4px; } .ds-estante-precio { display:block; margin-top:6px; padding:0 0.75rem; font-size:15px; color:var(--tinta-suave,#64503F); } .ds-estante:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-estante { display:block; width:220px; color:var(--tinta,#3B2318); text-decoration:none; font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; background:var(--yeso,#E2E1DE); } .ds-estante-foto { height:160px; display:flex; align-items:flex-end; justify-content:center; border-bottom:12px solid var(--roble,#B08A5A); box-shadow:0 3px 0 var(--tinta,#3B2318); } .ds-estante-foto svg { transform:translateY(4%); transition:transform 0.4s cubic-bezier(.16,1,.3,1); } .ds-estante:hover .ds-estante-foto svg { transform:translateY(0); } .ds-estante-casa { display:block; padding:1.1rem 0.75rem 0; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-estante-nombre { display:block; margin-top:4px; padding:0 0.75rem; font-size:18px; font-weight:500; } .ds-estante:hover .ds-estante-nombre { text-decoration:underline; text-underline-offset:4px; } .ds-estante-precio { display:block; margin-top:6px; padding:0 0.75rem; font-size:15px; color:var(--tinta-suave,#64503F); } .ds-estante:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Botón de carrito",
@@ -221,15 +227,15 @@
       "refersTo": "cart-button",
       "description": "Círculo papel con bolsa SVG y contador tinta.",
       "html": "<button class=\"ds-carrito\" aria-label=\"Carrito\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"><path d=\"M5 8.5h14l-1.1 11.5H6.1L5 8.5z\"/><path d=\"M9 8.5V7a3 3 0 0 1 6 0v1.5\"/></svg><span class=\"ds-carrito-n\">2</span></button>",
-      "css": ".ds-carrito { position:relative; width:44px; height:44px; border-radius:50%; background:var(--papel,#fff); border:1px solid rgba(59,35,24,0.16); color:var(--tinta,#3B2318); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px -6px rgba(59,35,24,0.35); transition:border-color 0.2s; } .ds-carrito:hover { border-color:var(--tinta,#3B2318); } .ds-carrito:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-carrito-n { position:absolute; top:-5px; right:-5px; min-width:20px; height:20px; padding:0 5px; border-radius:10px; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:12px; font-weight:600; display:flex; align-items:center; justify-content:center; }"
+      "css": ".ds-carrito { position:relative; width:44px; height:44px; border-radius:50%; background:var(--papel,#fff); border:1px solid rgba(59,35,24,0.16); color:var(--tinta,#3B2318); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 14px -6px rgba(59,35,24,0.35); transition:border-color 0.2s; } .ds-carrito:hover { border-color:var(--tinta,#3B2318); } .ds-carrito:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-carrito-n { position:absolute; top:-5px; right:-5px; min-width:20px; height:20px; padding:0 5px; border-radius:10px; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:12px; font-weight:600; display:flex; align-items:center; justify-content:center; }"
     },
     {
       "name": "Navegación",
       "kind": "nav",
       "refersTo": "nav",
-      "description": "Columna lateral de yeso en escritorio; marca extendida, desplegables en etiqueta.",
+      "description": "Columna lateral de yeso en escritorio; marca en Bodoni Moda, desplegables en etiqueta Hanken.",
       "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-marca\" href=\"#\">Saúco</a><span class=\"ds-nav-grupo\">Decants</span><a class=\"ds-nav-link activo\" href=\"#\">Todos</a><a class=\"ds-nav-link\" href=\"#\">Hombre</a><a class=\"ds-nav-link\" href=\"#\">Mujer</a></nav>",
-      "css": ".ds-nav { width:200px; padding:2rem 1.5rem; background:var(--yeso,#E2E1DE); border-right:1px solid rgba(59,35,24,0.16); display:flex; flex-direction:column; gap:0.4rem; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-nav-marca { font-stretch:125%; font-size:22px; font-weight:300; letter-spacing:0.06em; text-transform:uppercase; color:var(--tinta,#3B2318); text-decoration:none; margin-bottom:2rem; } .ds-nav-grupo { font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--tinta,#3B2318); padding:0.5rem 0; } .ds-nav-link { font-size:15px; color:var(--tinta-suave,#64503F); text-decoration:none; padding:0.4rem 0 0.4rem 0.85rem; border-left:1px solid rgba(59,35,24,0.16); transition:color 0.2s; } .ds-nav-link:hover { color:var(--tinta,#3B2318); } .ds-nav-link.activo { color:var(--tinta,#3B2318); border-left-color:var(--tinta,#3B2318); text-decoration:underline; text-underline-offset:5px; } .ds-nav-link:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-nav { width:200px; padding:2rem 1.5rem; background:var(--yeso,#E2E1DE); border-right:1px solid rgba(59,35,24,0.16); display:flex; flex-direction:column; gap:0.4rem; font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-nav-marca { font-family:'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif; font-size:22px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; color:var(--tinta,#3B2318); text-decoration:none; margin-bottom:2rem; } .ds-nav-grupo { font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--tinta,#3B2318); padding:0.5rem 0; } .ds-nav-link { font-size:15px; color:var(--tinta-suave,#64503F); text-decoration:none; padding:0.4rem 0 0.4rem 0.85rem; border-left:1px solid rgba(59,35,24,0.16); transition:color 0.2s; } .ds-nav-link:hover { color:var(--tinta,#3B2318); } .ds-nav-link.activo { color:var(--tinta,#3B2318); border-left-color:var(--tinta,#3B2318); text-decoration:underline; text-underline-offset:5px; } .ds-nav-link:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Pie",
@@ -237,7 +243,7 @@
       "refersTo": "footer",
       "description": "Única superficie chocolate del sitio.",
       "html": "<footer class=\"ds-pie\"><div class=\"ds-pie-nombre\">Saúco</div><div class=\"ds-pie-linea\"></div><div class=\"ds-pie-sub\">Decants · Monterrey · Envíos a todo México</div><div class=\"ds-pie-red\"><span>Instagram</span><a href=\"#\">@sauco.decants</a></div></footer>",
-      "css": ".ds-pie { background:var(--tinta,#3B2318); color:var(--yeso,#E2E1DE); padding:3.5rem 1.5rem 3rem; text-align:center; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-pie-nombre { font-stretch:125%; font-size:40px; font-weight:200; text-transform:uppercase; letter-spacing:0.06em; } .ds-pie-linea { width:120px; height:1px; background:var(--roble-claro,#CDAE86); margin:1rem auto 1.5rem; } .ds-pie-sub { font-size:13px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#D7CABD; } .ds-pie-red { margin-top:2rem; display:flex; flex-direction:column; gap:4px; } .ds-pie-red span { font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--roble-claro,#CDAE86); } .ds-pie-red a { color:var(--yeso,#E2E1DE); font-size:15px; text-decoration:none; } .ds-pie-red a:hover { text-decoration:underline; text-underline-offset:4px; } .ds-pie-red a:focus-visible { outline:2px solid var(--roble-claro,#CDAE86); outline-offset:3px; }"
+      "css": ".ds-pie { background:var(--tinta,#3B2318); color:var(--yeso,#E2E1DE); padding:3.5rem 1.5rem 3rem; text-align:center; font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-pie-nombre { font-family:'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif; font-size:40px; font-weight:400; text-transform:uppercase; letter-spacing:0.06em; } .ds-pie-linea { width:120px; height:1px; background:var(--roble-claro,#CDAE86); margin:1rem auto 1.5rem; } .ds-pie-sub { font-size:13px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#D7CABD; } .ds-pie-red { margin-top:2rem; display:flex; flex-direction:column; gap:4px; } .ds-pie-red span { font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--roble-claro,#CDAE86); } .ds-pie-red a { color:var(--yeso,#E2E1DE); font-size:15px; text-decoration:none; } .ds-pie-red a:hover { text-decoration:underline; text-underline-offset:4px; } .ds-pie-red a:focus-visible { outline:2px solid var(--roble-claro,#CDAE86); outline-offset:3px; }"
     },
     {
       "name": "Botón de contorno",
@@ -245,7 +251,7 @@
       "refersTo": "button-secondary",
       "description": "Acción secundaria con borde tinta; se llena de tinta en hover. Salidas del estado sin resultados.",
       "html": "<button class=\"ds-btn-contorno\" type=\"button\">Limpiar búsqueda</button>",
-      "css": ".ds-btn-contorno { display:inline-flex; align-items:center; min-height:44px; padding:0 1.1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-btn-contorno:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-btn-contorno:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-btn-contorno { display:inline-flex; align-items:center; min-height:44px; padding:0 1.1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-btn-contorno:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-btn-contorno:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Enlace en línea",
@@ -253,7 +259,7 @@
       "refersTo": "link-inline",
       "description": "Botón que se lee como texto subrayado dentro de un párrafo.",
       "html": "<p class=\"ds-nota\">Botellas originales sobre pedido. <button type=\"button\" class=\"ds-enlace-linea\">¿No está en la lista? Te lo cotizamos</button></p>",
-      "css": ".ds-nota { font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; line-height:1.5; color:var(--tinta-suave,#64503F); max-width:52ch; } .ds-enlace-linea { display:inline; padding:0; border:0; background:none; font:inherit; color:var(--tinta,#3B2318); font-weight:500; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; cursor:pointer; } .ds-enlace-linea:hover { text-decoration-thickness:2px; } .ds-enlace-linea:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-nota { font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:15px; line-height:1.5; color:var(--tinta-suave,#64503F); max-width:52ch; } .ds-enlace-linea { display:inline; padding:0; border:0; background:none; font:inherit; color:var(--tinta,#3B2318); font-weight:500; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; cursor:pointer; } .ds-enlace-linea:hover { text-decoration-thickness:2px; } .ds-enlace-linea:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Chips de filtro",
@@ -261,7 +267,7 @@
       "refersTo": "chip-filter",
       "description": "Píldoras papel de filtro por género; la activa se llena de tinta.",
       "html": "<nav class=\"ds-chips\"><a class=\"ds-chip activo\" href=\"#\" aria-current=\"page\">Todos</a><a class=\"ds-chip\" href=\"#\">Hombre</a><a class=\"ds-chip\" href=\"#\">Mujer</a></nav>",
-      "css": ".ds-chips { display:flex; flex-wrap:wrap; gap:8px; padding:16px; background:var(--yeso,#E2E1DE); } .ds-chip { display:inline-flex; align-items:center; min-height:40px; padding:0 1rem; border:1px solid rgba(59,35,24,0.16); border-radius:20px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; text-decoration:none; transition:border-color 0.2s, background 0.2s; } .ds-chip:hover { border-color:var(--tinta,#3B2318); } .ds-chip.activo { background:var(--tinta,#3B2318); border-color:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-chip:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-chips { display:flex; flex-wrap:wrap; gap:8px; padding:16px; background:var(--yeso,#E2E1DE); } .ds-chip { display:inline-flex; align-items:center; min-height:40px; padding:0 1rem; border:1px solid rgba(59,35,24,0.16); border-radius:20px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; text-decoration:none; transition:border-color 0.2s, background 0.2s; } .ds-chip:hover { border-color:var(--tinta,#3B2318); } .ds-chip.activo { background:var(--tinta,#3B2318); border-color:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-chip:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Buscador",
@@ -269,7 +275,7 @@
       "refersTo": "search-field",
       "description": "Campo de búsqueda papel a ancho completo con lupa de trazo.",
       "html": "<div class=\"ds-buscador\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"#64503F\" stroke-width=\"1.6\" stroke-linecap=\"round\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"M15.5 15.5 20 20\"/></svg><input type=\"search\" placeholder=\"Buscar por nombre o marca\" aria-label=\"Buscar\"></div>",
-      "css": ".ds-buscador { position:relative; width:340px; } .ds-buscador svg { position:absolute; left:0.9rem; top:50%; transform:translateY(-50%); pointer-events:none; } .ds-buscador input { width:100%; height:48px; padding:0 1rem 0 2.75rem; font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:16px; color:var(--tinta,#3B2318); background:var(--papel,#fff); border:1px solid rgba(59,35,24,0.16); border-radius:2px; transition:border-color 0.2s; } .ds-buscador input::placeholder { color:var(--tinta-suave,#64503F); opacity:1; } .ds-buscador input:hover { border-color:rgba(59,35,24,0.4); } .ds-buscador input:focus { outline:none; border-color:var(--tinta,#3B2318); box-shadow:0 0 0 1px var(--tinta,#3B2318); }"
+      "css": ".ds-buscador { position:relative; width:340px; } .ds-buscador svg { position:absolute; left:0.9rem; top:50%; transform:translateY(-50%); pointer-events:none; } .ds-buscador input { width:100%; height:48px; padding:0 1rem 0 2.75rem; font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:16px; color:var(--tinta,#3B2318); background:var(--papel,#fff); border:1px solid rgba(59,35,24,0.16); border-radius:2px; transition:border-color 0.2s; } .ds-buscador input::placeholder { color:var(--tinta-suave,#64503F); opacity:1; } .ds-buscador input:hover { border-color:rgba(59,35,24,0.4); } .ds-buscador input:focus { outline:none; border-color:var(--tinta,#3B2318); box-shadow:0 0 0 1px var(--tinta,#3B2318); }"
     },
     {
       "name": "Renglón de catálogo",
@@ -277,7 +283,7 @@
       "refersTo": "catalog-row",
       "description": "Un perfume por renglón: foto sobre mini repisa, casa, nombre, meta y precio con botón Agregar.",
       "html": "<ul class=\"ds-filas\"><li class=\"ds-fila\"><span class=\"ds-fila-foto\"><svg width=\"36\" height=\"62\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#C9B48E\"/></svg></span><div class=\"ds-fila-texto\"><span class=\"ds-fila-casa\">Le Labo</span><a class=\"ds-fila-nombre\" href=\"#\">Santal 33</a><span class=\"ds-fila-meta\">Unisex · Cardamomo, iris, violeta</span></div><div class=\"ds-fila-accion\"><span class=\"ds-fila-precio\">Desde $350</span><button type=\"button\" class=\"ds-fila-agregar\">Agregar</button></div></li></ul>",
-      "css": ".ds-filas { list-style:none; margin:0; padding:0 16px; width:360px; background:var(--yeso,#E2E1DE); border-top:1px solid rgba(59,35,24,0.16); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; color:var(--tinta,#3B2318); } .ds-fila { display:grid; grid-template-columns:72px minmax(0,1fr) auto; gap:0 14px; align-items:start; padding:1rem 0; border-bottom:1px solid rgba(59,35,24,0.16); } .ds-fila-foto { width:72px; height:72px; display:flex; align-items:flex-end; justify-content:center; border-bottom:6px solid var(--roble,#B08A5A); box-shadow:0 2px 0 var(--tinta,#3B2318); } .ds-fila-foto svg { transform:translateY(4%); transition:transform 0.35s cubic-bezier(.16,1,.3,1); } .ds-fila:hover .ds-fila-foto svg { transform:translateY(0); } .ds-fila-texto { min-width:0; display:flex; flex-direction:column; gap:2px; } .ds-fila-casa { font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-fila-nombre { font-size:17px; font-weight:500; line-height:1.25; color:var(--tinta,#3B2318); text-decoration:none; } .ds-fila-nombre:hover { text-decoration:underline; text-underline-offset:4px; } .ds-fila-meta { font-size:14px; line-height:1.4; color:var(--tinta-suave,#64503F); } .ds-fila-accion { display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; } .ds-fila-precio { font-size:15px; font-weight:600; white-space:nowrap; font-variant-numeric:tabular-nums; } .ds-fila-agregar { min-height:40px; padding:0 1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:14px; font-weight:600; letter-spacing:0.02em; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-fila-agregar:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-fila-agregar:focus-visible, .ds-fila-nombre:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-filas { list-style:none; margin:0; padding:0 16px; width:360px; background:var(--yeso,#E2E1DE); border-top:1px solid rgba(59,35,24,0.16); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; color:var(--tinta,#3B2318); } .ds-fila { display:grid; grid-template-columns:72px minmax(0,1fr) auto; gap:0 14px; align-items:start; padding:1rem 0; border-bottom:1px solid rgba(59,35,24,0.16); } .ds-fila-foto { width:72px; height:72px; display:flex; align-items:flex-end; justify-content:center; border-bottom:6px solid var(--roble,#B08A5A); box-shadow:0 2px 0 var(--tinta,#3B2318); } .ds-fila-foto svg { transform:translateY(4%); transition:transform 0.35s cubic-bezier(.16,1,.3,1); } .ds-fila:hover .ds-fila-foto svg { transform:translateY(0); } .ds-fila-texto { min-width:0; display:flex; flex-direction:column; gap:2px; } .ds-fila-casa { font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-fila-nombre { font-size:17px; font-weight:500; line-height:1.25; color:var(--tinta,#3B2318); text-decoration:none; } .ds-fila-nombre:hover { text-decoration:underline; text-underline-offset:4px; } .ds-fila-meta { font-size:14px; line-height:1.4; color:var(--tinta-suave,#64503F); } .ds-fila-accion { display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; } .ds-fila-precio { font-size:15px; font-weight:600; white-space:nowrap; font-variant-numeric:tabular-nums; } .ds-fila-agregar { min-height:40px; padding:0 1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:14px; font-weight:600; letter-spacing:0.02em; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-fila-agregar:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-fila-agregar:focus-visible, .ds-fila-nombre:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Vitrina",
@@ -285,7 +291,7 @@
       "refersTo": "vitrina",
       "description": "Repisa de más vendidos al inicio del catálogo de decants, con leyenda debajo.",
       "html": "<section class=\"ds-vitrina\"><div class=\"ds-vitrina-repisa\"><a class=\"ds-vitrina-frasco\" href=\"#\"><svg width=\"44\" height=\"88\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#C9B48E\"/></svg></a><a class=\"ds-vitrina-frasco\" href=\"#\"><svg width=\"44\" height=\"88\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#8E6A4C\"/></svg></a><a class=\"ds-vitrina-frasco\" href=\"#\"><svg width=\"44\" height=\"88\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#D9C7D8\"/></svg></a></div><h2 class=\"ds-vitrina-leyenda\">Los más vendidos</h2></section>",
-      "css": ".ds-vitrina { width:360px; padding:16px; background:var(--yeso,#E2E1DE); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-vitrina-repisa { display:flex; align-items:flex-end; height:96px; padding:0 0.25rem; border-bottom:10px solid var(--roble,#B08A5A); box-shadow:0 3px 0 var(--tinta,#3B2318); } .ds-vitrina-frasco { flex:1; height:100%; display:flex; align-items:flex-end; justify-content:center; } .ds-vitrina-frasco svg { transform:translateY(4%); transform-origin:50% 100%; transition:transform 0.4s cubic-bezier(.16,1,.3,1); } .ds-vitrina-frasco:hover svg { transform:translateY(0); } .ds-vitrina-frasco:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-vitrina-leyenda { margin:0.65rem 0 0; font-size:14px; font-weight:400; color:var(--tinta-suave,#64503F); }"
+      "css": ".ds-vitrina { width:360px; padding:16px; background:var(--yeso,#E2E1DE); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-vitrina-repisa { display:flex; align-items:flex-end; height:96px; padding:0 0.25rem; border-bottom:10px solid var(--roble,#B08A5A); box-shadow:0 3px 0 var(--tinta,#3B2318); } .ds-vitrina-frasco { flex:1; height:100%; display:flex; align-items:flex-end; justify-content:center; } .ds-vitrina-frasco svg { transform:translateY(4%); transform-origin:50% 100%; transition:transform 0.4s cubic-bezier(.16,1,.3,1); } .ds-vitrina-frasco:hover svg { transform:translateY(0); } .ds-vitrina-frasco:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-vitrina-leyenda { margin:0.65rem 0 0; font-size:14px; font-weight:400; color:var(--tinta-suave,#64503F); }"
     },
     {
       "name": "Sin resultados",
@@ -293,7 +299,7 @@
       "refersTo": "empty-state",
       "description": "Estado vacío con salidas que sí dan resultados: quitar filtro, otro catálogo, limpiar, cotizar.",
       "html": "<div class=\"ds-vacio\"><p class=\"ds-vacio-titulo\">No encontramos «aventus»</p><p class=\"ds-vacio-texto\">Revisa cómo se escribe, prueba con la marca o pídenos que lo consigamos.</p><div class=\"ds-vacio-acciones\"><button type=\"button\" class=\"ds-vacio-btn\">Ver «aventus» en perfumes completos</button><button type=\"button\" class=\"ds-vacio-btn\">Limpiar búsqueda</button><button type=\"button\" class=\"ds-vacio-btn\">Cotizar «aventus» por WhatsApp</button></div></div>",
-      "css": ".ds-vacio { width:360px; padding:2rem 16px; background:var(--yeso,#E2E1DE); border-top:1px solid rgba(59,35,24,0.16); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; color:var(--tinta,#3B2318); } .ds-vacio-titulo { margin:0; font-stretch:112%; font-size:22px; font-weight:500; } .ds-vacio-texto { margin:0.4rem 0 0; font-size:16px; line-height:1.5; color:var(--tinta-suave,#64503F); max-width:46ch; } .ds-vacio-acciones { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.25rem; } .ds-vacio-btn { display:inline-flex; align-items:center; min-height:44px; padding:0 1.1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; text-align:left; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-vacio-btn:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-vacio-btn:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-vacio { width:360px; padding:2rem 16px; background:var(--yeso,#E2E1DE); border-top:1px solid rgba(59,35,24,0.16); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; color:var(--tinta,#3B2318); } .ds-vacio-titulo { margin:0; font-family:'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif; font-size:22px; font-weight:500; } .ds-vacio-texto { margin:0.4rem 0 0; font-size:16px; line-height:1.5; color:var(--tinta-suave,#64503F); max-width:46ch; } .ds-vacio-acciones { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.25rem; } .ds-vacio-btn { display:inline-flex; align-items:center; min-height:44px; padding:0 1.1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; text-align:left; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-vacio-btn:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-vacio-btn:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Desplegable de filtros",
@@ -301,16 +307,24 @@
       "refersTo": "dropdown-toggle",
       "description": "Botón papel con flecha de trazo y contador; abre un panel papel con sombra del desplegable.",
       "html": "<div class=\"ds-desp\"><button type=\"button\" class=\"ds-desp-toggle\" aria-expanded=\"true\">Categoría y marca <span class=\"ds-desp-n\">2</span><span class=\"ds-desp-flecha\" aria-hidden=\"true\"></span></button><div class=\"ds-desp-panel\"><span class=\"ds-desp-etq\">Categoría</span><div class=\"ds-desp-chips\"><button type=\"button\" class=\"ds-desp-chip activo\">Todas</button><button type=\"button\" class=\"ds-desp-chip\">Nicho</button><button type=\"button\" class=\"ds-desp-chip\">Diseñador</button></div></div></div>",
-      "css": ".ds-desp { position:relative; padding:16px 16px 140px; background:var(--yeso,#E2E1DE); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-desp-toggle { display:inline-flex; align-items:center; gap:0.6rem; min-height:40px; padding:0 1rem; border:1px solid rgba(59,35,24,0.16); border-radius:2px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:inherit; font-size:15px; font-weight:500; cursor:pointer; transition:border-color 0.2s; } .ds-desp-toggle:hover, .ds-desp-toggle[aria-expanded='true'] { border-color:var(--tinta,#3B2318); } .ds-desp-toggle:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-desp-n { min-width:22px; height:22px; border-radius:11px; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-size:12px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; } .ds-desp-flecha { width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:translateY(-2px) rotate(45deg); transition:transform 0.25s cubic-bezier(.16,1,.3,1); } .ds-desp-toggle[aria-expanded='true'] .ds-desp-flecha { transform:translateY(2px) rotate(225deg); } .ds-desp-panel { position:absolute; top:64px; left:16px; width:280px; padding:1.1rem; border:1px solid rgba(59,35,24,0.16); border-radius:2px; background:var(--papel,#fff); box-shadow:0 14px 30px -12px rgba(59,35,24,0.4); } .ds-desp-etq { display:block; margin-bottom:0.5rem; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-desp-chips { display:flex; flex-wrap:wrap; gap:6px; } .ds-desp-chip { min-height:36px; padding:0 0.85rem; border:1px solid rgba(59,35,24,0.16); border-radius:18px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:inherit; font-size:14px; font-weight:500; cursor:pointer; } .ds-desp-chip:hover { border-color:var(--tinta,#3B2318); } .ds-desp-chip.activo { background:var(--tinta,#3B2318); border-color:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-desp-chip:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "css": ".ds-desp { position:relative; padding:16px 16px 140px; background:var(--yeso,#E2E1DE); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-desp-toggle { display:inline-flex; align-items:center; gap:0.6rem; min-height:40px; padding:0 1rem; border:1px solid rgba(59,35,24,0.16); border-radius:2px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:inherit; font-size:15px; font-weight:500; cursor:pointer; transition:border-color 0.2s; } .ds-desp-toggle:hover, .ds-desp-toggle[aria-expanded='true'] { border-color:var(--tinta,#3B2318); } .ds-desp-toggle:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-desp-n { min-width:22px; height:22px; border-radius:11px; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-size:12px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; } .ds-desp-flecha { width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:translateY(-2px) rotate(45deg); transition:transform 0.25s cubic-bezier(.16,1,.3,1); } .ds-desp-toggle[aria-expanded='true'] .ds-desp-flecha { transform:translateY(2px) rotate(225deg); } .ds-desp-panel { position:absolute; top:64px; left:16px; width:280px; padding:1.1rem; border:1px solid rgba(59,35,24,0.16); border-radius:2px; background:var(--papel,#fff); box-shadow:0 14px 30px -12px rgba(59,35,24,0.4); } .ds-desp-etq { display:block; margin-bottom:0.5rem; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-desp-chips { display:flex; flex-wrap:wrap; gap:6px; } .ds-desp-chip { min-height:36px; padding:0 0.85rem; border:1px solid rgba(59,35,24,0.16); border-radius:18px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:inherit; font-size:14px; font-weight:500; cursor:pointer; } .ds-desp-chip:hover { border-color:var(--tinta,#3B2318); } .ds-desp-chip.activo { background:var(--tinta,#3B2318); border-color:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-desp-chip:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Ficha técnica",
+      "kind": "custom",
+      "refersTo": "ficha-fila",
+      "description": "Ficha de producto: casa y nombre en un solo h1 (la casa es un span, nunca un kicker), repisa con fondo yeso, botones de medida y tabla técnica en renglones.",
+      "html": "<div class=\"ds-ficha\"><div class=\"ds-ficha-cab\"><h1 class=\"ds-ficha-titulo\"><span class=\"ds-ficha-casa\">Le Labo</span> <span class=\"ds-ficha-nombre\">Santal 33</span></h1><figure class=\"ds-ficha-repisa\"><svg width=\"52\" height=\"104\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#C9B48E\"/></svg></figure></div><div class=\"ds-ficha-medidas\" role=\"group\" aria-label=\"Elige la medida\"><button type=\"button\" class=\"ds-ficha-medida\"><span>3&nbsp;ml</span><span>$350</span></button><button type=\"button\" class=\"ds-ficha-medida\"><span>5&nbsp;ml</span><span>$554</span></button><button type=\"button\" class=\"ds-ficha-medida\"><span>10&nbsp;ml</span><span>$1,080</span></button></div><p class=\"ds-ficha-garantia\">Decant 100% original · Envíos a todo México</p><dl class=\"ds-ficha-tabla\"><div class=\"ds-ficha-fila\"><dt>Género</dt><dd>Unisex</dd></div><div class=\"ds-ficha-fila\"><dt>Salida</dt><dd>Cardamomo, iris, violeta</dd></div><div class=\"ds-ficha-fila\"><dt>Duración</dt><dd>6 a 8 horas en piel.</dd></div></dl></div>",
+      "css": ".ds-ficha { width:360px; padding:16px 20px; background:var(--yeso,#E2E1DE); color:var(--tinta,#3B2318); font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-ficha-cab { display:grid; grid-template-columns:minmax(0,1fr) 120px; gap:1rem; align-items:end; } .ds-ficha-titulo { margin:0; display:flex; flex-direction:column; gap:0.35rem; font-weight:400; } .ds-ficha-casa { font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-ficha-nombre { font-family:'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif; font-weight:400; font-size:38px; line-height:1; letter-spacing:-0.015em; text-wrap:balance; } .ds-ficha-repisa { margin:0; height:130px; background:var(--yeso,#E2E1DE); display:flex; align-items:flex-end; justify-content:center; border-bottom:8px solid var(--roble,#B08A5A); box-shadow:0 3px 0 var(--tinta,#3B2318); } .ds-ficha-repisa svg { transform:translateY(4%); transition:transform 0.4s cubic-bezier(.16,1,.3,1); } .ds-ficha-repisa:hover svg { transform:translateY(0); } .ds-ficha-medidas { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin-top:1.5rem; } .ds-ficha-medida { min-height:60px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:inherit; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-ficha-medida span:first-child { font-size:14px; font-weight:600; } .ds-ficha-medida span:last-child { font-size:17px; font-variant-numeric:tabular-nums; } .ds-ficha-medida:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-ficha-medida:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-ficha-garantia { margin:0.85rem 0 0; font-size:14px; line-height:1.5; color:var(--tinta-suave,#64503F); } .ds-ficha-tabla { margin:2rem 0 0; border-top:1px solid var(--tinta,#3B2318); } .ds-ficha-fila { display:grid; grid-template-columns:7.25rem minmax(0,1fr); gap:0.75rem; padding:0.8rem 0; border-bottom:1px solid rgba(59,35,24,0.16); } .ds-ficha-fila dt { padding-top:2px; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-ficha-fila dd { margin:0; font-size:16px; line-height:1.45; }"
     }
   ],
   "narrative": {
     "northStar": "El atelier del perfumista",
-    "overview": "Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.\n\nLa voz tipográfica es una sola familia, Archivo, en dos anchos: extendida y delgada para el nombre, los títulos y las cifras; ancho normal para leer. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.\n\nAlcance actual: este mundo cubre la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. Solo las fichas de producto (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.",
+    "overview": "Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.\n\nLa voz tipográfica son dos familias: Bodoni Moda, un Didone de alto contraste, habla en el nombre, los títulos y las cifras; Hanken Grotesk, una grotesca sobria, se lee y se opera en todo lo demás. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.\n\nAlcance actual: este mundo cubre todo el sitio: la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), las 134 fichas de producto (`decants/*`, `completos/*`, generadas por `tools/generar_pagina_producto.py`), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. La migración está completa; lo que queda del sistema heredado en `css/styles.css` y `css/fonts.css` son restos sin uso (ver la nota al final de Do's and Don'ts), deuda de limpieza y no parte de este sistema. El `theme-color` del navegador es yeso (#E2E1DE) en la portada y en todas las fichas.",
     "keyCharacteristics": [
       "Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.",
       "Chocolate como tinta: texto, líneas, botón principal y pie.",
-      "Archivo variable: ancho 125 % y peso 200–300 para nombre, títulos y cifras; ancho normal para texto.",
+      "Bodoni Moda para nombre, títulos y cifras; Hanken Grotesk para texto, etiquetas, botones y nav.",
       "Repisas de roble con canto chocolate como soporte de toda foto de producto.",
       "Tiras de papel blanco como selector de medida, con la cifra como protagonista.",
       "Fotos reales de frascos fundidas al muro con `multiply`; sin tarjetas ni marcos."
@@ -332,28 +346,40 @@
         "section": "colors"
       },
       {
-        "name": "The Two Widths Rule",
-        "body": "El ancho extendido (112–125 %) y los pesos 200–300 son para el nombre, los títulos y las cifras; todo lo que se lee va en ancho normal y peso 400–600.",
+        "name": "The Bodoni Speaks Rule",
+        "body": "Bodoni Moda habla: el nombre «Saúco», los títulos, el nombre del perfume en su ficha y las cifras que son el producto o su suma (medidas, pasos, total, precio de ficha). Hanken Grotesk lee y opera: texto, etiquetas, botones, nav, campos, chips y todo precio dentro de un botón o renglón. Bodoni nunca va en peso menor a 500 ni por debajo de 17px, y siempre en su óptica de texto (opsz 16, fijada en html con font-optical-sizing: none): la óptica automática de tamaños grandes deja trazos finos ilegibles. El logo usa óptica 11, peso 600; Hanken nunca compone un encabezado de sección, el nombre de la ficha ni la marca.",
         "section": "typography"
       },
       {
         "name": "The Number Is the Product Rule",
-        "body": "La medida se compone como cifra grande y delgada, con la unidad (ml) pequeña debajo. Precios y lecturas de atomizaciones usan cifras tabulares.",
+        "body": "La medida se compone como cifra Bodoni grande (500 en reposo, 700 elegida), con la unidad (ml) pequeña debajo en Hanken 13–15px/500. Precios de renglón y botón, subtotales y lecturas de atomizaciones van en Hanken con cifras tabulares; el total del carrito y el precio de la ficha son cifra Bodoni tabular.",
         "section": "typography"
       },
       {
         "name": "The Objects Cast Shadows Rule",
         "body": "Solo los objetos del atelier (papel, repisa) y las capas flotantes (carrito, menú abierto, desplegables) tienen sombra, siempre teñida de chocolate. Las secciones y los textos son planos.",
         "section": "elevation"
+      },
+      {
+        "name": "The Plaster Behind Multiply Rule",
+        "body": "`multiply` mezcla dentro de su contexto de apilamiento. Todo contenedor fijo o aislado (sticky, isolation, transform, opacity, filter) detrás de una foto fundida lleva `background: var(--yeso)`, o el blanco de la foto se ve como caja.",
+        "section": "components"
+      },
+      {
+        "name": "The House Lives in the Title Rule",
+        "body": "En la ficha, la casa y el nombre forman un solo `h1`: la casa es un `span` en etiqueta dentro del título, nunca un kicker suelto encima de un encabezado.",
+        "section": "components"
       }
     ],
     "dos": [
       "Do usar yeso (#E2E1DE) como fondo de toda sección y reservar el fondo chocolate para el pie.",
       "Do poner cada foto de producto sobre una repisa de roble con canto chocolate, fundida con `multiply`.",
-      "Do componer medidas y números con Archivo extendido y delgado, y el texto de lectura en ancho normal.",
+      "Do componer el nombre, los títulos, las medidas y los totales en Bodoni Moda (400 o más), y todo lo que se lee u opera en Hanken Grotesk.",
       "Do teñir toda sombra con chocolate (rgba(59,35,24,…)) y limitarla a objetos y capas flotantes.",
       "Do mantener el botón principal visible sin desplazarse en el primer viewport del celular.",
-      "Do dejar fijo todo movimiento con `prefers-reduced-motion`."
+      "Do dejar fijo todo movimiento con `prefers-reduced-motion`.",
+      "Do poner la casa dentro del título (`h1` con casa y nombre como `span`) en lugar de una etiqueta encima.",
+      "Do dar `background: var(--yeso)` a todo contenedor fijo o aislado que tenga detrás una foto con `multiply`."
     ],
     "donts": [
       "Don't usar el chocolate como fondo de sección fuera del pie.",
@@ -361,7 +387,9 @@
       "Don't usar crema, arena, terracota, cobre ni los puntos morado/verde del sistema heredado en superficies nuevas.",
       "Don't usar emoji como íconos; los íconos son SVG de trazo en tinta.",
       "Don't encerrar fotos de producto en tarjetas con borde o esquinas redondeadas.",
-      "Don't introducir Cormorant Garamond ni Jost en superficies nuevas."
+      "Don't introducir Cormorant Garamond ni Jost en superficies nuevas.",
+      "Don't volver a una sans geométrica extendida (Archivo 112–125 % u otra) para el display: el dueño la rechazó por leerse como marca de autos, no de perfume.",
+      "Don't poner una etiqueta suelta (kicker) encima de un encabezado; si la casa o la categoría importan, van dentro del título o en la ruta."
     ]
   }
 }

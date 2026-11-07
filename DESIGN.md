@@ -12,50 +12,46 @@ colors:
   roble-claro: "#CDAE86"
 typography:
   display:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Bodoni Moda, Didot, Bodoni 72, Georgia, serif"
     fontSize: "clamp(3.5rem, 15vw, 6rem)"
-    fontWeight: 200
+    fontWeight: 500
     lineHeight: 0.92
     letterSpacing: "-0.02em"
-    fontVariation: "'wdth' 125"
   numeral:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Bodoni Moda, Didot, Bodoni 72, Georgia, serif"
     fontSize: "40px"
-    fontWeight: 200
+    fontWeight: 500
     lineHeight: 1
     letterSpacing: "-0.03em"
-    fontVariation: "'wdth' 112"
     fontFeature: "'lnum'"
   headline:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Bodoni Moda, Didot, Bodoni 72, Georgia, serif"
     fontSize: "clamp(1.75rem, 7vw, 2.75rem)"
-    fontWeight: 300
+    fontWeight: 500
     lineHeight: 1.05
     letterSpacing: "-0.01em"
-    fontVariation: "'wdth' 125"
   title:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Bodoni Moda, Didot, Bodoni 72, Georgia, serif"
     fontSize: "22px"
     fontWeight: 500
     lineHeight: 1.2
-    fontVariation: "'wdth' 112"
   body-lg:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Hanken Grotesk, Helvetica Neue, Arial, sans-serif"
     fontSize: "17px"
     fontWeight: 400
     lineHeight: 1.6
   body:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Hanken Grotesk, Helvetica Neue, Arial, sans-serif"
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.5
   label:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Hanken Grotesk, Helvetica Neue, Arial, sans-serif"
     fontSize: "13px"
     fontWeight: 600
     letterSpacing: "0.08em"
   button:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Hanken Grotesk, Helvetica Neue, Arial, sans-serif"
     fontSize: "15px"
     fontWeight: 600
     letterSpacing: "0.1em"
@@ -160,6 +156,28 @@ components:
   empty-state:
     textColor: "{colors.tinta}"
     padding: "2rem 0"
+  ficha-repisa:
+    backgroundColor: "{colors.yeso}"
+    rounded: "{rounded.none}"
+    width: "120px"
+    height: "130px"
+  ficha-medida:
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.xs}"
+    height: "60px"
+  ficha-medida-hover:
+    backgroundColor: "{colors.tinta}"
+    textColor: "{colors.papel}"
+  ficha-agregar:
+    backgroundColor: "{colors.tinta}"
+    textColor: "{colors.papel}"
+    typography: "{typography.button}"
+    rounded: "{rounded.xs}"
+    padding: "0 1.5rem"
+    height: "56px"
+  ficha-fila:
+    textColor: "{colors.tinta}"
+    padding: "0.8rem 0"
 ---
 
 # Design System: Saúco Decants
@@ -170,14 +188,14 @@ components:
 
 Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.
 
-La voz tipográfica es una sola familia, Archivo, en dos anchos: extendida y delgada para el nombre, los títulos y las cifras; ancho normal para leer. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.
+La voz tipográfica son dos familias: Bodoni Moda, un Didone de alto contraste, habla en el nombre, los títulos y las cifras; Hanken Grotesk, una grotesca sobria, se lee y se opera en todo lo demás. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.
 
-Alcance actual: este mundo cubre la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. Solo las fichas de producto (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.
+Alcance actual: este mundo cubre todo el sitio: la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), las 134 fichas de producto (`decants/*`, `completos/*`, generadas por `tools/generar_pagina_producto.py`), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. La migración está completa; lo que queda del sistema heredado en `css/styles.css` y `css/fonts.css` son restos sin uso (ver la nota al final de Do's and Don'ts), deuda de limpieza y no parte de este sistema. El `theme-color` del navegador es yeso (#E2E1DE) en la portada y en todas las fichas.
 
 **Key Characteristics:**
 - Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.
 - Chocolate como tinta: texto, líneas, botón principal y pie.
-- Archivo variable: ancho 125 % y peso 200–300 para nombre, títulos y cifras; ancho normal para texto.
+- Bodoni Moda para nombre, títulos y cifras; Hanken Grotesk para texto, etiquetas, botones y nav.
 - Repisas de roble con canto chocolate como soporte de toda foto de producto.
 - Tiras de papel blanco como selector de medida, con la cifra como protagonista.
 - Fotos reales de frascos fundidas al muro con `multiply`; sin tarjetas ni marcos.
@@ -209,24 +227,27 @@ Un muro neutro casi gris, madera clara y una sola tinta oscura de chocolate; sin
 
 ## Typography
 
-**Display Font:** Archivo variable (ancho 62–125 %, peso 100–900, autohospedada en `fonts/`), con Helvetica Neue, Arial
-**Body Font:** Archivo en ancho normal
+**Display Font:** Bodoni Moda variable (óptico 6–96, peso 400–900, autohospedada en `fonts/`), con Didot, Bodoni 72, Georgia, serif
+**Body Font:** Hanken Grotesk variable (peso 100–900, autohospedada en `fonts/`), con Helvetica Neue, Arial, sans-serif
 
-**Character:** Una sola familia que cambia de voz con el ancho: extendida y delgada suena a rótulo de atelier y a cifra grabada; normal es clara y cercana para leer en el celular.
+**Character:** Un Didone de contraste alto, de etiqueta de perfumería, para lo que se nombra y se mide; una grotesca neutra y clara para leer y operar en el celular. El contraste lo pone el trazo de Bodoni, no el peso: los títulos van en 400.
+
+Por qué esta pareja: el dueño rechazó Archivo extendido porque «se siente como una marca de autos tipo Porsche, no de perfume»; no vuelvas a una sans geométrica extendida para la voz de display.
 
 ### Hierarchy
-- **Display** (200, ancho 125 %, clamp(3.5rem, 15vw, 6rem), 0.92): el nombre «Saúco» en la portada y el sello «100% originales» (hasta 6rem).
-- **Numeral** (200 en reposo, 500 elegida; ancho 112 % en móvil, 125 % y 64px en escritorio; cifras de forro): las medidas 3 · 5 · 10 en las tiras y los números de los pasos (44px).
-- **Headline** (300, ancho 125 %, clamp(1.75rem, 7vw, 2.75rem), 1.05): títulos de sección. En los catálogos, el título de página usa la misma voz a clamp(2.125rem, 9vw, 3.25rem) con interlínea 1, y los títulos de sección de la lista («Nicho», «Diseñador») y de cotización bajan a 24px, con el conteo a la derecha en ancho normal 14px tinta suave.
-- **Title** (500, ancho 112 %, 22px, 1.2): subtítulos de rutas y el titular del estado sin resultados; los títulos de paso usan 18px/600 en ancho normal y el nombre del perfume en cada renglón del catálogo 17px/500 (19px desde 700px).
-- **Body large** (400, 17px, 1.6, máx. 60ch): párrafos largos como el de originalidad.
-- **Body** (400, 15–16px, 1.5–1.55, máx. 36–46ch): lema secundario, descripciones, precios, enlaces del nav.
-- **Label** (600, 12–13px, 0.08–0.14em, mayúsculas): botón principal, marca del perfume en el estante, nombres de las tiras, desplegables del nav, nombres de redes en el pie.
+- **Display** (Bodoni Moda 500, clamp(3.5rem, 15vw, 6rem) en móvil y clamp(4.5rem, 8vw, 6rem) desde 861px, 0.92, -0.02em): el nombre «Saúco» en la portada; el sello «100% originales» a clamp(3rem, 14vw, 6rem) con interlínea 0.95. La marca del nav (22px) y del pie (40px) usa Bodoni 500 en mayúsculas con 0.06em.
+- **Numeral** (Bodoni Moda 500 en reposo, 700 elegida; 40px en móvil, 64px desde 861px; -0.03em; cifras de forro): las medidas 3 · 5 · 10 en las tiras y los números de los pasos (44px/500). Las sumas sueltas también son cifra Bodoni con cifras tabulares: total del carrito 26px/500, precio de la ficha de completos 30px/500 y la medida del selector flotante 17px/500.
+- **Headline** (Bodoni Moda 500, clamp(1.75rem, 7vw, 2.75rem), 1.05, -0.01em): títulos de sección. En los catálogos, el título de página va a clamp(2.125rem, 9vw, 3.25rem) con interlínea 1 y -0.015em; los títulos de sección de la lista («Nicho», «Diseñador»), el de cotización y el «Tu pedido» del carrito bajan a 24–26px/500, con el conteo a la derecha en Hanken 14px/400 tinta suave.
+- **Nombre de ficha** (Bodoni Moda 500, clamp(2.1rem, 9.5vw, 3.75rem) en móvil y clamp(3.25rem, 5.2vw, 5rem) desde 861px, interlínea 1, -0.015em, `text-wrap: balance`): el nombre del perfume en su ficha, dentro del mismo `h1` que la casa. El «Sobre esta fragancia» de la ficha usa la voz headline a clamp(1.6rem, 6vw, 2.25rem) con interlínea 1.1.
+- **Title** (Bodoni Moda 500, 22px, 1.2): subtítulos de rutas y el titular del estado sin resultados. Los títulos de paso (18px/600), el nombre del perfume en el estante (18px/500), en cada renglón del catálogo (17px/500, 19px desde 700px) y en el carrito (16px/500) van en Hanken.
+- **Body large** (Hanken 400, 17px, 1.6, máx. 60ch): párrafos largos como el de originalidad; «Sobre esta fragancia» a 17px/1.65, 65ch.
+- **Body** (Hanken 400, 15–16px, 1.5–1.55, máx. 36–46ch): lema secundario, descripciones, precios de renglón y botón, enlaces del nav. El lema de la portada sube a clamp(1.15rem, 4.8vw, 1.6rem)/1.25.
+- **Label** (Hanken 600, 12–13px, 0.08–0.14em, mayúsculas): botón principal (15px/600, 0.1em), marca del perfume en estante, renglón y ficha, nombres de las tiras, desplegables del nav, nombres de redes en el pie.
 
 ### Named Rules
-**The Two Widths Rule.** El ancho extendido (112–125 %) y los pesos 200–300 son para el nombre, los títulos y las cifras; todo lo que se lee va en ancho normal y peso 400–600.
+**The Bodoni Speaks Rule.** Bodoni Moda habla: el nombre «Saúco», los títulos, el nombre del perfume en su ficha y las cifras que son el producto o su suma (medidas, pasos, total, precio de ficha). Hanken Grotesk lee y opera: texto, etiquetas, botones, nav, campos, chips y todo precio dentro de un botón o renglón. Bodoni nunca va en peso menor a 500 ni por debajo de 17px, y siempre en su óptica de texto (`opsz` 16, fijada en `html` con `font-optical-sizing: none`): la óptica automática de tamaños grandes deja trazos finos ilegibles, y el dueño la rechazó por legibilidad. El logo usa óptica 11, peso 600; Hanken nunca compone un encabezado de sección, el nombre de la ficha ni la marca.
 
-**The Number Is the Product Rule.** La medida se compone como cifra grande y delgada, con la unidad (ml) pequeña debajo. Precios y lecturas de atomizaciones usan cifras tabulares.
+**The Number Is the Product Rule.** La medida se compone como cifra Bodoni grande (500 en reposo, 700 elegida), con la unidad (ml) pequeña debajo en Hanken 13–15px/500. Precios de renglón y botón, subtotales y lecturas de atomizaciones van en Hanken con cifras tabulares; el total del carrito y el precio de la ficha son cifra Bodoni tabular.
 
 ## Layout
 
@@ -237,6 +258,8 @@ La primera pantalla es una cuadrícula de tres zonas (texto, escena, acciones) q
 Las secciones bajo la portada llevan 4.5rem arriba, se separan con una línea de 1px y abren con una cabecera que alinea el título y un enlace secundario en la misma línea base. Los estantes de producto se desplazan en horizontal con snap en móvil y se reparten en fila en escritorio; rutas y pasos pasan a 2 y 3 columnas desde 640px.
 
 Los catálogos son una sola columna de lectura de 820px máx. (1.75rem arriba y 1.25rem a los lados en móvil; 3rem arriba y clamp(2rem, 4vw, 4rem) a los lados desde 861px). Orden fijo: título, nota opcional, buscador a ancho completo, chips, vitrina (solo decants y solo sin búsqueda) y luego secciones de lista separadas 2.5rem. Cada renglón es una rejilla de tres columnas (foto 72px · texto · acción) con 1rem de relleno vertical y divisor de 1px; desde 700px la foto pasa a 96px, todo se centra en vertical y precio y botón se ponen en fila. En móvil los chips se desplazan en horizontal en una sola línea, sin barra visible.
+
+Las fichas son una rejilla con áreas nombradas, 1080px máx. En móvil: dos columnas (texto · repisa de 120px) con ruta arriba, título a la izquierda y repisa a la derecha alineados abajo, y debajo a ancho completo la compra, la tabla, la descripción y el enlace de regreso (1rem arriba, 1.25rem a los lados). Desde 861px: texto a la izquierda (minmax(0, 1fr)) y repisa a la derecha (minmax(300px, 0.85fr)) ocupando todas las filas, fija con `position: sticky` a 3rem del borde mientras se lee; separación clamp(2.5rem, 5vw, 5rem) y 3rem arriba.
 
 Breakpoints observados: 640px (rejillas de rutas y pasos), 699/700px (renglones, vitrina y chips del catálogo), 860/861px (nav, portada y márgenes del catálogo).
 
@@ -250,6 +273,8 @@ La profundidad es física, no de interfaz: viene de los objetos del atelier. Las
 - **Sombra del carrito** (`box-shadow: 0 4px 14px -6px rgba(59,35,24,0.35)`): el botón flotante de carrito en escritorio; se quita en móvil, donde vive dentro de la barra.
 - **Sombra del menú** (`box-shadow: 0 18px 30px -18px rgba(59,35,24,0.35)`): el menú desplegado en móvil.
 - **Sombra del desplegable** (`box-shadow: 0 14px 30px -12px rgba(59,35,24,0.4)`): los paneles de filtros y orden de perfumes completos.
+
+La repisa de la ficha lleva en escritorio el canto de 3px más una sombra de repisa corta (`0 16px 20px -12px rgba(59,35,24,0.4)`); en móvil solo el canto.
 
 Las mini repisas de los renglones (6px de roble con canto de 2px) y la vitrina (10px con canto de 3px) repiten el canto chocolate como borde de madera, sin sombra de repisa.
 
@@ -289,40 +314,56 @@ Un perfume por renglón, sin tarjeta. A la izquierda la foto sobre una mini repi
 ### Vitrina
 Repisa de los más vendidos al inicio del catálogo de decants: hasta cuatro frascos (tres en móvil) sobre roble de 10px con canto chocolate de 3px, 96px de alto en móvil y 170px desde 700px, con la leyenda «Los más vendidos» debajo en 14px tinta suave. Respeta el género elegido y se oculta mientras hay búsqueda o si no hay destacados.
 
+### Ficha técnica (fichas de producto)
+La ficha es la tarjeta técnica del perfumista, sin tarjeta: todo sobre el yeso. Orden: ruta como enlaces en 14px tinta suave con subrayado en línea («Decants › Nicho», «Perfumes completos › Sets de regalo»); título; repisa; compra; tabla; «Sobre esta fragancia»; enlace secundario de regreso al catálogo.
+- **Título casa + nombre en un solo `h1`:** la casa es un `span` dentro del `h1` (etiqueta 13px/600, 0.1em, mayúsculas, tinta suave) y el nombre otro `span` en la voz de nombre de ficha. La casa es parte del título, nunca una etiqueta suelta encima de un encabezado.
+- **Repisa:** `figure` de 130px de alto y 120px de ancho en móvil (alto clamp(320px, 52vh, 460px) y fija en escritorio), franja de roble de 8px (12px en escritorio) con canto chocolate de 3px, foto con `multiply`, hundida 4 % y que sube en hover, con `escala` desde la base. Lleva `background: var(--yeso)` (ver Repisa y estante).
+- **Compra en decants:** los tres botones de medida del catálogo (`.fila-medida`) en tres columnas iguales a ancho completo (420px máx. en escritorio), 60px de alto, medida 14px y precio 17px con cifras tabulares; un toque agrega.
+- **Compra en completos:** fila con el precio en Bodoni Moda 30px/500 con cifras tabulares, y el botón principal «Agregar al carrito» (56px, se estira en móvil, ancho natural en escritorio).
+- **Garantía:** una línea 14px tinta suave bajo la compra (original, envío; en completos, «de 7 a 10 días hábiles»).
+- **Tabla:** `dl` con filo superior de 1px tinta y renglones `div > dt + dd` separados por línea: término en etiqueta 12px/600 tinta suave en una columna de 7.25rem, valor en 16px/1.45. Decants: género, salida, corazón, fondo, duración, ideal para; completos añade presentación, incluye (sets) y categoría. Solo datos reales; un renglón sin dato no se muestra.
+- **Sobre esta fragancia:** `h2` headline y párrafos 17px/1.65, 65ch máx.
+
 ### Estado sin resultados
-Abre con un divisor en línea; titular en ancho 112 %, 22px/500 («No encontramos «X»»), una línea de ayuda 16px tinta suave y una fila de botones de contorno. Solo ofrece una salida cuando esa salida da resultados: ver los resultados sin el filtro de género, ver la búsqueda en el otro catálogo (la búsqueda viaja con el cambio de vista), limpiar la búsqueda y cotizar el nombre buscado por WhatsApp.
+Abre con un divisor en línea; titular en Bodoni Moda 22px/500 («No encontramos «X»»), una línea de ayuda 16px tinta suave y una fila de botones de contorno. Solo ofrece una salida cuando esa salida da resultados: ver los resultados sin el filtro de género, ver la búsqueda en el otro catálogo (la búsqueda viaja con el cambio de vista), limpiar la búsqueda y cotizar el nombre buscado por WhatsApp.
 
 ### Tiras de prueba (Signature Component)
-Selector de medida como tiras de papel secante. Tres botones `aria-pressed` (Muestra 3 ml, Viaje 5 ml, Mensual 10 ml), papel blanco, 68×180px en móvil y 112×292px en escritorio, cifra grande arriba, unidad debajo y nombre en vertical. Al cargar se abren en abanico (0.9s, ease-out `cubic-bezier(.16,1,.3,1)`). La elegida sube 16px, su cifra pasa de 200 a 500 y un relleno de roble claro sube desde abajo. Debajo, una lectura en vivo muestra atomizaciones y el precio real del perfume. Con `prefers-reduced-motion` todo queda fijo.
+Selector de medida como tiras de papel secante. Tres botones `aria-pressed` (Muestra 3 ml, Viaje 5 ml, Mensual 10 ml), papel blanco, 68×180px en móvil y 112×292px en escritorio, cifra grande arriba, unidad debajo y nombre en vertical. Al cargar se abren en abanico (0.9s, ease-out `cubic-bezier(.16,1,.3,1)`). La elegida sube 16px, su cifra Bodoni pasa de 500 a 700 y un relleno de roble claro sube desde abajo. Debajo, una lectura en vivo muestra atomizaciones y el precio real del perfume. Con `prefers-reduced-motion` todo queda fijo.
 
 ### Repisa y estante
-Soporte de toda foto de producto. Fotos reales en `object-fit: contain` con `mix-blend-mode: multiply` para fundir el fondo blanco al yeso, apoyadas sobre una franja de roble con canto chocolate y hundidas un 3–4 % en la madera; en hover suben a la superficie. Cada foto puede ajustar su tamaño relativo con el campo opcional `escala` de `js/data.js`, aplicado como `scale: var(--escala, 1)` con `transform-origin: 50% 100%` para que el frasco crezca o se encoja desde la base y siga posado en la madera; vale para el estante, las rutas y la vitrina (los renglones no lo aplican). Bajo el estante: marca en etiqueta, nombre 18px/500 y «Desde $X · 3 ml» en tinta suave.
+Soporte de toda foto de producto. Fotos reales en `object-fit: contain` con `mix-blend-mode: multiply` para fundir el fondo blanco al yeso, apoyadas sobre una franja de roble con canto chocolate y hundidas un 3–4 % en la madera; en hover suben a la superficie. Cada foto puede ajustar su tamaño relativo con el campo opcional `escala` de `js/data.js`, aplicado como `scale: var(--escala, 1)` con `transform-origin: 50% 100%` para que el frasco crezca o se encoja desde la base y siga posado en la madera; vale para el estante, las rutas, la vitrina y la repisa de la ficha (los renglones no lo aplican).
+
+**Fondo yeso detrás de `multiply`:** `multiply` mezcla con lo que está detrás dentro de su contexto de apilamiento. Un contenedor que crea uno propio (`position: sticky`, `isolation`, `transform`, `opacity`, `z-index` con posición, `filter`) y no tiene fondo deja que el blanco de la foto se vea como caja. Todo contenedor así detrás de una foto fundida lleva `background: var(--yeso)`; la repisa fija de la ficha es el caso de referencia.
+
+Bajo el estante: marca en etiqueta, nombre 18px/500 y «Desde $X · 3 ml» en tinta suave.
 
 ### Navigation
-- **Escritorio:** columna de yeso de 200px con borde derecho en línea; «SAÚCO» en Archivo ancho 125 %, 22px/300, mayúsculas; desplegables Decants y Perfumes completos como etiquetas 13px/600 con flecha de trazo; enlaces 15px en tinta suave, tinta en hover, activo subrayado y con borde izquierdo tinta.
+- **Escritorio:** columna de yeso de 200px con borde derecho en línea; «SAÚCO» en Bodoni Moda 22px/400, mayúsculas, 0.06em; desplegables Decants y Perfumes completos como etiquetas 13px/600 con flecha de trazo; enlaces 15px en tinta suave, tinta en hover, activo subrayado y con borde izquierdo tinta.
 - **Móvil:** barra de 56px (hamburguesa de tres trazos, marca, carrito); el menú cae como panel de yeso con sombra.
 
 ### Panel del carrito
-Diálogo lateral (`role="dialog"`, `aria-modal`) de yeso, 400px máx., que entra desde la derecha con ease-out; al abrirse bloquea el scroll de la página, lleva el foco al botón de cerrar (aspa dibujada con dos trazos), lo atrapa dentro y lo devuelve al cerrar. Cada artículo: foto sobre una mini repisa de roble, marca en etiqueta, nombre 16px/500, medida y precio unitario, control de cantidad −/+ (botones de 40px sobre papel, − deshabilitado en 1) y subtotal; «Quitar» como enlace de texto. Pie: total con número de artículos y monto en Archivo 112 %, nota de precios por confirmar, botón principal «Enviar pedido por WhatsApp» (deshabilitado con el carrito vacío) y una línea que explica qué pasa al enviarlo. Vacío: mensaje y enlace «Explorar decants».
+Diálogo lateral (`role="dialog"`, `aria-modal`) de yeso, 400px máx., que entra desde la derecha con ease-out; al abrirse bloquea el scroll de la página, lleva el foco al botón de cerrar (aspa dibujada con dos trazos), lo atrapa dentro y lo devuelve al cerrar. Cada artículo: foto sobre una mini repisa de roble, marca en etiqueta, nombre 16px/500, medida y precio unitario, control de cantidad −/+ (botones de 40px sobre papel, − deshabilitado en 1) y subtotal; «Quitar» como enlace de texto. Pie: total con número de artículos y monto en Bodoni Moda 26px/500 con cifras tabulares, nota de precios por confirmar, botón principal «Enviar pedido por WhatsApp» (deshabilitado con el carrito vacío) y una línea que explica qué pasa al enviarlo. Vacío: mensaje y enlace «Explorar decants».
 
 ### Selector de medida y aviso
-El selector flotante de medida es una lista de papel con opciones de 48px (medida en Archivo 112 %, precio en tinta suave); recibe el foco al abrirse y lo devuelve al botón de origen. Al agregar aparece un aviso tinta en la parte baja («Santal 33 · 5 ml agregado al carrito» + botón papel «Ver carrito»), anunciado por `role="status"`, que se retira solo a los 5 s.
+El selector flotante de medida es una lista de papel con opciones de 48px (medida en Bodoni Moda 17px/500, precio en Hanken 15px tinta suave); recibe el foco al abrirse y lo devuelve al botón de origen. Al agregar aparece un aviso tinta en la parte baja («Santal 33 · 5 ml agregado al carrito» + botón papel «Ver carrito»), anunciado por `role="status"`, que se retira solo a los 5 s.
 
 ### Botón de carrito
 Círculo papel de 44px (40px en móvil) con borde en línea y un ícono de bolsa en SVG de trazo 1.6. El contador es una píldora tinta con cifra papel 12px/600, oculta cuando está vacía.
 
 ### Pie
-La única superficie chocolate. «SAÚCO» en Archivo ancho 125 %, 40px/200, color yeso, sobre dos líneas finas de roble claro; datos en etiqueta, contacto en 15px yeso y redes como pares etiqueta de roble claro + usuario en yeso.
+La única superficie chocolate. «SAÚCO» en Bodoni Moda 40px/400, mayúsculas, color yeso, sobre dos líneas finas de roble claro; datos en etiqueta, contacto en 15px yeso y redes como pares etiqueta de roble claro + usuario en yeso.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** usar yeso (#E2E1DE) como fondo de toda sección y reservar el fondo chocolate para el pie.
 - **Do** poner cada foto de producto sobre una repisa de roble con canto chocolate, fundida con `multiply`.
-- **Do** componer medidas y números con Archivo extendido y delgado, y el texto de lectura en ancho normal.
+- **Do** componer el nombre, los títulos, las medidas y los totales en Bodoni Moda (400 o más), y todo lo que se lee u opera en Hanken Grotesk.
 - **Do** teñir toda sombra con chocolate (rgba(59,35,24,…)) y limitarla a objetos y capas flotantes.
 - **Do** mantener el botón principal visible sin desplazarse en el primer viewport del celular.
 - **Do** dejar fijo todo movimiento con `prefers-reduced-motion`.
+- **Do** poner la casa dentro del título (`h1` con casa y nombre como `span`) en lugar de una etiqueta encima.
+- **Do** dar `background: var(--yeso)` a todo contenedor fijo o aislado que tenga detrás una foto con `multiply`.
 
 ### Don't:
 - **Don't** usar el chocolate como fondo de sección fuera del pie.
@@ -331,9 +372,15 @@ La única superficie chocolate. «SAÚCO» en Archivo ancho 125 %, 40px/200, col
 - **Don't** usar emoji como íconos; los íconos son SVG de trazo en tinta.
 - **Don't** encerrar fotos de producto en tarjetas con borde o esquinas redondeadas.
 - **Don't** introducir Cormorant Garamond ni Jost en superficies nuevas.
+- **Don't** volver a una sans geométrica extendida (Archivo 112–125 % u otra) para el display: el dueño la rechazó por leerse como marca de autos, no de perfume.
+- **Don't** poner una etiqueta suelta (kicker) encima de un encabezado; si la casa o la categoría importan, van dentro del título o en la ruta.
 
-**Sistema heredado (deuda de migración, no normativo):** solo las fichas de producto (`decants/*`, `completos/*`) siguen en Cormorant Garamond + Jost con `--chocolate` #3D2314, `--terracota`, `--cobre`, `--arena`, `--crema` y `--fondo`, y puntos de nivel morado (#6B5B9E) y verde (#1D7A5A). Al migrar cada superficie, pásala a los tokens de arriba y retira los heredados. Las clases heredadas que los catálogos todavía usan (barra y desplegables de completos, formulario de cotizar) se reestilan bajo el contenedor del catálogo; no las tomes como base para superficies nuevas.
+**Restos del sistema heredado (deuda de limpieza, no normativo):** ninguna superficie usa ya el sistema anterior. Siguen en `css/styles.css` y `css/fonts.css` solo como restos sin uso: los tokens `--chocolate` #3D2314, `--terracota`, `--cobre`, `--arena`, `--crema` y `--fondo`; las clases `.card*`, `.producto-*` y los puntos de nivel `.tier-*` morado (#6B5B9E) y verde (#1D7A5A); y los `@font-face` de Cormorant Garamond y Jost. Se pueden borrar; no los tomes como base ni los cites como parte del sistema. Las clases heredadas que los catálogos todavía usan (barra y desplegables de completos, formulario de cotizar, `.tier-header` en los títulos de lista junto a `.seccion-titulo`) se reestilan bajo el contenedor del catálogo; al limpiar, revisa esos selectores antes de borrar sus reglas base.
 
 **Deuda de imágenes (no normativo):** cinco fotos de producto tienen fondo gris, no blanco, y con `multiply` se ven como cajas grises sobre el yeso en lugar de frascos posados: `imagenes/oud royal.webp`, `imagenes/black afgano.webp`, `imagenes/black phantom.webp`, `imagenes/ombre leather.webp` e `imagenes/autumn vibes.webp`. Necesitan reemplazo del dueño con fondo blanco o recortadas; no se corrigen con CSS ni justifican tarjetas o marcos.
 
-**Pendiente:** el logo definitivo. Mientras tanto, «Saúco» se compone en Archivo extendido peso 200; no lo trates como logotipo final.
+**Logo: dos marcas con funciones distintas** (aprobadas por el dueño; el sello solo junto al nombre se veía repetitivo, «S» + «Saúco» en la misma letra). Todos los archivos en `imagenes/logo/` llevan las letras convertidas a trazos (no dependen de fuentes) y existen en tinta y en versión `-claro` (yeso, para fondo chocolate).
+- **El ramillete + nombre (marca principal):** una flor de saúco (umbela) a línea, con nueve florecitas de cinco pétalos en cúpula sobre un tallo, junto a «Saúco» en Bodoni Moda óptica 11, peso 600. El logo usa la óptica de texto y no la de cartel porque el dueño pidió legibilidad en tamaños chicos: con óptica 72 los trazos finos desaparecían a 14–20px; no regreses a la versión de alto contraste en el logo (el título de la portada, que es grande, sí usa la Bodoni del sitio). La flor de saúco es una nota real de perfumería y el origen del nombre. Archivos: `sauco-flor-horizontal.svg` (menú: 56px de alto en escritorio, 36px en móvil), `sauco-flor-vertical.svg` / `-claro` (pie a 140px, imagen al compartir `og-sauco.png`, tarjetas y empaque), `sauco-flor.svg` (la flor sola).
+- **El sello (monograma):** una «S» de Bodoni Moda (óptica 11, peso 600) en un óvalo de doble línea, como sello de casa de perfumes. Para avatar de redes (`sauco-avatar-chocolate.png`, `sauco-avatar-yeso.png`, 1080×1080), ícono del sitio (`favicon-32.png`, `apple-touch-icon.png`, `icon-512.png`, y `sauco-sello-simple.svg` de un solo anillo para 48px o menos), etiquetas de decants y sello de empaque (`sauco-sello.svg`). El sello nunca va pegado al nombre «Saúco» (eso repite la S); existen `sauco-horizontal.svg` / `sauco-vertical.svg` con sello + nombre solo para usos donde el ramillete no cabe y el nombre se necesita, y no se usan en el sitio.
+- `sauco-nombre.svg` / `-claro`: solo la palabra.
+Reglas: tinta sobre yeso o papel, o yeso sobre tinta; nunca otros colores, sombras ni deformación. La flor no se usa debajo de 24px (sus tallos desaparecen); ahí va el sello simple. El título de la portada sigue siendo texto en Bodoni, no imagen. El anterior `imagenes/Saúco_2.png` ya no se usa en el sitio.

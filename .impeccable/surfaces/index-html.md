@@ -11,13 +11,13 @@ Mode: Persuade. Scope: vista de portada de index.html más nav y pie globales (c
 
 Audiencia: llegan desde Instagram/TikTok en celular; viajero de trabajo/evento y probador de lujo, nivel medio-alto. Acción: Explorar decants (#catalogo/todos); secundaria Perfumes completos. Prueba: originales + selección curada; sección de originalidad con espacios marcados para fotos reales del dueño (pendientes). Sin reseñas ni cifras inventadas.
 
-Pendientes: logo definitivo (por ahora «Saúco» compuesto en Archivo extendido); fotos del dueño.
+Pendientes: logo definitivo (por ahora «Saúco» compuesto en Bodoni Moda); fotos del dueño.
 
 ## Direction contract
 
 THESIS: La portada es el atelier de un perfumista: frascos reales en repisas de roble y la medida como tira de prueba con su número grande. Rechaza el hero oscuro de logo a pantalla completa con redes y carrusel automático.
 
-OWN-WORLD: Muro de yeso gris cálido claro, repisas de roble claro con canto chocolate, tiras de papel secante blancas con sombra suave, fotos reales de frascos. Chocolate #3B2318 es tinta: texto, líneas, botón principal, nunca fondo de sección completa salvo el pie. Archivo: extendido delgado para nombre y cifras 3·5·10, normal para texto. Sin crema, sin terracota, sin emoji como iconos.
+OWN-WORLD: Muro de yeso gris cálido claro, repisas de roble claro con canto chocolate, tiras de papel secante blancas con sombra suave, fotos reales de frascos. Chocolate #3B2318 es tinta: texto, líneas, botón principal, nunca fondo de sección completa salvo el pie. Bodoni Moda para el nombre, los títulos y las cifras 3·5·10; Hanken Grotesk para el texto (el dueño cambió Archivo extendido porque se sentía de marca automotriz, no de perfume). Sin crema, sin terracota, sin emoji como iconos.
 
 STORY: El visitante entiende en segundos que son perfumes originales de lujo en 3, 5 o 10 ml, ve el más vendido de verdad, toca una medida y ve sus atomizaciones y precio desde, y entra al catálogo; abajo confirma con más vendidos, rutas por ocasión, originalidad y cómo pedir por WhatsApp.
 

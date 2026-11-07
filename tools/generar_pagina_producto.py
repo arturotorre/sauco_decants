@@ -3467,6 +3467,41 @@ def leer_catalogo_propio():
     return json.loads(resultado.stdout)
 
 
+def lista_notas(notas):
+    """«Cardamomo, iris, violeta»: mayúscula solo en la primera, como se escribe en español."""
+    return ", ".join(n if i == 0 else n.lower() for i, n in enumerate(notas))
+
+
+def fila_tabla(etiqueta, valor):
+    return f'<div class="ficha-fila"><dt>{etiqueta}</dt><dd>{valor}</dd></div>' if valor else ""
+
+
+def tabla_notas_html(contenido):
+    return (
+        fila_tabla("Salida", lista_notas(contenido.get("notas_salida") or []))
+        + fila_tabla("Corazón", lista_notas(contenido.get("notas_corazon") or []))
+        + fila_tabla("Fondo", lista_notas(contenido.get("notas_fondo") or []))
+        + fila_tabla("Duración", contenido.get("duracion"))
+        + fila_tabla("Ideal para", contenido.get("ideal_para"))
+    )
+
+
+def medidas_html(perfume, nombre_mostrar):
+    """Tres botones de medida con precio; un toque agrega esa medida (js/carrito.js, .fila-medida)."""
+    botones = []
+    for ml in ("3ml", "5ml", "10ml"):
+        n = ml.replace("ml", "")
+        precio = perfume["precios"].get(ml) or ""
+        etiqueta_precio = precio or "A confirmar"
+        botones.append(
+            f'<button type="button" class="fila-medida ficha-medida" data-casa="{perfume["casa"]}" '
+            f'data-nombre="{perfume["nombre"]}" data-ml="{ml}" '
+            f'aria-label="Agregar {nombre_mostrar} de {n} ml, {precio or "precio a confirmar"}, al carrito">'
+            f'<span class="fila-medida-ml">{n}&nbsp;ml</span><span class="fila-medida-precio">{etiqueta_precio}</span></button>'
+        )
+    return "".join(botones)
+
+
 def notas_tags_html(notas):
     return "".join(f'<span class="nota-tag">{n}</span>' for n in notas)
 
@@ -3485,7 +3520,7 @@ NAV_HTML = """<nav class="nav-lateral" id="nav-lateral">
   <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
-  <a href="/#home" class="nav-marca">Saúco</a>
+  <a href="/#home" class="nav-marca" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="Saúco" width="282" height="100"></a>
   <ul class="nav-links">
     <li class="nav-item-decants" id="nav-item-decants">
       <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">
@@ -3536,9 +3571,7 @@ CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
 <div id="carrito-aviso" class="carrito-aviso" role="status" aria-live="polite" hidden></div>
 
 <div class="footer-global">
-  <div class="footer-nombre">Saúco</div>
-  <div class="footer-linea"></div>
-  <div class="footer-linea2"></div>
+  <div class="footer-nombre"><img src="/imagenes/logo/sauco-flor-vertical-claro.svg" alt="Saúco" width="142" height="152" loading="lazy"></div>
   <div class="footer-sub">Decants · Monterrey · Envíos a todo México</div>
   <div class="footer-contacto">Escríbenos por WhatsApp o DM de Instagram para hacer tu pedido</div>
   <div class="footer-redes">
@@ -3597,7 +3630,7 @@ def render_pagina(perfume, contenido):
 <title>{titulo}</title>
 <meta name="description" content="{meta_desc}">
 <link rel="canonical" href="{url}">
-<meta name="theme-color" content="#3D2314">
+<meta name="theme-color" content="#E2E1DE">
 
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="Saúco Decants">
@@ -3612,7 +3645,9 @@ def render_pagina(perfume, contenido):
 <meta name="twitter:description" content="{meta_desc}">
 <meta name="twitter:image" content="https://saucodecants.com{perfume['imagen']}">
 
-<link rel="icon" type="image/png" href="/imagenes/Saúco_2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
+<link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
+<link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
 <link href="/css/fonts.css" rel="stylesheet">
 <link href="/css/styles.css" rel="stylesheet">
 <script type="application/ld+json">
@@ -3633,52 +3668,36 @@ def render_pagina(perfume, contenido):
 
 {NAV_HTML}
 
-<div class="main-content producto-detalle">
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
-    <a href="/">Inicio</a> › <a href="/#catalogo/todos">Decants</a> › <span>{nombre_mostrar}</span>
-  </nav>
+<main class="ficha">
+  <div class="ficha-contenido">
+    <nav class="ficha-miga" aria-label="Ruta de navegación">
+      <a href="/#catalogo/todos">Decants</a> <span aria-hidden="true">›</span> <a href="/#catalogo/todos/{tier}">{tier_label}</a>
+    </nav>
 
-  <div class="producto-hero">
-    <div class="producto-foto card-foto">
-      <img src="{imagen_rel}" alt="{alt_img}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="foto-label" style="display:none">Sin imagen</span>
-      <div class="card-tier-dot {dot}"></div>
+    <h1 class="ficha-titulo"><span class="ficha-casa">{casa}</span> <span class="ficha-nombre">{nombre_mostrar}</span></h1>
+
+    <figure class="ficha-repisa">
+      <img src="{imagen_rel}" alt="{alt_img}" style="--escala:{perfume.get('escala', 1)}" onerror="this.style.visibility='hidden'">
+    </figure>
+
+    <div class="ficha-compra">
+      <div class="ficha-medidas" role="group" aria-label="Elige la medida de {nombre_mostrar}">{medidas_html(perfume, nombre_mostrar)}</div>
+      <p class="ficha-garantia">Decant 100% original, desde ${precio_min:,} · Envíos a todo México desde Monterrey</p>
     </div>
-    <div class="producto-info">
-      <div class="card-casa">{casa}</div>
-      <h1 class="producto-nombre">{nombre_mostrar}</h1>
-      <div class="card-genero">{genero}</div>
-      <div class="notas-tags">{notas_tags_html(perfume["notas"])}</div>
-      <div class="card-divider"></div>
-      <div class="card-precios">{precios_html(precios)}</div>
-      <button class="btn-agregar producto-btn-agregar" data-casa="{casa}" data-nombre="{perfume['nombre']}" aria-label="Agregar {nombre_mostrar} al carrito">
-        <span class="btn-agregar-texto">Agregar al carrito</span>
-        <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
-      </button>
-      <div class="card-footer-text">{tier_label} · Original · Desde ${precio_min:,}</div>
-    </div>
+
+    <dl class="ficha-tabla">
+      {fila_tabla("Género", genero)}
+      {tabla_notas_html(contenido)}
+    </dl>
+
+    <section class="ficha-sobre" aria-labelledby="sobre-titulo">
+      <h2 id="sobre-titulo" class="ficha-h2">Sobre esta fragancia</h2>
+      {parrafos_html}
+    </section>
+
+    <a class="enlace-secundario ficha-volver" href="/#catalogo/todos">Ver todos los decants</a>
   </div>
-
-  <div class="producto-editorial">
-    <h2>Sobre esta fragancia</h2>
-    {parrafos_html}
-
-    <div class="producto-notas-detalle">
-      <div><span class="notas-label">Notas de salida</span><div class="notas-tags">{notas_tags_html(contenido["notas_salida"])}</div></div>
-      <div><span class="notas-label">Notas de corazón</span><div class="notas-tags">{notas_tags_html(contenido["notas_corazon"])}</div></div>
-      <div><span class="notas-label">Notas de fondo</span><div class="notas-tags">{notas_tags_html(contenido["notas_fondo"])}</div></div>
-    </div>
-
-    <div class="producto-datos">
-      <div><strong>Ideal para</strong>{contenido["ideal_para"]}</div>
-      <div><strong>Duración</strong>{contenido["duracion"]}</div>
-    </div>
-
-    <div class="producto-volver">
-      <a href="/#catalogo/todos">← Ver todos los decants</a>
-    </div>
-  </div>
-</div>
+</main>
 
 {CARRITO_Y_FOOTER_HTML}"""
 
@@ -3694,6 +3713,8 @@ def render_pagina_completo(perfume, contenido):
     dot = "dot-nicho" if categoria == "nicho" else "dot-disenador"
     es_set = bool(perfume.get("esSet"))
     imagen_rel = perfume["imagen"]
+    import re
+    tamano = re.sub(r"(\d)\s*ml$", "\\1\u00a0ml", tamano) if tamano else tamano
     conc_y_tamano = f"{concentracion} {tamano}" if tamano else concentracion
     titulo = f"{casa} {nombre_mostrar} {conc_y_tamano} — Perfume {genero} | Saúco Decants"
     meta_desc = contenido["meta_descripcion"]
@@ -3712,6 +3733,12 @@ def render_pagina_completo(perfume, contenido):
   }}'''
 
     genero_linea = f"{conc_y_tamano} · {genero}" + (" · Set de regalo" if es_set else "")
+    if es_set:
+        miga_url, miga_label = "/#completos/sets", "Sets de regalo"
+    elif genero in ("Dama", "Caballero"):
+        miga_url, miga_label = f"/#completos/{genero.lower()}", genero
+    else:
+        miga_url, miga_label = "/#completos/todos", "Todos"
     contenido_set_html = ""
     if es_set and perfume.get("contenido"):
         tags = "".join(f'<span class="nota-tag">{c}</span>' for c in perfume["contenido"])
@@ -3730,7 +3757,7 @@ def render_pagina_completo(perfume, contenido):
 <title>{titulo}</title>
 <meta name="description" content="{meta_desc}">
 <link rel="canonical" href="{url}">
-<meta name="theme-color" content="#3D2314">
+<meta name="theme-color" content="#E2E1DE">
 
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="Saúco Decants">
@@ -3745,7 +3772,9 @@ def render_pagina_completo(perfume, contenido):
 <meta name="twitter:description" content="{meta_desc}">
 <meta name="twitter:image" content="https://saucodecants.com{perfume['imagen']}">
 
-<link rel="icon" type="image/png" href="/imagenes/Saúco_2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
+<link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
+<link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
 <link href="/css/fonts.css" rel="stylesheet">
 <link href="/css/styles.css" rel="stylesheet">
 <script type="application/ld+json">
@@ -3765,51 +3794,42 @@ def render_pagina_completo(perfume, contenido):
 
 {NAV_HTML}
 
-<div class="main-content producto-detalle">
-  <nav class="breadcrumb" aria-label="Ruta de navegación">
-    <a href="/">Inicio</a> › <a href="/#completos/todos">Perfumes completos</a> › <span>{nombre_mostrar}</span>
-  </nav>
+<main class="ficha">
+  <div class="ficha-contenido">
+    <nav class="ficha-miga" aria-label="Ruta de navegación">
+      <a href="/#completos/todos">Perfumes completos</a> <span aria-hidden="true">›</span> <a href="{miga_url}">{miga_label}</a>
+    </nav>
 
-  <div class="producto-hero">
-    <div class="producto-foto card-foto">
-      <img src="{imagen_rel}" alt="{alt_img}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="foto-label" style="display:none">Sin imagen</span>
-      <div class="card-tier-dot {dot}"></div>
+    <h1 class="ficha-titulo"><span class="ficha-casa">{casa}</span> <span class="ficha-nombre">{nombre_mostrar}</span></h1>
+
+    <figure class="ficha-repisa">
+      <img src="{imagen_rel}" alt="{alt_img}" style="--escala:{perfume.get('escala', 1)}" onerror="this.style.visibility='hidden'">
+    </figure>
+
+    <div class="ficha-compra">
+      <div class="ficha-precio-fila">
+        <span class="ficha-precio">{perfume['precio']}</span>
+        <button type="button" class="btn-agregar btn-agregar-completo ficha-agregar" data-casa="{casa}" data-nombre="{perfume['nombre']}" data-concentracion="{concentracion}" aria-label="Agregar {nombre_mostrar} {conc_y_tamano} al carrito">Agregar al carrito</button>
+      </div>
+      <p class="ficha-garantia">Botella original sobre pedido; la entrega puede tardar de 7 a 10 días hábiles. Envíos a todo México desde Monterrey.</p>
     </div>
-    <div class="producto-info">
-      <div class="card-casa">{casa}</div>
-      <h1 class="producto-nombre">{nombre_mostrar}</h1>
-      <div class="card-genero">{genero_linea}</div>{contenido_set_html}
-      <div class="card-divider"></div>
-      <div class="card-precio-unico producto-precio-unico">{perfume['precio']}</div>
-      <button class="btn-agregar btn-agregar-completo producto-btn-agregar" data-casa="{casa}" data-nombre="{perfume['nombre']}" data-concentracion="{concentracion}" aria-label="Agregar {nombre_mostrar} al carrito">
-        <span class="btn-agregar-texto">Agregar al carrito</span>
-        <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
-      </button>
-      <div class="card-footer-text">{categoria_label} · Original</div>
-    </div>
+
+    <dl class="ficha-tabla">
+      {fila_tabla("Presentación", conc_y_tamano + (" · Set de regalo" if es_set else ""))}
+      {fila_tabla("Incluye", re.sub(r"(\d)\s*ml\b", "\\1\u00a0ml", lista_notas(perfume.get("contenido") or [])) if es_set else "")}
+      {fila_tabla("Género", genero)}
+      {fila_tabla("Categoría", categoria_label)}
+      {tabla_notas_html(contenido)}
+    </dl>
+
+    <section class="ficha-sobre" aria-labelledby="sobre-titulo">
+      <h2 id="sobre-titulo" class="ficha-h2">Sobre esta fragancia</h2>
+      {parrafos_html}
+    </section>
+
+    <a class="enlace-secundario ficha-volver" href="/#completos/todos">Ver todos los perfumes completos</a>
   </div>
-
-  <div class="producto-editorial">
-    <h2>Sobre esta fragancia</h2>
-    {parrafos_html}
-
-    <div class="producto-notas-detalle">
-      <div><span class="notas-label">Notas de salida</span><div class="notas-tags">{notas_tags_html(contenido["notas_salida"])}</div></div>
-      <div><span class="notas-label">Notas de corazón</span><div class="notas-tags">{notas_tags_html(contenido["notas_corazon"])}</div></div>
-      <div><span class="notas-label">Notas de fondo</span><div class="notas-tags">{notas_tags_html(contenido["notas_fondo"])}</div></div>
-    </div>
-
-    <div class="producto-datos">
-      <div><strong>Ideal para</strong>{contenido["ideal_para"]}</div>
-      <div><strong>Duración</strong>{contenido["duracion"]}</div>
-    </div>
-
-    <div class="producto-volver">
-      <a href="/#completos/todos">← Ver todos los perfumes completos</a>
-    </div>
-  </div>
-</div>
+</main>
 
 {CARRITO_Y_FOOTER_HTML}"""
 
