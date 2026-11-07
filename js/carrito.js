@@ -379,6 +379,18 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  // Botones de medida del catálogo: agregan directo, sin selector.
+  const medida = e.target.closest('.fila-medida');
+  if (medida) {
+    const perfume = PERFUMES.find(p => p.casa === medida.dataset.casa && p.nombre === medida.dataset.nombre);
+    if (perfume) {
+      agregarAlCarrito(perfume, medida.dataset.ml);
+      medida.classList.add('agregado');
+      setTimeout(() => medida.classList.remove('agregado'), 900);
+    }
+    return;
+  }
+
   const btnAgregar = e.target.closest('.btn-agregar');
   if (btnAgregar) {
     const perfume = PERFUMES.find(p => p.casa === btnAgregar.dataset.casa && p.nombre === btnAgregar.dataset.nombre);

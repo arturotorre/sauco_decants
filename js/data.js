@@ -236,7 +236,7 @@ const PERFUMES = [
     tier: "disenador",
     imagen: "/imagenes/paradoxe.webp",
     alt: "Paradoxe",
-    escala: 0.72,
+    escala: 0.62,
     notas: ["Neroli", "Flor de azahar", "Almizcle blanco", "Sándalo", "Ámbar"],
     precios: { "3ml": "$170", "5ml": "$250", "10ml": "$458" },
     bestseller: true

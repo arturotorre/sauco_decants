@@ -166,103 +166,101 @@
     </section>
   </div>
 
-  <div id="vista-catalogo" hidden>
-    <div class="main-content">
-      <div class="vista-header"><h1 id="catalogo-titulo-texto">Decants - Todos</h1></div>
-
-      <div class="completos-barra">
-        <div class="completos-buscador">
-          <input type="search" id="catalogo-busqueda" placeholder="Buscar por nombre o marca…" aria-label="Buscar perfume por nombre o marca">
+  <div id="vista-catalogo" class="catalogo" hidden>
+    <div class="catalogo-contenido">
+      <header class="catalogo-cabeza">
+        <h1 id="catalogo-titulo-texto" class="catalogo-h1">Decants</h1>
+        <div class="catalogo-buscador">
+          <input type="search" id="catalogo-busqueda" placeholder="Buscar por nombre o marca" aria-label="Buscar decant por nombre o marca" autocomplete="off">
         </div>
-      </div>
+        <nav class="catalogo-chips" aria-label="Filtrar decants por género">
+          <a class="catalogo-chip" href="/#catalogo/todos" data-chip="todos">Todos</a>
+          <a class="catalogo-chip" href="/#catalogo/hombre" data-chip="hombre">Hombre</a>
+          <a class="catalogo-chip" href="/#catalogo/mujer" data-chip="mujer">Mujer</a>
+        </nav>
+      </header>
 
-      <div id="catalogo-grid"></div>
+      <section class="vitrina" id="catalogo-vitrina" aria-labelledby="vitrina-titulo">
+        <div class="vitrina-repisa" id="vitrina-repisa"></div>
+        <h2 id="vitrina-titulo" class="vitrina-leyenda">Los más vendidos</h2>
+      </section>
+
+      <div id="catalogo-grid" aria-live="polite"></div>
     </div>
   </div>
 
-  <div id="vista-completos" hidden>
-    <div class="main-content">
-      <div class="completos-tier-header" id="completos-titulo-header">
-        <span class="completos-tier-titulo" id="completos-titulo-texto">Perfumes completos</span>
-      </div>
-
-      <div class="cotizar-section">
-        <button type="button" class="cotizar-toggle" id="cotizar-toggle" aria-expanded="false" aria-controls="cotizar-panel">
-          <span>¿No encuentras tu perfume en nuestro catálogo?</span>
-          <span class="cotizar-toggle-flecha" aria-hidden="true">▾</span>
-        </button>
-        <div class="cotizar-panel" id="cotizar-panel" hidden>
-          <p class="cotizar-pregunta">¡No te preocupes! Envíanos un mensaje con el nombre de tu perfume y te lo cotizamos en este instante.</p>
-          <form id="form-cotizar" class="cotizar-form">
-            <label class="cotizar-campo">
-              <span>Nombre del perfume</span>
-              <input type="text" id="cotizar-nombre" required>
-            </label>
-            <label class="cotizar-campo">
-              <span>Marca (opcional)</span>
-              <input type="text" id="cotizar-marca">
-            </label>
-            <button type="submit" class="cotizar-enviar">Enviar</button>
-          </form>
-          <p class="cotizar-nota">En Saúco no manejamos stock para entrega inmediata, por lo que la entrega de tu perfume puede tardar entre 7 y 10 días hábiles.</p>
+  <div id="vista-completos" class="catalogo" hidden>
+    <div class="catalogo-contenido">
+      <header class="catalogo-cabeza">
+        <h1 id="completos-titulo-texto" class="catalogo-h1">Perfumes completos</h1>
+        <p class="catalogo-nota">Botellas originales sobre pedido; la entrega puede tardar de 7 a 10 días hábiles. <button type="button" class="enlace-en-linea" data-ir-cotizar>¿No está en la lista? Te lo cotizamos</button></p>
+        <div class="catalogo-buscador">
+          <input type="search" id="completos-busqueda" placeholder="Buscar por nombre o marca" aria-label="Buscar perfume completo por nombre o marca" autocomplete="off">
         </div>
-      </div>
+        <nav class="catalogo-chips" aria-label="Filtrar perfumes completos">
+          <a class="catalogo-chip" href="/#completos/todos" data-chip="completos-todos">Todos</a>
+          <a class="catalogo-chip" href="/#completos/dama" data-chip="completos-dama">Dama</a>
+          <a class="catalogo-chip" href="/#completos/caballero" data-chip="completos-caballero">Caballero</a>
+          <a class="catalogo-chip" href="/#completos/sets" data-chip="completos-sets">Sets de regalo</a>
+        </nav>
 
-      <div class="completos-barra">
-        <div class="completos-buscador">
-          <input type="search" id="completos-busqueda" placeholder="Buscar por nombre o marca…" aria-label="Buscar perfume por nombre o marca">
-        </div>
-
-        <div class="completos-desplegable" id="completos-filtros-wrap">
-          <button type="button" class="completos-desplegable-toggle" id="completos-filtros-toggle" aria-expanded="false" aria-controls="completos-filtros-panel">
-            Filtros
-            <span class="completos-filtros-contador" id="completos-filtros-contador" hidden>0</span>
-            <span class="completos-desplegable-flecha" aria-hidden="true">▾</span>
-          </button>
-          <div class="completos-desplegable-panel" id="completos-filtros-panel" hidden>
-            <div class="completos-filtro-grupo">
-              <span class="completos-filtro-etiqueta">Género</span>
-              <div class="completos-filtro-genero" id="completos-filtro-genero">
-                <button type="button" class="completos-chip activo" data-filtro-genero="todos">Todos</button>
-                <button type="button" class="completos-chip" data-filtro-genero="Caballero">Caballero</button>
-                <button type="button" class="completos-chip" data-filtro-genero="Dama">Dama</button>
+        <div class="completos-barra">
+          <div class="completos-desplegable" id="completos-filtros-wrap">
+            <button type="button" class="completos-desplegable-toggle" id="completos-filtros-toggle" aria-expanded="false" aria-controls="completos-filtros-panel">
+              Categoría y marca
+              <span class="completos-filtros-contador" id="completos-filtros-contador" hidden>0</span>
+              <span class="completos-desplegable-flecha" aria-hidden="true"></span>
+            </button>
+            <div class="completos-desplegable-panel" id="completos-filtros-panel" hidden>
+              <div class="completos-filtro-grupo">
+                <span class="completos-filtro-etiqueta">Categoría</span>
+                <div class="completos-filtro-categoria" id="completos-filtro-categoria">
+                  <button type="button" class="completos-chip activo" data-categoria="todas">Todas</button>
+                  <button type="button" class="completos-chip" data-categoria="nicho">Nicho</button>
+                  <button type="button" class="completos-chip" data-categoria="disenador">Diseñador</button>
+                  <button type="button" class="completos-chip" data-categoria="arabe">Árabe</button>
+                </div>
+              </div>
+              <div class="completos-filtro-grupo">
+                <span class="completos-filtro-etiqueta">Marca</span>
+                <div class="completos-filtro-marca" id="completos-filtro-marca"></div>
               </div>
             </div>
-            <div class="completos-filtro-grupo">
-              <span class="completos-filtro-etiqueta">Categoría</span>
-              <div class="completos-filtro-categoria" id="completos-filtro-categoria">
-                <button type="button" class="completos-chip activo" data-categoria="todas">Todas</button>
-                <button type="button" class="completos-chip" data-categoria="nicho">Nicho</button>
-                <button type="button" class="completos-chip" data-categoria="disenador">Diseñador</button>
-                <button type="button" class="completos-chip" data-categoria="arabe">Árabe</button>
-              </div>
-            </div>
-            <div class="completos-filtro-grupo">
-              <span class="completos-filtro-etiqueta">Marca</span>
-              <div class="completos-filtro-marca" id="completos-filtro-marca"></div>
-            </div>
-            <div class="completos-filtro-grupo">
-              <button type="button" class="completos-chip" id="completos-filtro-set">🎁 Sets de regalo</button>
+          </div>
+
+          <div class="completos-desplegable" id="completos-orden-wrap">
+            <button type="button" class="completos-desplegable-toggle" id="completos-orden-toggle" aria-expanded="false" aria-controls="completos-orden-panel">
+              Ordenar
+              <span class="completos-desplegable-flecha" aria-hidden="true"></span>
+            </button>
+            <div class="completos-desplegable-panel completos-orden-panel" id="completos-orden-panel" hidden>
+              <button type="button" class="completos-orden-opcion activo" data-orden="relevancia">Predeterminado</button>
+              <button type="button" class="completos-orden-opcion" data-orden="precio-asc">Precio: menor a mayor</button>
+              <button type="button" class="completos-orden-opcion" data-orden="precio-desc">Precio: mayor a menor</button>
+              <button type="button" class="completos-orden-opcion" data-orden="marca">Marca (A–Z)</button>
+              <button type="button" class="completos-orden-opcion" data-orden="nombre">Nombre (A–Z)</button>
             </div>
           </div>
         </div>
+      </header>
 
-        <div class="completos-desplegable" id="completos-orden-wrap">
-          <button type="button" class="completos-desplegable-toggle" id="completos-orden-toggle" aria-expanded="false" aria-controls="completos-orden-panel">
-            Ordenar por
-            <span class="completos-desplegable-flecha" aria-hidden="true">▾</span>
-          </button>
-          <div class="completos-desplegable-panel completos-orden-panel" id="completos-orden-panel" hidden>
-            <button type="button" class="completos-orden-opcion activo" data-orden="relevancia">Predeterminado</button>
-            <button type="button" class="completos-orden-opcion" data-orden="precio-asc">Precio: menor a mayor</button>
-            <button type="button" class="completos-orden-opcion" data-orden="precio-desc">Precio: mayor a menor</button>
-            <button type="button" class="completos-orden-opcion" data-orden="marca">Marca (A–Z)</button>
-            <button type="button" class="completos-orden-opcion" data-orden="nombre">Nombre (A–Z)</button>
-          </div>
-        </div>
-      </div>
+      <div id="completos-grid" aria-live="polite"></div>
 
-      <div id="completos-grid"></div>
+      <section class="cotizar-section" aria-labelledby="cotizar-titulo">
+        <h2 id="cotizar-titulo" class="cotizar-titulo">¿No encuentras tu perfume?</h2>
+        <p class="cotizar-pregunta">Escríbenos el nombre y te lo cotizamos por WhatsApp.</p>
+        <form id="form-cotizar" class="cotizar-form">
+          <label class="cotizar-campo">
+            <span>Nombre del perfume</span>
+            <input type="text" id="cotizar-nombre" required autocomplete="off">
+          </label>
+          <label class="cotizar-campo">
+            <span>Marca (opcional)</span>
+            <input type="text" id="cotizar-marca" autocomplete="off">
+          </label>
+          <button type="submit" class="cotizar-enviar">Cotizar por WhatsApp</button>
+        </form>
+      </section>
     </div>
   </div>
 

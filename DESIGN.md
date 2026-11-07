@@ -103,6 +103,63 @@ components:
     backgroundColor: "{colors.tinta}"
     textColor: "{colors.yeso}"
     padding: "3.5rem 1.5rem 3rem"
+  button-secondary:
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.xs}"
+    padding: "0 1.1rem"
+    height: "44px"
+  button-secondary-hover:
+    backgroundColor: "{colors.tinta}"
+    textColor: "{colors.papel}"
+  button-row:
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.xs}"
+    padding: "0 1rem"
+    height: "40px"
+  button-row-hover:
+    backgroundColor: "{colors.tinta}"
+    textColor: "{colors.papel}"
+  link-inline:
+    textColor: "{colors.tinta}"
+    padding: "0"
+  chip-filter:
+    backgroundColor: "{colors.papel}"
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.full}"
+    padding: "0 1rem"
+    height: "40px"
+  chip-filter-active:
+    backgroundColor: "{colors.tinta}"
+    textColor: "{colors.papel}"
+  search-field:
+    backgroundColor: "{colors.papel}"
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.xs}"
+    padding: "0 1rem 0 2.75rem"
+    height: "48px"
+  catalog-row:
+    textColor: "{colors.tinta}"
+    padding: "1rem 0"
+  catalog-row-photo:
+    rounded: "{rounded.none}"
+    size: "72px"
+  vitrina:
+    rounded: "{rounded.none}"
+    height: "96px"
+  dropdown-toggle:
+    backgroundColor: "{colors.papel}"
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.xs}"
+    padding: "0 1rem"
+    height: "40px"
+  dropdown-panel:
+    backgroundColor: "{colors.papel}"
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.xs}"
+    padding: "1.1rem"
+  empty-state:
+    textColor: "{colors.tinta}"
+    padding: "2rem 0"
 ---
 
 # Design System: Saúco Decants
@@ -115,7 +172,7 @@ Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido
 
 La voz tipográfica es una sola familia, Archivo, en dos anchos: extendida y delgada para el nombre, los títulos y las cifras; ancho normal para leer. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.
 
-Alcance actual: este mundo cubre la portada (vista-home de `index.html`), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. El catálogo (`#catalogo`, `#completos`) y las fichas (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.
+Alcance actual: este mundo cubre la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. Solo las fichas de producto (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.
 
 **Key Characteristics:**
 - Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.
@@ -141,7 +198,7 @@ Un muro neutro casi gris, madera clara y una sola tinta oscura de chocolate; sin
 - **Yeso** (yeso): fondo de página, del nav y de toda sección; texto sobre el pie chocolate.
 - **Papel** (papel): las tiras de prueba, el botón de carrito y el texto del botón principal.
 - **Tinta suave** (tinta-suave): texto secundario, precios, enlaces del nav en reposo, marca del perfume en el estante.
-- **Línea** (linea): chocolate al 16 % para bordes del nav, divisores entre secciones y el botón de carrito.
+- **Línea** (linea): chocolate al 16 % para bordes del nav, divisores entre secciones y entre renglones del catálogo, el botón de carrito y el borde en reposo de chips, buscador y desplegables.
 
 ### Named Rules
 **The Chocolate Is Ink Rule.** El chocolate escribe; no pinta paredes. Ninguna sección completa lleva fondo chocolate salvo el pie global.
@@ -160,8 +217,8 @@ Un muro neutro casi gris, madera clara y una sola tinta oscura de chocolate; sin
 ### Hierarchy
 - **Display** (200, ancho 125 %, clamp(3.5rem, 15vw, 6rem), 0.92): el nombre «Saúco» en la portada y el sello «100% originales» (hasta 6rem).
 - **Numeral** (200 en reposo, 500 elegida; ancho 112 % en móvil, 125 % y 64px en escritorio; cifras de forro): las medidas 3 · 5 · 10 en las tiras y los números de los pasos (44px).
-- **Headline** (300, ancho 125 %, clamp(1.75rem, 7vw, 2.75rem), 1.05): títulos de sección.
-- **Title** (500, ancho 112 %, 22px, 1.2): subtítulos de rutas; los títulos de paso usan 18px/600 en ancho normal.
+- **Headline** (300, ancho 125 %, clamp(1.75rem, 7vw, 2.75rem), 1.05): títulos de sección. En los catálogos, el título de página usa la misma voz a clamp(2.125rem, 9vw, 3.25rem) con interlínea 1, y los títulos de sección de la lista («Nicho», «Diseñador») y de cotización bajan a 24px, con el conteo a la derecha en ancho normal 14px tinta suave.
+- **Title** (500, ancho 112 %, 22px, 1.2): subtítulos de rutas y el titular del estado sin resultados; los títulos de paso usan 18px/600 en ancho normal y el nombre del perfume en cada renglón del catálogo 17px/500 (19px desde 700px).
 - **Body large** (400, 17px, 1.6, máx. 60ch): párrafos largos como el de originalidad.
 - **Body** (400, 15–16px, 1.5–1.55, máx. 36–46ch): lema secundario, descripciones, precios, enlaces del nav.
 - **Label** (600, 12–13px, 0.08–0.14em, mayúsculas): botón principal, marca del perfume en el estante, nombres de las tiras, desplegables del nav, nombres de redes en el pie.
@@ -179,7 +236,9 @@ La primera pantalla es una cuadrícula de tres zonas (texto, escena, acciones) q
 
 Las secciones bajo la portada llevan 4.5rem arriba, se separan con una línea de 1px y abren con una cabecera que alinea el título y un enlace secundario en la misma línea base. Los estantes de producto se desplazan en horizontal con snap en móvil y se reparten en fila en escritorio; rutas y pasos pasan a 2 y 3 columnas desde 640px.
 
-Breakpoints observados: 640px (rejillas de rutas y pasos), 860/861px (nav y portada).
+Los catálogos son una sola columna de lectura de 820px máx. (1.75rem arriba y 1.25rem a los lados en móvil; 3rem arriba y clamp(2rem, 4vw, 4rem) a los lados desde 861px). Orden fijo: título, nota opcional, buscador a ancho completo, chips, vitrina (solo decants y solo sin búsqueda) y luego secciones de lista separadas 2.5rem. Cada renglón es una rejilla de tres columnas (foto 72px · texto · acción) con 1rem de relleno vertical y divisor de 1px; desde 700px la foto pasa a 96px, todo se centra en vertical y precio y botón se ponen en fila. En móvil los chips se desplazan en horizontal en una sola línea, sin barra visible.
+
+Breakpoints observados: 640px (rejillas de rutas y pasos), 699/700px (renglones, vitrina y chips del catálogo), 860/861px (nav, portada y márgenes del catálogo).
 
 ## Elevation & Depth
 
@@ -190,13 +249,16 @@ La profundidad es física, no de interfaz: viene de los objetos del atelier. Las
 - **Sombra de repisa** (`box-shadow: 0 14px 18px -12px rgba(59,35,24,0.45)`): bajo la repisa principal de la portada.
 - **Sombra del carrito** (`box-shadow: 0 4px 14px -6px rgba(59,35,24,0.35)`): el botón flotante de carrito en escritorio; se quita en móvil, donde vive dentro de la barra.
 - **Sombra del menú** (`box-shadow: 0 18px 30px -18px rgba(59,35,24,0.35)`): el menú desplegado en móvil.
+- **Sombra del desplegable** (`box-shadow: 0 14px 30px -12px rgba(59,35,24,0.4)`): los paneles de filtros y orden de perfumes completos.
+
+Las mini repisas de los renglones (6px de roble con canto de 2px) y la vitrina (10px con canto de 3px) repiten el canto chocolate como borde de madera, sin sombra de repisa.
 
 ### Named Rules
-**The Objects Cast Shadows Rule.** Solo los objetos del atelier (papel, repisa) y las capas flotantes (carrito, menú abierto) tienen sombra, siempre teñida de chocolate. Las secciones y los textos son planos.
+**The Objects Cast Shadows Rule.** Solo los objetos del atelier (papel, repisa) y las capas flotantes (carrito, menú abierto, desplegables) tienen sombra, siempre teñida de chocolate. Las secciones y los textos son planos.
 
 ## Shapes
 
-Formas rectas y artesanales. Las tiras son rectángulos de papel con la punta cortada en V (`clip-path` a 90 % / 100 %) y giradas ±8° en abanico desde un eje bajo. Las repisas son franjas horizontales de roble de 10–12px con canto chocolate de 3px. El botón principal tiene esquinas apenas suavizadas (2px); el botón de carrito y su contador son círculos. No hay tarjetas redondeadas ni contenedores con borde alrededor de las fotos.
+Formas rectas y artesanales. Las tiras son rectángulos de papel con la punta cortada en V (`clip-path` a 90 % / 100 %) y giradas ±8° en abanico desde un eje bajo. Las repisas son franjas horizontales de roble de 10–12px con canto chocolate de 3px. El botón principal, los botones de contorno, el buscador, los campos y los desplegables tienen esquinas apenas suavizadas (2px); el botón de carrito y su contador son círculos, y los chips de filtro son las únicas píldoras. Las mini repisas de los renglones (6px de roble, canto de 2px) son la versión pequeña de la repisa. No hay tarjetas redondeadas ni contenedores con borde alrededor de las fotos.
 
 ## Components
 
@@ -205,12 +267,36 @@ Formas rectas y artesanales. Las tiras son rectángulos de papel con la punta co
 - **Primary:** fondo tinta, texto papel, etiqueta en mayúsculas 15px/600 con 0.1em, altura mínima 56px, 0 1.75rem de relleno; ancho completo en móvil, ancho natural en escritorio.
 - **Hover / Focus:** hover a chocolate hondo; activo baja 1px; foco con contorno tinta de 2px separado 3px.
 - **Secondary:** enlace de texto tinta 15px/500 con subrayado de 1px separado 5px; en hover el subrayado sube a 2px.
+- **Botón de contorno:** borde tinta de 1px, fondo transparente, texto tinta 15px/500 en ancho normal sin mayúsculas, 44px de alto y 0 1.1rem de relleno; en hover se llena de tinta con texto papel. Para las acciones de recuperación del estado sin resultados.
+- **Agregar en renglón (completos):** el mismo contorno a 40px de alto, 0 1rem, 14px/600; dice «Agregar» o «Consultar» (WhatsApp, cuando no hay precio) y se llena de tinta en hover.
+- **Botones de medida (decants):** tres botones de contorno tinta, 52px de alto, con la medida en 13px/600 arriba y el precio en 15px con cifras tabulares abajo («A confirmar» si falta). Un toque agrega esa medida al carrito sin selector; se llenan de tinta en hover y durante 0.9 s tras agregar. En celular ocupan el ancho bajo el texto en tres columnas iguales; desde 700px van a la derecha, 84px cada uno.
+- **Enlace en línea:** un botón que se lee como texto dentro de un párrafo: hereda la fuente, tinta 500, subrayado de 1px separado 4px que sube a 2px en hover. Para acciones dentro de una nota («¿No está en la lista? Te lo cotizamos»).
+
+### Chips
+- **Style:** píldoras papel de 40px con borde en línea, texto tinta 15px/500 (14px y 0.8rem de relleno a 400px o menos); son enlaces de filtro por género o tipo.
+- **State:** el activo se llena de tinta con texto papel y lleva `aria-current="page"`; en hover el borde pasa a tinta. Dentro del panel de completos, los chips de categoría y marca son la misma píldora a 36px y 14px.
+
+### Inputs / Fields
+- **Style:** buscador de ancho completo, 48px, fondo papel, borde en línea, 2px de radio, texto 16px y una lupa de trazo 1.6 en tinta suave a la izquierda; placeholder en tinta suave. Los campos del formulario de cotización usan la misma caja con la etiqueta encima en 13px/600 tinta.
+- **Focus:** el borde pasa a tinta con un anillo interior de 1px tinta (`box-shadow: 0 0 0 1px`).
+
+### Desplegables de completos
+Botones de contorno papel de 40px (borde en línea, tinta en hover y abiertos) con flecha dibujada por dos trazos de 1.5px que gira al abrir; el contador de filtros es una píldora tinta de 22px. El panel es papel, borde en línea, 2px de radio, 1.1rem de relleno, sombra del desplegable y alto máximo min(70vh, 520px) con scroll. Las opciones de orden son de 44px y la activa va en 600 con un punto tinta de 6px.
+
+### Renglón de catálogo
+Un perfume por renglón, sin tarjeta. A la izquierda la foto sobre una mini repisa (72px; 96px desde 700px) fundida con `multiply`, hundida 4 % y que sube en hover; al centro la casa en etiqueta 12px/600 tinta suave, el nombre (enlace a la ficha, subrayado en hover) y una línea meta en 14px tinta suave: en decants género corto y las tres primeras notas; en completos concentración, tamaño, género y «Set de regalo», más «Incluye:» en los sets. En decants, debajo (a la derecha desde 700px) los tres botones de medida con su precio; en completos, a la derecha el precio en 15px/600 con cifras tabulares (o «Precio por consultar» en 14px/400) y el botón Agregar o Consultar. Las secciones abren con su título y conteo sobre un divisor en línea.
+
+### Vitrina
+Repisa de los más vendidos al inicio del catálogo de decants: hasta cuatro frascos (tres en móvil) sobre roble de 10px con canto chocolate de 3px, 96px de alto en móvil y 170px desde 700px, con la leyenda «Los más vendidos» debajo en 14px tinta suave. Respeta el género elegido y se oculta mientras hay búsqueda o si no hay destacados.
+
+### Estado sin resultados
+Abre con un divisor en línea; titular en ancho 112 %, 22px/500 («No encontramos «X»»), una línea de ayuda 16px tinta suave y una fila de botones de contorno. Solo ofrece una salida cuando esa salida da resultados: ver los resultados sin el filtro de género, ver la búsqueda en el otro catálogo (la búsqueda viaja con el cambio de vista), limpiar la búsqueda y cotizar el nombre buscado por WhatsApp.
 
 ### Tiras de prueba (Signature Component)
 Selector de medida como tiras de papel secante. Tres botones `aria-pressed` (Muestra 3 ml, Viaje 5 ml, Mensual 10 ml), papel blanco, 68×180px en móvil y 112×292px en escritorio, cifra grande arriba, unidad debajo y nombre en vertical. Al cargar se abren en abanico (0.9s, ease-out `cubic-bezier(.16,1,.3,1)`). La elegida sube 16px, su cifra pasa de 200 a 500 y un relleno de roble claro sube desde abajo. Debajo, una lectura en vivo muestra atomizaciones y el precio real del perfume. Con `prefers-reduced-motion` todo queda fijo.
 
 ### Repisa y estante
-Soporte de toda foto de producto. Fotos reales en `object-fit: contain` con `mix-blend-mode: multiply` para fundir el fondo blanco al yeso, apoyadas sobre una franja de roble con canto chocolate y hundidas un 3–4 % en la madera; en hover suben a la superficie. Cada foto puede ajustar su tamaño relativo con el campo opcional `escala` de `js/data.js` (variable `--escala`). Bajo el estante: marca en etiqueta, nombre 18px/500 y «Desde $X · 3 ml» en tinta suave.
+Soporte de toda foto de producto. Fotos reales en `object-fit: contain` con `mix-blend-mode: multiply` para fundir el fondo blanco al yeso, apoyadas sobre una franja de roble con canto chocolate y hundidas un 3–4 % en la madera; en hover suben a la superficie. Cada foto puede ajustar su tamaño relativo con el campo opcional `escala` de `js/data.js`, aplicado como `scale: var(--escala, 1)` con `transform-origin: 50% 100%` para que el frasco crezca o se encoja desde la base y siga posado en la madera; vale para el estante, las rutas y la vitrina (los renglones no lo aplican). Bajo el estante: marca en etiqueta, nombre 18px/500 y «Desde $X · 3 ml» en tinta suave.
 
 ### Navigation
 - **Escritorio:** columna de yeso de 200px con borde derecho en línea; «SAÚCO» en Archivo ancho 125 %, 22px/300, mayúsculas; desplegables Decants y Perfumes completos como etiquetas 13px/600 con flecha de trazo; enlaces 15px en tinta suave, tinta en hover, activo subrayado y con borde izquierdo tinta.
@@ -246,6 +332,8 @@ La única superficie chocolate. «SAÚCO» en Archivo ancho 125 %, 40px/200, col
 - **Don't** encerrar fotos de producto en tarjetas con borde o esquinas redondeadas.
 - **Don't** introducir Cormorant Garamond ni Jost en superficies nuevas.
 
-**Sistema heredado (deuda de migración, no normativo):** el catálogo, completos y las fichas siguen en Cormorant Garamond + Jost con `--chocolate` #3D2314, `--terracota`, `--cobre`, `--arena`, `--crema` y `--fondo`, y puntos de nivel morado (#6B5B9E) y verde (#1D7A5A). Al migrar cada superficie, pásala a los tokens de arriba y retira los heredados.
+**Sistema heredado (deuda de migración, no normativo):** solo las fichas de producto (`decants/*`, `completos/*`) siguen en Cormorant Garamond + Jost con `--chocolate` #3D2314, `--terracota`, `--cobre`, `--arena`, `--crema` y `--fondo`, y puntos de nivel morado (#6B5B9E) y verde (#1D7A5A). Al migrar cada superficie, pásala a los tokens de arriba y retira los heredados. Las clases heredadas que los catálogos todavía usan (barra y desplegables de completos, formulario de cotizar) se reestilan bajo el contenedor del catálogo; no las tomes como base para superficies nuevas.
+
+**Deuda de imágenes (no normativo):** cinco fotos de producto tienen fondo gris, no blanco, y con `multiply` se ven como cajas grises sobre el yeso en lugar de frascos posados: `imagenes/oud royal.webp`, `imagenes/black afgano.webp`, `imagenes/black phantom.webp`, `imagenes/ombre leather.webp` e `imagenes/autumn vibes.webp`. Necesitan reemplazo del dueño con fondo blanco o recortadas; no se corrigen con CSS ni justifican tarjetas o marcos.
 
 **Pendiente:** el logo definitivo. Mientras tanto, «Saúco» se compone en Archivo extendido peso 200; no lo trates como logotipo final.

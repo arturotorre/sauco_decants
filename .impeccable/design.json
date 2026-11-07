@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-06T00:00:00Z",
+  "generatedAt": "2026-11-07T00:00:00Z",
   "title": "Design System: Saúco Decants",
   "extensions": {
     "colorMeta": {
@@ -96,11 +96,11 @@
       },
       "headline": {
         "displayName": "Título de sección",
-        "purpose": "Encabezados de sección de la portada."
+        "purpose": "Encabezados de sección de la portada; título de página de los catálogos (clamp(2.125rem, 9vw, 3.25rem)) y títulos de lista a 24px."
       },
       "title": {
         "displayName": "Subtítulo",
-        "purpose": "Subtítulos de rutas por ocasión."
+        "purpose": "Subtítulos de rutas por ocasión y titular del estado sin resultados."
       },
       "body-lg": {
         "displayName": "Texto largo",
@@ -139,6 +139,11 @@
         "name": "sombra-menu",
         "value": "0 18px 30px -18px rgba(59,35,24,0.35)",
         "purpose": "Menú desplegado en móvil."
+      },
+      {
+        "name": "sombra-desplegable",
+        "value": "0 14px 30px -12px rgba(59,35,24,0.4)",
+        "purpose": "Paneles de filtros y orden de perfumes completos."
       }
     ],
     "motion": [
@@ -167,6 +172,10 @@
       {
         "name": "rejillas",
         "value": "640px"
+      },
+      {
+        "name": "renglones-catalogo",
+        "value": "700px"
       },
       {
         "name": "nav-portada",
@@ -229,11 +238,75 @@
       "description": "Única superficie chocolate del sitio.",
       "html": "<footer class=\"ds-pie\"><div class=\"ds-pie-nombre\">Saúco</div><div class=\"ds-pie-linea\"></div><div class=\"ds-pie-sub\">Decants · Monterrey · Envíos a todo México</div><div class=\"ds-pie-red\"><span>Instagram</span><a href=\"#\">@sauco.decants</a></div></footer>",
       "css": ".ds-pie { background:var(--tinta,#3B2318); color:var(--yeso,#E2E1DE); padding:3.5rem 1.5rem 3rem; text-align:center; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-pie-nombre { font-stretch:125%; font-size:40px; font-weight:200; text-transform:uppercase; letter-spacing:0.06em; } .ds-pie-linea { width:120px; height:1px; background:var(--roble-claro,#CDAE86); margin:1rem auto 1.5rem; } .ds-pie-sub { font-size:13px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#D7CABD; } .ds-pie-red { margin-top:2rem; display:flex; flex-direction:column; gap:4px; } .ds-pie-red span { font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--roble-claro,#CDAE86); } .ds-pie-red a { color:var(--yeso,#E2E1DE); font-size:15px; text-decoration:none; } .ds-pie-red a:hover { text-decoration:underline; text-underline-offset:4px; } .ds-pie-red a:focus-visible { outline:2px solid var(--roble-claro,#CDAE86); outline-offset:3px; }"
+    },
+    {
+      "name": "Botón de contorno",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción secundaria con borde tinta; se llena de tinta en hover. Salidas del estado sin resultados.",
+      "html": "<button class=\"ds-btn-contorno\" type=\"button\">Limpiar búsqueda</button>",
+      "css": ".ds-btn-contorno { display:inline-flex; align-items:center; min-height:44px; padding:0 1.1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-btn-contorno:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-btn-contorno:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Enlace en línea",
+      "kind": "button",
+      "refersTo": "link-inline",
+      "description": "Botón que se lee como texto subrayado dentro de un párrafo.",
+      "html": "<p class=\"ds-nota\">Botellas originales sobre pedido. <button type=\"button\" class=\"ds-enlace-linea\">¿No está en la lista? Te lo cotizamos</button></p>",
+      "css": ".ds-nota { font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; line-height:1.5; color:var(--tinta-suave,#64503F); max-width:52ch; } .ds-enlace-linea { display:inline; padding:0; border:0; background:none; font:inherit; color:var(--tinta,#3B2318); font-weight:500; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; cursor:pointer; } .ds-enlace-linea:hover { text-decoration-thickness:2px; } .ds-enlace-linea:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Chips de filtro",
+      "kind": "chip",
+      "refersTo": "chip-filter",
+      "description": "Píldoras papel de filtro por género; la activa se llena de tinta.",
+      "html": "<nav class=\"ds-chips\"><a class=\"ds-chip activo\" href=\"#\" aria-current=\"page\">Todos</a><a class=\"ds-chip\" href=\"#\">Hombre</a><a class=\"ds-chip\" href=\"#\">Mujer</a></nav>",
+      "css": ".ds-chips { display:flex; flex-wrap:wrap; gap:8px; padding:16px; background:var(--yeso,#E2E1DE); } .ds-chip { display:inline-flex; align-items:center; min-height:40px; padding:0 1rem; border:1px solid rgba(59,35,24,0.16); border-radius:20px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; text-decoration:none; transition:border-color 0.2s, background 0.2s; } .ds-chip:hover { border-color:var(--tinta,#3B2318); } .ds-chip.activo { background:var(--tinta,#3B2318); border-color:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-chip:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Buscador",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Campo de búsqueda papel a ancho completo con lupa de trazo.",
+      "html": "<div class=\"ds-buscador\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"#64503F\" stroke-width=\"1.6\" stroke-linecap=\"round\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"M15.5 15.5 20 20\"/></svg><input type=\"search\" placeholder=\"Buscar por nombre o marca\" aria-label=\"Buscar\"></div>",
+      "css": ".ds-buscador { position:relative; width:340px; } .ds-buscador svg { position:absolute; left:0.9rem; top:50%; transform:translateY(-50%); pointer-events:none; } .ds-buscador input { width:100%; height:48px; padding:0 1rem 0 2.75rem; font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:16px; color:var(--tinta,#3B2318); background:var(--papel,#fff); border:1px solid rgba(59,35,24,0.16); border-radius:2px; transition:border-color 0.2s; } .ds-buscador input::placeholder { color:var(--tinta-suave,#64503F); opacity:1; } .ds-buscador input:hover { border-color:rgba(59,35,24,0.4); } .ds-buscador input:focus { outline:none; border-color:var(--tinta,#3B2318); box-shadow:0 0 0 1px var(--tinta,#3B2318); }"
+    },
+    {
+      "name": "Renglón de catálogo",
+      "kind": "custom",
+      "refersTo": "catalog-row",
+      "description": "Un perfume por renglón: foto sobre mini repisa, casa, nombre, meta y precio con botón Agregar.",
+      "html": "<ul class=\"ds-filas\"><li class=\"ds-fila\"><span class=\"ds-fila-foto\"><svg width=\"36\" height=\"62\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#C9B48E\"/></svg></span><div class=\"ds-fila-texto\"><span class=\"ds-fila-casa\">Le Labo</span><a class=\"ds-fila-nombre\" href=\"#\">Santal 33</a><span class=\"ds-fila-meta\">Unisex · Cardamomo, iris, violeta</span></div><div class=\"ds-fila-accion\"><span class=\"ds-fila-precio\">Desde $350</span><button type=\"button\" class=\"ds-fila-agregar\">Agregar</button></div></li></ul>",
+      "css": ".ds-filas { list-style:none; margin:0; padding:0 16px; width:360px; background:var(--yeso,#E2E1DE); border-top:1px solid rgba(59,35,24,0.16); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; color:var(--tinta,#3B2318); } .ds-fila { display:grid; grid-template-columns:72px minmax(0,1fr) auto; gap:0 14px; align-items:start; padding:1rem 0; border-bottom:1px solid rgba(59,35,24,0.16); } .ds-fila-foto { width:72px; height:72px; display:flex; align-items:flex-end; justify-content:center; border-bottom:6px solid var(--roble,#B08A5A); box-shadow:0 2px 0 var(--tinta,#3B2318); } .ds-fila-foto svg { transform:translateY(4%); transition:transform 0.35s cubic-bezier(.16,1,.3,1); } .ds-fila:hover .ds-fila-foto svg { transform:translateY(0); } .ds-fila-texto { min-width:0; display:flex; flex-direction:column; gap:2px; } .ds-fila-casa { font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-fila-nombre { font-size:17px; font-weight:500; line-height:1.25; color:var(--tinta,#3B2318); text-decoration:none; } .ds-fila-nombre:hover { text-decoration:underline; text-underline-offset:4px; } .ds-fila-meta { font-size:14px; line-height:1.4; color:var(--tinta-suave,#64503F); } .ds-fila-accion { display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; } .ds-fila-precio { font-size:15px; font-weight:600; white-space:nowrap; font-variant-numeric:tabular-nums; } .ds-fila-agregar { min-height:40px; padding:0 1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:14px; font-weight:600; letter-spacing:0.02em; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-fila-agregar:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-fila-agregar:focus-visible, .ds-fila-nombre:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Vitrina",
+      "kind": "custom",
+      "refersTo": "vitrina",
+      "description": "Repisa de más vendidos al inicio del catálogo de decants, con leyenda debajo.",
+      "html": "<section class=\"ds-vitrina\"><div class=\"ds-vitrina-repisa\"><a class=\"ds-vitrina-frasco\" href=\"#\"><svg width=\"44\" height=\"88\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#C9B48E\"/></svg></a><a class=\"ds-vitrina-frasco\" href=\"#\"><svg width=\"44\" height=\"88\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#8E6A4C\"/></svg></a><a class=\"ds-vitrina-frasco\" href=\"#\"><svg width=\"44\" height=\"88\" viewBox=\"0 0 60 120\"><rect x=\"22\" y=\"0\" width=\"16\" height=\"22\" fill=\"#3B2318\"/><rect x=\"6\" y=\"22\" width=\"48\" height=\"98\" rx=\"4\" fill=\"#D9C7D8\"/></svg></a></div><h2 class=\"ds-vitrina-leyenda\">Los más vendidos</h2></section>",
+      "css": ".ds-vitrina { width:360px; padding:16px; background:var(--yeso,#E2E1DE); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-vitrina-repisa { display:flex; align-items:flex-end; height:96px; padding:0 0.25rem; border-bottom:10px solid var(--roble,#B08A5A); box-shadow:0 3px 0 var(--tinta,#3B2318); } .ds-vitrina-frasco { flex:1; height:100%; display:flex; align-items:flex-end; justify-content:center; } .ds-vitrina-frasco svg { transform:translateY(4%); transform-origin:50% 100%; transition:transform 0.4s cubic-bezier(.16,1,.3,1); } .ds-vitrina-frasco:hover svg { transform:translateY(0); } .ds-vitrina-frasco:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-vitrina-leyenda { margin:0.65rem 0 0; font-size:14px; font-weight:400; color:var(--tinta-suave,#64503F); }"
+    },
+    {
+      "name": "Sin resultados",
+      "kind": "custom",
+      "refersTo": "empty-state",
+      "description": "Estado vacío con salidas que sí dan resultados: quitar filtro, otro catálogo, limpiar, cotizar.",
+      "html": "<div class=\"ds-vacio\"><p class=\"ds-vacio-titulo\">No encontramos «aventus»</p><p class=\"ds-vacio-texto\">Revisa cómo se escribe, prueba con la marca o pídenos que lo consigamos.</p><div class=\"ds-vacio-acciones\"><button type=\"button\" class=\"ds-vacio-btn\">Ver «aventus» en perfumes completos</button><button type=\"button\" class=\"ds-vacio-btn\">Limpiar búsqueda</button><button type=\"button\" class=\"ds-vacio-btn\">Cotizar «aventus» por WhatsApp</button></div></div>",
+      "css": ".ds-vacio { width:360px; padding:2rem 16px; background:var(--yeso,#E2E1DE); border-top:1px solid rgba(59,35,24,0.16); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; color:var(--tinta,#3B2318); } .ds-vacio-titulo { margin:0; font-stretch:112%; font-size:22px; font-weight:500; } .ds-vacio-texto { margin:0.4rem 0 0; font-size:16px; line-height:1.5; color:var(--tinta-suave,#64503F); max-width:46ch; } .ds-vacio-acciones { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.25rem; } .ds-vacio-btn { display:inline-flex; align-items:center; min-height:44px; padding:0 1.1rem; border:1px solid var(--tinta,#3B2318); border-radius:2px; background:transparent; color:var(--tinta,#3B2318); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size:15px; font-weight:500; text-align:left; cursor:pointer; transition:background 0.2s, color 0.2s; } .ds-vacio-btn:hover { background:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-vacio-btn:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+    },
+    {
+      "name": "Desplegable de filtros",
+      "kind": "custom",
+      "refersTo": "dropdown-toggle",
+      "description": "Botón papel con flecha de trazo y contador; abre un panel papel con sombra del desplegable.",
+      "html": "<div class=\"ds-desp\"><button type=\"button\" class=\"ds-desp-toggle\" aria-expanded=\"true\">Categoría y marca <span class=\"ds-desp-n\">2</span><span class=\"ds-desp-flecha\" aria-hidden=\"true\"></span></button><div class=\"ds-desp-panel\"><span class=\"ds-desp-etq\">Categoría</span><div class=\"ds-desp-chips\"><button type=\"button\" class=\"ds-desp-chip activo\">Todas</button><button type=\"button\" class=\"ds-desp-chip\">Nicho</button><button type=\"button\" class=\"ds-desp-chip\">Diseñador</button></div></div></div>",
+      "css": ".ds-desp { position:relative; padding:16px 16px 140px; background:var(--yeso,#E2E1DE); font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; } .ds-desp-toggle { display:inline-flex; align-items:center; gap:0.6rem; min-height:40px; padding:0 1rem; border:1px solid rgba(59,35,24,0.16); border-radius:2px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:inherit; font-size:15px; font-weight:500; cursor:pointer; transition:border-color 0.2s; } .ds-desp-toggle:hover, .ds-desp-toggle[aria-expanded='true'] { border-color:var(--tinta,#3B2318); } .ds-desp-toggle:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; } .ds-desp-n { min-width:22px; height:22px; border-radius:11px; background:var(--tinta,#3B2318); color:var(--papel,#fff); font-size:12px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; } .ds-desp-flecha { width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:translateY(-2px) rotate(45deg); transition:transform 0.25s cubic-bezier(.16,1,.3,1); } .ds-desp-toggle[aria-expanded='true'] .ds-desp-flecha { transform:translateY(2px) rotate(225deg); } .ds-desp-panel { position:absolute; top:64px; left:16px; width:280px; padding:1.1rem; border:1px solid rgba(59,35,24,0.16); border-radius:2px; background:var(--papel,#fff); box-shadow:0 14px 30px -12px rgba(59,35,24,0.4); } .ds-desp-etq { display:block; margin-bottom:0.5rem; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--tinta-suave,#64503F); } .ds-desp-chips { display:flex; flex-wrap:wrap; gap:6px; } .ds-desp-chip { min-height:36px; padding:0 0.85rem; border:1px solid rgba(59,35,24,0.16); border-radius:18px; background:var(--papel,#fff); color:var(--tinta,#3B2318); font-family:inherit; font-size:14px; font-weight:500; cursor:pointer; } .ds-desp-chip:hover { border-color:var(--tinta,#3B2318); } .ds-desp-chip.activo { background:var(--tinta,#3B2318); border-color:var(--tinta,#3B2318); color:var(--papel,#fff); } .ds-desp-chip:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     }
   ],
   "narrative": {
     "northStar": "El atelier del perfumista",
-    "overview": "Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.\n\nLa voz tipográfica es una sola familia, Archivo, en dos anchos: extendida y delgada para el nombre, los títulos y las cifras; ancho normal para leer. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.\n\nAlcance actual: este mundo cubre la portada (vista-home de `index.html`), el nav global, el botón de carrito y el pie. El catálogo (`#catalogo`, `#completos`), el panel del carrito y las fichas (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.",
+    "overview": "Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.\n\nLa voz tipográfica es una sola familia, Archivo, en dos anchos: extendida y delgada para el nombre, los títulos y las cifras; ancho normal para leer. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.\n\nAlcance actual: este mundo cubre la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. Solo las fichas de producto (`decants/*`, `completos/*`) siguen en el sistema heredado (ver la nota al final de Do's and Don'ts); es deuda de migración, no parte de este sistema.",
     "keyCharacteristics": [
       "Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.",
       "Chocolate como tinta: texto, líneas, botón principal y pie.",
@@ -270,7 +343,7 @@
       },
       {
         "name": "The Objects Cast Shadows Rule",
-        "body": "Solo los objetos del atelier (papel, repisa) y las capas flotantes (carrito, menú abierto) tienen sombra, siempre teñida de chocolate. Las secciones y los textos son planos.",
+        "body": "Solo los objetos del atelier (papel, repisa) y las capas flotantes (carrito, menú abierto, desplegables) tienen sombra, siempre teñida de chocolate. Las secciones y los textos son planos.",
         "section": "elevation"
       }
     ],

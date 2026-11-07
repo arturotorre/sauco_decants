@@ -1,47 +1,67 @@
 // Render de tarjetas, filtro por género, portada y ruteo por hash.
 // Los datos viven en js/data.js (const PERFUMES).
 
+function escaparTexto(t) {
+  return String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+const GENERO_CORTO = { Masculino: 'Hombre', Femenino: 'Mujer', Unisex: 'Unisex' };
+
+function fotoFilaHTML(src, alt, url) {
+  const img = `<img src="${src}" alt="${alt}" loading="lazy" onerror="this.style.visibility='hidden'">`;
+  return url
+    ? `<a class="fila-foto" href="${url}" tabindex="-1" aria-hidden="true">${img}</a>`
+    : `<span class="fila-foto">${img}</span>`;
+}
+
 function cardHTML(p) {
-  const dot = 'dot-' + p.tier;
-  const tierLabel = p.tier === 'nicho' ? 'Nicho' : 'Diseñador';
-  const notas = p.notas.map(n => `<span class="nota-tag">${n}</span>`).join('');
-  const precios = ['3ml', '5ml', '10ml'].map(ml => `
-        <div class="precio-item"><span class="precio-ml">${ml}</span><span class="precio-val">${p.precios[ml] || ''}</span></div>`).join('');
-
-  const urlProducto = p.slug ? `/decants/${p.slug}/` : null;
-  const fotoImg = `<img src="${p.imagen}" alt="${p.casa} ${p.alt} - decant de perfume ${p.genero.toLowerCase()}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="foto-label" style="display:none">Sin imagen</span>`;
-  const fotoHTML = urlProducto
-    ? `<a class="card-foto-link" href="${urlProducto}" aria-label="Ver detalles de ${p.nombre}">${fotoImg}</a>`
-    : fotoImg;
-  const nombreHTML = urlProducto
-    ? `<a class="card-nombre" href="${urlProducto}">${p.nombre}</a>`
-    : `<div class="card-nombre">${p.nombre}</div>`;
-
+  const url = p.slug ? `/decants/${p.slug}/` : null;
+  const notas = p.notas.slice(0, 3).map((n, i) => i ? n.toLocaleLowerCase('es') : n).join(', ');
+  const nombre = url ? `<a class="fila-nombre" href="${url}">${p.alt}</a>` : `<span class="fila-nombre">${p.alt}</span>`;
+  // Cada medida es su propio botón: un toque agrega esa medida al carrito.
+  const medidas = ['3ml', '5ml', '10ml'].map(ml => {
+    const n = ml.replace('ml', '');
+    const precio = p.precios[ml];
+    return `<button type="button" class="fila-medida" data-casa="${p.casa}" data-nombre="${p.nombre}" data-ml="${ml}" aria-label="Agregar ${p.alt} de ${n} ml, ${precio || 'precio a confirmar'}, al carrito">
+        <span class="fila-medida-ml">${n}&nbsp;ml</span>
+        <span class="fila-medida-precio">${precio || 'A confirmar'}</span>
+      </button>`;
+  }).join('');
   return `
-  <div class="card">
-    <div class="card-foto">
-      ${fotoHTML}
-      <div class="card-tier-dot ${dot}"></div>
+  <li class="fila fila-decant">
+    ${fotoFilaHTML(p.imagen, `${p.casa} ${p.alt}, decant`, url)}
+    <div class="fila-texto">
+      <span class="fila-casa">${p.casa}</span>
+      ${nombre}
+      <span class="fila-meta">${GENERO_CORTO[p.genero] || p.genero} · ${notas}</span>
     </div>
-    <div class="card-info">
-      <div class="card-casa">${p.casa}</div>
-      <div class="card-nombre-fila">
-        ${nombreHTML}
-        <button class="btn-agregar" data-casa="${p.casa}" data-nombre="${p.nombre}" aria-label="Agregar ${p.nombre} al carrito">
-          <span class="btn-agregar-texto">Agregar al carrito</span>
-          <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
-        </button>
-      </div>
-      <div class="card-genero">${p.genero}</div>
-      <div class="card-notas">
-        <span class="notas-label">Notas</span>
-        <div class="notas-tags">${notas}</div>
-      </div>
-      <div class="card-divider"></div>
-      <div class="card-precios">${precios}</div>
-    </div>
-    <div class="card-footer"><div class="card-footer-dot ${dot}"></div><span class="card-footer-text">${tierLabel} · Original</span></div>
+    <div class="fila-medidas" role="group" aria-label="Elige la medida de ${p.alt}">${medidas}</div>
+  </li>`;
+}
+
+function vitrinaHTML(p) {
+  return `<a class="vitrina-frasco" href="/decants/${p.slug}/" style="--escala:${p.escala || 1}">
+    <img src="${p.imagen}" alt="${p.casa} ${p.alt}" loading="lazy" onerror="this.style.visibility='hidden'">
+  </a>`;
+}
+
+function coincideTexto(p, busqueda) {
+  const b = normalizarTexto(busqueda.trim());
+  return !b || normalizarTexto(p.nombre).includes(b) || normalizarTexto(p.casa).includes(b);
+}
+
+function sinResultadosHTML({ busqueda, filtroActivo, urlSinFiltro, etiquetaFiltro, otroCatalogo }) {
+  const q = escaparTexto(busqueda.trim());
+  const acciones = [];
+  // Solo se ofrece quitar el filtro cuando eso sí devuelve resultados.
+  if (filtroActivo) acciones.push(`<button type="button" class="btn-secundario" data-buscar-en="${urlSinFiltro}" data-q="${q}">Ver resultados en ${etiquetaFiltro}</button>`);
+  if (otroCatalogo) acciones.push(`<button type="button" class="btn-secundario" data-buscar-en="${otroCatalogo.url}" data-q="${q}">Ver «${q}» en ${otroCatalogo.etiqueta}</button>`);
+  if (q) acciones.push('<button type="button" class="btn-secundario" data-limpiar-busqueda>Limpiar búsqueda</button>');
+  if (q) acciones.push(`<button type="button" class="btn-secundario" data-cotizar="${q}">Cotizar «${q}» por WhatsApp</button>`);
+  return `<div class="sin-resultados">
+    <p class="sin-resultados-titulo">${q ? `No encontramos «${q}»` : 'No hay perfumes con este filtro'}</p>
+    <p class="sin-resultados-texto">${q ? 'Revisa cómo se escribe, prueba con la marca o pídenos que lo consigamos.' : 'Prueba con otro filtro.'}</p>
+    <div class="sin-resultados-acciones">${acciones.join('')}</div>
   </div>`;
 }
 
@@ -68,80 +88,64 @@ function renderCatalogo(filtro) {
   if (!contenedor) return;
   catalogoFiltroGenero = filtro;
 
-  const etiquetasGenero = { todos: 'Todos', hombre: 'Hombre', mujer: 'Mujer' };
-  const tituloEl = document.getElementById('catalogo-titulo-texto');
-  if (tituloEl) tituloEl.textContent = `Decants - ${etiquetasGenero[filtro] || 'Todos'}`;
+  document.querySelectorAll('#vista-catalogo .catalogo-chip').forEach(a => {
+    const activo = a.dataset.chip === filtro;
+    a.classList.toggle('activo', activo);
+    if (activo) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+
+  // Vitrina de más vendidos: solo sin búsqueda, respetando el género elegido.
+  const vitrina = document.getElementById('catalogo-vitrina');
+  const destacados = PERFUMES.filter(p => p.bestseller && p.slug && coincideGenero(p, filtro)).slice(0, 4);
+  vitrina.hidden = !!catalogoBusqueda.trim() || destacados.length === 0;
+  document.getElementById('vitrina-repisa').innerHTML = destacados.map(vitrinaHTML).join('');
 
   const tiers = [
-    { key: 'nicho', clase: 'tier-nicho', label: 'Nicho' },
-    { key: 'disenador', clase: 'tier-disenador', label: 'Diseñador' }
+    { key: 'nicho', label: 'Nicho' },
+    { key: 'disenador', label: 'Diseñador' }
   ];
 
-  const gruposConResultados = tiers
+  const grupos = tiers
     .map(t => ({ t, perfumes: PERFUMES.filter(p => p.tier === t.key && coincideGenero(p, filtro) && catalogoCoincideBusqueda(p)) }))
     .filter(g => g.perfumes.length);
 
-  contenedor.innerHTML = gruposConResultados.length
-    ? gruposConResultados.map(({ t, perfumes }) => `
-    <div class="tier-header ${t.clase}" id="tier-${t.key}">
-      <div class="tier-line"></div><span class="tier-title">${t.label}</span><div class="tier-line"></div>
-    </div>
-    <div class="cards-grid">
-      ${perfumes.map(cardHTML).join('')}
-    </div>`).join('')
-    : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
+  contenedor.innerHTML = grupos.length
+    ? grupos.map(({ t, perfumes }) => `
+    <section class="seccion-lista" aria-labelledby="tier-${t.key}">
+      <h2 class="tier-header seccion-titulo" id="tier-${t.key}">${t.label} <span>${perfumes.length} ${perfumes.length === 1 ? 'perfume' : 'perfumes'}</span></h2>
+      <ul class="filas">${perfumes.map(cardHTML).join('')}</ul>
+    </section>`).join('')
+    : sinResultadosHTML({
+        busqueda: catalogoBusqueda,
+        filtroActivo: filtro !== 'todos' && PERFUMES.some(p => coincideTexto(p, catalogoBusqueda)),
+        urlSinFiltro: '#catalogo/todos', etiquetaFiltro: 'todos los decants',
+        otroCatalogo: catalogoBusqueda.trim() && PERFUMES_COMPLETOS.some(p => coincideTexto(p, catalogoBusqueda)) ? { url: '#completos/todos', etiqueta: 'perfumes completos' } : null
+      });
 }
 
 function completoCardHTML(p) {
   const disponible = p.precio != null;
-
-  const boton = disponible
-    ? `<button class="btn-agregar btn-agregar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Agregar ${p.nombre} al carrito">
-        <span class="btn-agregar-texto">Agregar al carrito</span>
-        <span class="btn-agregar-icono" aria-hidden="true">🛒</span>
-      </button>`
-    : `<button class="btn-agregar btn-consultar-completo" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Consultar disponibilidad de ${p.nombre}">
-        <span class="btn-agregar-texto">Consultar</span>
-        <span class="btn-agregar-icono" aria-hidden="true">💬</span>
-      </button>`;
-
-  const precioHTML = disponible
-    ? `<div class="card-precio-unico">${p.precio}</div>`
-    : `<div class="card-precio-unico card-precio-consultar">¡Pregunta por disponibilidad!</div>`;
-
-  const contenidoHTML = p.contenido ? `
-      <div class="card-notas">
-        <span class="notas-label">Incluye</span>
-        <div class="notas-tags">${p.contenido.map(c => `<span class="nota-tag">${c}</span>`).join('')}</div>
-      </div>` : '';
-
-  const urlProducto = p.slug ? `/completos/${p.slug}/` : null;
-  const fotoImg = `<img src="${p.imagen}" alt="${p.casa} ${p.alt} ${p.concentracion} - perfume ${p.esSet ? 'set de regalo' : 'de botella completa'}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="foto-label" style="display:none">Sin imagen</span>`;
-  const fotoHTML = urlProducto
-    ? `<a class="card-foto-link" href="${urlProducto}" aria-label="Ver detalles de ${p.nombre}">${fotoImg}</a>`
-    : fotoImg;
-  const nombreHTML = urlProducto
-    ? `<a class="card-nombre" href="${urlProducto}">${p.nombre}</a>`
-    : `<div class="card-nombre">${p.nombre}</div>`;
-
+  const url = p.slug ? `/completos/${p.slug}/` : null;
+  const nombre = url ? `<a class="fila-nombre" href="${url}">${p.nombre}</a>` : `<span class="fila-nombre">${p.nombre}</span>`;
+  const detalle = [p.concentracion, p.tamano && String(p.tamano).replace(/(\d)\s*ml$/i, '$1\u00a0ml')].filter(Boolean).join(' ');
+  const meta = [detalle, GENERO_CORTO[p.genero] || p.genero, p.esSet ? 'Set de regalo' : ''].filter(Boolean).join(' · ');
+  const incluye = p.contenido ? `<span class="fila-meta">Incluye: ${p.contenido.join(', ')}</span>` : '';
+  const accion = disponible
+    ? `<span class="fila-precio">${p.precio}</span>
+       <button type="button" class="btn-agregar btn-agregar-completo fila-agregar" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Agregar ${p.nombre} ${p.concentracion} al carrito">Agregar</button>`
+    : `<span class="fila-precio fila-precio-pendiente">Precio por consultar</span>
+       <button type="button" class="btn-agregar btn-consultar-completo fila-agregar" data-casa="${p.casa}" data-nombre="${p.nombre}" data-concentracion="${p.concentracion}" aria-label="Consultar ${p.nombre} por WhatsApp">Consultar</button>`;
   return `
-  <div class="card card-completo">
-    <div class="card-foto">
-      ${fotoHTML}
+  <li class="fila">
+    ${fotoFilaHTML(p.imagen, `${p.casa} ${p.nombre} ${p.concentracion}`, url)}
+    <div class="fila-texto">
+      <span class="fila-casa">${p.casa}</span>
+      ${nombre}
+      <span class="fila-meta">${meta}</span>
+      ${incluye}
     </div>
-    <div class="card-info">
-      <div class="card-casa">${p.casa}</div>
-      <div class="card-nombre-fila">
-        ${nombreHTML}
-        ${boton}
-      </div>
-      <div class="card-genero">${p.concentracion}${p.tamano ? ' ' + p.tamano : ''} · ${p.genero}${p.esSet ? ' · Set de regalo' : ''}</div>
-      ${contenidoHTML}
-      <div class="card-divider"></div>
-      ${precioHTML}
-    </div>
-  </div>`;
+    <div class="fila-accion">${accion}</div>
+  </li>`;
 }
 
 let completosGenero = 'todos';
@@ -212,20 +216,21 @@ function ordenarCompletos(perfumes) {
 function establecerGeneroCompletos(genero) {
   completosGenero = genero;
   completosMarca = 'todas';
-  document.querySelectorAll('#completos-filtro-genero .completos-chip').forEach(b => b.classList.toggle('activo', b.dataset.filtroGenero === genero));
   renderFiltroMarcaCompletos();
 }
 
 function establecerSetsCompletos(activo) {
   completosSoloSets = activo;
-  document.getElementById('completos-filtro-set').classList.toggle('activo', activo);
   renderFiltroMarcaCompletos();
 }
 
 function actualizarTituloCompletos(sub) {
-  const etiquetas = { dama: 'Dama', caballero: 'Caballero', sets: 'Sets de regalo' };
-  const el = document.getElementById('completos-titulo-texto');
-  el.textContent = etiquetas[sub] ? `Perfumes completos - ${etiquetas[sub]}` : 'Perfumes completos';
+  const actual = 'completos-' + (sub || 'todos');
+  document.querySelectorAll('#vista-completos .catalogo-chip').forEach(a => {
+    const activo = a.dataset.chip === actual;
+    a.classList.toggle('activo', activo);
+    if (activo) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
 }
 
 function aplicarFiltroCompletosDesdeNav(sub) {
@@ -253,10 +258,8 @@ function aplicarFiltroCompletosDesdeNav(sub) {
 function actualizarContadorFiltrosCompletos() {
   const badge = document.getElementById('completos-filtros-contador');
   let n = 0;
-  if (completosGenero !== 'todos') n++;
   if (completosCategoria !== 'todas') n++;
   if (completosMarca !== 'todas') n++;
-  if (completosSoloSets) n++;
   badge.textContent = String(n);
   badge.hidden = n === 0;
 }
@@ -269,9 +272,15 @@ function renderCompletos() {
     return okGenero && completosCoincide(p);
   }));
 
+  const filtrosActivos = completosGenero !== 'todos' || completosSoloSets || completosCategoria !== 'todas' || completosMarca !== 'todas';
   contenedor.innerHTML = perfumes.length
-    ? `<div class="cards-grid">${perfumes.map(completoCardHTML).join('')}</div>`
-    : '<p class="completos-sin-resultados">No encontramos perfumes con ese filtro.</p>';
+    ? `<p class="lista-conteo">${perfumes.length} ${perfumes.length === 1 ? 'perfume' : 'perfumes'}</p><ul class="filas">${perfumes.map(completoCardHTML).join('')}</ul>`
+    : sinResultadosHTML({
+        busqueda: completosBusqueda,
+        filtroActivo: filtrosActivos && PERFUMES_COMPLETOS.some(p => coincideTexto(p, completosBusqueda)),
+        urlSinFiltro: '#completos/todos', etiquetaFiltro: 'todos los perfumes',
+        otroCatalogo: completosBusqueda.trim() && PERFUMES.some(p => coincideTexto(p, completosBusqueda)) ? { url: '#catalogo/todos', etiqueta: 'decants' } : null
+      });
   actualizarContadorFiltrosCompletos();
 }
 
@@ -374,14 +383,17 @@ function actualizarNavCompletos(activo) {
 function actualizarTituloPagina(seccion, filtro) {
   if (seccion === 'catalogo') {
     const etiquetas = { todos: 'Todos', hombre: 'Hombre', mujer: 'Mujer' };
-    document.title = `Decants - ${etiquetas[filtro] || 'Todos'} | Saúco`;
+    document.title = filtro && filtro !== 'todos' ? `Decants para ${etiquetas[filtro].toLowerCase()} | Saúco` : 'Decants | Saúco';
   } else if (seccion === 'completos') {
     const etiquetas = { dama: 'Dama', caballero: 'Caballero', sets: 'Sets de regalo' };
-    document.title = etiquetas[filtro] ? `Perfumes completos - ${etiquetas[filtro]} | Saúco` : 'Perfumes completos | Saúco';
+    document.title = etiquetas[filtro] ? `Perfumes completos: ${etiquetas[filtro]} | Saúco` : 'Perfumes completos | Saúco';
   } else {
     document.title = 'Saúco Decants — Perfumes 100% Originales | Envíos a todo México';
   }
 }
+
+// Búsqueda que se traslada a otra vista (ej. «Ver X en perfumes completos»).
+let busquedaPendiente = '';
 
 function route() {
   const vistaHome = document.getElementById('vista-home');
@@ -401,15 +413,20 @@ function route() {
   if (seccion === 'catalogo') {
     const genero = filtro || 'todos';
     vistaCatalogo.hidden = false;
-    catalogoBusqueda = '';
+    catalogoBusqueda = busquedaPendiente;
     const catalogoInputBusqueda = document.getElementById('catalogo-busqueda');
-    if (catalogoInputBusqueda) catalogoInputBusqueda.value = '';
+    if (catalogoInputBusqueda) catalogoInputBusqueda.value = busquedaPendiente;
     renderCatalogo(genero);
     activo = genero;
   } else if (seccion === 'completos') {
     const sub = filtro || 'todos';
     vistaCompletos.hidden = false;
     aplicarFiltroCompletosDesdeNav(sub);
+    if (busquedaPendiente) {
+      completosBusqueda = busquedaPendiente;
+      document.getElementById('completos-busqueda').value = busquedaPendiente;
+      renderCompletos();
+    }
     activo = 'completos-' + sub;
   } else {
     vistaHome.hidden = false;
@@ -418,6 +435,7 @@ function route() {
   navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
   actualizarNavDecants(activo);
   actualizarNavCompletos(activo);
+  busquedaPendiente = '';
   actualizarTituloPagina(seccion, filtro);
   window.scrollTo(0, 0);
   if (seccion === 'catalogo' && ancla) {
@@ -495,6 +513,33 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('completos-busqueda')?.addEventListener('input', (e) => {
     completosBusqueda = e.target.value;
     renderCompletos();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-limpiar-busqueda]')) {
+      const vistaCompletosVisible = !document.getElementById('vista-completos').hidden;
+      const input = document.getElementById(vistaCompletosVisible ? 'completos-busqueda' : 'catalogo-busqueda');
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+      input.focus();
+      return;
+    }
+    const buscarEn = e.target.closest('[data-buscar-en]');
+    if (buscarEn) {
+      busquedaPendiente = buscarEn.dataset.q;
+      const destino = buscarEn.dataset.buscarEn;
+      if (location.hash === destino) route(); else location.hash = destino;
+      return;
+    }
+    if (e.target.closest('[data-ir-cotizar]')) {
+      document.getElementById('cotizar-titulo')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('cotizar-nombre')?.focus({ preventScroll: true });
+      return;
+    }
+    const cotizar = e.target.closest('[data-cotizar]');
+    if (cotizar && typeof abrirWhatsApp === 'function') {
+      abrirWhatsApp(`Hola, ¿me pueden cotizar ${cotizar.dataset.cotizar}? No lo encontré en el catálogo.`);
+    }
   });
 
   document.getElementById('catalogo-busqueda')?.addEventListener('input', (e) => {
