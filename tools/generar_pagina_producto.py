@@ -28,7 +28,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # Versión de CSS/JS: cámbiala cada vez que se publiquen cambios en css/ o js/
 # para que los navegadores descarguen los archivos nuevos en lugar de usar los
 # que tienen guardados (deben coincidir con los de index.html).
-VERSION_ARCHIVOS = "20261108j"
+VERSION_ARCHIVOS = "20261108m"
 DATA_JS = RAIZ / "js" / "data.js"
 
 # --- Contenido editorial curado a mano, un producto a la vez ------------
@@ -3526,39 +3526,36 @@ def precios_html(precios):
 
 NAV_HTML = """<a class="saltar" href="#app">Saltar al contenido</a>
 
-<nav class="nav-lateral" id="nav-lateral" aria-label="Principal">
-  <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="/#home" class="nav-marca" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="Saúco" width="282" height="100"></a>
-  <ul class="nav-links">
-    <li class="nav-item-decants" id="nav-item-decants">
-      <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">
-        Decants
-        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
-      </button>
-      <ul class="nav-submenu" id="nav-decants-submenu">
-        <li><a href="/#catalogo/todos" data-genero="todos">Todos</a></li>
-        <li><a href="/#catalogo/hombre" data-genero="hombre">Hombre</a></li>
-        <li><a href="/#catalogo/mujer" data-genero="mujer">Mujer</a></li>
-      </ul>
-    </li>
-    <li class="nav-item-completos" id="nav-item-completos">
-      <button type="button" class="nav-desplegable" id="nav-completos-toggle" aria-expanded="false" aria-controls="nav-completos-submenu">
-        Perfumes completos
-        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
-      </button>
-      <ul class="nav-submenu" id="nav-completos-submenu">
-        <li><a href="/#completos/todos" data-genero="completos-todos">Todos</a></li>
-        <li><a href="/#completos/dama" data-genero="completos-dama">Dama</a></li>
-        <li><a href="/#completos/caballero" data-genero="completos-caballero">Caballero</a></li>
-        <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
-      </ul>
-    </li>
-    <li class="nav-extra nav-extra-primero"><a href="/#originalidad">100% originales</a></li>
-    <li class="nav-extra"><a href="https://wa.me/525612567245" class="nav-whatsapp">WhatsApp <span>56 1256 7245</span></a></li>
-  </ul>
-</nav>"""
+<header class="encabezado" id="encabezado">
+  <div class="encabezado-fila">
+    <a class="encabezado-whatsapp" href="https://wa.me/525612567245">WhatsApp<span> 56 1256 7245</span></a>
+    <a href="/#home" class="nav-marca" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="Saúco" width="282" height="100"></a>
+  </div>
+  <nav class="nav-principal" id="nav-principal" aria-label="Principal">
+    <a href="/#home" class="nav-marca-mini" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="" width="282" height="100"></a>
+    <ul class="nav-links">
+      <li class="nav-item-decants" id="nav-item-decants">
+        <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">Decants<span class="nav-desplegable-flecha" aria-hidden="true"></span></button>
+        <ul class="nav-submenu" id="nav-decants-submenu">
+          <li><a href="/#catalogo/todos" data-genero="todos">Todos los decants</a></li>
+          <li><a href="/#catalogo/hombre" data-genero="hombre">Hombre</a></li>
+          <li><a href="/#catalogo/mujer" data-genero="mujer">Mujer</a></li>
+        </ul>
+      </li>
+      <li class="nav-item-completos" id="nav-item-completos">
+        <button type="button" class="nav-desplegable" id="nav-completos-toggle" aria-expanded="false" aria-controls="nav-completos-submenu"><span><span class="solo-escritorio">Perfumes </span>completos</span><span class="nav-desplegable-flecha" aria-hidden="true"></span></button>
+        <ul class="nav-submenu" id="nav-completos-submenu">
+          <li><a href="/#completos/todos" data-genero="completos-todos">Todos los completos</a></li>
+          <li><a href="/#completos/dama" data-genero="completos-dama">Dama</a></li>
+          <li><a href="/#completos/caballero" data-genero="completos-caballero">Caballero</a></li>
+          <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
+        </ul>
+      </li>
+      <li><a href="/#originalidad" data-genero="originalidad"><span><span class="solo-escritorio">100% </span>originales</span></a></li>
+      <li class="solo-escritorio"><a href="/#como-pedir" data-genero="como-pedir">Cómo pedir</a></li>
+    </ul>
+  </nav>
+</header>"""
 
 CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
   <span id="carrito-contador" hidden>0</span>
@@ -3768,14 +3765,14 @@ def render_pagina(perfume, contenido, botella="", relacionados=""):
       {parrafos_html}
     </section>
 
-    <section class="ficha-siguiente" aria-labelledby="siguiente-titulo">
-      <h2 id="siguiente-titulo" class="ficha-h2">¿Te convenció?</h2>
-      <div class="ficha-botella">{botella}</div>
-      {f'<h3 class="ficha-h3">También te puede gustar</h3><ul class="ficha-relacionados">{relacionados}</ul>' if relacionados else ''}
-    </section>
-
     <a class="enlace-secundario ficha-volver" href="/#catalogo/todos">Ver todos los decants</a>
   </div>
+
+  <section class="ficha-siguiente ficha-sala" aria-labelledby="siguiente-titulo">
+    <h2 id="siguiente-titulo" class="ficha-h2">¿Te convenció?</h2>
+    <div class="ficha-botella">{botella}</div>
+    {f'<h3 class="ficha-h3">También te puede gustar</h3><ul class="ficha-relacionados">{relacionados}</ul>' if relacionados else ''}
+  </section>
 </main>
 
 {CARRITO_Y_FOOTER_HTML}"""

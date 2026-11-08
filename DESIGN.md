@@ -187,14 +187,17 @@ components:
 
 **Creative North Star: "El atelier del perfumista"**
 
-Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.
+Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en dos lugares: la banda de «100% originales» en la portada y el pie.
+
+El sitio se recorre por **salas**: cada sección es una franja a todo lo ancho con su propio fondo (yeso, papel o, una sola vez, chocolate) y un título centrado sobre una regla de roble; el cambio de fondo es lo que separa, no una línea. Arriba manda un **encabezado de casa de perfumes**: el logo grande al centro y el menú en una fila debajo, que se compacta al bajar.
 
 La voz tipográfica son dos familias: Bodoni Moda, un Didone de alto contraste, habla en el nombre, los títulos y las cifras; Hanken Grotesk, una grotesca sobria, se lee y se opera en todo lo demás. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.
 
 Alcance actual: este mundo cubre todo el sitio: la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), las 134 fichas de producto (`decants/*`, `completos/*`, generadas por `tools/generar_pagina_producto.py`), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. La migración está completa; lo que queda del sistema heredado en `css/styles.css` y `css/fonts.css` son restos sin uso (ver la nota al final de Do's and Don'ts), deuda de limpieza y no parte de este sistema. El `theme-color` del navegador es yeso (#E2E1DE) en la portada y en todas las fichas.
 
 **Key Characteristics:**
-- Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.
+- Salas a todo lo ancho: yeso (#E2E1DE) como muro base, papel (#fff) donde se exhiben frascos y una sola banda chocolate (originalidad); nunca crema.
+- Encabezado de casa: logo al centro, menú en fila entre dos líneas, compacto al bajar.
 - Chocolate como tinta: texto, líneas, botón principal y pie.
 - Bodoni Moda para nombre, títulos y cifras; Hanken Grotesk para texto, etiquetas, botones y nav.
 - Repisas de roble con canto chocolate como soporte de toda foto de producto.
@@ -221,7 +224,9 @@ Un muro neutro casi gris, madera clara y una sola tinta oscura de chocolate; sin
 - **Línea** (linea): chocolate al 16 % para bordes del nav, divisores entre secciones y entre renglones del catálogo, el botón de carrito y el borde en reposo de chips, buscador y desplegables.
 
 ### Named Rules
-**The Chocolate Is Ink Rule.** El chocolate escribe; no pinta paredes. Ninguna sección completa lleva fondo chocolate salvo el pie global.
+**The Chocolate Is Ink Rule.** El chocolate escribe; casi nunca pinta paredes. Solo dos superficies completas llevan fondo chocolate: la banda «100% originales» de la portada (aprobada por el dueño el 2026-11-08, porque es la prueba central del negocio) y el pie global. No agregues una tercera: el dueño pidió que el chocolate identifique sin dominar.
+
+**The Rooms Rule.** Las secciones se separan por cambio de fondo a todo lo ancho, no por líneas de 1px: yeso para el muro y la conversación, papel para exhibir frascos (más vendidos, sala del catálogo, «¿Te convenció?» de la ficha), chocolate solo en originalidad. Dos salas seguidas nunca comparten fondo. Cada sala abre con su título centrado y una regla de roble de 64×3px debajo.
 
 **The Neutral Plaster Rule.** El yeso es #E2E1DE a propósito. Un yeso más cálido (#E5E2DD, #E6E3DF) se lee como crema y el detector lo marca; no lo calientes.
 
@@ -253,13 +258,13 @@ Por qué esta pareja: el dueño rechazó Archivo extendido porque «se siente co
 
 ## Layout
 
-Móvil primero (390px). El nav es una barra superior de 56px en móvil y una columna lateral fija de 200px desde 861px; el contenido se desplaza en consecuencia. Contenedor máximo de 1240px, márgenes de 1.25rem en móvil y clamp(2rem, 4vw, 4rem) en escritorio.
+Móvil primero (390px). El encabezado es fijo arriba en todo el sitio: fila del logo (88px en escritorio, 52px en móvil) y fila del menú (48px / 44px); el contenido lleva de margen superior el alto completo (`--enc-alto`), así que al compactarse no mueve la página. Contenedor máximo de 1240px, márgenes de 1.25rem en móvil y clamp(2rem, 4vw, 4rem) en escritorio.
 
 La primera pantalla es una cuadrícula de tres zonas (texto, escena, acciones) que ocupa `100svh` menos el nav, con el botón principal visible sin desplazarse. En escritorio pasa a dos columnas (0.9fr / 1.1fr): texto y acciones a la izquierda, repisa y tiras a la derecha.
 
-Las secciones bajo la portada llevan 4.5rem arriba, se separan con una línea de 1px y abren con una cabecera que alinea el título y un enlace secundario en la misma línea base. Los estantes de producto se desplazan en horizontal con snap en móvil y se reparten en fila en escritorio; rutas y pasos pasan a 2 y 3 columnas desde 640px.
+La portada es una sola columna centrada: el lema como `h1` en Bodoni, el texto de apoyo y, en escritorio, el botón principal arriba de la escena (repisa y tiras, 620px máx.); en móvil el botón queda al pie del primer viewport. Debajo, las salas a todo lo ancho (4.5rem arriba y abajo en móvil, 6rem en escritorio; contenido a 1240px máx. con el relleno lateral calculado para que el fondo llegue al borde): más vendidos en papel, «Dos formas de empezar» en yeso, «100% originales» en chocolate y «Cómo pedir» en yeso. Cada sala abre con su título centrado sobre la regla de roble y, si lo tiene, el enlace secundario centrado debajo. Los estantes de producto se desplazan en horizontal con snap en móvil y se reparten en fila en escritorio; rutas y pasos pasan a 2 y 3 columnas desde 640px.
 
-Los catálogos son una sola columna de lectura de 820px máx. (1.75rem arriba y 1.25rem a los lados en móvil; 3rem arriba y clamp(2rem, 4vw, 4rem) a los lados desde 861px). Orden fijo: título, nota opcional, buscador a ancho completo, chips, vitrina (solo decants y solo sin búsqueda) y luego secciones de lista separadas 2.5rem. Cada renglón es una rejilla de tres columnas (foto 72px · texto · acción) con 1rem de relleno vertical y divisor de 1px; desde 700px la foto pasa a 96px, todo se centra en vertical y precio y botón se ponen en fila. En móvil los chips se desplazan en horizontal en una sola línea, sin barra visible.
+Los catálogos tienen dos salas: la cabecera en yeso (título centrado con regla, nota, buscador y filtros; alineada a la izquierda en móvil) y una sala de papel a todo lo ancho con la vitrina y la lista (fondo extendido con `box-shadow` de 100vmax y `clip-path`, sin cambiar el marcado de la columna). Son una sola columna de lectura de 820px máx. (1.75rem arriba y 1.25rem a los lados en móvil; 3rem arriba y clamp(2rem, 4vw, 4rem) a los lados desde 861px). Orden fijo: título, nota opcional, buscador a ancho completo, chips, vitrina (solo decants y solo sin búsqueda) y luego secciones de lista separadas 2.5rem. Cada renglón es una rejilla de tres columnas (foto 72px · texto · acción) con 1rem de relleno vertical y divisor de 1px; desde 700px la foto pasa a 96px, todo se centra en vertical y precio y botón se ponen en fila. En móvil los chips se desplazan en horizontal en una sola línea, sin barra visible.
 
 Las fichas son una rejilla con áreas nombradas, 1080px máx. En móvil: dos columnas (texto · repisa de 120px) con ruta arriba, título a la izquierda y repisa a la derecha alineados abajo, y debajo a ancho completo la compra, la tabla, la descripción y el enlace de regreso (1rem arriba, 1.25rem a los lados). Desde 861px: texto a la izquierda (minmax(0, 1fr)) y repisa a la derecha (minmax(300px, 0.85fr)) ocupando todas las filas, fija con `position: sticky` a 3rem del borde mientras se lee; separación clamp(2.5rem, 5vw, 5rem) y 3rem arriba.
 
@@ -273,7 +278,8 @@ La profundidad es física, no de interfaz: viene de los objetos del atelier. Las
 - **Sombra de papel** (`filter: drop-shadow(0 6px 8px rgba(59,35,24,0.18))`): el grupo de tiras.
 - **Sombra de repisa** (`box-shadow: 0 14px 18px -12px rgba(59,35,24,0.45)`): bajo la repisa principal de la portada.
 - **Sombra del carrito** (`box-shadow: 0 4px 14px -6px rgba(59,35,24,0.35)`): el botón flotante de carrito en escritorio; se quita en móvil, donde vive dentro de la barra.
-- **Sombra del menú** (`box-shadow: 0 18px 30px -18px rgba(59,35,24,0.35)`): el menú desplegado en móvil.
+- **Sombra del encabezado compacto** (`box-shadow: 0 12px 26px -20px rgba(59,35,24,0.55)`): solo cuando el encabezado se compacta al bajar.
+- **Sombra del submenú** (`box-shadow: 0 14px 30px -12px rgba(59,35,24,0.4)`): los paneles de Decants y Perfumes completos.
 - **Sombra del desplegable** (`box-shadow: 0 14px 30px -12px rgba(59,35,24,0.4)`): los paneles de filtros y orden de perfumes completos.
 
 La repisa de la ficha lleva en escritorio el canto de 3px más una sombra de repisa corta (`0 16px 20px -12px rgba(59,35,24,0.4)`); en móvil solo el canto.
@@ -343,8 +349,11 @@ Bajo el estante: marca en etiqueta, nombre 18px/500 y «Desde $X · 3 ml» en ti
 Primer elemento de cada página: «Saltar al contenido», fuera de la vista hasta recibir foco con teclado; entonces aparece arriba a la izquierda en tinta con texto papel. Lleva el foco a `main#app` sin cambiar el hash (el sitio usa el hash para sus vistas). La portada y las fichas tienen una sola región `<main id="app">`; los resultados del catálogo se anuncian con un estado discreto («3 perfumes», «Sin resultados») en lugar de releer la lista completa.
 
 ### Navigation
-- **Escritorio:** columna de yeso de 200px con borde derecho en línea; «SAÚCO» en Bodoni Moda 22px/400, mayúsculas, 0.06em; desplegables Decants y Perfumes completos como etiquetas 13px/600 con flecha de trazo; enlaces 15px en tinta suave, tinta en hover, activo subrayado y con borde izquierdo tinta.
-- **Móvil:** barra de 56px (hamburguesa de tres trazos, marca, carrito); el menú cae como panel de yeso con sombra.
+Encabezado de casa de perfumes (`header.encabezado`, elegido por el dueño el 2026-11-08 en lugar de la columna lateral). Fijo arriba, fondo yeso.
+- **Fila del logo:** «WhatsApp 56 1256 7245» a la izquierda (Hanken 14px, subrayado roble), el ramillete + «Saúco» al centro (56px de alto; 32px en móvil) y el botón de carrito flotante alineado a la derecha.
+- **Fila del menú:** entre una línea de 1px arriba y una tinta abajo; etiquetas Hanken 13px/600, 0.12em, mayúsculas: Decants ▾, Perfumes completos ▾, 100% originales, Cómo pedir. La sección activa lleva una raya de roble de 3px abajo. Los desplegables abren un panel de papel con filo chocolate de 2px y sombra de submenú; se cierran al elegir, al tocar fuera o con Escape.
+- **Compacto (`html.compacto`, al bajar más de 24px):** la fila del logo se pliega (altura y opacidad, ease-out 0.35s), aparece un logo chico de 28px a la izquierda del menú y el carrito se encoge a 40px dentro de la barra.
+- **Móvil:** sin hamburguesa; el menú queda siempre visible con nombres cortos (Decants, Completos, Originales; «Cómo pedir» solo en escritorio). Los paneles caen a todo lo ancho. Compacto, queda solo la fila del menú, recorrida a la izquierda para dejar lugar al carrito.
 
 ### Originalidad: proceso y qué recibes
 En la portada, `#originalidad` (con `scroll-margin` para el nav fijo; se llega con `/#originalidad`): el titular «100% originales», una entrada en 17px y una lista ordenada de tres pasos con la cifra en Bodoni 40px/500 (columna de 2.75rem en móvil; tres columnas desde 640px con la cifra arriba), título 18px/600 y texto 16px tinta suave. Debajo, un enlace a WhatsApp para pedir foto o video de la botella original, y el bloque «Qué recibes»: título Bodoni 24px y una lista `dl` con regla tinta arriba y renglones en línea, la medida en Bodoni 22px junto a su nombre de uso y la descripción de la presentación. Todo el contenido es dato del dueño (ver PRODUCT.md); no se agregan afirmaciones nuevas sin confirmarlas.
@@ -371,7 +380,7 @@ La única superficie chocolate. «SAÚCO» en Bodoni Moda 40px/400, mayúsculas,
 ## Do's and Don'ts
 
 ### Do:
-- **Do** usar yeso (#E2E1DE) como fondo de toda sección y reservar el fondo chocolate para el pie.
+- **Do** separar secciones con salas a todo lo ancho (yeso, papel, y chocolate solo en originalidad y el pie), con título centrado sobre regla de roble.
 - **Do** poner cada foto de producto sobre una repisa de roble con canto chocolate, fundida con `multiply`.
 - **Do** componer el nombre, los títulos, las medidas y los totales en Bodoni Moda (400 o más), y todo lo que se lee u opera en Hanken Grotesk.
 - **Do** teñir toda sombra con chocolate (rgba(59,35,24,…)) y limitarla a objetos y capas flotantes.
@@ -381,7 +390,8 @@ La única superficie chocolate. «SAÚCO» en Bodoni Moda 40px/400, mayúsculas,
 - **Do** dar `background: var(--yeso)` a todo contenedor fijo o aislado que tenga detrás una foto con `multiply`.
 
 ### Don't:
-- **Don't** usar el chocolate como fondo de sección fuera del pie.
+- **Don't** usar el chocolate como fondo de sección fuera de la banda de originalidad y el pie.
+- **Don't** volver a separar secciones con líneas de 1px ni a una columna lateral de navegación: el dueño sentía el sitio plano y sin divisiones.
 - **Don't** calentar el yeso hacia crema (#E5E2DD, #E6E3DF se leen como crema).
 - **Don't** usar crema, arena, terracota, cobre ni los puntos morado/verde del sistema heredado en superficies nuevas.
 - **Don't** usar emoji como íconos; los íconos son SVG de trazo en tinta.

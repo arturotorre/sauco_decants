@@ -379,47 +379,43 @@ function renderPortada() {
   document.getElementById('ruta-nicho').innerHTML = nicho.map(p => frascoHTML(p, '')).join('');
 }
 
-function cerrarNavMovil() {
-  const nav = document.getElementById('nav-lateral');
-  const toggle = document.getElementById('nav-toggle');
-  nav.classList.remove('nav-abierto');
-  toggle.setAttribute('aria-expanded', 'false');
-}
+// ----- Encabezado de casa: menús desplegables y modo compacto -----
+function cerrarNavMovil() { cerrarMenusNav(); }
 
-let decantsAbierto = false;
-
-function navMovil() {
-  return window.matchMedia('(max-width: 860px)').matches;
-}
-
-function expandirNavCompleto() {
-  decantsAbierto = true;
-  completosNavAbierto = true;
+function cerrarMenusNav(devolverFoco) {
   ['decants', 'completos'].forEach(k => {
-    document.getElementById(`nav-item-${k}`)?.classList.add('abierto');
-    document.getElementById(`nav-${k}-toggle`)?.setAttribute('aria-expanded', 'true');
+    const item = document.getElementById(`nav-item-${k}`);
+    const toggle = document.getElementById(`nav-${k}-toggle`);
+    if (!item || !toggle) return;
+    if (devolverFoco && item.classList.contains('abierto')) toggle.focus();
+    item.classList.remove('abierto');
+    toggle.setAttribute('aria-expanded', 'false');
   });
 }
-let completosNavAbierto = false;
+
+function alternarMenuNav(k) {
+  const item = document.getElementById(`nav-item-${k}`);
+  const abrir = !item.classList.contains('abierto');
+  cerrarMenusNav();
+  item.classList.toggle('abierto', abrir);
+  document.getElementById(`nav-${k}-toggle`).setAttribute('aria-expanded', String(abrir));
+}
+
+// Al bajar, el encabezado se compacta a la fila del menú con un logo chico.
+// El encabezado es fijo y el contenido tiene su alto completo de margen,
+// así que compactarlo no mueve la página.
+function actualizarEncabezadoCompacto() {
+  document.documentElement.classList.toggle('compacto', window.scrollY > 24);
+}
 
 function actualizarNavDecants(activo) {
-  const item = document.getElementById('nav-item-decants');
   const toggle = document.getElementById('nav-decants-toggle');
-  const esDecants = ['todos', 'hombre', 'mujer'].includes(activo);
-  if (esDecants) decantsAbierto = true;
-  item.classList.toggle('abierto', decantsAbierto);
-  toggle.classList.toggle('activo', esDecants);
-  toggle.setAttribute('aria-expanded', String(decantsAbierto));
+  toggle?.classList.toggle('activo', ['todos', 'hombre', 'mujer'].includes(activo));
 }
 
 function actualizarNavCompletos(activo) {
-  const item = document.getElementById('nav-item-completos');
   const toggle = document.getElementById('nav-completos-toggle');
-  const esCompletos = typeof activo === 'string' && activo.startsWith('completos-');
-  if (esCompletos) completosNavAbierto = true;
-  item.classList.toggle('abierto', completosNavAbierto);
-  toggle.classList.toggle('activo', esCompletos);
-  toggle.setAttribute('aria-expanded', String(completosNavAbierto));
+  toggle?.classList.toggle('activo', typeof activo === 'string' && activo.startsWith('completos-'));
 }
 
 function actualizarTituloPagina(seccion, filtro) {
@@ -473,7 +469,8 @@ function route() {
   } else {
     vistaHome.hidden = false;
   }
-  const anclaHome = seccion === 'originalidad' ? document.getElementById('originalidad') : null;
+  const anclaHome = ['originalidad', 'como-pedir'].includes(seccion) ? document.getElementById(seccion) : null;
+  if (anclaHome) activo = seccion;
 
   navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
   actualizarNavDecants(activo);
@@ -507,34 +504,14 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCompletos();
   route();
 
-  document.getElementById('nav-toggle')?.addEventListener('click', () => {
-    const nav = document.getElementById('nav-lateral');
-    const abierto = nav.classList.toggle('nav-abierto');
-    document.getElementById('nav-toggle').setAttribute('aria-expanded', String(abierto));
-    // En el celular el menú se abre plano: las dos listas a la vista, sin
-    // acordeones cerrados que obliguen a tocar dos veces.
-    if (abierto && navMovil()) expandirNavCompleto();
+  document.getElementById('nav-decants-toggle')?.addEventListener('click', () => alternarMenuNav('decants'));
+  document.getElementById('nav-completos-toggle')?.addEventListener('click', () => alternarMenuNav('completos'));
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item-decants, .nav-item-completos') || e.target.closest('.nav-submenu a')) cerrarMenusNav();
   });
-
-  document.getElementById('nav-decants-toggle')?.addEventListener('click', () => {
-    decantsAbierto = !decantsAbierto;
-    document.getElementById('nav-item-decants').classList.toggle('abierto', decantsAbierto);
-    document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', String(decantsAbierto));
-    if (navMovil()) return;
-    completosNavAbierto = false;
-    document.getElementById('nav-item-completos').classList.remove('abierto');
-    document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', 'false');
-  });
-
-  document.getElementById('nav-completos-toggle')?.addEventListener('click', () => {
-    completosNavAbierto = !completosNavAbierto;
-    document.getElementById('nav-item-completos').classList.toggle('abierto', completosNavAbierto);
-    document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', String(completosNavAbierto));
-    if (navMovil()) return;
-    decantsAbierto = false;
-    document.getElementById('nav-item-decants').classList.remove('abierto');
-    document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', 'false');
-  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarMenusNav(true); });
+  window.addEventListener('scroll', actualizarEncabezadoCompacto, { passive: true });
+  actualizarEncabezadoCompacto();
 
   document.getElementById('cotizar-toggle')?.addEventListener('click', () => {
     const panel = document.getElementById('cotizar-panel');

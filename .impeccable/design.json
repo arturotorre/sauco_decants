@@ -185,7 +185,7 @@
       {
         "name": "nav-portada",
         "value": "861px",
-        "purpose": "Nav lateral, portada en dos columnas, márgenes de catálogo y ficha con repisa fija."
+        "purpose": "Encabezado: tamaños de escritorio vs. móvil (menú visible sin hamburguesa); ficha con repisa fija; botón principal arriba de la escena en la portada."
       }
     ]
   },
@@ -233,9 +233,9 @@
       "name": "Navegación",
       "kind": "nav",
       "refersTo": "nav",
-      "description": "Columna lateral de yeso en escritorio; marca en Bodoni Moda, desplegables en etiqueta Hanken.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-marca\" href=\"#\">Saúco</a><span class=\"ds-nav-grupo\">Decants</span><a class=\"ds-nav-link activo\" href=\"#\">Todos</a><a class=\"ds-nav-link\" href=\"#\">Hombre</a><a class=\"ds-nav-link\" href=\"#\">Mujer</a></nav>",
-      "css": ".ds-nav { width:200px; padding:2rem 1.5rem; background:var(--yeso,#E2E1DE); border-right:1px solid rgba(59,35,24,0.16); display:flex; flex-direction:column; gap:0.4rem; font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-nav-marca { font-family:'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif; font-size:22px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; color:var(--tinta,#3B2318); text-decoration:none; margin-bottom:2rem; } .ds-nav-grupo { font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--tinta,#3B2318); padding:0.5rem 0; } .ds-nav-link { font-size:15px; color:var(--tinta-suave,#64503F); text-decoration:none; padding:0.4rem 0 0.4rem 0.85rem; border-left:1px solid rgba(59,35,24,0.16); transition:color 0.2s; } .ds-nav-link:hover { color:var(--tinta,#3B2318); } .ds-nav-link.activo { color:var(--tinta,#3B2318); border-left-color:var(--tinta,#3B2318); text-decoration:underline; text-underline-offset:5px; } .ds-nav-link:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
+      "description": "Encabezado de casa: logo al centro, menú en fila entre dos líneas con etiquetas Hanken 13px/600 y raya de roble en la activa; se compacta al bajar.",
+      "html": "<header class=\"ds-enc\"><img class=\"ds-enc-logo\" src=\"/imagenes/logo/sauco-flor-horizontal.svg\" alt=\"Saúco\"><nav class=\"ds-enc-menu\"><a class=\"ds-enc-link activo\" href=\"#\">Decants</a><a class=\"ds-enc-link\" href=\"#\">Perfumes completos</a><a class=\"ds-enc-link\" href=\"#\">100% originales</a><a class=\"ds-enc-link\" href=\"#\">Cómo pedir</a></nav></header>",
+      "css": ".ds-enc { background:var(--yeso,#E2E1DE); padding:18px 2rem 0; text-align:center; font-family:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; } .ds-enc-logo { height:56px; display:block; margin:0 auto 14px; } .ds-enc-menu { display:flex; justify-content:center; gap:2.5rem; height:48px; border-top:1px solid rgba(59,35,24,0.16); border-bottom:1px solid var(--tinta,#3B2318); } .ds-enc-link { display:inline-flex; align-items:center; font-size:13px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--tinta,#3B2318); text-decoration:none; } .ds-enc-link:hover { color:var(--tinta-suave,#64503F); } .ds-enc-link.activo { box-shadow:inset 0 -3px 0 var(--roble,#B08A5A); } .ds-enc-link:focus-visible { outline:2px solid var(--tinta,#3B2318); outline-offset:3px; }"
     },
     {
       "name": "Pie",
@@ -320,9 +320,9 @@
   ],
   "narrative": {
     "northStar": "El atelier del perfumista",
-    "overview": "Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en el pie.\n\nLa voz tipográfica son dos familias: Bodoni Moda, un Didone de alto contraste, habla en el nombre, los títulos y las cifras; Hanken Grotesk, una grotesca sobria, se lee y se opera en todo lo demás. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.\n\nAlcance actual: este mundo cubre todo el sitio: la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), las 134 fichas de producto (`decants/*`, `completos/*`, generadas por `tools/generar_pagina_producto.py`), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. La migración está completa; lo que queda del sistema heredado en `css/styles.css` y `css/fonts.css` son restos sin uso (ver la nota al final de Do's and Don'ts), deuda de limpieza y no parte de este sistema. El `theme-color` del navegador es yeso (#E2E1DE) en la portada y en todas las fichas.",
+    "overview": "Saúco se presenta como el taller de un perfumista: un muro de yeso gris cálido y claro, repisas de roble claro con canto de chocolate, frascos reales fotografiados sobre ellas y tiras de papel secante blancas que llevan la medida (3 · 5 · 10) en cifras grandes. El chocolate de la marca es tinta, no pintura de pared: escribe, traza líneas y llena el botón principal, y solo cubre una superficie completa en la banda de «100% originales» y en el pie. Las secciones son salas a todo lo ancho (yeso, papel, una sola chocolate) con título centrado sobre regla de roble, bajo un encabezado de casa con el logo al centro.\n\nLa voz tipográfica son dos familias: Bodoni Moda, un Didone de alto contraste, habla en el nombre, los títulos y las cifras; Hanken Grotesk, una grotesca sobria, se lee y se opera en todo lo demás. La densidad es baja y la composición es de taller, no de tienda en cuadrícula: las fotos se posan sobre repisas, no dentro de tarjetas. El movimiento es breve y con ease-out; las tiras se abren en abanico una vez al cargar y la elegida se levanta.\n\nAlcance actual: este mundo cubre todo el sitio: la portada (vista-home de `index.html`), los dos catálogos (`#catalogo` de decants y `#completos` de perfumes completos, con su formulario de cotización), las 134 fichas de producto (`decants/*`, `completos/*`, generadas por `tools/generar_pagina_producto.py`), el nav global, el carrito completo (botón, panel, selector de medida y aviso al agregar) y el pie. La migración está completa; lo que queda del sistema heredado en `css/styles.css` y `css/fonts.css` son restos sin uso (ver la nota al final de Do's and Don'ts), deuda de limpieza y no parte de este sistema. El `theme-color` del navegador es yeso (#E2E1DE) en la portada y en todas las fichas.",
     "keyCharacteristics": [
-      "Muro de yeso neutro (#E2E1DE) como único fondo de sección; nunca crema.",
+      "Salas a todo lo ancho: yeso (#E2E1DE), papel (#fff) para exhibir frascos y una sola banda chocolate en originalidad; nunca crema.",
       "Chocolate como tinta: texto, líneas, botón principal y pie.",
       "Bodoni Moda para nombre, títulos y cifras; Hanken Grotesk para texto, etiquetas, botones y nav.",
       "Repisas de roble con canto chocolate como soporte de toda foto de producto.",
@@ -332,7 +332,7 @@
     "rules": [
       {
         "name": "The Chocolate Is Ink Rule",
-        "body": "El chocolate escribe; no pinta paredes. Ninguna sección completa lleva fondo chocolate salvo el pie global.",
+        "body": "El chocolate escribe; casi nunca pinta paredes. Solo la banda «100% originales» de la portada y el pie global llevan fondo chocolate; no agregues una tercera.",
         "section": "colors"
       },
       {
@@ -382,7 +382,7 @@
       "Do dar `background: var(--yeso)` a todo contenedor fijo o aislado que tenga detrás una foto con `multiply`."
     ],
     "donts": [
-      "Don't usar el chocolate como fondo de sección fuera del pie.",
+      "Don't usar el chocolate como fondo de sección fuera de la banda de originalidad y el pie.",
       "Don't calentar el yeso hacia crema (#E5E2DD, #E6E3DF se leen como crema).",
       "Don't usar crema, arena, terracota, cobre ni los puntos morado/verde del sistema heredado en superficies nuevas.",
       "Don't usar emoji como íconos; los íconos son SVG de trazo en tinta.",

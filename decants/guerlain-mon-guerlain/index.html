@@ -25,8 +25,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
 <link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
-<link href="/css/fonts.css?v=20261108j" rel="stylesheet">
-<link href="/css/styles.css?v=20261108j" rel="stylesheet">
+<link href="/css/fonts.css?v=20261108m" rel="stylesheet">
+<link href="/css/styles.css?v=20261108m" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,39 +69,36 @@
 
 <a class="saltar" href="#app">Saltar al contenido</a>
 
-<nav class="nav-lateral" id="nav-lateral" aria-label="Principal">
-  <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="/#home" class="nav-marca" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="Saúco" width="282" height="100"></a>
-  <ul class="nav-links">
-    <li class="nav-item-decants" id="nav-item-decants">
-      <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">
-        Decants
-        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
-      </button>
-      <ul class="nav-submenu" id="nav-decants-submenu">
-        <li><a href="/#catalogo/todos" data-genero="todos">Todos</a></li>
-        <li><a href="/#catalogo/hombre" data-genero="hombre">Hombre</a></li>
-        <li><a href="/#catalogo/mujer" data-genero="mujer">Mujer</a></li>
-      </ul>
-    </li>
-    <li class="nav-item-completos" id="nav-item-completos">
-      <button type="button" class="nav-desplegable" id="nav-completos-toggle" aria-expanded="false" aria-controls="nav-completos-submenu">
-        Perfumes completos
-        <span class="nav-desplegable-flecha" aria-hidden="true">▾</span>
-      </button>
-      <ul class="nav-submenu" id="nav-completos-submenu">
-        <li><a href="/#completos/todos" data-genero="completos-todos">Todos</a></li>
-        <li><a href="/#completos/dama" data-genero="completos-dama">Dama</a></li>
-        <li><a href="/#completos/caballero" data-genero="completos-caballero">Caballero</a></li>
-        <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
-      </ul>
-    </li>
-    <li class="nav-extra nav-extra-primero"><a href="/#originalidad">100% originales</a></li>
-    <li class="nav-extra"><a href="https://wa.me/525612567245" class="nav-whatsapp">WhatsApp <span>56 1256 7245</span></a></li>
-  </ul>
-</nav>
+<header class="encabezado" id="encabezado">
+  <div class="encabezado-fila">
+    <a class="encabezado-whatsapp" href="https://wa.me/525612567245">WhatsApp<span> 56 1256 7245</span></a>
+    <a href="/#home" class="nav-marca" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="Saúco" width="282" height="100"></a>
+  </div>
+  <nav class="nav-principal" id="nav-principal" aria-label="Principal">
+    <a href="/#home" class="nav-marca-mini" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="" width="282" height="100"></a>
+    <ul class="nav-links">
+      <li class="nav-item-decants" id="nav-item-decants">
+        <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">Decants<span class="nav-desplegable-flecha" aria-hidden="true"></span></button>
+        <ul class="nav-submenu" id="nav-decants-submenu">
+          <li><a href="/#catalogo/todos" data-genero="todos">Todos los decants</a></li>
+          <li><a href="/#catalogo/hombre" data-genero="hombre">Hombre</a></li>
+          <li><a href="/#catalogo/mujer" data-genero="mujer">Mujer</a></li>
+        </ul>
+      </li>
+      <li class="nav-item-completos" id="nav-item-completos">
+        <button type="button" class="nav-desplegable" id="nav-completos-toggle" aria-expanded="false" aria-controls="nav-completos-submenu"><span><span class="solo-escritorio">Perfumes </span>completos</span><span class="nav-desplegable-flecha" aria-hidden="true"></span></button>
+        <ul class="nav-submenu" id="nav-completos-submenu">
+          <li><a href="/#completos/todos" data-genero="completos-todos">Todos los completos</a></li>
+          <li><a href="/#completos/dama" data-genero="completos-dama">Dama</a></li>
+          <li><a href="/#completos/caballero" data-genero="completos-caballero">Caballero</a></li>
+          <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
+        </ul>
+      </li>
+      <li><a href="/#originalidad" data-genero="originalidad"><span><span class="solo-escritorio">100% </span>originales</span></a></li>
+      <li class="solo-escritorio"><a href="/#como-pedir" data-genero="como-pedir">Cómo pedir</a></li>
+    </ul>
+  </nav>
+</header>
 
 <main class="ficha" id="app" tabindex="-1">
   <div class="ficha-contenido">
@@ -132,14 +129,14 @@
       <p>Mon Guerlain, lanzada en 2017 por Thierry Wasser y Delphine Jelk, reinterpreta la lavanda —tradicionalmente masculina en la casa Guerlain— dentro de un bouquet floral femenino y contemporáneo. Abre con lavanda y bergamota frescas, se despliega en un corazón polvoriento de iris, jazmín sambac y rosa, y cierra en una base gourmand de vainilla de Tahití, sándalo y regaliz.</p><p>Es una fragancia amaderada oriental dulce y envolvente, con un carácter moderno que combina frescura aromática y calidez golosa — funciona todo el año, ideal para el uso diario y también para la noche.</p>
     </section>
 
-    <section class="ficha-siguiente" aria-labelledby="siguiente-titulo">
-      <h2 id="siguiente-titulo" class="ficha-h2">¿Te convenció?</h2>
-      <div class="ficha-botella"><p>Si la quieres en botella completa, te la cotizamos: original y sobre pedido (de 7 a 10 días hábiles).</p><a class="enlace-secundario" href="https://wa.me/525612567245?text=Hola%2C%20me%20interesa%20la%20botella%20completa%20de%20Guerlain%20Mon%20Guerlain.%20%C2%BFMe%20la%20pueden%20cotizar%3F">Cotízala por WhatsApp</a></div>
-      <h3 class="ficha-h3">También te puede gustar</h3><ul class="ficha-relacionados"><li><a class="relacionado" href="/decants/valentino-donna-born-in-roma-intense/"><span class="relacionado-foto"><img src="/imagenes/born in roma intense donna.webp" alt="" loading="lazy" style="--escala:1"></span><span class="relacionado-casa">Valentino</span><span class="relacionado-nombre">Donna Born in Roma Intense</span><span class=relacionado-precio>Desde $155 · 3&nbsp;ml</span></a></li><li><a class="relacionado" href="/decants/carolina-herrera-good-girl-blush/"><span class="relacionado-foto"><img src="/imagenes/good girl blush.webp" alt="" loading="lazy" style="--escala:1"></span><span class="relacionado-casa">Carolina Herrera</span><span class="relacionado-nombre">Good Girl Blush</span><span class=relacionado-precio>Desde $170 · 3&nbsp;ml</span></a></li><li><a class="relacionado" href="/decants/lancome-la-vie-est-belle/"><span class="relacionado-foto"><img src="/imagenes/la vie est belle.webp" alt="" loading="lazy" style="--escala:1"></span><span class="relacionado-casa">Lancôme</span><span class="relacionado-nombre">La Vie Est Belle</span><span class=relacionado-precio>Desde $150 · 3&nbsp;ml</span></a></li></ul>
-    </section>
-
     <a class="enlace-secundario ficha-volver" href="/#catalogo/todos">Ver todos los decants</a>
   </div>
+
+  <section class="ficha-siguiente ficha-sala" aria-labelledby="siguiente-titulo">
+    <h2 id="siguiente-titulo" class="ficha-h2">¿Te convenció?</h2>
+    <div class="ficha-botella"><p>Si la quieres en botella completa, te la cotizamos: original y sobre pedido (de 7 a 10 días hábiles).</p><a class="enlace-secundario" href="https://wa.me/525612567245?text=Hola%2C%20me%20interesa%20la%20botella%20completa%20de%20Guerlain%20Mon%20Guerlain.%20%C2%BFMe%20la%20pueden%20cotizar%3F">Cotízala por WhatsApp</a></div>
+    <h3 class="ficha-h3">También te puede gustar</h3><ul class="ficha-relacionados"><li><a class="relacionado" href="/decants/valentino-donna-born-in-roma-intense/"><span class="relacionado-foto"><img src="/imagenes/born in roma intense donna.webp" alt="" loading="lazy" style="--escala:1"></span><span class="relacionado-casa">Valentino</span><span class="relacionado-nombre">Donna Born in Roma Intense</span><span class=relacionado-precio>Desde $155 · 3&nbsp;ml</span></a></li><li><a class="relacionado" href="/decants/carolina-herrera-good-girl-blush/"><span class="relacionado-foto"><img src="/imagenes/good girl blush.webp" alt="" loading="lazy" style="--escala:1"></span><span class="relacionado-casa">Carolina Herrera</span><span class="relacionado-nombre">Good Girl Blush</span><span class=relacionado-precio>Desde $170 · 3&nbsp;ml</span></a></li><li><a class="relacionado" href="/decants/lancome-la-vie-est-belle/"><span class="relacionado-foto"><img src="/imagenes/la vie est belle.webp" alt="" loading="lazy" style="--escala:1"></span><span class="relacionado-casa">Lancôme</span><span class="relacionado-nombre">La Vie Est Belle</span><span class=relacionado-precio>Desde $150 · 3&nbsp;ml</span></a></li></ul>
+  </section>
 </main>
 
 <button id="carrito-boton" aria-label="Ver carrito">
@@ -172,8 +169,8 @@
   </div>
 </div>
 
-<script src="/js/data.js?v=20261108j"></script>
-<script src="/js/main.js?v=20261108j"></script>
-<script src="/js/carrito.js?v=20261108j"></script>
+<script src="/js/data.js?v=20261108m"></script>
+<script src="/js/main.js?v=20261108m"></script>
+<script src="/js/carrito.js?v=20261108m"></script>
 </body>
 </html>
