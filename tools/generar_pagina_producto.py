@@ -18,6 +18,7 @@ que "Agregar al carrito" funcione igual que en el catálogo.
 """
 
 import json
+from urllib.parse import quote
 import subprocess
 from pathlib import Path
 
@@ -26,7 +27,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # Versión de CSS/JS: cámbiala cada vez que se publiquen cambios en css/ o js/
 # para que los navegadores descarguen los archivos nuevos en lugar de usar los
 # que tienen guardados (deben coincidir con los de index.html).
-VERSION_ARCHIVOS = "20261108c"
+VERSION_ARCHIVOS = "20261108g"
 DATA_JS = RAIZ / "js" / "data.js"
 
 # --- Contenido editorial curado a mano, un producto a la vez ------------
@@ -3524,7 +3525,7 @@ def precios_html(precios):
 
 NAV_HTML = """<a class="saltar" href="#app">Saltar al contenido</a>
 
-<nav class="nav-lateral" id="nav-lateral">
+<nav class="nav-lateral" id="nav-lateral" aria-label="Principal">
   <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -3557,7 +3558,6 @@ NAV_HTML = """<a class="saltar" href="#app">Saltar al contenido</a>
 </nav>"""
 
 CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
-  <span aria-hidden="true">🛒</span>
   <span id="carrito-contador" hidden>0</span>
 </button>
 
@@ -3577,13 +3577,13 @@ CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
 
 <div class="footer-global">
   <div class="footer-nombre"><img src="/imagenes/logo/sauco-flor-vertical-claro.svg" alt="Saúco" width="142" height="152" loading="lazy"></div>
-  <div class="footer-sub">Decants · Monterrey · Envíos a todo México</div>
+  <div class="footer-sub">Decants · Monterrey · Envíos a todo&nbsp;México</div>
   <div class="footer-contacto">Escríbenos por WhatsApp o DM de Instagram para hacer tu pedido</div>
   <div class="footer-redes">
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">Facebook</span><span class="red-handle-dark"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Saúco Decants</a></span></div>
-    <div class="red-item"><span class="red-icon" style="color:rgba(184,115,51,0.6)">WhatsApp</span><span class="red-handle-dark"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
+    <div class="red-item"><span class="red-icon">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
+    <div class="red-item"><span class="red-icon">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
+    <div class="red-item"><span class="red-icon">Facebook</span><span class="red-handle-dark"><a href="https://www.facebook.com/share/175fic6S1r/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Saúco Decants</a></span></div>
+    <div class="red-item"><span class="red-icon">WhatsApp</span><span class="red-handle-dark"><a href="https://wa.me/525612567245">56 1256 7245</a></span></div>
   </div>
 </div>
 
@@ -3646,12 +3646,12 @@ def render_pagina(perfume, contenido):
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="{titulo}">
 <meta property="og:description" content="{meta_desc}">
-<meta property="og:image" content="https://saucodecants.com{perfume['imagen']}">
+<meta property="og:image" content="https://saucodecants.com{quote(perfume['imagen'])}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{titulo}">
 <meta name="twitter:description" content="{meta_desc}">
-<meta name="twitter:image" content="https://saucodecants.com{perfume['imagen']}">
+<meta name="twitter:image" content="https://saucodecants.com{quote(perfume['imagen'])}">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
@@ -3665,7 +3665,7 @@ def render_pagina(perfume, contenido):
   "name": "{casa} {nombre_mostrar}",
   "brand": {{ "@type": "Brand", "name": "{casa}" }},
   "description": "{meta_desc}",
-  "image": "https://saucodecants.com{perfume['imagen']}",
+  "image": "https://saucodecants.com{quote(perfume['imagen'])}",
   "url": "{url}",
   "offers": [
 {ofertas}  ]
@@ -3774,12 +3774,12 @@ def render_pagina_completo(perfume, contenido):
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="{titulo}">
 <meta property="og:description" content="{meta_desc}">
-<meta property="og:image" content="https://saucodecants.com{perfume['imagen']}">
+<meta property="og:image" content="https://saucodecants.com{quote(perfume['imagen'])}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{titulo}">
 <meta name="twitter:description" content="{meta_desc}">
-<meta name="twitter:image" content="https://saucodecants.com{perfume['imagen']}">
+<meta name="twitter:image" content="https://saucodecants.com{quote(perfume['imagen'])}">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
@@ -3793,7 +3793,7 @@ def render_pagina_completo(perfume, contenido):
   "name": "{casa} {nombre_mostrar} {conc_y_tamano}",
   "brand": {{ "@type": "Brand", "name": "{casa}" }},
   "description": "{meta_desc}",
-  "image": "https://saucodecants.com{perfume['imagen']}",
+  "image": "https://saucodecants.com{quote(perfume['imagen'])}",
   "url": "{url}",
 {oferta}
 }}

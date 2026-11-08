@@ -47,7 +47,7 @@ Saúco no se posiciona por precio bajo. Ningún texto debe venderlo como "el má
 - **Formas de pago:** transferencia o tarjeta.
 - **Qué recibe el cliente (dato del dueño, 2026-11-08):** 3 ml en frasco de vidrio con atomizador y tapa de plástico transparente; 5 y 10 ml en carcasa de aluminio con frasco de vidrio adentro y atomizador plateado (presentación premium, más protegida contra caídas, pensada para viajar). Cada decant lleva etiqueta con la casa, el perfume, la concentración y la marca Saúco. El pedido se empaca en una caja de cartón etiquetada con el logo de Saúco. En el sitio se dice «llega en tu caja personalizada de Saúco»; no usar «estuche» (da a entender una protección adicional que no existe) ni detallar el material de la caja (indicación del dueño).
 - **Proceso de originalidad (dato del dueño):** las botellas originales de las que se decanta son de Saúco (compradas por Saúco); cada decant se prepara al momento del pedido, siempre en frasco y atomizador nuevos; si el cliente lo pide, se le manda por WhatsApp foto o video de la botella original.
-- No se publica un tiempo de respuesta por WhatsApp (el dueño no lo ha definido).
+- **Horario de atención por WhatsApp (dato del dueño, 2026-11-08):** lunes a sábado, de 9:00 a 20:00. No se promete un tiempo de respuesta más específico.
 
 ## Brand Commitments
 

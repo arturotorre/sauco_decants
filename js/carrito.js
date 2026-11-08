@@ -82,7 +82,27 @@ function agregarItem(datos) {
     carrito.push({ ...datos, cantidad: 1 });
   }
   carritoCambio();
+  ultimaAgregada = { tipo: datos.tipo, perfumeId: datos.perfumeId, tamano: datos.tamano };
   mostrarAviso(`${datos.alt || datos.nombre} · ${textoTamano(datos.tamano)}`);
+}
+
+// Deshacer: quita la última pieza agregada (por si fue un toque accidental).
+let ultimaAgregada = null;
+function deshacerUltima() {
+  if (!ultimaAgregada) return;
+  const u = ultimaAgregada;
+  const i = carrito.findIndex(item => item.tipo === u.tipo && item.perfumeId === u.perfumeId && item.tamano === u.tamano);
+  if (i >= 0) {
+    if (carrito[i].cantidad > 1) carrito[i].cantidad -= 1; else carrito.splice(i, 1);
+    carritoCambio();
+  }
+  ultimaAgregada = null;
+  const aviso = document.getElementById('carrito-aviso');
+  if (aviso) {
+    aviso.innerHTML = '<span class="carrito-aviso-texto">Se quitó del carrito</span>';
+    clearTimeout(avisoTimer);
+    avisoTimer = setTimeout(ocultarAviso, 2000);
+  }
 }
 
 function agregarAlCarrito(perfume, tamano) {
@@ -182,22 +202,27 @@ const ENVIO = {
   nacional: { etiqueta: 'Envío nacional', costoMin: 160, costoMax: 200, gratisDesde: 1500, tiempo: '1 a 3 días hábiles' }
 };
 const FORMAS_PAGO = ['Transferencia', 'Tarjeta'];
+const HORARIO = 'de lunes a sábado, de 9:00 a 20:00';
+const PEDIDO_STORAGE_KEY = 'sauco_pedido';
 const ENVIO_STORAGE_KEY = 'sauco_envio';
 const CAMPOS_ENVIO = [
   { id: 'nombre', etiqueta: 'Nombre de quien recibe', tipo: 'text', auto: 'name', requerido: true },
   { id: 'telefono', etiqueta: 'Teléfono (10 dígitos)', tipo: 'tel', auto: 'tel-national', requerido: true, modo: 'numeric' },
   { id: 'calle', etiqueta: 'Calle y número', tipo: 'text', auto: 'address-line1', requerido: true },
   { id: 'colonia', etiqueta: 'Colonia', tipo: 'text', auto: 'address-line2', requerido: true },
-  { id: 'ciudad', etiqueta: 'Ciudad o municipio', tipo: 'text', auto: 'address-level2', requerido: true },
+  { id: 'ciudad', etiqueta: 'Ciudad o municipio', tipo: 'text', auto: 'address-level2', requerido: true, ejemplo: 'Ej. Monterrey, San Pedro, Guadalupe' },
   { id: 'estado', etiqueta: 'Estado', tipo: 'text', auto: 'address-level1', requerido: true },
   { id: 'cp', etiqueta: 'Código postal', tipo: 'text', auto: 'postal-code', requerido: true, modo: 'numeric' },
-  { id: 'referencias', etiqueta: 'Referencias (opcional)', tipo: 'textarea', requerido: false, ayuda: 'Entre qué calles, color de la casa, etc.' }
+  { id: 'referencias', etiqueta: 'Referencias (opcional)', tipo: 'textarea', requerido: false, ayuda: 'Entre qué calles, color de la casa, etc.' },
+  { id: 'fecha', etiqueta: '¿Para cuándo lo necesitas? (opcional)', tipo: 'date', requerido: false, ayuda: 'Para un viaje o evento. Te confirmamos por WhatsApp si llega a tiempo.' }
 ];
 
 let carritoPaso = 'carrito'; // 'carrito' | 'envio' | 'enviado'
-let envio = { entrega: '', pago: '', nombre: '', telefono: '', calle: '', colonia: '', ciudad: '', estado: '', cp: '', referencias: '' };
+let envio = { entrega: '', pago: '', nombre: '', telefono: '', calle: '', colonia: '', ciudad: '', estado: '', cp: '', referencias: '', fecha: '' };
 let envioErrores = {};
-let ultimoPedido = null; // { numero, mensaje }
+let ultimoPedido = null; // { numero, firma, mensaje, entrega, pago, conCompletos, resumen }
+let confirmandoNuevo = false;
+let verCarritoSinPedido = false;
 
 function cargarEnvio() {
   try {
@@ -212,6 +237,46 @@ function guardarEnvio() {
 
 function hayCompletos() {
   return carrito.some(item => item.tipo === 'completo');
+}
+
+// El envío gratis y los costos son de decants: el mínimo se calcula solo con
+// el subtotal de decants. El envío de perfumes completos se confirma aparte.
+function subtotalDecants() {
+  return carrito.reduce((s, i) => i.tipo === 'decant' && i.precio != null ? s + i.precio * i.cantidad : s, 0);
+}
+function hayDecants() {
+  return carrito.some(i => i.tipo === 'decant');
+}
+function envioPedido(entrega) {
+  if (!hayDecants()) return { texto: 'Se confirma por WhatsApp', monto: null };
+  return envioEstimado(entrega, subtotalDecants());
+}
+function totalEstimadoTexto(entrega) {
+  const sub = calcularTotal();
+  const est = envioPedido(entrega);
+  if (est.monto == null) return `${formatoPrecio(sub)} + envío`;
+  return formatoPrecio(sub + est.monto) + (hayCompletos() ? ' + envío de completos' : '');
+}
+
+// Firma del carrito: si no cambia, un pedido ya generado conserva su número.
+function firmaCarrito() {
+  return JSON.stringify(carrito.map(i => [i.perfumeId, i.tipo, i.tamano, i.cantidad]));
+}
+function guardarPedido() {
+  try { localStorage.setItem(PEDIDO_STORAGE_KEY, JSON.stringify(ultimoPedido)); } catch (e) { /* sin persistencia */ }
+}
+function cargarPedido() {
+  try {
+    const p = JSON.parse(localStorage.getItem(PEDIDO_STORAGE_KEY));
+    if (p && typeof p.numero === 'string' && typeof p.mensaje === 'string') ultimoPedido = p;
+  } catch (e) { /* sin datos */ }
+}
+function borrarPedido() {
+  ultimoPedido = null;
+  try { localStorage.removeItem(PEDIDO_STORAGE_KEY); } catch (e) { /* nada */ }
+}
+function pedidoVigente() {
+  return ultimoPedido && carrito.length && ultimoPedido.firma === firmaCarrito();
 }
 
 function envioEstimado(entrega, subtotal) {
@@ -238,14 +303,15 @@ function resumenEnvioHTML() {
     <p><strong>Envío en Monterrey:</strong> ${formatoPrecio(l.costo)} (${formatoPrecio(l.costoExtendida)} en zonas extendidas), gratis desde ${formatoPrecio(l.gratisDesde)}. Llega en ${l.tiempo}.</p>
     <p><strong>Envío nacional:</strong> aprox. ${formatoPrecio(n.costoMin)}–${formatoPrecio(n.costoMax)} según tu código postal, gratis desde ${formatoPrecio(n.gratisDesde)}. Llega en ${n.tiempo}.</p>
     <p><strong>Pago:</strong> transferencia o tarjeta; te mandamos los datos por WhatsApp.</p>
+    <p><strong>Atención:</strong> te respondemos por WhatsApp ${HORARIO}.</p>
     ${hayCompletos() ? '<p>Los perfumes completos se piden sobre pedido (7 a 10 días hábiles); su envío se confirma por WhatsApp.</p>' : ''}
   </div>`;
 }
 
-function encabezadoCarrito(titulo, conAtras) {
+function encabezadoCarrito(titulo, conAtras, paso) {
   const h = document.getElementById('carrito-titulo');
   const atras = document.getElementById('carrito-atras');
-  if (h) h.textContent = titulo;
+  if (h) h.innerHTML = escaparHTML(titulo) + (paso ? ` <span class="carrito-paso">· ${paso} de 3</span>` : '');
   if (atras) atras.hidden = !conAtras;
 }
 
@@ -263,7 +329,8 @@ function campoHTML(c) {
   const err = envioErrores[c.id];
   const idCampo = `envio-${c.id}`;
   const desc = [c.ayuda ? `${idCampo}-ayuda` : '', err ? `${idCampo}-error` : ''].filter(Boolean).join(' ');
-  const comunes = `id="${idCampo}" name="${c.id}" ${c.auto ? `autocomplete="${c.auto}"` : ''} ${c.modo ? `inputmode="${c.modo}"` : ''} ${c.requerido ? 'required aria-required="true"' : ''} ${err ? 'aria-invalid="true"' : ''} ${desc ? `aria-describedby="${desc}"` : ''}`;
+  const hoy = new Date(); const minFecha = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, '0')}-${String(hoy.getDate()).padStart(2, '0')}`;
+  const comunes = `id="${idCampo}" name="${c.id}" ${c.ejemplo ? `placeholder="${c.ejemplo}"` : ''} ${c.tipo === 'date' ? `min="${minFecha}"` : ''} ${c.auto ? `autocomplete="${c.auto}"` : ''} ${c.modo ? `inputmode="${c.modo}"` : ''} ${c.requerido ? 'required aria-required="true"' : ''} ${err ? 'aria-invalid="true"' : ''} ${desc ? `aria-describedby="${desc}"` : ''}`;
   const control = c.tipo === 'textarea'
     ? `<textarea ${comunes} rows="2">${escaparHTML(envio[c.id])}</textarea>`
     : `<input type="${c.tipo}" ${comunes} value="${escaparHTML(envio[c.id])}">`;
@@ -288,30 +355,45 @@ function opcionesHTML(nombre, opciones, actual, leyenda) {
 }
 
 function pasoEnvioHTML() {
-  const sub = calcularTotal();
-  const local = envioEstimado('local', sub), nac = envioEstimado('nacional', sub);
+  const local = envioPedido('local'), nac = envioPedido('nacional');
+  const n = totalArticulos();
+  const resumen = `<details class="envio-resumen">
+    <summary>${n} ${n === 1 ? 'artículo' : 'artículos'} · ${formatoPrecio(calcularTotal())}</summary>
+    <ul>${carrito.map(i => `<li>${escaparHTML(i.alt || i.nombre)} · ${escaparHTML(textoTamano(i.tamano))}${i.cantidad > 1 ? ` ×${i.cantidad}` : ''}</li>`).join('')}</ul>
+  </details>`;
   return `<form id="form-envio" class="envio-form" novalidate>
+    ${resumen}
     ${opcionesHTML('entrega', [
       { valor: 'local', titulo: 'Entrega en Monterrey', detalle: `${local.texto} · ${ENVIO.local.tiempo}` },
       { valor: 'nacional', titulo: 'Envío nacional', detalle: `${nac.texto} · ${ENVIO.nacional.tiempo}` }
     ], envio.entrega, '¿Dónde lo recibes?')}
     ${opcionesHTML('pago', FORMAS_PAGO.map(f => ({ valor: f, titulo: f })), envio.pago, '¿Cómo prefieres pagar?')}
-    <fieldset class="envio-datos"><legend>Datos de envío</legend>${CAMPOS_ENVIO.map(campoHTML).join('')}</fieldset>
+    <fieldset class="envio-datos"><legend>¿A quién y a dónde lo enviamos?</legend>${CAMPOS_ENVIO.map(campoHTML).join('')}</fieldset>
   </form>`;
 }
 
 function pasoEnviadoHTML() {
   const p = ultimoPedido;
+  const r = p.resumen || {};
+  const productos = carrito.map(i => `<li>${escaparHTML(i.casa)} ${escaparHTML(i.nombre)} · ${escaparHTML(textoTamano(i.tamano))}${i.cantidad > 1 ? ` ×${i.cantidad}` : ''}</li>`).join('');
   return `<div class="pedido-enviado">
-    <p class="pedido-numero">Pedido <strong>#${p.numero}</strong></p>
-    <p>Abrimos WhatsApp con tu pedido ya escrito. Envíalo desde ahí para que lo recibamos.</p>
-    <button type="button" class="btn-secundario" data-accion="reenviar">Abrir WhatsApp de nuevo</button>
+    <p class="pedido-numero">Pedido <strong>#${escaparHTML(p.numero)}</strong></p>
+    <p class="pedido-aviso">Abrimos WhatsApp con tu pedido ya escrito. <strong>Envíalo desde ahí para que lo recibamos;</strong> si no se abrió, usa el botón de abajo.</p>
+    <dl class="pedido-resumen">
+      <div><dt>Productos</dt><dd><ul>${productos}</ul></dd></div>
+      <div><dt>Total estimado</dt><dd>${escaparHTML(r.total || '')}</dd></div>
+      <div><dt>Entrega</dt><dd>${escaparHTML(r.entrega || '')}</dd></div>
+      <div><dt>Dirección</dt><dd>${escaparHTML(r.direccion || '')}</dd></div>
+      <div><dt>Pago</dt><dd>${escaparHTML(p.pago)}</dd></div>
+      ${r.fecha ? `<div><dt>Lo necesitas</dt><dd>${escaparHTML(r.fecha)} · te confirmamos si llega a tiempo</dd></div>` : ''}
+    </dl>
     <h3 class="pedido-subtitulo">Lo que sigue</h3>
     <ol class="pedido-pasos">
-      <li>Te respondemos por WhatsApp para confirmar tu pedido y el pago por ${p.pago.toLowerCase()}.</li>
-      <li>Al confirmarse el pago, preparamos tu envío.</li>
+      <li>Te respondemos por WhatsApp ${HORARIO}, para confirmar tu pedido y el pago por ${escaparHTML(p.pago.toLowerCase())}.</li>
+      <li>Al confirmarse el pago, preparamos tus decants al momento.</li>
       <li>${p.entrega === 'local' ? `Entrega en Monterrey: ${ENVIO.local.tiempo}.` : `Envío nacional: ${ENVIO.nacional.tiempo}.`}${p.conCompletos ? ' Los perfumes completos tardan de 7 a 10 días hábiles.' : ''}</li>
     </ol>
+    <p class="pedido-gracias">Gracias por elegir Saúco.</p>
   </div>`;
 }
 
@@ -326,25 +408,31 @@ function renderCarrito() {
   const hayPendientes = carrito.some(item => item.precio == null);
 
   if (carritoPaso === 'envio') {
-    encabezadoCarrito('Datos de envío', true);
+    encabezadoCarrito('Datos de envío', true, 2);
     cont.innerHTML = pasoEnvioHTML();
-    const est = envioEstimado(envio.entrega, sub);
-    const totalTexto = est.monto != null ? formatoPrecio(sub + est.monto) : `${formatoPrecio(sub)} + envío`;
+    const est = envioPedido(envio.entrega);
     pie.innerHTML = `
       <div class="carrito-total-fila"><span>Subtotal</span><span>${formatoPrecio(sub)}</span></div>
-      <div class="carrito-total-fila"><span>Envío</span><span class="carrito-envio-texto">${envio.entrega ? est.texto : 'Elige dónde lo recibes'}</span></div>
-      <div class="carrito-total-fila carrito-total-final"><span>Total estimado</span><span class="carrito-total-monto">${totalTexto}</span></div>
+      <div class="carrito-total-fila"><span>Envío${hayCompletos() && hayDecants() ? ' de decants' : ''}</span><span class="carrito-envio-texto">${envio.entrega || !hayDecants() ? est.texto : 'Elige dónde lo recibes'}</span></div>
+      ${hayCompletos() && hayDecants() ? '<div class="carrito-total-fila"><span>Envío de completos</span><span class="carrito-envio-texto">Se confirma por WhatsApp</span></div>' : ''}
+      <div class="carrito-total-fila carrito-total-final"><span>Total estimado</span><span class="carrito-total-monto">${totalEstimadoTexto(envio.entrega)}</span></div>
       <button type="submit" form="form-envio" class="carrito-principal">Enviar pedido por WhatsApp</button>
       <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido y tus datos ya escritos.</p>`;
-  } else if (carritoPaso === 'enviado' && ultimoPedido) {
-    encabezadoCarrito('Pedido listo', false);
+  } else if (carritoPaso === 'enviado' && pedidoVigente()) {
+    encabezadoCarrito('Último paso', false, 3);
     cont.innerHTML = pasoEnviadoHTML();
-    pie.innerHTML = `
-      <button type="button" class="carrito-principal" data-accion="nuevo">Hacer un pedido nuevo</button>
-      <button type="button" class="enlace-secundario carrito-volver" data-accion="volver">Volver a mi carrito</button>`;
+    pie.innerHTML = confirmandoNuevo ? `
+      <p class="carrito-confirmar">¿Vaciar el carrito y empezar otro pedido? El pedido #${escaparHTML(ultimoPedido.numero)} no se borra de WhatsApp si ya lo enviaste.</p>
+      <button type="button" class="carrito-principal" data-accion="nuevo-si">Sí, vaciar el carrito</button>
+      <button type="button" class="enlace-secundario carrito-volver" data-accion="nuevo-no">Cancelar</button>` : `
+      <button type="button" class="carrito-principal" data-accion="reenviar">Abrir WhatsApp para enviarlo</button>
+      <div class="carrito-enlaces">
+        <button type="button" class="enlace-secundario" data-accion="volver">Volver a mi carrito</button>
+        <button type="button" class="enlace-secundario" data-accion="nuevo">Hacer un pedido nuevo</button>
+      </div>`;
   } else {
     carritoPaso = 'carrito';
-    encabezadoCarrito('Tu carrito', false);
+    encabezadoCarrito('Tu carrito', false, carrito.length ? 1 : 0);
     cont.innerHTML = pasoCarritoHTML();
     pie.innerHTML = carrito.length ? `
       <div class="carrito-total-fila"><span>Subtotal · ${n} ${n === 1 ? 'artículo' : 'artículos'}</span><span class="carrito-total-monto">${formatoPrecio(sub)}</span></div>
@@ -376,6 +464,7 @@ function validarEnvio() {
   const tel = envio.telefono.replace(/\D/g, '').replace(/^52(?=\d{10}$)/, '');
   if (envio.telefono && tel.length !== 10) e.telefono = 'El teléfono debe tener 10 dígitos, por ejemplo 81 1234 5678.';
   if (envio.cp && !/^\d{5}$/.test(envio.cp.replace(/\s/g, ''))) e.cp = 'El código postal tiene 5 dígitos.';
+  if (envio.fecha && new Date(envio.fecha + 'T23:59:59') < new Date()) e.fecha = 'Elige una fecha de hoy en adelante.';
   return e;
 }
 
@@ -389,6 +478,8 @@ function carritoAbierto() {
 
 function abrirCarrito() {
   if (carritoPaso === 'envio') carritoPaso = 'carrito';
+  confirmandoNuevo = false;
+  carritoPaso = pedidoVigente() && !verCarritoSinPedido ? 'enviado' : (carritoPaso === 'enviado' ? 'carrito' : carritoPaso);
   renderCarrito();
   ocultarAviso();
   const overlay = document.getElementById('carrito-overlay');
@@ -438,12 +529,15 @@ let avisoTimer = null;
 function mostrarAviso(texto) {
   const aviso = document.getElementById('carrito-aviso');
   if (!aviso) return;
-  aviso.innerHTML = `<span class="carrito-aviso-texto"><strong>${escaparHTML(texto)}</strong> agregado al carrito</span>
-    <button type="button" class="carrito-aviso-ver">Ver carrito</button>`;
+  aviso.innerHTML = `<span class="carrito-aviso-texto"><strong>${escaparHTML(texto)}</strong> agregado</span>
+    <span class="carrito-aviso-acciones">
+      <button type="button" class="carrito-aviso-deshacer">Deshacer</button>
+      <button type="button" class="carrito-aviso-ver">Ver carrito</button>
+    </span>`;
   aviso.hidden = false;
   requestAnimationFrame(() => aviso.classList.add('visible'));
   clearTimeout(avisoTimer);
-  avisoTimer = setTimeout(ocultarAviso, 5000);
+  avisoTimer = setTimeout(ocultarAviso, 4000);
 }
 
 function ocultarAviso() {
@@ -521,7 +615,7 @@ function abrirWhatsApp(mensaje) {
 
 function mensajePedido(numeroPedido) {
   const sub = calcularTotal();
-  const est = envioEstimado(envio.entrega, sub);
+  const est = envioPedido(envio.entrega);
   const lineas = carrito.map(item => {
     const cantidadTexto = item.cantidad > 1 ? ` x${item.cantidad}` : '';
     if (item.precio == null) {
@@ -538,14 +632,15 @@ function mensajePedido(numeroPedido) {
     + `Número de pedido: ${numeroPedido}\n\n`
     + lineas.join('\n')
     + `\n\nSubtotal: ${formatoPrecio(sub)}`
-    + `\nEnvío (${ENVIO[envio.entrega].etiqueta}): ${est.texto}`
-    + `\nTotal estimado: ${est.monto != null ? formatoPrecio(sub + est.monto) : formatoPrecio(sub) + ' + envío'}`
+    + `\nEnvío${hayCompletos() && hayDecants() ? ' de decants' : ''} (${ENVIO[envio.entrega].etiqueta}): ${est.texto}`
+    + `\nTotal estimado: ${totalEstimadoTexto(envio.entrega)}`
     + `\nForma de pago: ${envio.pago}`
     + '\n\nDatos de envío:'
     + `\nNombre: ${envio.nombre}`
     + `\nTeléfono: ${tel}`
     + `\nDirección: ${envio.calle}, col. ${envio.colonia}, C.P. ${envio.cp.replace(/\s/g, '')}, ${envio.ciudad}, ${envio.estado}`
-    + (envio.referencias ? `\nReferencias: ${envio.referencias}` : '');
+    + (envio.referencias ? `\nReferencias: ${envio.referencias}` : '')
+    + (envio.fecha ? `\n\nLo necesito para: ${fechaLegible(envio.fecha)}` : '');
   if (carrito.some(item => item.precio == null)) {
     m += '\n\n(Nota: hay productos con precio por confirmar, no incluidos en el total.)';
   }
@@ -553,6 +648,11 @@ function mensajePedido(numeroPedido) {
     m += '\n\n(Incluye perfumes completos: sobre pedido, 7 a 10 días hábiles; el envío se confirma por WhatsApp.)';
   }
   return m;
+}
+
+function fechaLegible(iso) {
+  try { return new Date(iso + 'T12:00:00').toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'long' }); }
+  catch (e) { return iso; }
 }
 
 function checkoutWhatsApp(form) {
@@ -569,9 +669,20 @@ function checkoutWhatsApp(form) {
     destino?.focus();
     return;
   }
-  const numero = generarNumeroPedido();
+  const firma = firmaCarrito();
+  const numero = ultimoPedido && ultimoPedido.firma === firma ? ultimoPedido.numero : generarNumeroPedido();
   const mensaje = mensajePedido(numero);
-  ultimoPedido = { numero, mensaje, entrega: envio.entrega, pago: envio.pago, conCompletos: hayCompletos() };
+  ultimoPedido = {
+    numero, firma, mensaje, entrega: envio.entrega, pago: envio.pago, conCompletos: hayCompletos(),
+    resumen: {
+      total: totalEstimadoTexto(envio.entrega),
+      entrega: `${ENVIO[envio.entrega].etiqueta} · ${envioPedido(envio.entrega).texto}`,
+      direccion: `${envio.calle}, col. ${envio.colonia}, C.P. ${envio.cp.replace(/\s/g, '')}, ${envio.ciudad}, ${envio.estado}`,
+      fecha: envio.fecha ? fechaLegible(envio.fecha) : ''
+    }
+  };
+  guardarPedido();
+  verCarritoSinPedido = false;
   abrirWhatsApp(mensaje);
   irAPaso('enviado');
 }
@@ -630,6 +741,7 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  if (e.target.closest('.carrito-aviso-deshacer')) { deshacerUltima(); return; }
   if (e.target.closest('.carrito-aviso-ver')) { abrirCarrito(); return; }
   if (e.target.closest('#carrito-boton')) { abrirCarrito(); return; }
   const accion = e.target.closest('[data-accion]');
@@ -637,9 +749,11 @@ document.addEventListener('click', (e) => {
     const a = accion.dataset.accion;
     if (a === 'continuar') { irAPaso('envio'); return; }
     if (a === 'reenviar' && ultimoPedido) { abrirWhatsApp(ultimoPedido.mensaje); return; }
-    if (a === 'volver') { irAPaso('carrito'); return; }
-    if (a === 'nuevo') {
-      carrito = []; ultimoPedido = null; carritoCambio(); irAPaso('carrito'); return;
+    if (a === 'volver') { verCarritoSinPedido = true; irAPaso('carrito'); return; }
+    if (a === 'nuevo') { confirmandoNuevo = true; renderCarrito(); document.querySelector('[data-accion="nuevo-no"]')?.focus(); return; }
+    if (a === 'nuevo-no') { confirmandoNuevo = false; renderCarrito(); document.querySelector('[data-accion="nuevo"]')?.focus(); return; }
+    if (a === 'nuevo-si') {
+      confirmandoNuevo = false; carrito = []; borrarPedido(); carritoCambio(); irAPaso('carrito'); return;
     }
   }
   if (e.target.closest('#carrito-atras')) { irAPaso('carrito'); return; }
@@ -657,13 +771,21 @@ document.addEventListener('submit', (e) => {
   checkoutWhatsApp(e.target);
 });
 
+document.addEventListener('focusin', (e) => {
+  if (e.target.matches('#form-envio input:not([type="radio"]), #form-envio textarea')) document.getElementById('carrito-panel')?.classList.add('escribiendo');
+});
+document.addEventListener('focusout', (e) => {
+  if (e.target.closest('#form-envio')) setTimeout(() => {
+    if (!document.activeElement?.matches('#form-envio input:not([type="radio"]), #form-envio textarea')) document.getElementById('carrito-panel')?.classList.remove('escribiendo');
+  }, 0);
+});
+
 document.addEventListener('change', (e) => {
   const form = e.target.closest('#form-envio');
   if (!form) return;
   leerFormEnvio(form);
   // Al elegir entrega local se sugiere la ciudad y el estado si están vacíos.
   if (e.target.name === 'entrega' && envio.entrega === 'local') {
-    if (!envio.ciudad) envio.ciudad = 'Monterrey';
     if (!envio.estado) envio.estado = 'Nuevo León';
   }
   guardarEnvio();
@@ -699,6 +821,7 @@ function enviarConsultaDisponibilidad(nombrePerfume, marca) {
 document.addEventListener('DOMContentLoaded', () => {
   cargarCarrito();
   cargarEnvio();
+  cargarPedido();
   actualizarBadge();
   renderCarrito();
 
