@@ -28,8 +28,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
 <link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
-<link href="/css/fonts.css" rel="stylesheet">
-<link href="/css/styles.css" rel="stylesheet">
+<link href="/css/fonts.css?v=20261108b" rel="stylesheet">
+<link href="/css/styles.css?v=20261108b" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,7 +112,10 @@
           <button type="button" class="tira" data-ml="5ml" aria-pressed="true"><span class="tira-ml">5</span><span class="tira-unidad">ml</span><span class="tira-nombre">Viaje</span></button>
           <button type="button" class="tira" data-ml="10ml" aria-pressed="false"><span class="tira-ml">10</span><span class="tira-unidad">ml</span><span class="tira-nombre">Mensual</span></button>
         </div>
-        <p class="tira-lectura" id="tira-lectura" aria-live="polite"><strong>≈ 90 atomizaciones</strong> · Santal 33 en 5&nbsp;ml: $554</p>
+        <div class="tira-accion">
+          <p class="tira-lectura" id="tira-lectura" aria-live="polite"><strong>≈ 90 atomizaciones</strong><span class="tira-lectura-extra"> · Santal 33 en 5&nbsp;ml</span></p>
+          <button type="button" class="tira-agregar" id="tira-agregar" data-ml="5ml" aria-label="Agregar Le Labo Santal 33 de 5 ml al carrito">Agregar 5&nbsp;ml · $554</button>
+        </div>
       </div>
 
       <div class="atelier-acciones">
@@ -146,9 +149,23 @@
       </div>
     </section>
 
-    <section class="atelier-seccion originalidad" aria-labelledby="originalidad-titulo">
+    <section class="atelier-seccion originalidad" id="originalidad" aria-labelledby="originalidad-titulo">
       <h2 id="originalidad-titulo" class="originalidad-sello">100% originales</h2>
-      <p class="atelier-texto-largo">Así garantizamos la originalidad: cada decant de Saúco se saca de la botella original del perfume. Recibes exactamente la misma fragancia que se vende en tienda, solo que en la medida que tú eliges.</p>
+      <p class="atelier-texto-largo">Cada decant de Saúco sale de una botella original que es nuestra. Recibes la misma fragancia que se vende en tienda, en la medida que tú eliges. Así lo hacemos:</p>
+      <ol class="proceso">
+        <li class="proceso-paso"><span class="proceso-titulo">La botella original</span><span class="proceso-texto">Compramos cada perfume en su botella original; las botellas de las que decantamos son nuestras.</span></li>
+        <li class="proceso-paso"><span class="proceso-titulo">Decantado al momento</span><span class="proceso-texto">Preparamos tu decant cuando haces tu pedido, siempre en frasco y atomizador nuevos.</span></li>
+        <li class="proceso-paso"><span class="proceso-titulo">Etiquetado y empacado</span><span class="proceso-texto">Lleva la casa, el perfume, su concentración y la marca Saúco, y llega en tu caja personalizada de Saúco.</span></li>
+      </ol>
+      <p class="originalidad-prueba">¿Quieres verla? <a href="https://wa.me/525612567245?text=Hola%2C%20%C2%BFme%20pueden%20mandar%20una%20foto%20o%20video%20de%20la%20botella%20original%20de%20tu%20perfume%3F">Pídenos por WhatsApp una foto o video de la botella original</a> de tu perfume.</p>
+
+      <div class="recibes" aria-labelledby="recibes-titulo">
+        <h3 id="recibes-titulo" class="recibes-titulo">Qué recibes</h3>
+        <dl class="recibes-lista">
+          <div class="recibes-fila"><dt><span class="recibes-ml">3&nbsp;ml</span> Muestra</dt><dd>Frasco de vidrio con atomizador y tapa de plástico transparente. Unas 60 atomizaciones.</dd></div>
+          <div class="recibes-fila"><dt><span class="recibes-ml">5 y 10&nbsp;ml</span> Viaje y Mensual</dt><dd>Carcasa de aluminio con frasco de vidrio adentro y atomizador plateado: más protegido contra caídas y listo para llevar de viaje. Unas 90 y 180 atomizaciones.</dd></div>
+        </dl>
+      </div>
       <!-- Espacio para las fotos reales de Saúco (botella original, decantado, empaque).
            Reemplazar cada figura con la foto y quitar el atributo hidden. -->
       <div class="originalidad-fotos" hidden>
@@ -182,6 +199,7 @@
           <a class="catalogo-chip" href="/#catalogo/hombre" data-chip="hombre">Hombre</a>
           <a class="catalogo-chip" href="/#catalogo/mujer" data-chip="mujer">Mujer</a>
         </nav>
+        <p class="catalogo-leyenda"><strong>3&nbsp;ml</strong> Muestra, ≈60 atomizaciones · <strong>5&nbsp;ml</strong> Viaje, ≈90 · <strong>10&nbsp;ml</strong> Mensual, ≈180. <a href="/#originalidad">Qué recibes</a></p>
       </header>
 
       <section class="vitrina" id="catalogo-vitrina" aria-labelledby="vitrina-titulo">
@@ -278,15 +296,12 @@
 <div id="carrito-overlay" hidden></div>
 <aside id="carrito-panel" hidden role="dialog" aria-modal="true" aria-labelledby="carrito-titulo">
   <div class="carrito-panel-header">
-    <h2 id="carrito-titulo">Tu carrito</h2>
+    <button type="button" class="carrito-atras" id="carrito-atras" aria-label="Volver al carrito" hidden></button>
+    <h2 id="carrito-titulo" tabindex="-1">Tu carrito</h2>
     <button type="button" class="carrito-cerrar" aria-label="Cerrar carrito"></button>
   </div>
   <div id="carrito-items"></div>
-  <div class="carrito-panel-footer">
-    <div id="carrito-total"></div>
-    <button type="button" id="carrito-checkout-whatsapp">Enviar pedido por WhatsApp</button>
-    <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido ya escrito. Ahí te respondemos para coordinar el pago y el envío.</p>
-  </div>
+  <div class="carrito-panel-footer" id="carrito-pie"></div>
 </aside>
 
 <div id="selector-tamano" hidden></div>
@@ -304,8 +319,8 @@
   </div>
 </div>
 
-<script src="/js/data.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/carrito.js"></script>
+<script src="/js/data.js?v=20261108b"></script>
+<script src="/js/main.js?v=20261108b"></script>
+<script src="/js/carrito.js?v=20261108b"></script>
 </body>
 </html>

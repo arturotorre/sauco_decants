@@ -334,8 +334,21 @@ function renderPortada() {
     const precio = heroe && heroe.precios[ml];
     const medida = ml.replace('ml', '\u00a0ml');
     lectura.innerHTML = `<strong>≈ ${ATOMIZACIONES[ml]} atomizaciones</strong>` +
-      (heroe ? ` · ${heroe.alt} en ${medida}: ${precio || 'precio a consultar'}` : '');
+      (heroe ? `<span class="tira-lectura-extra"> · ${heroe.alt} en ${medida}</span>` : '');
+    if (botonAgregar && heroe) {
+      botonAgregar.dataset.ml = ml;
+      botonAgregar.textContent = `Agregar ${medida}${precio ? ' · ' + precio : ''}`;
+      botonAgregar.setAttribute('aria-label', `Agregar ${heroe.casa} ${heroe.alt} de ${medida.replace('\u00a0', ' ')} al carrito${precio ? ', ' + precio : ''}`);
+    }
   }
+  // Agregar el más vendido en la medida elegida, sin salir de la portada.
+  const botonAgregar = document.getElementById('tira-agregar');
+  botonAgregar?.addEventListener('click', () => {
+    if (!heroe || typeof agregarAlCarrito !== 'function') return;
+    agregarAlCarrito(heroe, botonAgregar.dataset.ml);
+    botonAgregar.classList.add('agregado');
+    setTimeout(() => botonAgregar.classList.remove('agregado'), 900);
+  });
   tiras.forEach(t => t.addEventListener('click', () => elegir(t.dataset.ml)));
   elegir((tiras.find(t => t.getAttribute('aria-pressed') === 'true') || tiras[1]).dataset.ml);
 
@@ -431,6 +444,7 @@ function route() {
   } else {
     vistaHome.hidden = false;
   }
+  const anclaHome = seccion === 'originalidad' ? document.getElementById('originalidad') : null;
 
   navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
   actualizarNavDecants(activo);
@@ -438,6 +452,7 @@ function route() {
   busquedaPendiente = '';
   actualizarTituloPagina(seccion, filtro);
   window.scrollTo(0, 0);
+  if (anclaHome) anclaHome.scrollIntoView();
   if (seccion === 'catalogo' && ancla) {
     document.getElementById('tier-' + ancla)?.scrollIntoView();
   }

@@ -22,6 +22,11 @@ import subprocess
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
+
+# Versión de CSS/JS: cámbiala cada vez que se publiquen cambios en css/ o js/
+# para que los navegadores descarguen los archivos nuevos en lugar de usar los
+# que tienen guardados (deben coincidir con los de index.html).
+VERSION_ARCHIVOS = "20261108b"
 DATA_JS = RAIZ / "js" / "data.js"
 
 # --- Contenido editorial curado a mano, un producto a la vez ------------
@@ -3493,11 +3498,12 @@ def medidas_html(perfume, nombre_mostrar):
         n = ml.replace("ml", "")
         precio = perfume["precios"].get(ml) or ""
         etiqueta_precio = precio or "A confirmar"
+        uso = {"3ml": "Muestra · ≈60", "5ml": "Viaje · ≈90", "10ml": "Mensual · ≈180"}[ml]
         botones.append(
             f'<button type="button" class="fila-medida ficha-medida" data-casa="{perfume["casa"]}" '
             f'data-nombre="{perfume["nombre"]}" data-ml="{ml}" '
             f'aria-label="Agregar {nombre_mostrar} de {n} ml, {precio or "precio a confirmar"}, al carrito">'
-            f'<span class="fila-medida-ml">{n}&nbsp;ml</span><span class="fila-medida-precio">{etiqueta_precio}</span></button>'
+            f'<span class="fila-medida-ml">{n}&nbsp;ml</span><span class="fila-medida-precio">{etiqueta_precio}</span><span class="ficha-medida-uso">{uso}</span></button>'
         )
     return "".join(botones)
 
@@ -3556,15 +3562,12 @@ CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
 <div id="carrito-overlay" hidden></div>
 <aside id="carrito-panel" hidden role="dialog" aria-modal="true" aria-labelledby="carrito-titulo">
   <div class="carrito-panel-header">
-    <h2 id="carrito-titulo">Tu carrito</h2>
+    <button type="button" class="carrito-atras" id="carrito-atras" aria-label="Volver al carrito" hidden></button>
+    <h2 id="carrito-titulo" tabindex="-1">Tu carrito</h2>
     <button type="button" class="carrito-cerrar" aria-label="Cerrar carrito"></button>
   </div>
   <div id="carrito-items"></div>
-  <div class="carrito-panel-footer">
-    <div id="carrito-total"></div>
-    <button type="button" id="carrito-checkout-whatsapp">Enviar pedido por WhatsApp</button>
-    <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido ya escrito. Ahí te respondemos para coordinar el pago y el envío.</p>
-  </div>
+  <div class="carrito-panel-footer" id="carrito-pie"></div>
 </aside>
 
 <div id="selector-tamano" hidden></div>
@@ -3582,13 +3585,16 @@ CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
   </div>
 </div>
 
-<script src="/js/data.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/carrito.js"></script>
+<script src="/js/data.js?v={VERSION_ARCHIVOS}"></script>
+<script src="/js/main.js?v={VERSION_ARCHIVOS}"></script>
+<script src="/js/carrito.js?v={VERSION_ARCHIVOS}"></script>
 </body>
 </html>
 """
 
+
+# La plantilla del carrito y pie no es f-string: se le pone la versión aquí.
+CARRITO_Y_FOOTER_HTML = CARRITO_Y_FOOTER_HTML.replace("{VERSION_ARCHIVOS}", VERSION_ARCHIVOS)
 
 def render_pagina(perfume, contenido):
     casa = perfume["casa"]
@@ -3648,8 +3654,8 @@ def render_pagina(perfume, contenido):
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
 <link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
-<link href="/css/fonts.css" rel="stylesheet">
-<link href="/css/styles.css" rel="stylesheet">
+<link href="/css/fonts.css?v={VERSION_ARCHIVOS}" rel="stylesheet">
+<link href="/css/styles.css?v={VERSION_ARCHIVOS}" rel="stylesheet">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -3682,7 +3688,8 @@ def render_pagina(perfume, contenido):
 
     <div class="ficha-compra">
       <div class="ficha-medidas" role="group" aria-label="Elige la medida de {nombre_mostrar}">{medidas_html(perfume, nombre_mostrar)}</div>
-      <p class="ficha-garantia">Decant 100% original, desde ${precio_min:,} · Envíos a todo México desde Monterrey</p>
+      <p class="ficha-medidas-nota">Atomizaciones aproximadas. 3 ml en frasco de vidrio; 5 y 10 ml en carcasa de aluminio, ideal para viajar.</p>
+      <p class="ficha-garantia">Decant 100% original, preparado al momento de tu pedido de nuestra botella original · <a href="/#originalidad">Cómo lo garantizamos</a> · Envíos a todo México desde Monterrey</p>
     </div>
 
     <dl class="ficha-tabla">
@@ -3775,8 +3782,8 @@ def render_pagina_completo(perfume, contenido):
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
 <link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
-<link href="/css/fonts.css" rel="stylesheet">
-<link href="/css/styles.css" rel="stylesheet">
+<link href="/css/fonts.css?v={VERSION_ARCHIVOS}" rel="stylesheet">
+<link href="/css/styles.css?v={VERSION_ARCHIVOS}" rel="stylesheet">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",

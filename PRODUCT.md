@@ -42,8 +42,12 @@ Saúco no se posiciona por precio bajo. Ningún texto debe venderlo como "el má
 - Términos: "decant", "perfume completo", "atomizaciones" (3 ml ≈ 60, 5 ml ≈ 90, 10 ml ≈ 180), "Dama/Caballero" en completos y "Hombre/Mujer" en decants.
 - Idioma: español de México (`lang="es"`, `es_MX`).
 - No hay backend ni base de datos. El carrito vive en el navegador.
-- El pago y el envío se coordinan por WhatsApp: el cliente manda su pedido desde el sitio y Saúco le responde para acordar ambos.
-- **Pendiente (TODO):** que el cliente capture sus datos de envío al hacer el pedido en el sitio, para que lleguen incluidos en el mensaje de WhatsApp.
+- El cliente manda su pedido desde el sitio por WhatsApp, ya con sus datos de envío (nombre, teléfono, dirección completa, referencias opcionales), tipo de entrega y forma de pago; Saúco le responde para confirmar el pedido y el pago.
+- **Envío de decants (dato del dueño, 2026-11-08):** entrega local en Monterrey $100 ($150 en zonas extendidas), gratis en pedidos desde $1,000, llega en 1 día hábil; envío nacional se cotiza por código postal, aprox. $160–$200, gratis en pedidos desde $1,500, llega en 1 a 3 días hábiles. Los tiempos cuentan desde que se confirma el pago. El costo de envío de perfumes completos no está definido en el sitio: se confirma por WhatsApp.
+- **Formas de pago:** transferencia o tarjeta.
+- **Qué recibe el cliente (dato del dueño, 2026-11-08):** 3 ml en frasco de vidrio con atomizador y tapa de plástico transparente; 5 y 10 ml en carcasa de aluminio con frasco de vidrio adentro y atomizador plateado (presentación premium, más protegida contra caídas, pensada para viajar). Cada decant lleva etiqueta con la casa, el perfume, la concentración y la marca Saúco. El pedido se empaca en una caja de cartón etiquetada con el logo de Saúco. En el sitio se dice «llega en tu caja personalizada de Saúco»; no usar «estuche» (da a entender una protección adicional que no existe) ni detallar el material de la caja (indicación del dueño).
+- **Proceso de originalidad (dato del dueño):** las botellas originales de las que se decanta son de Saúco (compradas por Saúco); cada decant se prepara al momento del pedido, siempre en frasco y atomizador nuevos; si el cliente lo pide, se le manda por WhatsApp foto o video de la botella original.
+- No se publica un tiempo de respuesta por WhatsApp (el dueño no lo ha definido).
 
 ## Brand Commitments
 

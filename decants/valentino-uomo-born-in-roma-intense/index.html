@@ -25,8 +25,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
 <link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
-<link href="/css/fonts.css" rel="stylesheet">
-<link href="/css/styles.css" rel="stylesheet">
+<link href="/css/fonts.css?v=20261108b" rel="stylesheet">
+<link href="/css/styles.css?v=20261108b" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,8 +112,9 @@
     </figure>
 
     <div class="ficha-compra">
-      <div class="ficha-medidas" role="group" aria-label="Elige la medida de Uomo Born in Roma Intense"><button type="button" class="fila-medida ficha-medida" data-casa="Valentino" data-nombre="Uomo Born in Roma Intense EDP" data-ml="3ml" aria-label="Agregar Uomo Born in Roma Intense de 3 ml, $220, al carrito"><span class="fila-medida-ml">3&nbsp;ml</span><span class="fila-medida-precio">$220</span></button><button type="button" class="fila-medida ficha-medida" data-casa="Valentino" data-nombre="Uomo Born in Roma Intense EDP" data-ml="5ml" aria-label="Agregar Uomo Born in Roma Intense de 5 ml, $374, al carrito"><span class="fila-medida-ml">5&nbsp;ml</span><span class="fila-medida-precio">$374</span></button><button type="button" class="fila-medida ficha-medida" data-casa="Valentino" data-nombre="Uomo Born in Roma Intense EDP" data-ml="10ml" aria-label="Agregar Uomo Born in Roma Intense de 10 ml, $707, al carrito"><span class="fila-medida-ml">10&nbsp;ml</span><span class="fila-medida-precio">$707</span></button></div>
-      <p class="ficha-garantia">Decant 100% original, desde $220 · Envíos a todo México desde Monterrey</p>
+      <div class="ficha-medidas" role="group" aria-label="Elige la medida de Uomo Born in Roma Intense"><button type="button" class="fila-medida ficha-medida" data-casa="Valentino" data-nombre="Uomo Born in Roma Intense EDP" data-ml="3ml" aria-label="Agregar Uomo Born in Roma Intense de 3 ml, $220, al carrito"><span class="fila-medida-ml">3&nbsp;ml</span><span class="fila-medida-precio">$220</span><span class="ficha-medida-uso">Muestra · ≈60</span></button><button type="button" class="fila-medida ficha-medida" data-casa="Valentino" data-nombre="Uomo Born in Roma Intense EDP" data-ml="5ml" aria-label="Agregar Uomo Born in Roma Intense de 5 ml, $374, al carrito"><span class="fila-medida-ml">5&nbsp;ml</span><span class="fila-medida-precio">$374</span><span class="ficha-medida-uso">Viaje · ≈90</span></button><button type="button" class="fila-medida ficha-medida" data-casa="Valentino" data-nombre="Uomo Born in Roma Intense EDP" data-ml="10ml" aria-label="Agregar Uomo Born in Roma Intense de 10 ml, $707, al carrito"><span class="fila-medida-ml">10&nbsp;ml</span><span class="fila-medida-precio">$707</span><span class="ficha-medida-uso">Mensual · ≈180</span></button></div>
+      <p class="ficha-medidas-nota">Atomizaciones aproximadas. 3 ml en frasco de vidrio; 5 y 10 ml en carcasa de aluminio, ideal para viajar.</p>
+      <p class="ficha-garantia">Decant 100% original, preparado al momento de tu pedido de nuestra botella original · <a href="/#originalidad">Cómo lo garantizamos</a> · Envíos a todo México desde Monterrey</p>
     </div>
 
     <dl class="ficha-tabla">
@@ -138,15 +139,12 @@
 <div id="carrito-overlay" hidden></div>
 <aside id="carrito-panel" hidden role="dialog" aria-modal="true" aria-labelledby="carrito-titulo">
   <div class="carrito-panel-header">
-    <h2 id="carrito-titulo">Tu carrito</h2>
+    <button type="button" class="carrito-atras" id="carrito-atras" aria-label="Volver al carrito" hidden></button>
+    <h2 id="carrito-titulo" tabindex="-1">Tu carrito</h2>
     <button type="button" class="carrito-cerrar" aria-label="Cerrar carrito"></button>
   </div>
   <div id="carrito-items"></div>
-  <div class="carrito-panel-footer">
-    <div id="carrito-total"></div>
-    <button type="button" id="carrito-checkout-whatsapp">Enviar pedido por WhatsApp</button>
-    <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido ya escrito. Ahí te respondemos para coordinar el pago y el envío.</p>
-  </div>
+  <div class="carrito-panel-footer" id="carrito-pie"></div>
 </aside>
 
 <div id="selector-tamano" hidden></div>
@@ -164,8 +162,8 @@
   </div>
 </div>
 
-<script src="/js/data.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/carrito.js"></script>
+<script src="/js/data.js?v=20261108b"></script>
+<script src="/js/main.js?v=20261108b"></script>
+<script src="/js/carrito.js?v=20261108b"></script>
 </body>
 </html>
