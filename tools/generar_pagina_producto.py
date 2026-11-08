@@ -26,7 +26,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # Versión de CSS/JS: cámbiala cada vez que se publiquen cambios en css/ o js/
 # para que los navegadores descarguen los archivos nuevos en lugar de usar los
 # que tienen guardados (deben coincidir con los de index.html).
-VERSION_ARCHIVOS = "20261108b"
+VERSION_ARCHIVOS = "20261108c"
 DATA_JS = RAIZ / "js" / "data.js"
 
 # --- Contenido editorial curado a mano, un producto a la vez ------------
@@ -3522,7 +3522,9 @@ def precios_html(precios):
     return "".join(filas)
 
 
-NAV_HTML = """<nav class="nav-lateral" id="nav-lateral">
+NAV_HTML = """<a class="saltar" href="#app">Saltar al contenido</a>
+
+<nav class="nav-lateral" id="nav-lateral">
   <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -3674,7 +3676,7 @@ def render_pagina(perfume, contenido):
 
 {NAV_HTML}
 
-<main class="ficha">
+<main class="ficha" id="app" tabindex="-1">
   <div class="ficha-contenido">
     <nav class="ficha-miga" aria-label="Ruta de navegación">
       <a href="/#catalogo/todos">Decants</a> <span aria-hidden="true">›</span> <a href="/#catalogo/todos/{tier}">{tier_label}</a>
@@ -3801,7 +3803,7 @@ def render_pagina_completo(perfume, contenido):
 
 {NAV_HTML}
 
-<main class="ficha">
+<main class="ficha" id="app" tabindex="-1">
   <div class="ficha-contenido">
     <nav class="ficha-miga" aria-label="Ruta de navegación">
       <a href="/#completos/todos">Perfumes completos</a> <span aria-hidden="true">›</span> <a href="{miga_url}">{miga_label}</a>

@@ -28,8 +28,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
 <link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
-<link href="/css/fonts.css?v=20261108b" rel="stylesheet">
-<link href="/css/styles.css?v=20261108b" rel="stylesheet">
+<link href="/css/fonts.css?v=20261108c" rel="stylesheet">
+<link href="/css/styles.css?v=20261108c" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,6 +56,8 @@
 </script>
 </head>
 <body>
+
+<a class="saltar" href="#app">Saltar al contenido</a>
 
 <nav class="nav-lateral" id="nav-lateral">
   <button class="nav-hamburguesa" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -89,7 +91,7 @@
   </ul>
 </nav>
 
-<div id="app">
+<main id="app" tabindex="-1">
 
   <div id="vista-home" class="atelier">
     <section class="atelier-portada" aria-labelledby="portada-titulo">
@@ -207,7 +209,8 @@
         <h2 id="vitrina-titulo" class="vitrina-leyenda">Los más vendidos</h2>
       </section>
 
-      <div id="catalogo-grid" aria-live="polite"></div>
+      <p class="sr-only" id="catalogo-estado" role="status" aria-live="polite"></p>
+      <div id="catalogo-grid"></div>
     </div>
   </div>
 
@@ -266,7 +269,8 @@
         </div>
       </header>
 
-      <div id="completos-grid" aria-live="polite"></div>
+      <p class="sr-only" id="completos-estado" role="status" aria-live="polite"></p>
+      <div id="completos-grid"></div>
 
       <section class="cotizar-section" aria-labelledby="cotizar-titulo">
         <h2 id="cotizar-titulo" class="cotizar-titulo">¿No encuentras tu perfume?</h2>
@@ -286,7 +290,7 @@
     </div>
   </div>
 
-</div>
+</main>
 
 <button id="carrito-boton" aria-label="Ver carrito">
   <span aria-hidden="true">🛒</span>
@@ -319,8 +323,8 @@
   </div>
 </div>
 
-<script src="/js/data.js?v=20261108b"></script>
-<script src="/js/main.js?v=20261108b"></script>
-<script src="/js/carrito.js?v=20261108b"></script>
+<script src="/js/data.js?v=20261108c"></script>
+<script src="/js/main.js?v=20261108c"></script>
+<script src="/js/carrito.js?v=20261108c"></script>
 </body>
 </html>

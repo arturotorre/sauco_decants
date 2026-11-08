@@ -216,6 +216,7 @@ Un muro neutro casi gris, madera clara y una sola tinta oscura de chocolate; sin
 - **Yeso** (yeso): fondo de página, del nav y de toda sección; texto sobre el pie chocolate.
 - **Papel** (papel): las tiras de prueba, el botón de carrito y el texto del botón principal.
 - **Tinta suave** (tinta-suave): texto secundario, precios, enlaces del nav en reposo, marca del perfume en el estante.
+- **Pie suave** (pie-suave, #D7CABD): texto secundario sobre el pie chocolate.
 - **Línea** (linea): chocolate al 16 % para bordes del nav, divisores entre secciones y entre renglones del catálogo, el botón de carrito y el borde en reposo de chips, buscador y desplegables.
 
 ### Named Rules
@@ -337,6 +338,9 @@ Soporte de toda foto de producto. Fotos reales en `object-fit: contain` con `mix
 
 Bajo el estante: marca en etiqueta, nombre 18px/500 y «Desde $X · 3 ml» en tinta suave.
 
+### Enlace para saltar al contenido
+Primer elemento de cada página: «Saltar al contenido», fuera de la vista hasta recibir foco con teclado; entonces aparece arriba a la izquierda en tinta con texto papel. Lleva el foco a `main#app` sin cambiar el hash (el sitio usa el hash para sus vistas). La portada y las fichas tienen una sola región `<main id="app">`; los resultados del catálogo se anuncian con un estado discreto («3 perfumes», «Sin resultados») en lugar de releer la lista completa.
+
 ### Navigation
 - **Escritorio:** columna de yeso de 200px con borde derecho en línea; «SAÚCO» en Bodoni Moda 22px/400, mayúsculas, 0.06em; desplegables Decants y Perfumes completos como etiquetas 13px/600 con flecha de trazo; enlaces 15px en tinta suave, tinta en hover, activo subrayado y con borde izquierdo tinta.
 - **Móvil:** barra de 56px (hamburguesa de tres trazos, marca, carrito); el menú cae como panel de yeso con sombra.
@@ -384,7 +388,7 @@ La única superficie chocolate. «SAÚCO» en Bodoni Moda 40px/400, mayúsculas,
 - **Don't** volver a una sans geométrica extendida (Archivo 112–125 % u otra) para el display: el dueño la rechazó por leerse como marca de autos, no de perfume.
 - **Don't** poner una etiqueta suelta (kicker) encima de un encabezado; si la casa o la categoría importan, van dentro del título o en la ruta.
 
-**Restos del sistema heredado (deuda de limpieza, no normativo):** ninguna superficie usa ya el sistema anterior. Siguen en `css/styles.css` y `css/fonts.css` solo como restos sin uso: los tokens `--chocolate` #3D2314, `--terracota`, `--cobre`, `--arena`, `--crema` y `--fondo`; las clases `.card*`, `.producto-*` y los puntos de nivel `.tier-*` morado (#6B5B9E) y verde (#1D7A5A); y los `@font-face` de Cormorant Garamond y Jost. Se pueden borrar; no los tomes como base ni los cites como parte del sistema. Las clases heredadas que los catálogos todavía usan (barra y desplegables de completos, formulario de cotizar, `.tier-header` en los títulos de lista junto a `.seccion-titulo`) se reestilan bajo el contenedor del catálogo; al limpiar, revisa esos selectores antes de borrar sus reglas base.
+**Limpieza del sistema heredado (2026-11-08):** se retiraron las reglas sin uso del CSS anterior (tarjetas `.card*`, página de producto `.producto-*`, migas `.breadcrumb`, líneas del pie del logo viejo, cotización plegable) y los `@font-face` y archivos de Cormorant Garamond y Jost. Quedan solo restos con uso: la barra, desplegables y chips de completos y el formulario de cotizar, reestilados bajo `.catalogo`, que todavía leen algunos tokens heredados (`--chocolate`, `--arena`, `--terracota`) en su regla base; al tocarlos, muévelos a los tokens del sistema.
 
 **Deuda de imágenes (no normativo):** cinco fotos de producto tienen fondo gris, no blanco, y con `multiply` se ven como cajas grises sobre el yeso en lugar de frascos posados: `imagenes/oud royal.webp`, `imagenes/black afgano.webp`, `imagenes/black phantom.webp`, `imagenes/ombre leather.webp` e `imagenes/autumn vibes.webp`. Necesitan reemplazo del dueño con fondo blanco o recortadas; no se corrigen con CSS ni justifican tarjetas o marcos.
 

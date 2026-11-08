@@ -39,6 +39,17 @@ function cardHTML(p) {
   </li>`;
 }
 
+// Anuncia solo el número de resultados (no la lista completa) a lectores de pantalla.
+let estadoTimers = {};
+function anunciarEstado(id, n) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  clearTimeout(estadoTimers[id]);
+  estadoTimers[id] = setTimeout(() => {
+    el.textContent = n ? `${n} ${n === 1 ? 'perfume' : 'perfumes'}` : 'Sin resultados';
+  }, 400);
+}
+
 function vitrinaHTML(p) {
   return `<a class="vitrina-frasco" href="/decants/${p.slug}/" style="--escala:${p.escala || 1}">
     <img src="${p.imagen}" alt="${p.casa} ${p.alt}" loading="lazy" onerror="this.style.visibility='hidden'">
@@ -109,6 +120,8 @@ function renderCatalogo(filtro) {
     .map(t => ({ t, perfumes: PERFUMES.filter(p => p.tier === t.key && coincideGenero(p, filtro) && catalogoCoincideBusqueda(p)) }))
     .filter(g => g.perfumes.length);
 
+  const totalDecants = grupos.reduce((n, g) => n + g.perfumes.length, 0);
+  anunciarEstado('catalogo-estado', totalDecants);
   contenedor.innerHTML = grupos.length
     ? grupos.map(({ t, perfumes }) => `
     <section class="seccion-lista" aria-labelledby="tier-${t.key}">
@@ -272,6 +285,7 @@ function renderCompletos() {
     return okGenero && completosCoincide(p);
   }));
 
+  anunciarEstado('completos-estado', perfumes.length);
   const filtrosActivos = completosGenero !== 'todos' || completosSoloSets || completosCategoria !== 'todas' || completosMarca !== 'todas';
   contenedor.innerHTML = perfumes.length
     ? `<p class="lista-conteo">${perfumes.length} ${perfumes.length === 1 ? 'perfume' : 'perfumes'}</p><ul class="filas">${perfumes.map(completoCardHTML).join('')}</ul>`
@@ -356,9 +370,11 @@ function renderPortada() {
   estante.innerHTML = (destacados.length ? destacados : conFicha.slice(0, 5)).map(estanteItemHTML).join('');
 
   // Rutas: viaje (diseñador) y nicho
-  const viaje = conFicha.filter(p => p.tier === 'disenador' && p.bestseller)
-    .concat(conFicha.filter(p => p.tier === 'disenador' && !p.bestseller)).slice(0, 3);
-  const nicho = conFicha.filter(p => p.tier === 'nicho').slice(0, 3);
+  // Una sola casa por repisa: tres frascos de marcas distintas.
+  const unaPorCasa = lista => lista.filter((p, i) => lista.findIndex(q => q.casa === p.casa) === i);
+  const viaje = unaPorCasa(conFicha.filter(p => p.tier === 'disenador' && p.bestseller)
+    .concat(conFicha.filter(p => p.tier === 'disenador' && !p.bestseller))).slice(0, 3);
+  const nicho = unaPorCasa(conFicha.filter(p => p.tier === 'nicho')).slice(0, 3);
   document.getElementById('ruta-viaje').innerHTML = viaje.map(p => frascoHTML(p, '')).join('');
   document.getElementById('ruta-nicho').innerHTML = nicho.map(p => frascoHTML(p, '')).join('');
 }
@@ -458,6 +474,15 @@ function route() {
   }
   cerrarNavMovil();
 }
+
+document.addEventListener('click', (e) => {
+  const saltar = e.target.closest('.saltar');
+  if (!saltar) return;
+  e.preventDefault();
+  const destino = document.getElementById('app');
+  destino?.focus();
+  destino?.scrollIntoView();
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   // Nota: main.js se incluye tanto en la SPA (index.html) como en páginas
