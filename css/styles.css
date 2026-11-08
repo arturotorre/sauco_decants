@@ -233,7 +233,7 @@ html.carrito-bloqueo, html.carrito-bloqueo body { overflow: hidden; }
 .envio-datos { display: grid; gap: 0.9rem; }
 .envio-campo { display: flex; flex-direction: column; gap: 0.35rem; }
 .envio-campo label { font-size: 14px; font-weight: 600; color: var(--tinta); }
-.envio-campo input, .envio-campo textarea { width: 100%; min-height: 48px; padding: 0.65rem 0.85rem; font-family: var(--f); font-size: 16px; color: var(--tinta); background: var(--papel); border: 1px solid var(--linea); border-radius: 2px; resize: vertical; }
+.envio-campo input, .envio-campo textarea { width: 100%; min-height: 48px; padding: 0.65rem 0.85rem; font-family: var(--f); font-size: 16px; color: var(--tinta); background: var(--papel); border: 1px solid rgba(59,35,24,.55); border-radius: 2px; resize: vertical; }
 .envio-campo input:focus, .envio-campo textarea:focus { outline: none; border-color: var(--tinta); box-shadow: 0 0 0 1px var(--tinta); }
 .envio-ayuda { font-size: 13px; color: var(--tinta-suave); }
 .envio-error { font-size: 14px; font-weight: 500; color: #8A1F1F; }
@@ -570,7 +570,7 @@ a.fila-nombre:hover { text-decoration: underline; text-decoration-thickness: 1px
 .ficha-contenido {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 120px;
-  grid-template-areas: "miga miga" "titulo repisa" "compra compra" "tabla tabla" "sobre sobre" "volver volver";
+  grid-template-areas: "miga miga" "titulo repisa" "compra compra" "tabla tabla" "sobre sobre" "siguiente siguiente" "volver volver";
   column-gap: 1rem;
   max-width: 1080px; margin: 0 auto; padding: 1rem 1.25rem 4rem;
 }
@@ -611,7 +611,7 @@ a.fila-nombre:hover { text-decoration: underline; text-decoration-thickness: 1px
 @media (min-width: 861px) {
   .ficha-contenido {
     grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
-    grid-template-areas: "miga repisa" "titulo repisa" "compra repisa" "tabla repisa" "sobre repisa" "volver repisa";
+    grid-template-areas: "miga repisa" "titulo repisa" "compra repisa" "tabla repisa" "sobre repisa" "siguiente repisa" "volver repisa";
     grid-template-rows: auto auto auto auto auto 1fr;
     column-gap: clamp(2.5rem, 5vw, 5rem);
     padding: 3rem clamp(2rem, 4vw, 4rem) 5rem;
@@ -673,7 +673,7 @@ a.fila-nombre:hover { text-decoration: underline; text-decoration-thickness: 1px
 .ficha-medida-uso { font-size: 12px; font-weight: 500; color: var(--tinta-suave); letter-spacing: 0.01em; transition: color 0.2s; }
 .fila-medida:hover .ficha-medida-uso, .fila-medida.agregado .ficha-medida-uso { color: var(--yeso); }
 .ficha-medidas-nota { margin-top: 0.6rem; font-size: 13px; line-height: 1.45; color: var(--tinta-suave); }
-.ficha-garantia a { color: var(--tinta); font-weight: 600; text-underline-offset: 4px; }
+.ficha-garantia a, .ficha-prueba a { color: var(--tinta); font-weight: 600; text-underline-offset: 4px; }
 
 /* Enlace para saltar al contenido: visible solo con teclado */
 .saltar { position: fixed; top: 0.5rem; left: 0.5rem; z-index: 300; padding: 0.75rem 1rem; background: var(--tinta); color: var(--papel); font-family: var(--f); font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 2px; transform: translateY(-150%); transition: transform 0.2s; }
@@ -723,3 +723,49 @@ a.fila-nombre:hover { text-decoration: underline; text-decoration-thickness: 1px
   #carrito-panel.escribiendo .carrito-total-final { margin-top: 0 !important; padding-top: 0; border-top: 0; }
   #carrito-panel.escribiendo .carrito-principal { margin-top: 0.5rem; min-height: 48px; }
 }
+
+/* Paso 2: respuesta a la fecha, datos faltantes, confianza y política */
+.envio-fecha-respuesta { font-size: 14px; line-height: 1.45; color: var(--tinta-suave); text-wrap: pretty; }
+.envio-faltan { margin-top: 0.75rem; font-size: 14px; font-weight: 500; color: var(--tinta-suave); text-align: center; font-variant-numeric: tabular-nums; }
+.envio-faltan.completo { color: var(--tinta); }
+.envio-confianza { display: grid; gap: 0.6rem; padding-top: 1rem; border-top: 1px solid var(--linea); font-size: 14px; line-height: 1.5; color: var(--tinta-suave); text-wrap: pretty; }
+.envio-confianza strong { color: var(--tinta); font-weight: 600; }
+.envio-politica summary { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--tinta); list-style: none; text-decoration: underline; text-decoration-color: var(--roble); text-underline-offset: 3px; }
+.envio-politica summary::-webkit-details-marker { display: none; }
+.envio-politica summary::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 0.25s cubic-bezier(.16,1,.3,1); }
+.envio-politica[open] summary::after { transform: translateY(1px) rotate(225deg); }
+.envio-politica p { font-size: 14px; line-height: 1.5; color: var(--tinta-suave); padding-bottom: 0.25rem; }
+.ficha-prueba { margin-top: 0.5rem; font-size: 14px; line-height: 1.5; color: var(--tinta-suave); }
+
+/* Menú: accesos fijos a originalidad y WhatsApp */
+.nav-extra-primero { padding-top: 1rem; border-top: 1px solid var(--linea); }
+.nav-links .nav-extra a { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tinta); padding: 0.5rem 0; }
+.nav-links .nav-extra a:hover { color: var(--tinta-suave); }
+.nav-whatsapp span { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--tinta-suave); font-variant-numeric: tabular-nums; }
+@media (max-width: 860px) {
+  .nav-lateral.nav-abierto .nav-links { max-height: calc(100dvh - var(--nav-alto-movil)); overflow-y: auto; overscroll-behavior: contain; }
+  .nav-links .nav-extra a { padding: 0.9rem 0; }
+  .nav-extra-primero { margin-top: 0.5rem; }
+}
+
+/* Contador del carrito: un pulso breve al agregar */
+#carrito-contador.pulso { animation: contador-pulso 0.6s cubic-bezier(.16,1,.3,1); }
+@keyframes contador-pulso { 0% { transform: scale(1); } 35% { transform: scale(1.35); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { #carrito-contador.pulso { animation: none; } }
+
+/* Ficha: puente a la botella completa y decants afines */
+.ficha-siguiente { grid-area: siguiente; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--tinta); }
+.ficha-botella { display: grid; gap: 0.75rem; justify-items: start; margin-top: 0.75rem; font-size: 16px; line-height: 1.55; color: var(--tinta); text-wrap: pretty; max-width: 60ch; }
+.ficha-h3 { margin-top: 2.25rem; font-family: var(--f); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tinta-suave); }
+.ficha-relacionados { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 0.9rem; }
+.relacionado { display: flex; flex-direction: column; gap: 2px; color: var(--tinta); text-decoration: none; }
+.relacionado-foto { display: grid; place-items: center; aspect-ratio: 1; margin-bottom: 0.5rem; background: var(--papel); overflow: hidden; }
+.relacionado-foto img { width: 78%; height: 78%; object-fit: contain; mix-blend-mode: multiply; transform: scale(var(--escala, 1)); transition: transform 0.4s cubic-bezier(.16,1,.3,1); }
+.relacionado:hover .relacionado-foto img { transform: scale(calc(var(--escala, 1) * 1.04)); }
+.relacionado-casa { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-suave); }
+.relacionado-nombre { font-family: var(--f-display); font-size: 19px; font-weight: 500; line-height: 1.15; }
+.relacionado:hover .relacionado-nombre { text-decoration: underline; text-decoration-color: var(--roble); text-underline-offset: 3px; }
+.relacionado-precio { margin-top: 2px; font-size: 13px; color: var(--tinta-suave); font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .relacionado-nombre { font-size: 16px; } .ficha-relacionados { gap: 8px; } }
+@media (prefers-reduced-motion: reduce) { .relacionado-foto img { transition: none; } }
+.ficha-botella .enlace-secundario { padding-left: 0; }

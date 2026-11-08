@@ -387,6 +387,19 @@ function cerrarNavMovil() {
 }
 
 let decantsAbierto = false;
+
+function navMovil() {
+  return window.matchMedia('(max-width: 860px)').matches;
+}
+
+function expandirNavCompleto() {
+  decantsAbierto = true;
+  completosNavAbierto = true;
+  ['decants', 'completos'].forEach(k => {
+    document.getElementById(`nav-item-${k}`)?.classList.add('abierto');
+    document.getElementById(`nav-${k}-toggle`)?.setAttribute('aria-expanded', 'true');
+  });
+}
 let completosNavAbierto = false;
 
 function actualizarNavDecants(activo) {
@@ -498,12 +511,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('nav-lateral');
     const abierto = nav.classList.toggle('nav-abierto');
     document.getElementById('nav-toggle').setAttribute('aria-expanded', String(abierto));
+    // En el celular el menú se abre plano: las dos listas a la vista, sin
+    // acordeones cerrados que obliguen a tocar dos veces.
+    if (abierto && navMovil()) expandirNavCompleto();
   });
 
   document.getElementById('nav-decants-toggle')?.addEventListener('click', () => {
     decantsAbierto = !decantsAbierto;
     document.getElementById('nav-item-decants').classList.toggle('abierto', decantsAbierto);
     document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', String(decantsAbierto));
+    if (navMovil()) return;
     completosNavAbierto = false;
     document.getElementById('nav-item-completos').classList.remove('abierto');
     document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', 'false');
@@ -513,6 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
     completosNavAbierto = !completosNavAbierto;
     document.getElementById('nav-item-completos').classList.toggle('abierto', completosNavAbierto);
     document.getElementById('nav-completos-toggle').setAttribute('aria-expanded', String(completosNavAbierto));
+    if (navMovil()) return;
     decantsAbierto = false;
     document.getElementById('nav-item-decants').classList.remove('abierto');
     document.getElementById('nav-decants-toggle').setAttribute('aria-expanded', 'false');

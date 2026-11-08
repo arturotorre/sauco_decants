@@ -18,6 +18,7 @@ que "Agregar al carrito" funcione igual que en el catálogo.
 """
 
 import json
+import re
 from urllib.parse import quote
 import subprocess
 from pathlib import Path
@@ -27,7 +28,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # Versión de CSS/JS: cámbiala cada vez que se publiquen cambios en css/ o js/
 # para que los navegadores descarguen los archivos nuevos en lugar de usar los
 # que tienen guardados (deben coincidir con los de index.html).
-VERSION_ARCHIVOS = "20261108g"
+VERSION_ARCHIVOS = "20261108j"
 DATA_JS = RAIZ / "js" / "data.js"
 
 # --- Contenido editorial curado a mano, un producto a la vez ------------
@@ -3554,6 +3555,8 @@ NAV_HTML = """<a class="saltar" href="#app">Saltar al contenido</a>
         <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
       </ul>
     </li>
+    <li class="nav-extra nav-extra-primero"><a href="/#originalidad">100% originales</a></li>
+    <li class="nav-extra"><a href="https://wa.me/525612567245" class="nav-whatsapp">WhatsApp <span>56 1256 7245</span></a></li>
   </ul>
 </nav>"""
 
@@ -3573,7 +3576,7 @@ CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
 </aside>
 
 <div id="selector-tamano" hidden></div>
-<div id="carrito-aviso" class="carrito-aviso" role="status" aria-live="polite" hidden></div>
+<div id="carrito-aviso" class="carrito-aviso" hidden></div>
 
 <div class="footer-global">
   <div class="footer-nombre"><img src="/imagenes/logo/sauco-flor-vertical-claro.svg" alt="Saúco" width="142" height="152" loading="lazy"></div>
@@ -3598,7 +3601,66 @@ CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
 # La plantilla del carrito y pie no es f-string: se le pone la versión aquí.
 CARRITO_Y_FOOTER_HTML = CARRITO_Y_FOOTER_HTML.replace("{VERSION_ARCHIVOS}", VERSION_ARCHIVOS)
 
-def render_pagina(perfume, contenido):
+def _sin_concentracion(nombre):
+    return re.sub(r"\s+(EDP|EDT|Parfum)$", "", nombre).strip().lower()
+
+
+def botella_completa_html(perfume, nombre_mostrar, completos, contenido_completos):
+    """Puente decant → botella: enlaza la ficha de la botella si existe; si no, ofrece cotizarla."""
+    casa = perfume["casa"]
+    conc = (re.search(r"\b(EDP|EDT|Parfum)$", perfume["nombre"]) or [None, None])[1]
+    candidatos = [c for c in completos
+                  if c["casa"].lower() == casa.lower()
+                  and c["nombre"].lower() == _sin_concentracion(perfume["nombre"])
+                  and (conc is None or c["concentracion"] == conc)]
+    wa = "https://wa.me/525612567245?text=" + quote(
+        f"Hola, me interesa la botella completa de {casa} {nombre_mostrar}. ¿Me la pueden cotizar?")
+    for c in candidatos:
+        clave = f"{c['casa']}|{c['nombre']}|{c['concentracion']}"
+        if c.get("precio") and clave in contenido_completos:
+            tam = c["tamano"].replace("ml", "&nbsp;ml")
+            return (f'<p>También la tenemos en botella completa: {casa} {nombre_mostrar} {c["concentracion"]}, '
+                    f'{tam}, por {c["precio"]}. Original y sobre pedido; la entrega tarda de 7 a 10 días hábiles.</p>'
+                    f'<a class="enlace-secundario" href="/completos/{contenido_completos[clave]["slug"]}/">Ver la botella completa</a>')
+    if candidatos:
+        return ('<p>También la conseguimos en botella completa, original y sobre pedido (de 7 a 10 días hábiles).</p>'
+                f'<a class="enlace-secundario" href="{wa}">Cotízala por WhatsApp</a>')
+    return ('<p>Si la quieres en botella completa, te la cotizamos: original y sobre pedido (de 7 a 10 días hábiles).</p>'
+            f'<a class="enlace-secundario" href="{wa}">Cotízala por WhatsApp</a>')
+
+
+def relacionados_html(perfume, decants, contenido_decants, n=3):
+    """Tres decants afines: mismo género, notas compartidas y mismo tipo; de preferencia otra casa."""
+    notas = {x.lower() for x in perfume.get("notas", [])}
+    def puntos(o):
+        pts = 0
+        if o["genero"] == perfume["genero"]: pts += 3
+        elif "Unisex" in (o["genero"], perfume["genero"]): pts += 1
+        else: return -1
+        pts += 2 * len(notas & {x.lower() for x in o.get("notas", [])})
+        if o["tier"] == perfume["tier"]: pts += 4
+        if o["casa"] != perfume["casa"]: pts += 0.5
+        return pts
+    otros = [o for o in decants
+             if f"{o['casa']}|{o['nombre']}" in contenido_decants and o is not perfume
+             and not (o["casa"] == perfume["casa"] and o["nombre"] == perfume["nombre"])]
+    otros = sorted((o for o in otros if puntos(o) >= 0), key=lambda o: (-puntos(o), o["nombre"]))[:n]
+    items = []
+    for o in otros:
+        c = contenido_decants[f"{o['casa']}|{o['nombre']}"]
+        nom = c.get("nombre_mostrar") or o["nombre"].replace(" EDP", "").replace(" EDT", "")
+        desde = o["precios"].get("3ml")
+        items.append(
+            f'<li><a class="relacionado" href="/decants/{c["slug"]}/">'
+            f'<span class="relacionado-foto"><img src="{o["imagen"]}" alt="" loading="lazy" style="--escala:{o.get("escala", 1)}"></span>'
+            f'<span class="relacionado-casa">{o["casa"]}</span>'
+            f'<span class="relacionado-nombre">{nom}</span>'
+            f'{f"<span class=relacionado-precio>Desde {desde} · 3&nbsp;ml</span>" if desde else ""}'
+            f'</a></li>')
+    return "".join(items)
+
+
+def render_pagina(perfume, contenido, botella="", relacionados=""):
     casa = perfume["casa"]
     nombre_mostrar = contenido.get("nombre_mostrar") or perfume["nombre"].replace(" EDP", "").replace(" EDT", "")
     genero = perfume["genero"]
@@ -3611,6 +3673,7 @@ def render_pagina(perfume, contenido):
     meta_desc = contenido["meta_descripcion"]
     url = f"https://saucodecants.com/decants/{contenido['slug']}/"
     alt_img = f"{casa} {nombre_mostrar} - decant de perfume {genero_lower}"
+    wa_foto = "https://wa.me/525612567245?text=" + quote(f"Hola, ¿me pueden mandar una foto o video de la botella original de {casa} {nombre_mostrar}?")
 
     parrafos_html = "".join(f"<p>{p}</p>" for p in contenido["parrafos"])
 
@@ -3692,6 +3755,7 @@ def render_pagina(perfume, contenido):
       <div class="ficha-medidas" role="group" aria-label="Elige la medida de {nombre_mostrar}">{medidas_html(perfume, nombre_mostrar)}</div>
       <p class="ficha-medidas-nota">Atomizaciones aproximadas. 3 ml en frasco de vidrio; 5 y 10 ml en carcasa de aluminio, ideal para viajar.</p>
       <p class="ficha-garantia">Decant 100% original, preparado al momento de tu pedido de nuestra botella original · <a href="/#originalidad">Cómo lo garantizamos</a> · Envíos a todo México desde Monterrey</p>
+      <p class="ficha-prueba">¿Quieres ver la botella antes? <a href="{wa_foto}">Pídenos foto o video por WhatsApp</a></p>
     </div>
 
     <dl class="ficha-tabla">
@@ -3702,6 +3766,12 @@ def render_pagina(perfume, contenido):
     <section class="ficha-sobre" aria-labelledby="sobre-titulo">
       <h2 id="sobre-titulo" class="ficha-h2">Sobre esta fragancia</h2>
       {parrafos_html}
+    </section>
+
+    <section class="ficha-siguiente" aria-labelledby="siguiente-titulo">
+      <h2 id="siguiente-titulo" class="ficha-h2">¿Te convenció?</h2>
+      <div class="ficha-botella">{botella}</div>
+      {f'<h3 class="ficha-h3">También te puede gustar</h3><ul class="ficha-relacionados">{relacionados}</ul>' if relacionados else ''}
     </section>
 
     <a class="enlace-secundario ficha-volver" href="/#catalogo/todos">Ver todos los decants</a>
@@ -3879,7 +3949,11 @@ def main():
         if not perfume:
             print(f"  ⚠ no encontrado en js/data.js (PERFUMES), se omite: {clave}")
             continue
-        html = render_pagina(perfume, contenido)
+        html = render_pagina(
+            perfume, contenido,
+            botella_completa_html(perfume, contenido.get("nombre_mostrar") or perfume["nombre"].replace(" EDP", "").replace(" EDT", ""),
+                                  catalogo["PERFUMES_COMPLETOS"], CONTENIDO_COMPLETOS),
+            relacionados_html(perfume, catalogo["PERFUMES"], CONTENIDO_DECANTS))
         destino = RAIZ / "decants" / contenido["slug"] / "index.html"
         destino.parent.mkdir(parents=True, exist_ok=True)
         destino.write_text(html, encoding="utf-8")

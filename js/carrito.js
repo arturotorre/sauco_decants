@@ -83,7 +83,9 @@ function agregarItem(datos) {
   }
   carritoCambio();
   ultimaAgregada = { tipo: datos.tipo, perfumeId: datos.perfumeId, tamano: datos.tamano };
-  mostrarAviso(`${datos.alt || datos.nombre} · ${textoTamano(datos.tamano)}`);
+  const item = existente || carrito[carrito.length - 1];
+  mostrarAviso(`${datos.alt || datos.nombre} · ${textoTamano(datos.tamano)}`, item.cantidad);
+  pulsarContador();
 }
 
 // Deshacer: quita la última pieza agregada (por si fue un toque accidental).
@@ -100,8 +102,8 @@ function deshacerUltima() {
   const aviso = document.getElementById('carrito-aviso');
   if (aviso) {
     aviso.innerHTML = '<span class="carrito-aviso-texto">Se quitó del carrito</span>';
-    clearTimeout(avisoTimer);
-    avisoTimer = setTimeout(ocultarAviso, 2000);
+    anunciar('Se quitó del carrito');
+    programarAviso(2500);
   }
 }
 
@@ -201,20 +203,30 @@ const ENVIO = {
   local: { etiqueta: 'Entrega local en Monterrey', costo: 100, costoExtendida: 150, gratisDesde: 1000, tiempo: '1 día hábil' },
   nacional: { etiqueta: 'Envío nacional', costoMin: 160, costoMax: 200, gratisDesde: 1500, tiempo: '1 a 3 días hábiles' }
 };
-const FORMAS_PAGO = ['Transferencia', 'Tarjeta'];
+const FORMAS_PAGO = [
+  { valor: 'Transferencia', detalle: 'Te mandamos los datos bancarios por WhatsApp.' },
+  { valor: 'Tarjeta', detalle: 'Te mandamos una liga de pago segura de Mercado Pago, sin comisión.' }
+];
 const HORARIO = 'de lunes a sábado, de 9:00 a 20:00';
+// Datos del dueño (2026-11-08): corte de pedidos y política de reclamos.
+const HORA_CORTE = 18;
+const POLITICA_HTML = `<details class="envio-politica">
+    <summary>¿Y si algo llega mal?</summary>
+    <p>Si tu decant llega dañado o derramado, avísanos por WhatsApp en las primeras 24 horas después de recibirlo; si te llegó un perfume equivocado, tienes 48 horas. Te pediremos fotos del decant, de su etiqueta y del interior de la caja. Si el reclamo procede, te reponemos el decant sin costo.</p>
+  </details>`;
 const PEDIDO_STORAGE_KEY = 'sauco_pedido';
 const ENVIO_STORAGE_KEY = 'sauco_envio';
+// Orden del formulario: cuándo → a dónde → quién recibe (el pago va al final).
 const CAMPOS_ENVIO = [
-  { id: 'nombre', etiqueta: 'Nombre de quien recibe', tipo: 'text', auto: 'name', requerido: true },
-  { id: 'telefono', etiqueta: 'Teléfono (10 dígitos)', tipo: 'tel', auto: 'tel-national', requerido: true, modo: 'numeric' },
-  { id: 'calle', etiqueta: 'Calle y número', tipo: 'text', auto: 'address-line1', requerido: true },
-  { id: 'colonia', etiqueta: 'Colonia', tipo: 'text', auto: 'address-line2', requerido: true },
-  { id: 'ciudad', etiqueta: 'Ciudad o municipio', tipo: 'text', auto: 'address-level2', requerido: true, ejemplo: 'Ej. Monterrey, San Pedro, Guadalupe' },
-  { id: 'estado', etiqueta: 'Estado', tipo: 'text', auto: 'address-level1', requerido: true },
-  { id: 'cp', etiqueta: 'Código postal', tipo: 'text', auto: 'postal-code', requerido: true, modo: 'numeric' },
-  { id: 'referencias', etiqueta: 'Referencias (opcional)', tipo: 'textarea', requerido: false, ayuda: 'Entre qué calles, color de la casa, etc.' },
-  { id: 'fecha', etiqueta: '¿Para cuándo lo necesitas? (opcional)', tipo: 'date', requerido: false, ayuda: 'Para un viaje o evento. Te confirmamos por WhatsApp si llega a tiempo.' }
+  { id: 'fecha', grupo: 'cuando', etiqueta: 'Fecha (opcional)', tipo: 'date', requerido: false },
+  { id: 'cp', grupo: 'donde', etiqueta: 'Código postal', tipo: 'text', auto: 'postal-code', requerido: true, modo: 'numeric' },
+  { id: 'calle', grupo: 'donde', etiqueta: 'Calle y número', tipo: 'text', auto: 'address-line1', requerido: true },
+  { id: 'colonia', grupo: 'donde', etiqueta: 'Colonia', tipo: 'text', auto: 'address-line2', requerido: true },
+  { id: 'ciudad', grupo: 'donde', etiqueta: 'Ciudad o municipio', tipo: 'text', auto: 'address-level2', requerido: true, ejemplo: 'Ej. Monterrey, San Pedro, Guadalupe' },
+  { id: 'estado', grupo: 'donde', etiqueta: 'Estado', tipo: 'text', auto: 'address-level1', requerido: true },
+  { id: 'referencias', grupo: 'donde', etiqueta: 'Referencias (opcional)', tipo: 'textarea', requerido: false, ayuda: 'Entre qué calles, color de la casa, etc.' },
+  { id: 'nombre', grupo: 'quien', etiqueta: 'Nombre de quien recibe', tipo: 'text', auto: 'name', requerido: true },
+  { id: 'telefono', grupo: 'quien', etiqueta: 'Teléfono (10 dígitos)', tipo: 'tel', auto: 'tel-national', requerido: true, modo: 'numeric' }
 ];
 
 let carritoPaso = 'carrito'; // 'carrito' | 'envio' | 'enviado'
@@ -300,11 +312,10 @@ function resumenEnvioHTML() {
   const l = ENVIO.local, n = ENVIO.nacional;
   return `<div class="carrito-info">
     <p><strong>100% original:</strong> preparamos tus decants al momento de tu pedido, de nuestras botellas originales y en frasco nuevo.</p>
-    <p><strong>Envío en Monterrey:</strong> ${formatoPrecio(l.costo)} (${formatoPrecio(l.costoExtendida)} en zonas extendidas), gratis desde ${formatoPrecio(l.gratisDesde)}. Llega en ${l.tiempo}.</p>
-    <p><strong>Envío nacional:</strong> aprox. ${formatoPrecio(n.costoMin)}–${formatoPrecio(n.costoMax)} según tu código postal, gratis desde ${formatoPrecio(n.gratisDesde)}. Llega en ${n.tiempo}.</p>
-    <p><strong>Pago:</strong> transferencia o tarjeta; te mandamos los datos por WhatsApp.</p>
-    <p><strong>Atención:</strong> te respondemos por WhatsApp ${HORARIO}.</p>
+    <p><strong>Envío:</strong> en Monterrey ${formatoPrecio(l.costo)} (${formatoPrecio(l.costoExtendida)} en zonas extendidas), gratis desde ${formatoPrecio(l.gratisDesde)}; nacional aprox. ${formatoPrecio(n.costoMin)}–${formatoPrecio(n.costoMax)} según tu código postal, gratis desde ${formatoPrecio(n.gratisDesde)}. Pedidos recibidos antes de las 18:00 se envían el siguiente día hábil (de lunes a viernes; lo del sábado sale el lunes).</p>
+    <p><strong>Pago:</strong> transferencia, o tarjeta con liga segura de Mercado Pago sin comisión. Te respondemos por WhatsApp ${HORARIO}.</p>
     ${hayCompletos() ? '<p>Los perfumes completos se piden sobre pedido (7 a 10 días hábiles); su envío se confirma por WhatsApp.</p>' : ''}
+    ${POLITICA_HTML}
   </div>`;
 }
 
@@ -367,9 +378,69 @@ function pasoEnvioHTML() {
       { valor: 'local', titulo: 'Entrega en Monterrey', detalle: `${local.texto} · ${ENVIO.local.tiempo}` },
       { valor: 'nacional', titulo: 'Envío nacional', detalle: `${nac.texto} · ${ENVIO.nacional.tiempo}` }
     ], envio.entrega, '¿Dónde lo recibes?')}
-    ${opcionesHTML('pago', FORMAS_PAGO.map(f => ({ valor: f, titulo: f })), envio.pago, '¿Cómo prefieres pagar?')}
-    <fieldset class="envio-datos"><legend>¿A quién y a dónde lo enviamos?</legend>${CAMPOS_ENVIO.map(campoHTML).join('')}</fieldset>
+    <fieldset class="envio-datos"><legend>¿Para cuándo lo necesitas?</legend>
+      ${grupoCampos('cuando')}
+      <p class="envio-fecha-respuesta" id="envio-fecha-respuesta" aria-live="polite">${respuestaFecha()}</p>
+    </fieldset>
+    <fieldset class="envio-datos"><legend>¿A dónde lo enviamos?</legend>${grupoCampos('donde')}</fieldset>
+    <fieldset class="envio-datos"><legend>¿Quién lo recibe?</legend>${grupoCampos('quien')}</fieldset>
+    ${opcionesHTML('pago', FORMAS_PAGO.map(f => ({ valor: f.valor, titulo: f.valor, detalle: f.detalle })), envio.pago, '¿Cómo prefieres pagar?')}
+    <div class="envio-confianza">
+      <p><strong>100% original:</strong> preparamos tu decant de nuestra botella original, en frasco nuevo. Si quieres, te mandamos foto o video de la botella antes de pagar.</p>
+      ${POLITICA_HTML}
+    </div>
   </form>`;
+}
+
+function grupoCampos(grupo) {
+  return CAMPOS_ENVIO.filter(c => c.grupo === grupo).map(campoHTML).join('');
+}
+
+function fechaISO(d) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+// Día en que sale el pedido (dato del dueño, 2026-11-08): lo recibido antes
+// de las 18:00 cuenta ese día; después, al día siguiente. Sale el siguiente
+// día hábil de paquetería (lunes a viernes): el sábado se prepara, pero la
+// paquetería recolecta el lunes. Lo del domingo cuenta como recibido el
+// lunes. No contempla días festivos.
+function diaEnvio(ahora = new Date()) {
+  const d = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate());
+  // El sábado no aplica el corte: todo lo del sábado sale el lunes.
+  if (ahora.getHours() >= HORA_CORTE && d.getDay() !== 6) d.setDate(d.getDate() + 1);
+  if (d.getDay() === 0) d.setDate(d.getDate() + 1); // el domingo no se atiende: cuenta como lunes
+  do { d.setDate(d.getDate() + 1); } while (d.getDay() === 0 || d.getDay() === 6);
+  return d;
+}
+
+// Respuesta inmediata a la fecha: dice cuándo sale el pedido si se hace ahora;
+// la llegada exacta se confirma por WhatsApp.
+function respuestaFecha() {
+  const sale = diaEnvio();
+  const saleTexto = fechaLegible(fechaISO(sale));
+  const llega = envio.entrega === 'local' ? ` En Monterrey llega en ${ENVIO.local.tiempo}.`
+    : envio.entrega === 'nacional' ? ` Por envío nacional llega en ${ENVIO.nacional.tiempo}.` : '';
+  if (!envio.fecha) return `Si haces tu pedido ahora, sale el ${saleTexto}.${llega} Si hubiera alguna demora, te avisamos.`;
+  if (envio.fecha < fechaISO(sale)) return `No alcanza: si haces tu pedido ahora, sale el ${saleTexto}. Elige otra fecha o pregúntanos por WhatsApp.`;
+  if (envio.fecha === fechaISO(sale)) return `Es justo: tu pedido sale ese mismo día, el ${saleTexto}. Te confirmamos por WhatsApp si llega a tiempo.`;
+  return `Anotado para el ${fechaLegible(envio.fecha)}. Tu pedido sale el ${saleTexto}.${llega} Te confirmamos por WhatsApp.`;
+}
+
+// Cuenta los datos obligatorios que faltan, en el orden del formulario.
+function datosFaltantes() {
+  let n = envio.entrega ? 0 : 1;
+  CAMPOS_ENVIO.forEach(c => { if (c.requerido && !envio[c.id]) n++; });
+  if (!envio.pago) n++;
+  return n;
+}
+function faltantesTexto() {
+  const n = datosFaltantes();
+  return n ? `Faltan ${n} ${n === 1 ? 'dato' : 'datos'} por llenar` : 'Listo para enviar';
+}
+function actualizarFaltantes() {
+  const el = document.getElementById('envio-faltan');
+  if (el) { el.textContent = faltantesTexto(); el.classList.toggle('completo', !datosFaltantes()); }
 }
 
 function pasoEnviadoHTML() {
@@ -389,9 +460,10 @@ function pasoEnviadoHTML() {
     </dl>
     <h3 class="pedido-subtitulo">Lo que sigue</h3>
     <ol class="pedido-pasos">
-      <li>Te respondemos por WhatsApp ${HORARIO}, para confirmar tu pedido y el pago por ${escaparHTML(p.pago.toLowerCase())}.</li>
-      <li>Al confirmarse el pago, preparamos tus decants al momento.</li>
+      <li>Te respondemos por WhatsApp ${HORARIO}, para confirmar tu pedido y ${p.pago === 'Tarjeta' ? 'mandarte la liga de pago segura de Mercado Pago (sin comisión)' : 'mandarte los datos para la transferencia'}.</li>
+      <li>Al confirmarse el pago, preparamos tus decants al momento. Pedidos recibidos antes de las 18:00 se envían el siguiente día hábil, de lunes a viernes.</li>
       <li>${p.entrega === 'local' ? `Entrega en Monterrey: ${ENVIO.local.tiempo}.` : `Envío nacional: ${ENVIO.nacional.tiempo}.`}${p.conCompletos ? ' Los perfumes completos tardan de 7 a 10 días hábiles.' : ''}</li>
+      <li>Al recibirlo, revisa tu paquete: si algo llega dañado, avísanos en 24 horas; si es otro perfume, en 48 horas.</li>
     </ol>
     <p class="pedido-gracias">Gracias por elegir Saúco.</p>
   </div>`;
@@ -416,6 +488,7 @@ function renderCarrito() {
       <div class="carrito-total-fila"><span>Envío${hayCompletos() && hayDecants() ? ' de decants' : ''}</span><span class="carrito-envio-texto">${envio.entrega || !hayDecants() ? est.texto : 'Elige dónde lo recibes'}</span></div>
       ${hayCompletos() && hayDecants() ? '<div class="carrito-total-fila"><span>Envío de completos</span><span class="carrito-envio-texto">Se confirma por WhatsApp</span></div>' : ''}
       <div class="carrito-total-fila carrito-total-final"><span>Total estimado</span><span class="carrito-total-monto">${totalEstimadoTexto(envio.entrega)}</span></div>
+      <p class="envio-faltan${datosFaltantes() ? '' : ' completo'}" id="envio-faltan" aria-live="polite">${faltantesTexto()}</p>
       <button type="submit" form="form-envio" class="carrito-principal">Enviar pedido por WhatsApp</button>
       <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido y tus datos ya escritos.</p>`;
   } else if (carritoPaso === 'enviado' && pedidoVigente()) {
@@ -457,14 +530,17 @@ function leerFormEnvio(form) {
 }
 
 function validarEnvio() {
+  // Las llaves se insertan en el orden del formulario: el foco va al primer error.
   const e = {};
   if (!envio.entrega) e.entrega = 'Elige si lo recibes en Monterrey o por envío nacional.';
-  if (!envio.pago) e.pago = 'Elige cómo prefieres pagar.';
-  CAMPOS_ENVIO.forEach(c => { if (c.requerido && !envio[c.id]) e[c.id] = `Escribe ${c.etiqueta.replace(/ \(.*\)$/, '').toLowerCase()}.`; });
   const tel = envio.telefono.replace(/\D/g, '').replace(/^52(?=\d{10}$)/, '');
-  if (envio.telefono && tel.length !== 10) e.telefono = 'El teléfono debe tener 10 dígitos, por ejemplo 81 1234 5678.';
-  if (envio.cp && !/^\d{5}$/.test(envio.cp.replace(/\s/g, ''))) e.cp = 'El código postal tiene 5 dígitos.';
-  if (envio.fecha && new Date(envio.fecha + 'T23:59:59') < new Date()) e.fecha = 'Elige una fecha de hoy en adelante.';
+  CAMPOS_ENVIO.forEach(c => {
+    if (c.requerido && !envio[c.id]) e[c.id] = `Escribe ${c.etiqueta.replace(/ \(.*\)$/, '').toLowerCase()}.`;
+    else if (c.id === 'fecha' && envio.fecha && new Date(envio.fecha + 'T23:59:59') < new Date()) e.fecha = 'Elige una fecha de hoy en adelante.';
+    else if (c.id === 'cp' && envio.cp && !/^\d{5}$/.test(envio.cp.replace(/\s/g, ''))) e.cp = 'El código postal tiene 5 dígitos.';
+    else if (c.id === 'telefono' && envio.telefono && tel.length !== 10) e.telefono = 'El teléfono debe tener 10 dígitos, por ejemplo 81 1234 5678.';
+  });
+  if (!envio.pago) e.pago = 'Elige cómo prefieres pagar.';
   return e;
 }
 
@@ -525,25 +601,73 @@ function atraparFocoCarrito(e) {
 
 // ----- Aviso al agregar -----
 let avisoTimer = null;
+let avisoFin = 0;        // momento en que se oculta el aviso
+let avisoRestante = 0;   // tiempo que quedaba al pausar
+// 8 s para alcanzar a leer y deshacer; se pausa mientras el cliente lo toca,
+// le pasa el cursor o tiene el foco en él (WCAG 2.2.1).
+const AVISO_MS = 8000;
 
-function mostrarAviso(texto) {
+function programarAviso(ms) {
+  clearTimeout(avisoTimer);
+  avisoRestante = 0;
+  avisoFin = Date.now() + ms;
+  avisoTimer = setTimeout(ocultarAviso, ms);
+}
+function pausarAviso() {
+  if (!avisoFin) return;
+  clearTimeout(avisoTimer);
+  avisoRestante = Math.max(avisoFin - Date.now(), 0);
+  avisoFin = 0;
+}
+function reanudarAviso() {
+  const aviso = document.getElementById('carrito-aviso');
+  if (avisoFin || !aviso || aviso.hidden) return;
+  if (aviso.contains(document.activeElement)) return;
+  programarAviso(Math.max(avisoRestante, 3000));
+}
+
+// Región viva aparte: el aviso tiene botones y no debe ser él mismo un «status».
+function anunciar(texto) {
+  let r = document.getElementById('carrito-anuncio');
+  if (!r) {
+    r = document.createElement('p');
+    r.id = 'carrito-anuncio';
+    r.className = 'sr-only';
+    r.setAttribute('aria-live', 'polite');
+    document.body.appendChild(r);
+  }
+  r.textContent = '';
+  setTimeout(() => { r.textContent = texto; }, 50);
+}
+
+function pulsarContador() {
+  const badge = document.getElementById('carrito-contador');
+  if (!badge || badge.hidden) return;
+  badge.classList.remove('pulso');
+  void badge.offsetWidth; // reinicia la animación si se agrega dos veces seguidas
+  badge.classList.add('pulso');
+}
+
+function mostrarAviso(texto, cantidad = 1) {
   const aviso = document.getElementById('carrito-aviso');
   if (!aviso) return;
-  aviso.innerHTML = `<span class="carrito-aviso-texto"><strong>${escaparHTML(texto)}</strong> agregado</span>
+  const llevas = cantidad > 1 ? ` · ya llevas ${cantidad}` : '';
+  aviso.innerHTML = `<span class="carrito-aviso-texto"><strong>${escaparHTML(texto)}</strong> agregado${llevas}</span>
     <span class="carrito-aviso-acciones">
       <button type="button" class="carrito-aviso-deshacer">Deshacer</button>
       <button type="button" class="carrito-aviso-ver">Ver carrito</button>
     </span>`;
   aviso.hidden = false;
   requestAnimationFrame(() => aviso.classList.add('visible'));
-  clearTimeout(avisoTimer);
-  avisoTimer = setTimeout(ocultarAviso, 4000);
+  anunciar(`${texto} agregado al carrito${llevas}.`);
+  programarAviso(AVISO_MS);
 }
 
 function ocultarAviso() {
   const aviso = document.getElementById('carrito-aviso');
   if (!aviso || aviso.hidden) return;
   clearTimeout(avisoTimer);
+  avisoFin = 0;
   aviso.classList.remove('visible');
   setTimeout(() => { if (!aviso.classList.contains('visible')) aviso.hidden = true; }, 250);
 }
@@ -651,7 +775,7 @@ function mensajePedido(numeroPedido) {
 }
 
 function fechaLegible(iso) {
-  try { return new Date(iso + 'T12:00:00').toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'long' }); }
+  try { return new Date(iso + 'T12:00:00').toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'long' }).replace(',', ''); }
   catch (e) { return iso; }
 }
 
@@ -771,6 +895,13 @@ document.addEventListener('submit', (e) => {
   checkoutWhatsApp(e.target);
 });
 
+document.addEventListener('input', (e) => {
+  const form = e.target.closest('#form-envio');
+  if (!form || e.target.type === 'radio') return;
+  leerFormEnvio(form);
+  actualizarFaltantes();
+});
+
 document.addEventListener('focusin', (e) => {
   if (e.target.matches('#form-envio input:not([type="radio"]), #form-envio textarea')) document.getElementById('carrito-panel')?.classList.add('escribiendo');
 });
@@ -789,6 +920,11 @@ document.addEventListener('change', (e) => {
     if (!envio.estado) envio.estado = 'Nuevo León';
   }
   guardarEnvio();
+  if (e.target.name === 'fecha') {
+    const r = document.getElementById('envio-fecha-respuesta');
+    if (r) r.textContent = respuestaFecha();
+  }
+  actualizarFaltantes();
   if (e.target.type === 'radio') {
     delete envioErrores[e.target.name];
     const activo = e.target.value, nombre = e.target.name;
@@ -843,3 +979,17 @@ window.addEventListener('storage', (e) => {
   actualizarBadge();
   renderCarrito();
 });
+
+// Pausa del aviso mientras se interactúa con él.
+(function () {
+  const aviso = document.getElementById('carrito-aviso');
+  if (!aviso) return;
+  aviso.removeAttribute('role');
+  aviso.removeAttribute('aria-live');
+  aviso.addEventListener('pointerenter', pausarAviso);
+  aviso.addEventListener('pointerleave', reanudarAviso);
+  aviso.addEventListener('focusin', pausarAviso);
+  aviso.addEventListener('focusout', () => setTimeout(reanudarAviso, 0));
+  aviso.addEventListener('touchstart', pausarAviso, { passive: true });
+  aviso.addEventListener('touchend', () => setTimeout(reanudarAviso, 0), { passive: true });
+})();
