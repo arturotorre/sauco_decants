@@ -284,7 +284,7 @@ La profundidad es física, no de interfaz: viene de los objetos del atelier. Las
 
 La repisa de la ficha lleva en escritorio el canto de 3px más una sombra de repisa corta (`0 16px 20px -12px rgba(59,35,24,0.4)`); en móvil solo el canto.
 
-Las mini repisas de los renglones (6px de roble con canto de 2px) y la vitrina (10px con canto de 3px) repiten el canto chocolate como borde de madera, sin sombra de repisa.
+El catálogo ya no usa repisas (ni en la galería ni en su vitrina); las repisas quedan en la portada y las fichas.
 
 ### Named Rules
 **The Objects Cast Shadows Rule.** Solo los objetos del atelier (papel, repisa) y las capas flotantes (carrito, menú abierto, desplegables) tienen sombra, siempre teñida de chocolate. Las secciones y los textos son planos.
@@ -316,8 +316,8 @@ Formas rectas y artesanales. Las tiras son rectángulos de papel con la punta co
 ### Desplegables de completos
 Botones de contorno papel de 40px (borde en línea, tinta en hover y abiertos) con flecha dibujada por dos trazos de 1.5px que gira al abrir; el contador de filtros es una píldora tinta de 22px. El panel es papel, borde en línea, 2px de radio, 1.1rem de relleno, sombra del desplegable y alto máximo min(70vh, 520px) con scroll. Las opciones de orden son de 44px y la activa va en 600 con un punto tinta de 6px.
 
-### Renglón de catálogo
-Un perfume por renglón, sin tarjeta. A la izquierda la foto sobre una mini repisa (72px; 96px desde 700px) fundida con `multiply`, hundida 4 % y que sube en hover; al centro la casa en etiqueta 12px/600 tinta suave, el nombre (enlace a la ficha, subrayado en hover) y una línea meta en 14px tinta suave: en decants género corto y las tres primeras notas; en completos concentración, tamaño, género y «Set de regalo», más «Incluye:» en los sets. En decants, debajo (a la derecha desde 700px) los tres botones de medida con su precio; en completos, a la derecha el precio en 15px/600 con cifras tabulares (o «Precio por consultar» en 14px/400) y el botón Agregar o Consultar. Las secciones abren con su título y conteo sobre un divisor en línea.
+### Galería de catálogo
+(Antes «renglón de catálogo»; el dueño pidió fotos más grandes y quitar la mini repisa el 2026-11-08.) Cuadrícula de frascos sin tarjeta ni repisa: 2 por fila en móvil, 3 desde 700px y 4 desde 1024px, dentro de una sala de papel de hasta 1180px (la cabecera del catálogo se queda a 820px). Cada pieza: foto en una placa de yeso 1:1 (el mismo cuadro para todas, para que la cuadrícula se lea ordenada; el dueño sentía los frascos «volando» sin ella), fundida con `multiply` al 80 % del cuadro y que crece 4 % en hover, la casa en etiqueta 11.5px/600 tinta suave, el nombre en Hanken 16–17px/500 (enlace a la ficha) y una sola línea meta 13.5px recortada con puntos suspensivos. Al pie de cada pieza, alineados entre piezas: en decants los tres botones de medida con su precio (48px de alto, «+» de 7px); en completos el precio y el botón Agregar o Consultar en fila. La vitrina «Los más vendidos» del catálogo tampoco lleva repisa: los frascos se posan sobre el papel y la leyenda va sobre una línea fina. La portada y las fichas conservan sus repisas.
 
 ### Vitrina
 Repisa de los más vendidos al inicio del catálogo de decants: hasta cuatro frascos (tres en móvil) sobre roble de 10px con canto chocolate de 3px, 96px de alto en móvil y 170px desde 700px, con la leyenda «Los más vendidos» debajo en 14px tinta suave. Respeta el género elegido y se oculta mientras hay búsqueda o si no hay destacados.

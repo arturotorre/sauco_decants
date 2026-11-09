@@ -28,7 +28,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # Versión de CSS/JS: cámbiala cada vez que se publiquen cambios en css/ o js/
 # para que los navegadores descarguen los archivos nuevos en lugar de usar los
 # que tienen guardados (deben coincidir con los de index.html).
-VERSION_ARCHIVOS = "20261108r"
+VERSION_ARCHIVOS = "20261108u"
 DATA_JS = RAIZ / "js" / "data.js"
 
 # --- Contenido editorial curado a mano, un producto a la vez ------------
