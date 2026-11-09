@@ -134,8 +134,8 @@ html.compacto .nav-marca-mini { opacity: 1; visibility: visible; transition-dela
 .precio-ml { font-family: var(--f); font-size: 9px; font-weight: 300; letter-spacing: 1px; color: var(--cobre); display: block; margin-bottom: 3px; }
 .precio-val { font-family: var(--f-display); font-size: 14px; font-weight: 400; color: var(--chocolate); display: block; }
 
-.btn-agregar { flex-shrink: 0; display: flex; align-items: center; gap: 4px; background: var(--fondo); border: 0.5px solid var(--cobre); border-radius: 20px; padding: 4px 10px; cursor: pointer; font-family: var(--f); font-size: 8px; font-weight: 300; letter-spacing: 1px; color: var(--cobre); text-transform: uppercase; white-space: nowrap; transition: background 0.2s, color 0.2s; }
-.btn-agregar:hover { background: var(--terracota); border-color: var(--terracota); color: #fff; }
+.btn-agregar { flex-shrink: 0; display: flex; align-items: center; gap: 4px; background: var(--papel); border: 0.5px solid var(--tinta); border-radius: 20px; padding: 4px 10px; cursor: pointer; font-family: var(--f); font-size: 8px; font-weight: 300; letter-spacing: 1px; color: var(--tinta); text-transform: uppercase; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+.btn-agregar:hover { background: var(--tinta); border-color: var(--tinta); color: #fff; }
 
 @media (max-width: 600px) {
   .btn-agregar { padding: 0; width: 24px; height: 24px; border-radius: 50%; justify-content: center; }
@@ -466,7 +466,7 @@ input, textarea { caret-color: var(--tinta); }
 .enlace-en-linea:hover { text-decoration-thickness: 2px; }
 
 .catalogo-buscador { margin-top: 1.1rem; }
-.catalogo-buscador input { width: 100%; height: 48px; padding: 0 1rem 0 2.75rem; font-family: var(--f); font-size: 16px; color: var(--tinta); background: var(--papel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364503F' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 20 20'/%3E%3C/svg%3E") no-repeat 0.9rem 50% / 20px; border: 1px solid var(--linea); border-radius: 2px; transition: border-color 0.2s; }
+.catalogo-buscador input { width: 100%; height: 48px; padding: 0 1rem 0 2.75rem; font-family: var(--f); font-size: 16px; color: var(--tinta); background: var(--papel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364503F' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 20 20'/%3E%3C/svg%3E") no-repeat 0.9rem 50% / 20px; border: 1px solid rgba(59,35,24,.55); border-radius: 2px; transition: border-color 0.2s; }
 .catalogo-buscador input::placeholder { color: var(--tinta-suave); opacity: 1; }
 .catalogo-buscador input:focus { outline: none; border-color: var(--tinta); box-shadow: 0 0 0 1px var(--tinta); }
 
@@ -660,7 +660,7 @@ a.fila-nombre:hover { text-decoration: underline; text-decoration-thickness: 1px
 }
 
 /* ===== Originalidad: proceso y qué recibes ===== */
-#originalidad, #como-pedir { scroll-margin-top: calc(var(--nav-alto-movil) + 1rem); }
+#originalidad, #que-recibes, #como-pedir { scroll-margin-top: calc(var(--nav-alto-movil) + 1rem); }
 .proceso { list-style: none; counter-reset: proceso; display: grid; gap: 1.5rem; margin-top: 0.5rem; }
 .proceso-paso { display: grid; grid-template-columns: 2.75rem 1fr; gap: 0.15rem 1rem; align-items: baseline; }
 .proceso-paso::before { counter-increment: proceso; content: counter(proceso); grid-row: span 2; font-family: var(--f-display); font-size: 40px; font-weight: 500; line-height: 1; }
@@ -745,8 +745,9 @@ a.fila-nombre:hover { text-decoration: underline; text-decoration-thickness: 1px
 
 /* Paso 2: respuesta a la fecha, datos faltantes, confianza y política */
 .envio-fecha-respuesta { font-size: 14px; line-height: 1.45; color: var(--tinta-suave); text-wrap: pretty; }
-.envio-faltan { margin-top: 0.75rem; font-size: 14px; font-weight: 500; color: var(--tinta-suave); text-align: center; font-variant-numeric: tabular-nums; }
-.envio-faltan.completo { color: var(--tinta); }
+.envio-faltan { display: block; width: 100%; min-height: 36px; margin-top: 0.35rem; padding: 0; background: none; border: 0; cursor: pointer; font-family: var(--f); font-size: 14px; font-weight: 500; color: var(--tinta-suave); text-align: center; text-decoration: underline; text-decoration-color: var(--roble); text-underline-offset: 4px; font-variant-numeric: tabular-nums; }
+.envio-faltan:hover { color: var(--tinta); }
+.envio-faltan.completo { color: var(--tinta); text-decoration: none; cursor: default; }
 .envio-confianza { display: grid; gap: 0.6rem; padding-top: 1rem; border-top: 1px solid var(--linea); font-size: 14px; line-height: 1.5; color: var(--tinta-suave); text-wrap: pretty; }
 .envio-confianza strong { color: var(--tinta); font-weight: 600; }
 .envio-politica summary { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--tinta); list-style: none; text-decoration: underline; text-decoration-color: var(--roble); text-underline-offset: 3px; }
@@ -808,13 +809,9 @@ html.compacto { --enc-visible: var(--enc-menu); }
 .sala-tinta .atelier-texto-largo { color: var(--yeso); margin: 0 auto; }
 .sala-tinta .proceso { width: 100%; max-width: 1080px; text-align: left; margin-top: 1.5rem; }
 .sala-tinta .proceso-paso::before { color: var(--roble-claro); }
-.sala-tinta .proceso-texto, .sala-tinta .recibes-fila dd { color: var(--pie-suave); }
+.sala-tinta .proceso-texto { color: var(--pie-suave); }
 .sala-tinta .originalidad-prueba { color: var(--pie-suave); margin: 0 auto; }
 .sala-tinta .originalidad-prueba a { color: var(--yeso); text-decoration-color: var(--roble-claro); }
-.sala-tinta .recibes { width: 100%; max-width: 1080px; text-align: left; border-top-color: rgba(226,225,222,0.2); }
-.sala-tinta .recibes-titulo { color: var(--yeso); }
-.sala-tinta .recibes-lista { border-top-color: var(--roble-claro); }
-.sala-tinta .recibes-fila { border-bottom-color: rgba(226,225,222,0.2); }
 .sala-tinta :focus-visible { outline-color: var(--yeso); }
 .sala-tinta ::selection { background: var(--yeso); color: var(--tinta); }
 
@@ -876,3 +873,79 @@ html.compacto { --enc-visible: var(--enc-menu); }
 .ficha-sala .ficha-relacionados { max-width: 900px; margin: 1.25rem auto 0; text-align: left; }
 .ficha-sala .relacionado-foto { background: transparent; }
 @media (min-width: 861px) { .ficha-sala { padding: 5rem clamp(2rem, 4vw, 4rem) 5.5rem; } .ficha-sala .ficha-relacionados { gap: 28px; } }
+
+/* «Qué recibes»: sala de papel propia, fuera de la banda chocolate (la banda
+   queda solo con la prueba de originalidad). */
+.recibes-sala .recibes-lista { max-width: 1080px; margin: 0 auto; }
+/* Pie más compacto en el celular: el chocolate identifica sin dominar. */
+@media (max-width: 699px) {
+  .footer-global { padding: 2.5rem 1.25rem 2.25rem; }
+  .footer-nombre img { height: 96px; margin-bottom: 1.25rem; }
+  .footer-contacto { margin-top: 1rem; }
+  .footer-redes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 1rem; margin-top: 1.5rem; }
+}
+
+/* Paso 2: desglose arriba, pie fijo mínimo y estados de la fecha */
+.envio-resumen ul { padding-bottom: 0.6rem; }
+.envio-desglose { display: grid; gap: 0.35rem; margin: 0 0.9rem; padding: 0.7rem 0 0.9rem; border-top: 1px solid var(--linea); font-size: 14px; }
+.envio-desglose div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.envio-desglose dt { color: var(--tinta-suave); }
+.envio-desglose dd { color: var(--tinta); text-align: right; max-width: 62%; font-variant-numeric: tabular-nums; }
+.envio-desglose-total { margin-top: 0.25rem; padding-top: 0.5rem; border-top: 1px solid var(--linea); font-weight: 600; }
+.envio-pie-total { margin-top: 0 !important; padding-top: 0 !important; border-top: 0 !important; }
+.envio-fecha-respuesta.no-alcanza, .envio-fecha-respuesta.justo { padding: 0.65rem 0.8rem; border-radius: 2px; font-weight: 500; }
+.envio-fecha-respuesta.no-alcanza { color: #8A1F1F; background: rgba(138,31,31,0.06); border: 1px solid rgba(138,31,31,0.4); }
+.envio-fecha-respuesta.justo { color: var(--tinta); background: var(--papel); border: 1px solid var(--roble); }
+@media (max-width: 699px) {
+  #carrito-pie .carrito-nota-whatsapp { display: none; }
+  #carrito-pie .carrito-principal { margin-top: 0.35rem; }
+}
+
+/* Encabezado en el celular: «Más» agrupa originalidad, qué recibes, cómo pedir
+   y WhatsApp; compacto conserva la flor como enlace al inicio. */
+.solo-movil, .nav-links > li.solo-movil { display: none; }
+.mini-movil { display: none; }
+.encabezado-whatsapp { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 860px) {
+  .nav-links > li.solo-movil { display: flex; }
+  .encabezado-whatsapp { padding-right: 0.75rem; }
+  .nav-marca-mini { display: block; position: static; transform: none; width: 0; overflow: hidden; margin-right: 0; transition: opacity 0.25s, visibility 0s 0.25s, width 0.3s cubic-bezier(.16,1,.3,1), margin-right 0.3s cubic-bezier(.16,1,.3,1); }
+  .nav-marca-mini .mini-escritorio { display: none; }
+  .nav-marca-mini .mini-movil { display: block; width: 28px; height: 28px; min-width: 28px; }
+  html.compacto .nav-marca-mini { width: 28px; margin-right: 0.9rem; }
+  html.compacto .nav-principal { padding-left: 0.85rem; align-items: center; }
+  html.compacto .nav-links { gap: 1.1rem; }
+  .nav-marca-mini { align-self: center; min-height: 44px; display: flex; align-items: center; }
+}
+.encabezado-whatsapp span { margin-left: 0.35em; }
+
+/* Inicio en dos columnas desde 1024px: texto y botón a la izquierda, repisa y
+   tiras a la derecha, todo dentro de la primera pantalla. */
+@media (min-width: 1024px) {
+  .atelier-portada {
+    grid-template-areas: "texto escena" "acciones escena";
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: clamp(2.5rem, 5vw, 5rem);
+    row-gap: 2rem;
+    align-items: end;
+    text-align: left;
+    padding: clamp(2rem, 5vh, 3.5rem) clamp(2rem, 4vw, 4rem) clamp(2rem, 4vh, 3rem);
+  }
+  .atelier-texto { align-items: flex-start; align-self: end; }
+  .atelier-lema { font-size: clamp(2.8rem, 4.2vw, 4.1rem); max-width: 13ch; text-wrap: balance; }
+  .atelier-sub { margin-left: 0; }
+  .atelier-acciones { justify-content: flex-start; align-self: start; }
+  .atelier-escena { align-self: center; max-width: 640px; }
+  .repisa { height: clamp(220px, 32vh, 340px); }
+}
+.atelier-acciones .enlace-secundario { white-space: nowrap; }
+
+/* Pulido final */
+.encabezado-whatsapp { display: inline-block; min-height: 0; padding: 13px 0; line-height: 18px; }
+.encabezado-whatsapp span { margin-left: 0; }
+.relacionado-nombre { font-family: var(--f); font-size: 17px; font-weight: 500; line-height: 1.25; }
+.carrito-vacio { margin-top: 2.5rem; display: grid; justify-items: center; gap: 0.75rem; padding: 0 0.5rem; }
+.carrito-vacio p { margin-bottom: 0; }
+.carrito-vacio .carrito-principal { display: flex; align-items: center; justify-content: center; text-decoration: none; margin-top: 0.5rem; }
+.carrito-vacio .carrito-vacio-sub { font-size: 15px; line-height: 1.5; max-width: 26ch; text-align: center; }

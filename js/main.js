@@ -383,7 +383,7 @@ function renderPortada() {
 function cerrarNavMovil() { cerrarMenusNav(); }
 
 function cerrarMenusNav(devolverFoco) {
-  ['decants', 'completos'].forEach(k => {
+  ['decants', 'completos', 'mas'].forEach(k => {
     const item = document.getElementById(`nav-item-${k}`);
     const toggle = document.getElementById(`nav-${k}-toggle`);
     if (!item || !toggle) return;
@@ -469,7 +469,7 @@ function route() {
   } else {
     vistaHome.hidden = false;
   }
-  const anclaHome = ['originalidad', 'como-pedir'].includes(seccion) ? document.getElementById(seccion) : null;
+  const anclaHome = ['originalidad', 'que-recibes', 'como-pedir'].includes(seccion) ? document.getElementById(seccion) : null;
   if (anclaHome) activo = seccion;
 
   navLinks.forEach(a => a.classList.toggle('activo', a.dataset.genero === activo));
@@ -506,8 +506,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('nav-decants-toggle')?.addEventListener('click', () => alternarMenuNav('decants'));
   document.getElementById('nav-completos-toggle')?.addEventListener('click', () => alternarMenuNav('completos'));
+  document.getElementById('nav-mas-toggle')?.addEventListener('click', () => alternarMenuNav('mas'));
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-item-decants, .nav-item-completos') || e.target.closest('.nav-submenu a')) cerrarMenusNav();
+    if (!e.target.closest('.nav-item-decants, .nav-item-completos, .nav-item-mas') || e.target.closest('.nav-submenu a')) cerrarMenusNav();
   });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarMenusNav(true); });
   window.addEventListener('scroll', actualizarEncabezadoCompacto, { passive: true });

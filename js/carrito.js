@@ -265,7 +265,9 @@ function envioPedido(entrega) {
 }
 function totalEstimadoTexto(entrega) {
   const sub = calcularTotal();
-  const est = envioPedido(entrega);
+  let est = envioPedido(entrega);
+  // Sin entrega elegida: si ambas opciones salen gratis, el total ya es definitivo.
+  if (!entrega && hayDecants() && envioPedido('local').monto === 0 && envioPedido('nacional').monto === 0) est = { monto: 0 };
   if (est.monto == null) return `${formatoPrecio(sub)} + envío`;
   return formatoPrecio(sub + est.monto) + (hayCompletos() ? ' + envío de completos' : '');
 }
@@ -330,7 +332,9 @@ function pasoCarritoHTML() {
   if (!carrito.length) {
     return `<div class="carrito-vacio">
       <p>Tu carrito está vacío.</p>
-      <a class="enlace-secundario" href="/#catalogo/todos">Explorar decants</a>
+      <p class="carrito-vacio-sub">Prueba un perfume de lujo en&nbsp;3,&nbsp;5 o&nbsp;10&nbsp;ml.</p>
+      <a class="carrito-principal" href="/#catalogo/todos">Explorar decants</a>
+      <a class="enlace-secundario" href="/#completos/todos">Perfumes completos</a>
     </div>`;
   }
   return carrito.map(carritoItemHTML).join('') + resumenEnvioHTML();
@@ -368,9 +372,18 @@ function opcionesHTML(nombre, opciones, actual, leyenda) {
 function pasoEnvioHTML() {
   const local = envioPedido('local'), nac = envioPedido('nacional');
   const n = totalArticulos();
+  const est = envioPedido(envio.entrega);
+  const mixto = hayCompletos() && hayDecants();
+  // El desglose vive aquí arriba; el pie fijo solo lleva el total y el botón.
   const resumen = `<details class="envio-resumen">
-    <summary>${n} ${n === 1 ? 'artículo' : 'artículos'} · ${formatoPrecio(calcularTotal())}</summary>
+    <summary>${n} ${n === 1 ? 'artículo' : 'artículos'} · ver desglose</summary>
     <ul>${carrito.map(i => `<li>${escaparHTML(i.alt || i.nombre)} · ${escaparHTML(textoTamano(i.tamano))}${i.cantidad > 1 ? ` ×${i.cantidad}` : ''}</li>`).join('')}</ul>
+    <dl class="envio-desglose">
+      <div><dt>Subtotal</dt><dd>${formatoPrecio(calcularTotal())}</dd></div>
+      <div><dt>Envío${mixto ? ' de decants' : ''}</dt><dd>${envio.entrega || !hayDecants() ? est.texto : 'Según dónde lo recibas'}</dd></div>
+      ${mixto ? '<div><dt>Envío de completos</dt><dd>Se confirma por WhatsApp</dd></div>' : ''}
+      <div class="envio-desglose-total"><dt>Total estimado</dt><dd>${totalEstimadoTexto(envio.entrega)}</dd></div>
+    </dl>
   </details>`;
   return `<form id="form-envio" class="envio-form" novalidate>
     ${resumen}
@@ -380,7 +393,7 @@ function pasoEnvioHTML() {
     ], envio.entrega, '¿Dónde lo recibes?')}
     <fieldset class="envio-datos"><legend>¿Para cuándo lo necesitas?</legend>
       ${grupoCampos('cuando')}
-      <p class="envio-fecha-respuesta" id="envio-fecha-respuesta" aria-live="polite">${respuestaFecha()}</p>
+      <p class="envio-fecha-respuesta${estadoFecha() ? ' ' + estadoFecha() : ''}" id="envio-fecha-respuesta" aria-live="polite">${respuestaFecha()}</p>
     </fieldset>
     <fieldset class="envio-datos"><legend>¿A dónde lo enviamos?</legend>${grupoCampos('donde')}</fieldset>
     <fieldset class="envio-datos"><legend>¿Quién lo recibe?</legend>${grupoCampos('quien')}</fieldset>
@@ -416,6 +429,15 @@ function diaEnvio(ahora = new Date()) {
 
 // Respuesta inmediata a la fecha: dice cuándo sale el pedido si se hace ahora;
 // la llegada exacta se confirma por WhatsApp.
+// Estado visual de la respuesta: «no-alcanza» (aviso), «justo» (atención) o nada.
+function estadoFecha() {
+  if (!envio.fecha) return '';
+  const sale = fechaISO(diaEnvio());
+  if (envio.fecha < sale) return 'no-alcanza';
+  if (envio.fecha === sale) return 'justo';
+  return '';
+}
+
 function respuestaFecha() {
   const sale = diaEnvio();
   const saleTexto = fechaLegible(fechaISO(sale));
@@ -434,9 +456,22 @@ function datosFaltantes() {
   if (!envio.pago) n++;
   return n;
 }
+function irAlPrimerFaltante() {
+  let destino = null;
+  if (!envio.entrega) destino = document.querySelector('#form-envio input[name="entrega"]');
+  else {
+    const c = CAMPOS_ENVIO.find(x => x.requerido && !envio[x.id]);
+    if (c) destino = document.getElementById(`envio-${c.id}`);
+    else if (!envio.pago) destino = document.querySelector('#form-envio input[name="pago"]');
+  }
+  if (!destino) return;
+  destino.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  destino.focus({ preventScroll: true });
+}
+
 function faltantesTexto() {
   const n = datosFaltantes();
-  return n ? `Faltan ${n} ${n === 1 ? 'dato' : 'datos'} por llenar` : 'Listo para enviar';
+  return n ? `Faltan ${n} ${n === 1 ? 'dato' : 'datos'} · ir al primero` : 'Listo para enviar';
 }
 function actualizarFaltantes() {
   const el = document.getElementById('envio-faltan');
@@ -482,13 +517,10 @@ function renderCarrito() {
   if (carritoPaso === 'envio') {
     encabezadoCarrito('Datos de envío', true, 2);
     cont.innerHTML = pasoEnvioHTML();
-    const est = envioPedido(envio.entrega);
+    // Pie fijo mínimo: total, lo que falta (lleva al primer dato) y el botón.
     pie.innerHTML = `
-      <div class="carrito-total-fila"><span>Subtotal</span><span>${formatoPrecio(sub)}</span></div>
-      <div class="carrito-total-fila"><span>Envío${hayCompletos() && hayDecants() ? ' de decants' : ''}</span><span class="carrito-envio-texto">${envio.entrega || !hayDecants() ? est.texto : 'Elige dónde lo recibes'}</span></div>
-      ${hayCompletos() && hayDecants() ? '<div class="carrito-total-fila"><span>Envío de completos</span><span class="carrito-envio-texto">Se confirma por WhatsApp</span></div>' : ''}
-      <div class="carrito-total-fila carrito-total-final"><span>Total estimado</span><span class="carrito-total-monto">${totalEstimadoTexto(envio.entrega)}</span></div>
-      <p class="envio-faltan${datosFaltantes() ? '' : ' completo'}" id="envio-faltan" aria-live="polite">${faltantesTexto()}</p>
+      <div class="carrito-total-fila carrito-total-final envio-pie-total"><span>Total estimado</span><span class="carrito-total-monto">${totalEstimadoTexto(envio.entrega)}</span></div>
+      <button type="button" class="envio-faltan${datosFaltantes() ? '' : ' completo'}" id="envio-faltan" data-accion="ir-faltante" aria-live="polite">${faltantesTexto()}</button>
       <button type="submit" form="form-envio" class="carrito-principal">Enviar pedido por WhatsApp</button>
       <p class="carrito-nota-whatsapp">Se abrirá WhatsApp con tu pedido y tus datos ya escritos.</p>`;
   } else if (carritoPaso === 'enviado' && pedidoVigente()) {
@@ -562,6 +594,9 @@ function abrirCarrito() {
   const panel = document.getElementById('carrito-panel');
   if (!panel) return;
   carritoFocoPrevio = document.activeElement;
+  // Una entrada en el historial: el botón «atrás» del celular cierra el carrito
+  // en lugar de salir de la página.
+  if (!(history.state && history.state.carrito)) history.pushState({ carrito: true }, '');
   overlay.hidden = false;
   panel.hidden = false;
   document.documentElement.classList.add('carrito-bloqueo');
@@ -571,6 +606,15 @@ function abrirCarrito() {
     panel.querySelector('.carrito-cerrar')?.focus();
   });
 }
+
+// Cierre explícito (botón, fondo, Escape): consume la entrada del historial,
+// y el cierre real llega por «popstate».
+function cerrarCarritoUI() {
+  if (!carritoAbierto()) return;
+  if (history.state && history.state.carrito) history.back();
+  else cerrarCarrito();
+}
+window.addEventListener('popstate', () => { if (carritoAbierto()) cerrarCarrito(); });
 
 function cerrarCarrito() {
   if (!carritoAbierto()) return;
@@ -872,6 +916,7 @@ document.addEventListener('click', (e) => {
   if (accion && accion.closest('#carrito-panel')) {
     const a = accion.dataset.accion;
     if (a === 'continuar') { irAPaso('envio'); return; }
+    if (a === 'ir-faltante') { irAlPrimerFaltante(); return; }
     if (a === 'reenviar' && ultimoPedido) { abrirWhatsApp(ultimoPedido.mensaje); return; }
     if (a === 'volver') { verCarritoSinPedido = true; irAPaso('carrito'); return; }
     if (a === 'nuevo') { confirmandoNuevo = true; renderCarrito(); document.querySelector('[data-accion="nuevo-no"]')?.focus(); return; }
@@ -881,7 +926,7 @@ document.addEventListener('click', (e) => {
     }
   }
   if (e.target.closest('#carrito-atras')) { irAPaso('carrito'); return; }
-  if (e.target.closest('.carrito-cerrar') || e.target.id === 'carrito-overlay') { cerrarCarrito(); return; }
+  if (e.target.closest('.carrito-cerrar') || e.target.id === 'carrito-overlay') { cerrarCarritoUI(); return; }
   // Un enlace dentro del carrito (ej. "Explorar decants" con el carrito vacío)
   // navega y cierra el panel.
   if (e.target.closest('#carrito-panel a[href]')) { cerrarCarrito(); return; }
@@ -922,7 +967,7 @@ document.addEventListener('change', (e) => {
   guardarEnvio();
   if (e.target.name === 'fecha') {
     const r = document.getElementById('envio-fecha-respuesta');
-    if (r) r.textContent = respuestaFecha();
+    if (r) { r.textContent = respuestaFecha(); r.className = 'envio-fecha-respuesta' + (estadoFecha() ? ' ' + estadoFecha() : ''); }
   }
   actualizarFaltantes();
   if (e.target.type === 'radio') {
@@ -937,7 +982,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     const selector = document.getElementById('selector-tamano');
     if (selector && !selector.hidden) { cerrarSelectorTamano(true); return; }
-    cerrarCarrito();
+    cerrarCarritoUI();
     ocultarAviso();
     return;
   }

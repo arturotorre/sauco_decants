@@ -28,8 +28,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/logo/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/imagenes/logo/sauco-sello-simple.svg">
 <link rel="apple-touch-icon" href="/imagenes/logo/apple-touch-icon.png">
-<link href="/css/fonts.css?v=20261108m" rel="stylesheet">
-<link href="/css/styles.css?v=20261108m" rel="stylesheet">
+<link href="/css/fonts.css?v=20261108r" rel="stylesheet">
+<link href="/css/styles.css?v=20261108r" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,7 +65,7 @@
     <a href="/#home" class="nav-marca" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="Saúco" width="282" height="100"></a>
   </div>
   <nav class="nav-principal" id="nav-principal" aria-label="Principal">
-    <a href="/#home" class="nav-marca-mini" aria-label="Saúco, ir al inicio"><img src="/imagenes/logo/sauco-flor-horizontal.svg" alt="" width="282" height="100"></a>
+    <a href="/#home" class="nav-marca-mini" aria-label="Saúco, ir al inicio"><img class="mini-escritorio" src="/imagenes/logo/sauco-flor-horizontal.svg" alt="" width="282" height="100"><img class="mini-movil" src="/imagenes/logo/sauco-flor.svg" alt="" width="28" height="28"></a>
     <ul class="nav-links">
       <li class="nav-item-decants" id="nav-item-decants">
         <button type="button" class="nav-desplegable" id="nav-decants-toggle" aria-expanded="false" aria-controls="nav-decants-submenu">Decants<span class="nav-desplegable-flecha" aria-hidden="true"></span></button>
@@ -84,8 +84,17 @@
           <li><a href="/#completos/sets" data-genero="completos-sets">Sets de regalo</a></li>
         </ul>
       </li>
-      <li><a href="/#originalidad" data-genero="originalidad"><span><span class="solo-escritorio">100% </span>originales</span></a></li>
+      <li class="solo-escritorio"><a href="/#originalidad" data-genero="originalidad"><span><span class="solo-escritorio">100% </span>originales</span></a></li>
       <li class="solo-escritorio"><a href="/#como-pedir" data-genero="como-pedir">Cómo pedir</a></li>
+      <li class="nav-item-mas solo-movil" id="nav-item-mas">
+        <button type="button" class="nav-desplegable" id="nav-mas-toggle" aria-expanded="false" aria-controls="nav-mas-submenu">Más<span class="nav-desplegable-flecha" aria-hidden="true"></span></button>
+        <ul class="nav-submenu" id="nav-mas-submenu">
+          <li><a href="/#originalidad">100% originales</a></li>
+          <li><a href="/#que-recibes">Qué recibes</a></li>
+          <li><a href="/#como-pedir">Cómo pedir</a></li>
+          <li><a href="https://wa.me/525612567245">WhatsApp · 56 1256 7245</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </header>
@@ -160,15 +169,8 @@
         <li class="proceso-paso"><span class="proceso-titulo">Decantado al momento</span><span class="proceso-texto">Preparamos tu decant cuando haces tu pedido, siempre en frasco y atomizador nuevos.</span></li>
         <li class="proceso-paso"><span class="proceso-titulo">Etiquetado y empacado</span><span class="proceso-texto">Lleva la casa, el perfume, su concentración y la marca Saúco, y llega en tu caja personalizada de Saúco.</span></li>
       </ol>
-      <p class="originalidad-prueba">¿Quieres verla? <a href="https://wa.me/525612567245?text=Hola%2C%20%C2%BFme%20pueden%20mandar%20una%20foto%20o%20video%20de%20la%20botella%20original%20de%20tu%20perfume%3F">Pídenos por WhatsApp una foto o video de la botella original</a> de tu perfume.</p>
+      <p class="originalidad-prueba">¿Quieres verla? <a href="https://wa.me/525612567245?text=Hola%2C%20%C2%BFme%20pueden%20mandar%20una%20foto%20o%20video%20de%20la%20botella%20original%20de%20mi%20perfume%3F">Pídenos por WhatsApp una foto o video de la botella original</a> de tu perfume.</p>
 
-      <div class="recibes" aria-labelledby="recibes-titulo">
-        <h3 id="recibes-titulo" class="recibes-titulo">Qué recibes</h3>
-        <dl class="recibes-lista">
-          <div class="recibes-fila"><dt><span class="recibes-ml">3&nbsp;ml</span> Muestra</dt><dd>Frasco de vidrio con atomizador y tapa de plástico transparente. Unas 60 atomizaciones.</dd></div>
-          <div class="recibes-fila"><dt><span class="recibes-ml">5 y 10&nbsp;ml</span> Viaje y Mensual</dt><dd>Carcasa de aluminio con frasco de vidrio adentro y atomizador plateado: más protegido contra caídas y listo para llevar de viaje. Unas 90 y 180 atomizaciones.</dd></div>
-        </dl>
-      </div>
       <!-- Espacio para las fotos reales de Saúco (botella original, decantado, empaque).
            Reemplazar cada figura con la foto y quitar el atributo hidden. -->
       <div class="originalidad-fotos" hidden>
@@ -176,6 +178,16 @@
         <figure data-pendiente="decantado"></figure>
         <figure data-pendiente="empaque"></figure>
       </div>
+    </section>
+
+    <section class="atelier-seccion sala-papel recibes-sala" id="que-recibes" aria-labelledby="recibes-titulo">
+      <div class="atelier-cabeza">
+        <h2 id="recibes-titulo" class="atelier-h2">Qué recibes</h2>
+      </div>
+      <dl class="recibes-lista">
+          <div class="recibes-fila"><dt><span class="recibes-ml">3&nbsp;ml</span> Muestra</dt><dd>Frasco de vidrio con atomizador y tapa de plástico transparente. Unas 60 atomizaciones.</dd></div>
+          <div class="recibes-fila"><dt><span class="recibes-ml">5 y 10&nbsp;ml</span> Viaje y Mensual</dt><dd>Carcasa de aluminio con frasco de vidrio adentro y atomizador plateado: más protegido contra caídas y listo para llevar de viaje. Unas 90 y 180 atomizaciones.</dd></div>
+        </dl>
     </section>
 
     <section class="atelier-seccion atelier-seccion-final" id="como-pedir" aria-labelledby="pedir-titulo">
@@ -202,7 +214,7 @@
           <a class="catalogo-chip" href="/#catalogo/hombre" data-chip="hombre">Hombre</a>
           <a class="catalogo-chip" href="/#catalogo/mujer" data-chip="mujer">Mujer</a>
         </nav>
-        <p class="catalogo-leyenda">Toca una medida para agregarla al carrito. <strong>3&nbsp;ml</strong> Muestra, ≈60 atomizaciones · <strong>5&nbsp;ml</strong> Viaje, ≈90 · <strong>10&nbsp;ml</strong> Mensual, ≈180. <a href="/#originalidad">Qué recibes</a></p>
+        <p class="catalogo-leyenda">Toca una medida para agregarla al carrito. <strong>3&nbsp;ml</strong> Muestra, ≈60 atomizaciones · <strong>5&nbsp;ml</strong> Viaje, ≈90 · <strong>10&nbsp;ml</strong> Mensual, ≈180. <a href="/#que-recibes">Qué recibes</a></p>
       </header>
 
       <div class="catalogo-sala">
@@ -318,7 +330,7 @@
 <div class="footer-global">
   <div class="footer-nombre"><img src="/imagenes/logo/sauco-flor-vertical-claro.svg" alt="Saúco" width="142" height="152" loading="lazy"></div>
   <div class="footer-sub">Decants · Monterrey · Envíos a todo&nbsp;México</div>
-  <div class="footer-contacto">Escríbenos por WhatsApp o DM de Instagram para hacer tu pedido</div>
+  <div class="footer-contacto">Arma tu pedido en el carrito y te respondemos por WhatsApp</div>
   <div class="footer-redes">
     <div class="red-item"><span class="red-icon">Instagram</span><span class="red-handle-dark"><a href="https://www.instagram.com/sauco.decants/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">@sauco.decants</a></span></div>
     <div class="red-item"><span class="red-icon">TikTok</span><span class="red-handle-dark"><a href="https://www.tiktok.com/@saucodecants" target="_blank" rel="noopener noreferrer">@saucodecants</a></span></div>
@@ -327,8 +339,8 @@
   </div>
 </div>
 
-<script src="/js/data.js?v=20261108m"></script>
-<script src="/js/main.js?v=20261108m"></script>
-<script src="/js/carrito.js?v=20261108m"></script>
+<script src="/js/data.js?v=20261108r"></script>
+<script src="/js/main.js?v=20261108r"></script>
+<script src="/js/carrito.js?v=20261108r"></script>
 </body>
 </html>
