@@ -213,7 +213,7 @@ const PERFUMES = [
     imagen: "/imagenes/born in roma intense.webp",
     alt: "Born in Roma Intense",
     notas: ["Vainilla bourbon", "Lavanda", "Vetiver", "Madera ambarada"],
-    precios: { "3ml": "$220", "5ml": "$374", "10ml": "$707" },
+    precios: { "3ml": "$175", "5ml": "$260", "10ml": "$475" },
     bestseller: true
   },
   {
