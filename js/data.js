@@ -169,6 +169,18 @@ const PERFUMES = [
     bestseller: false
   },
   {
+    casa: "Louis Vuitton",
+    nombre: "Ombre Nomade EDP",
+    slug: "louis-vuitton-ombre-nomade",
+    genero: "Unisex",
+    tier: "disenador",
+    imagen: "/imagenes/ombre nomade.webp",
+    alt: "Ombre Nomade",
+    notas: ["Oud", "Frambuesa", "Incienso", "Benjuí", "Rosa"],
+    precios: { "3ml": "$380", "5ml": "$600", "10ml": "$1,160" },
+    bestseller: false
+  },
+  {
     casa: "Tom Ford",
     nombre: "Ombré Leather EDP",
     slug: "tom-ford-ombre-leather",

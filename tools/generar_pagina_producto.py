@@ -404,6 +404,31 @@ CONTENIDO_DECANTS = {
         "ideal_para": "Primavera y verano, día a día — uso ligero.",
         "duracion": "5 a 7 horas en piel, proyección moderada.",
     },
+    "Louis Vuitton|Ombre Nomade EDP": {
+        "slug": "louis-vuitton-ombre-nomade",
+        "meta_descripcion": (
+            "Decant de Ombre Nomade de Louis Vuitton (3ml, 5ml, 10ml), 100% "
+            "original. Oud ahumado con frambuesa, incienso y benjuí — intenso y "
+            "unisex. Envíos a todo México desde Monterrey."
+        ),
+        "notas_salida": ["Frambuesa", "Geranio", "Azafrán"],
+        "notas_corazon": ["Rosa", "Abedul", "Madera ambarada"],
+        "notas_fondo": ["Oud", "Incienso", "Benjuí"],
+        "parrafos": [
+            "Ombre Nomade, creada por Jacques Cavallier Belletrud en 2018, es el oud "
+            "de Louis Vuitton: un homenaje a los desiertos y a la sombra que buscan "
+            "los viajeros. Abre con una frambuesa jugosa y un toque de geranio y "
+            "azafrán, pasa por un corazón de rosa y abedul ahumado, y se asienta en "
+            "un fondo profundo de oud, incienso y benjuí.",
+
+            "Es una fragancia unisex, densa y envolvente, de las más reconocidas "
+            "entre los oud de lujo. Brilla en otoño e invierno y en la noche — "
+            "ocasiones especiales, cenas y eventos — y con muy poco basta: tiene "
+            "una fijación y una estela notables.",
+        ],
+        "ideal_para": "Otoño e invierno, noches y ocasiones especiales.",
+        "duracion": "10 a 12 horas en piel, con proyección fuerte.",
+    },
     "YSL|Y EDP": {
         "slug": "ysl-y",
         "meta_descripcion": (
