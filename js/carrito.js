@@ -344,33 +344,14 @@ function envioEstimado(entrega, subtotal) {
   return { texto: 'Según el tipo de entrega', monto: null };
 }
 
-// ----- Zona de entrega local (geocodificación con Google Maps) -----
-// Pendiente antes de producción: crear esta API key en Google Cloud Console
-// → habilitar "Maps JavaScript API" y "Geocoding API" → Credenciales → Crear
-// credencial → API key → restringirla por "HTTP referrers (sitios web)" a
-// https://saucodecants.com/* (y https://www.saucodecants.com/* si aplica) →
-// restringirla también a esas dos APIs nada más. El peor caso de que alguien
-// la copie del código fuente es gasto de cuota de Google (la key no sirve
-// desde otro dominio), nunca un cobro ni un pedido falso: por eso es
-// aceptable que viva aquí, a diferencia de un secreto de verdad (pago, por
-// ejemplo, que sí vive solo en servidor).
-const GOOGLE_MAPS_API_KEY = 'TU_API_KEY_RESTRINGIDA_AQUI';
-
-let googleMapsListo = null; // promesa: resuelve cuando el SDK de Maps ya cargó
-
-function cargarGoogleMaps() {
-  if (googleMapsListo) return googleMapsListo;
-  googleMapsListo = new Promise((resolve, reject) => {
-    if (window.google && window.google.maps && window.google.maps.Geocoder) { resolve(); return; }
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_MAPS_API_KEY)}&loading=async`;
-    script.async = true;
-    script.onload = () => (window.google && window.google.maps && window.google.maps.Geocoder) ? resolve() : reject(new Error('Google Maps cargó sin Geocoder.'));
-    script.onerror = () => reject(new Error('No se pudo cargar Google Maps.'));
-    document.head.appendChild(script);
-  });
-  return googleMapsListo;
-}
+// ----- Zona de entrega local -----
+// Resuelta por una función serverless aparte (api/zona-envio.js, proyecto de
+// Vercel independiente del GitHub Pages estático — ver api/README.md): ahí
+// geocodifica con Google Maps y revisa el mapa de cobertura real. La API key
+// de Google vive solo en esa función (variable de entorno), nunca en el
+// navegador — a diferencia de cargar el SDK de Maps directo en el sitio, acá
+// no hay ningún secreto que alguien pueda copiar del código fuente.
+const ZONA_API_BASE = 'https://sauco-zona-envio.vercel.app';
 
 function programarResolverZonaLocal() {
   clearTimeout(zonaLocalTimer);
@@ -386,20 +367,19 @@ function resolverZonaLocal() {
   zonaLocal = { firma, zona: null, cargando: true, error: null };
   renderCarrito();
 
-  cargarGoogleMaps()
-    .then(() => new Promise((resolve, reject) => {
-      const direccion = `${envio.calle}, ${envio.colonia}, ${envio.ciudad}, ${envio.estado} ${envio.cp}, México`;
-      new google.maps.Geocoder().geocode(
-        { address: direccion, region: 'mx', componentRestrictions: { country: 'MX' } },
-        (resultados, status) => {
-          if (status === 'OK' && resultados && resultados[0]) resolve(resultados[0].geometry.location);
-          else reject(new Error('geocode status: ' + status));
-        }
-      );
-    }))
-    .then(ubicacion => {
+  fetch(`${ZONA_API_BASE}/api/zona-envio`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ calle: envio.calle, colonia: envio.colonia, ciudad: envio.ciudad, estado: envio.estado, cp: envio.cp })
+  })
+    .then(r => r.json().catch(() => ({})).then(datos => ({ ok: r.ok, datos })))
+    .then(({ ok, datos }) => {
       if (firmaDireccionLocal() !== firma) return; // la dirección cambió mientras se resolvía
-      zonaLocal = { firma, zona: zonaDeEnvio(ubicacion.lat(), ubicacion.lng()), cargando: false, error: null };
+      if (ok && datos && 'zona' in datos) {
+        zonaLocal = { firma, zona: datos.zona, cargando: false, error: null };
+      } else {
+        zonaLocal = { firma, zona: null, cargando: false, error: true };
+      }
       renderCarrito();
     })
     .catch(() => {

@@ -1,3 +1,5 @@
+'use strict';
+
 // Zonas de cobertura de la paquetería local (Líder Express) para la entrega
 // en Monterrey, tomadas del mapa real que comparte el dueño en Google My Maps:
 // https://www.google.com/maps/d/edit?mid=1cjcadUQEPbJDTVBzB_qSSK7nUvQ8qnI
@@ -5,11 +7,16 @@
 // Los polígonos de abajo son una copia estática de ese mapa (export KML:
 // /maps/d/kml?mid=1cjcadUQEPbJDTVBzB_qSSK7nUvQ8qnI&forcekml=1), en pares
 // [longitud, latitud] como maneja KML. No se vuelve a pedir ese mapa en cada
-// carga de página — es un dato que cambia muy de vez en cuando, igual que el
-// resto del catálogo. Si la paquetería actualiza su cobertura, hay que
-// volver a descargar ese KML y regenerar los arreglos de aquí abajo (cada
-// Placemark del KML trae su <name> — "COBERTURA REGULAR" o "COBERTURA
-// EXTENDIDA" — y sus coordenadas en <outerBoundaryIs>/<innerBoundaryIs>).
+// llamada — es un dato que cambia muy de vez en cuando. Si la paquetería
+// actualiza su cobertura, hay que volver a descargar ese KML y regenerar los
+// arreglos de aquí abajo (cada Placemark del KML trae su <name> —
+// "COBERTURA REGULAR" o "COBERTURA EXTENDIDA" — y sus coordenadas en
+// <outerBoundaryIs>/<innerBoundaryIs>).
+//
+// Esta es la única copia de esta geometría en el repo: antes vivía también
+// en js/zonas-envio.js para resolverse en el navegador, pero se movió aquí
+// para que la API key de geocodificación nunca llegue al cliente (ver
+// zona-envio.js en este mismo folder).
 //
 // ZONA_REGULAR: dos polígonos — el área principal (con un hueco interior de
 // 4 puntos, una zona chica excluida dentro de la cobertura) y un segundo
@@ -54,3 +61,5 @@ function zonaDeEnvio(lat, lng) {
   if (puntoEnConjunto(lng, lat, ZONA_EXTENDIDA)) return 'extendida';
   return null;
 }
+
+module.exports = { zonaDeEnvio };

@@ -1,0 +1,10 @@
+{
+  "name": "sauco-zona-envio-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Función serverless de Saúco Decants: resuelve la zona de envío local (regular/extendida) geocodificando del lado del servidor, para que la API key de Google Maps nunca llegue al navegador. Proyecto de Vercel separado del sitio estático (GitHub Pages).",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  }
+}

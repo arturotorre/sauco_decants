@@ -28,7 +28,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # Versión de CSS/JS: cámbiala cada vez que se publiquen cambios en css/ o js/
 # para que los navegadores descarguen los archivos nuevos en lugar de usar los
 # que tienen guardados (deben coincidir con los de index.html).
-VERSION_ARCHIVOS = "20261119"
+VERSION_ARCHIVOS = "20261119b"
 DATA_JS = RAIZ / "js" / "data.js"
 
 # --- Contenido editorial curado a mano, un producto a la vez ------------
@@ -3622,7 +3622,6 @@ CARRITO_Y_FOOTER_HTML = """<button id="carrito-boton" aria-label="Ver carrito">
 </div>
 
 <script src="/js/data.js?v={VERSION_ARCHIVOS}"></script>
-<script src="/js/zonas-envio.js?v={VERSION_ARCHIVOS}"></script>
 <script src="/js/main.js?v={VERSION_ARCHIVOS}"></script>
 <script src="/js/carrito.js?v={VERSION_ARCHIVOS}"></script>
 </body>
