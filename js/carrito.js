@@ -345,13 +345,13 @@ function envioEstimado(entrega, subtotal) {
 }
 
 // ----- Zona de entrega local -----
-// Resuelta por una función serverless aparte (api/zona-envio.js, proyecto de
-// Vercel independiente del GitHub Pages estático — ver api/README.md): ahí
-// geocodifica con Google Maps y revisa el mapa de cobertura real. La API key
-// de Google vive solo en esa función (variable de entorno), nunca en el
-// navegador — a diferencia de cargar el SDK de Maps directo en el sitio, acá
-// no hay ningún secreto que alguien pueda copiar del código fuente.
-const ZONA_API_BASE = 'https://sauco-zona-envio.vercel.app';
+// Resuelta por una función serverless aparte (api/zona-envio.js, desplegada
+// en Vercel desde este mismo repo — ver api/README.md): ahí geocodifica con
+// Google Maps y revisa el mapa de cobertura real. La API key de Google vive
+// solo en esa función (variable de entorno), nunca en el navegador — a
+// diferencia de cargar el SDK de Maps directo en el sitio, acá no hay ningún
+// secreto que alguien pueda copiar del código fuente.
+const ZONA_API_BASE = 'https://saucodecants.vercel.app';
 
 function programarResolverZonaLocal() {
   clearTimeout(zonaLocalTimer);
