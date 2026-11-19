@@ -200,7 +200,11 @@ function carritoItemHTML(item, indice) {
 // Pago: transferencia o tarjeta. Estos costos aplican a decants; el envío de
 // perfumes completos (sobre pedido, 7 a 10 días) se confirma por WhatsApp.
 const ENVIO = {
-  local: { etiqueta: 'Entrega local en Monterrey', costo: 100, costoExtendida: 150, gratisDesde: 1000, tiempo: '1 día hábil' },
+  // La zona (regular/extendida) se detecta sola por la dirección, con
+  // zonaDeEnvio() (js/zonas-envio.js) — ver resolverZonaLocal() más abajo.
+  // Zona extendida ya no es un costo fijo: baja a $50 en vez de ser gratis
+  // en pedidos grandes, porque entregar ahí le cuesta más al negocio.
+  local: { etiqueta: 'Entrega local en Monterrey', costo: 100, gratisDesde: 1000, costoExtendida: 150, costoExtendidaDesdeMinimo: 50, tiempo: '1 día hábil' },
   nacional: { etiqueta: 'Envío nacional', costoMin: 160, costoMax: 200, gratisDesde: 1500, tiempo: '1 a 3 días hábiles' }
 };
 const FORMAS_PAGO = [
@@ -231,6 +235,12 @@ const CAMPOS_ENVIO = [
 
 let carritoPaso = 'carrito'; // 'carrito' | 'envio' | 'enviado'
 let envio = { entrega: '', pago: '', nombre: '', telefono: '', calle: '', colonia: '', ciudad: '', estado: '', cp: '', referencias: '', fecha: '' };
+// Zona de entrega local (regular/extendida), resuelta geocodificando la
+// dirección con Google Maps y revisando el mapa de cobertura real
+// (js/zonas-envio.js). "firma" es la dirección ya normalizada con la que se
+// resolvió "zona" — para no volver a geocodificar si no cambió nada.
+let zonaLocal = { firma: null, zona: null, cargando: false, error: null };
+let zonaLocalTimer = null;
 let envioErrores = {};
 let ultimoPedido = null; // { numero, firma, mensaje, entrega, pago, conCompletos, resumen }
 let confirmandoNuevo = false;
@@ -293,13 +303,37 @@ function pedidoVigente() {
   return ultimoPedido && carrito.length && ultimoPedido.firma === firmaCarrito();
 }
 
+// Dirección ya normalizada con la que se resuelve la zona local: cambia solo
+// si cambia alguno de estos 5 campos (no con cada tecla de "referencias").
+function firmaDireccionLocal() {
+  return [envio.calle, envio.colonia, envio.ciudad, envio.estado, envio.cp].map(v => v.trim().toLowerCase()).join('|');
+}
+
 function envioEstimado(entrega, subtotal) {
   // Devuelve { texto, monto } para el resumen y el mensaje; monto null si se cotiza.
   if (entrega === 'local') {
     const e = ENVIO.local;
+    const vigente = zonaLocal.firma === firmaDireccionLocal();
+    if (vigente && zonaLocal.cargando) return { texto: 'Calculando tu zona de entrega…', monto: null };
+    if (vigente && !zonaLocal.error && zonaLocal.zona === 'regular') {
+      return subtotal >= e.gratisDesde ? { texto: 'Gratis', monto: 0 } : { texto: `${formatoPrecio(e.costo)} · zona regular`, monto: e.costo };
+    }
+    if (vigente && !zonaLocal.error && zonaLocal.zona === 'extendida') {
+      return subtotal >= e.gratisDesde
+        ? { texto: `${formatoPrecio(e.costoExtendidaDesdeMinimo)} · zona extendida`, monto: e.costoExtendidaDesdeMinimo }
+        : { texto: `${formatoPrecio(e.costoExtendida)} · zona extendida`, monto: e.costoExtendida };
+    }
+    if (vigente && !zonaLocal.error && zonaLocal.zona === null) {
+      // Google sí geocodificó la dirección, pero cayó fuera de las dos zonas
+      // que cubre hoy la paquetería: no se adivina un costo.
+      return { texto: 'Fuera de nuestra zona de cobertura automática — lo confirmamos por WhatsApp', monto: null };
+    }
+    // Sin dirección completa todavía, o Google Maps no respondió/falló: se
+    // cae al comportamiento de siempre (asume zona regular) para nunca
+    // bloquear el pedido por un problema de geocodificación.
     return subtotal >= e.gratisDesde
       ? { texto: 'Gratis', monto: 0 }
-      : { texto: `${formatoPrecio(e.costo)} (${formatoPrecio(e.costoExtendida)} en zonas extendidas)`, monto: e.costo };
+      : { texto: `${formatoPrecio(e.costo)} (${formatoPrecio(e.costoExtendida)} en zona extendida — lo confirmamos contigo)`, monto: e.costo };
   }
   if (entrega === 'nacional') {
     const e = ENVIO.nacional;
@@ -310,11 +344,76 @@ function envioEstimado(entrega, subtotal) {
   return { texto: 'Según el tipo de entrega', monto: null };
 }
 
+// ----- Zona de entrega local (geocodificación con Google Maps) -----
+// Pendiente antes de producción: crear esta API key en Google Cloud Console
+// → habilitar "Maps JavaScript API" y "Geocoding API" → Credenciales → Crear
+// credencial → API key → restringirla por "HTTP referrers (sitios web)" a
+// https://saucodecants.com/* (y https://www.saucodecants.com/* si aplica) →
+// restringirla también a esas dos APIs nada más. El peor caso de que alguien
+// la copie del código fuente es gasto de cuota de Google (la key no sirve
+// desde otro dominio), nunca un cobro ni un pedido falso: por eso es
+// aceptable que viva aquí, a diferencia de un secreto de verdad (pago, por
+// ejemplo, que sí vive solo en servidor).
+const GOOGLE_MAPS_API_KEY = 'TU_API_KEY_RESTRINGIDA_AQUI';
+
+let googleMapsListo = null; // promesa: resuelve cuando el SDK de Maps ya cargó
+
+function cargarGoogleMaps() {
+  if (googleMapsListo) return googleMapsListo;
+  googleMapsListo = new Promise((resolve, reject) => {
+    if (window.google && window.google.maps && window.google.maps.Geocoder) { resolve(); return; }
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_MAPS_API_KEY)}&loading=async`;
+    script.async = true;
+    script.onload = () => (window.google && window.google.maps && window.google.maps.Geocoder) ? resolve() : reject(new Error('Google Maps cargó sin Geocoder.'));
+    script.onerror = () => reject(new Error('No se pudo cargar Google Maps.'));
+    document.head.appendChild(script);
+  });
+  return googleMapsListo;
+}
+
+function programarResolverZonaLocal() {
+  clearTimeout(zonaLocalTimer);
+  zonaLocalTimer = setTimeout(resolverZonaLocal, 500);
+}
+
+function resolverZonaLocal() {
+  if (envio.entrega !== 'local') return;
+  if (['calle', 'colonia', 'ciudad', 'estado', 'cp'].some(c => !envio[c].trim())) return; // dirección incompleta
+  const firma = firmaDireccionLocal();
+  if (zonaLocal.firma === firma && !zonaLocal.error && (zonaLocal.zona !== null || zonaLocal.cargando)) return; // ya resuelta o en curso
+
+  zonaLocal = { firma, zona: null, cargando: true, error: null };
+  renderCarrito();
+
+  cargarGoogleMaps()
+    .then(() => new Promise((resolve, reject) => {
+      const direccion = `${envio.calle}, ${envio.colonia}, ${envio.ciudad}, ${envio.estado} ${envio.cp}, México`;
+      new google.maps.Geocoder().geocode(
+        { address: direccion, region: 'mx', componentRestrictions: { country: 'MX' } },
+        (resultados, status) => {
+          if (status === 'OK' && resultados && resultados[0]) resolve(resultados[0].geometry.location);
+          else reject(new Error('geocode status: ' + status));
+        }
+      );
+    }))
+    .then(ubicacion => {
+      if (firmaDireccionLocal() !== firma) return; // la dirección cambió mientras se resolvía
+      zonaLocal = { firma, zona: zonaDeEnvio(ubicacion.lat(), ubicacion.lng()), cargando: false, error: null };
+      renderCarrito();
+    })
+    .catch(() => {
+      if (firmaDireccionLocal() !== firma) return;
+      zonaLocal = { firma, zona: null, cargando: false, error: true };
+      renderCarrito();
+    });
+}
+
 function resumenEnvioHTML() {
   const l = ENVIO.local, n = ENVIO.nacional;
   return `<div class="carrito-info">
     <p><strong>100% original:</strong> preparamos tus decants al momento de tu pedido, de nuestras botellas originales y en frasco nuevo.</p>
-    <p><strong>Envío:</strong> en Monterrey ${formatoPrecio(l.costo)} (${formatoPrecio(l.costoExtendida)} en zonas extendidas), gratis desde ${formatoPrecio(l.gratisDesde)}; nacional aprox. ${formatoPrecio(n.costoMin)}–${formatoPrecio(n.costoMax)} según tu código postal, gratis desde ${formatoPrecio(n.gratisDesde)}. Pedidos recibidos antes de las 18:00 se envían el siguiente día hábil (de lunes a viernes; lo del sábado sale el lunes).</p>
+    <p><strong>Envío:</strong> en Monterrey ${formatoPrecio(l.costo)} en zona regular (gratis desde ${formatoPrecio(l.gratisDesde)}) o ${formatoPrecio(l.costoExtendida)} en zona extendida (${formatoPrecio(l.costoExtendidaDesdeMinimo)} desde ${formatoPrecio(l.gratisDesde)}) — lo calculamos solo con tu dirección; nacional aprox. ${formatoPrecio(n.costoMin)}–${formatoPrecio(n.costoMax)} según tu código postal, gratis desde ${formatoPrecio(n.gratisDesde)}. Pedidos recibidos antes de las 18:00 se envían el siguiente día hábil (de lunes a viernes; lo del sábado sale el lunes).</p>
     <p><strong>Pago:</strong> transferencia, o tarjeta con liga segura de Mercado Pago sin comisión. Te respondemos por WhatsApp ${HORARIO}.</p>
     ${hayCompletos() ? '<p>Los perfumes completos se piden sobre pedido (7 a 10 días hábiles); su envío se confirma por WhatsApp.</p>' : ''}
     ${POLITICA_HTML}
@@ -945,6 +1044,9 @@ document.addEventListener('input', (e) => {
   if (!form || e.target.type === 'radio') return;
   leerFormEnvio(form);
   actualizarFaltantes();
+  if (['envio-calle', 'envio-colonia', 'envio-ciudad', 'envio-estado', 'envio-cp'].includes(e.target.id) && envio.entrega === 'local') {
+    programarResolverZonaLocal();
+  }
 });
 
 document.addEventListener('focusin', (e) => {
@@ -963,6 +1065,7 @@ document.addEventListener('change', (e) => {
   // Al elegir entrega local se sugiere la ciudad y el estado si están vacíos.
   if (e.target.name === 'entrega' && envio.entrega === 'local') {
     if (!envio.estado) envio.estado = 'Nuevo León';
+    resolverZonaLocal();
   }
   guardarEnvio();
   if (e.target.name === 'fecha') {
